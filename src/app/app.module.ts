@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -14,14 +15,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         AppComponent
     ],
     providers: [],
-    bootstrap: [AppComponent],
+    bootstrap: [
+      AppComponent,
+      CoreModule
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         CoreModule,
         SharedModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        NgbModule
     ]
 })
 export class AppModule { }
