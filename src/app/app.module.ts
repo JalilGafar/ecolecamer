@@ -10,6 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormationInfoModule } from './formation-info/formation-info.module';
 import { OrientationModule } from './orientation/orientation.module';
+import { LandingPageModule } from './landing-page/landing-page.module';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { OrientationModule } from './orientation/orientation.module';
         //FlexLayoutModule,
         NgbModule,
         FormationInfoModule,
-        OrientationModule
+        OrientationModule,
+        LandingPageModule
     ]
 })
 export class AppModule { }

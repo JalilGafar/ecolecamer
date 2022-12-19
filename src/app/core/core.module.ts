@@ -12,7 +12,6 @@ import { SidenavListComponent } from './components/sidenav-list/sidenav-list.com
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SidenavListComponent,
     SidenavListComponent
   ],
   imports: [

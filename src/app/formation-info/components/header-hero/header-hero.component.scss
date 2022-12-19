@@ -1,0 +1,30 @@
+.header-hero {
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    padding-bottom: 40px;
+    padding-top: 50px;
+    text-align: left;
+    img {
+      max-width: 50%;
+      border-radius: 40px;
+    }
+    .content{
+        background-color: hsla(0,0%,100%,.8);
+        border-radius: 40px;
+        left: calc(50% - 144px);
+        padding: 25px 0 23px 32px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+    }
+    .title{
+        font-size: 2rem;
+        text-indent: 90px;
+        font-family: PlusJakartaSans-Bold,Plus Jakarta Sans Bold,Plus Jakarta Sans,sans-serif;
+        margin-bottom: 8px;
+    }
+    .subtitle{
+
+    }
+}

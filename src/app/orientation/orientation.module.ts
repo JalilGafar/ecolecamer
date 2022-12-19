@@ -5,6 +5,7 @@ import { DegreeComponent } from './components/degree/degree.component';
 import { FieldComponent } from './components/field/field.component';
 import { CityComponent } from './components/city/city.component';
 import { OrientationRoutingModule } from './orientation-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -17,7 +18,11 @@ import { OrientationRoutingModule } from './orientation-routing.module';
   ],
   imports: [
     CommonModule,
-    OrientationRoutingModule
+    OrientationRoutingModule,
+    SharedModule
+  ],
+  exports :[
+    StartComponent
   ]
 })
 export class OrientationModule { }
