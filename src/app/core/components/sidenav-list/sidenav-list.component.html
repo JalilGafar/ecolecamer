@@ -1,0 +1,24 @@
+<mat-nav-list fxLayout="column">
+    <button mat-button [matMenuTriggerFor]="diplomes" >Diplômes</button>
+    <mat-menu #diplomes="matMenu">
+        <button mat-menu-item (click)="onSidenavClose() " >Diplomes</button>
+        <button mat-menu-item (click)="onSidenavClose() ">Bac Pro</button>
+        <button mat-menu-item (click)="onSidenavClose() ">CAP</button>
+        <button mat-menu-item (click)="onSidenavClose() ">BTS</button>
+        <button mat-menu-item (click)="onSidenavClose() ">Prépa</button>
+        <button mat-menu-item (click)="onSidenavClose() ">DUT</button>
+        <button mat-menu-item (click)="onSidenavClose() ">BUT</button>
+        <button mat-menu-item (click)="onSidenavClose() ">Bachelor</button>
+        <button mat-menu-item (click)="onSidenavClose() ">Licence</button>
+        <button mat-menu-item (click)="onSidenavClose() ">Licence Pro</button>
+        <button mat-menu-item (click)="onSidenavClose() ">Master</button>
+    </mat-menu>
+    <button mat-button >Ècoles</button>
+    <button mat-button [matMenuTriggerFor]="formation" >Formation</button>
+    <mat-menu #formation="matMenu">
+        <button mat-menu-item (click)="onSidenavClose() ">Domaine d'étude</button>
+        <button mat-menu-item (click)="onSidenavClose() ">Filière</button>
+        <button mat-menu-item (click)="onSidenavClose() ">Formation à distance</button>
+        <button mat-menu-item (click)="onSidenavClose() ">Métier</button>
+    </mat-menu>
+</mat-nav-list>

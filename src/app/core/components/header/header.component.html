@@ -1,7 +1,7 @@
 
 <mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <button mat-icon-button (click)="sidenav.toggle()" fxHide.gt-xs>
+    
+        <button mat-icon-button (click)="onToggleSidenav()" fxHide.gt-xs>
             <mat-icon>menu</mat-icon>
         </button>
         <span>EcoleCamer</span>
@@ -30,9 +30,9 @@
                 <button mat-menu-item>Métier</button>
             </mat-menu>
         </div>
-    </mat-toolbar-row>
+    
 </mat-toolbar>
-
+<!--
 <mat-sidenav-container fxFlexFill>
     <mat-sidenav #sidenav>
         <mat-nav-list>
@@ -60,7 +60,9 @@
             </mat-menu>
         </mat-nav-list>
     </mat-sidenav>
-    <!--
+
         <mat-sidenav-content fxFlexFill>Main content</mat-sidenav-content>
-    --> 
+    
 </mat-sidenav-container>
+
+-->

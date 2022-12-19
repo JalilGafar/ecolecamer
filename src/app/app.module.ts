@@ -8,6 +8,8 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormationInfoModule } from './formation-info/formation-info.module';
+import { OrientationModule } from './orientation/orientation.module';
 
 
 @NgModule({
@@ -25,8 +27,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         BrowserAnimationsModule,
         CoreModule,
         SharedModule,
-        FlexLayoutModule,
-        NgbModule
+        //FlexLayoutModule,
+        NgbModule,
+        FormationInfoModule,
+        OrientationModule
     ]
 })
 export class AppModule { }

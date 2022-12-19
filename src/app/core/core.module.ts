@@ -4,13 +4,16 @@ import { HeaderComponent } from './components/header/header.component';
 import { SharedModule } from '../shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './components/footer/footer.component';
+import { SidenavListComponent } from './components/sidenav-list/sidenav-list.component';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SidenavListComponent,
+    SidenavListComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
   exports: [
     HeaderComponent,
     FooterComponent,
-    SharedModule
+    SharedModule,
+    SidenavListComponent
   ]
 })
 export class CoreModule { }
