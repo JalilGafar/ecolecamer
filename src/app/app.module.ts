@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormationInfoModule } from './formation-info/formation-info.module';
 import { OrientationModule } from './orientation/orientation.module';
 import { LandingPageModule } from './landing-page/landing-page.module';
+import { TopVideoSchoolModule } from './top-video-school/top-video-school.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { LandingPageModule } from './landing-page/landing-page.module';
     providers: [],
     bootstrap: [
       AppComponent,
-      CoreModule
+      CoreModule,
+      TopVideoSchoolModule
     ],
     imports: [
         BrowserModule,

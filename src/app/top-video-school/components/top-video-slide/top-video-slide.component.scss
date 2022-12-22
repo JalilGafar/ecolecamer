@@ -1,0 +1,69 @@
+.container {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    max-width: 600px;
+   //display: contents;
+}
+
+.content {
+   display: grid;
+   grid-template-columns: repeat(7, 1fr);
+   grid-auto-rows: 100px;
+}
+
+.content > div {
+    box-sizing: border-box;
+    position: relative;
+    //width: 80%;
+    margin-left: 3%;
+    margin-right: 3%;
+   // margin: 7% auto;
+    padding: 3px 3px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.30), 0 8px 5px rgba(0, 0, 0, 0.30) 
+}
+
+.content > div > p {
+    position: absolute;
+    bottom: 2px;
+    left: 3px;
+}
+
+.box1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: red;
+}
+.box2 {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: rgb(20, 53, 170);
+}
+.box3 {
+    grid-column-start: 6;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: rgb(13, 235, 43);
+    margin-bottom: 3px;
+}
+.box4 {
+
+    grid-column-start: 6;
+    grid-column-end: 8;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: rgb(49, 37, 37);
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0px;
+    //border-radius: 10px;
+}
