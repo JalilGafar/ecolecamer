@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { LandingPageComponent } from './landing-page.component';
 
-describe('LandingPageComponent', () => {
-  let component: LandingPageComponent;
-  let fixture: ComponentFixture<LandingPageComponent>;
+import { SingleTopNewsComponent } from './single-top-news.component';
+
+describe('SingleTopNewsComponent', () => {
+  let component: SingleTopNewsComponent;
+  let fixture: ComponentFixture<SingleTopNewsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LandingPageComponent ]
+      declarations: [ SingleTopNewsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LandingPageComponent);
+    fixture = TestBed.createComponent(SingleTopNewsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

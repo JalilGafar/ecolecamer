@@ -1,1 +1,16 @@
-<p>top-news-slide works!</p>
+<p-carousel [value]="myTopNews" [numVisible]="3" [numScroll]="1">
+    <ng-template let-topNews pTemplate="item">
+        <div class="product-item">
+            <div class="product-item-content">
+                <div class="p-mb-3">
+                </div>
+                <div>
+                    <h4 class="p-mb-1">{{myTopNews.title}</h4>
+                    <h6 class="p-mt-0 p-mb-3">${{topNews.description}}</h6>
+                    <img mat-card-xl-image [src]="topNews.imageUrl" [alt]="topNews.title">
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-carousel>
+

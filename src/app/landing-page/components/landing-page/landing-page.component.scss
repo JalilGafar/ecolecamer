@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Plus Jakarta Sans');
+
 .steps, .banner-stat, .promise {
     padding-bottom: 64px;
     padding-top: 64px;
@@ -53,4 +55,20 @@
 
 .title {
     text-align: center;
+}
+
+.trouver {
+    text-align: center;
+}
+
+.top-news-slide{
+    /*
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 100px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    //background-color: lightgrey;
+    position: relative;
+    */
 }
