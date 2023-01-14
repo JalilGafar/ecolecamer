@@ -9,8 +9,8 @@
         [rows]="9"
         filterBy="name"
         >          
-            <ng-template let-bts pTemplate="gridItem" >
-                <div class="product-grid-item card col">
+            <ng-template let-bts pTemplate="gridItem" fxLayout.xs="column">
+                <div class="product-grid-item card">
                     {{bts.title}}
                 </div>
             </ng-template>
