@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {CarouselModule} from 'primeng/carousel';
-import { DataViewModule } from 'primeng/dataview'
+import { DataViewModule } from 'primeng/dataview';
+import {ButtonModule} from 'primeng/button';
+
 
 
 @NgModule({
@@ -13,13 +15,15 @@ import { DataViewModule } from 'primeng/dataview'
     MaterialModule,
     FlexLayoutModule,
     CarouselModule,
-    DataViewModule
+    DataViewModule,
+    ButtonModule
   ],
   exports: [
     MaterialModule,
     FlexLayoutModule,
     CarouselModule,
-    DataViewModule
+    DataViewModule,
+    ButtonModule
   ],
 })
 export class SharedModule { }

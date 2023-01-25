@@ -1,7 +1,9 @@
 <div fxLayout="column" class="landing">
     <app-header-hero></app-header-hero>
     <app-start ></app-start>
-    <app-top-video-slide class="top-video"></app-top-video-slide>
+    <app-top-video-slide class="top-video">
+
+    </app-top-video-slide>
 
     <div class="steps" fxFlex fxLayout="column">
         <div class="orientTitle">
@@ -46,8 +48,7 @@
 
     </div>
 
-    <app-top-news-slide  
-                        class="top-news-slide">
+    <app-top-news-slide  class="top-news-slide">
     </app-top-news-slide>
 
     <div class="banner-stat orientTitle">
@@ -85,8 +86,32 @@
 
     <app-catalog-panel></app-catalog-panel>
 
-    <div class="promise">
-
+    <div class="promise" fxFlex fxLayout="column">
+        <div class="orientTitle">
+            <h2>La promesse de EcoleCamer</h2>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px">
+            <div class="inbox">
+                <div class="inboxImage">
+                    <img src="./../../../../assets/images/josh.jpg" alt="">
+                </div>
+                <div class="inboxText">
+                    <h4>Une offre exhaustive</h4>
+                    <p class="dolle">EcoleCamer référence toutes les écoles privées comme publiques</p>
+                    <span>Pour chaque école, on vous propose les formations, les avis, les accréditations, les campus, les brochures, les vidéos, les témoignages, les articles, etc.</span>
+                </div>
+            </div>
+            <div class="inbox">
+                <div class="inboxImage">
+                    <img src="./../../../../assets/images/josh.jpg" alt="">
+                </div>
+                <div class="inboxText">
+                    <h4>Des conseils personnalisés</h4>
+                    <p class="dolle">Des conseillers d’orientation formés pour vous guider dans votre démarche</p>
+                    <span>Nos conseillers d’orientation vous rappellent gratuitement pour valider votre profil, ajuster votre projet et vous orienter vers les meilleures écoles.</span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

@@ -12,6 +12,7 @@ import { FormationInfoModule } from './formation-info/formation-info.module';
 import { OrientationModule } from './orientation/orientation.module';
 import { LandingPageModule } from './landing-page/landing-page.module';
 import { TopVideoSchoolModule } from './top-video-school/top-video-school.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { TopVideoSchoolModule } from './top-video-school/top-video-school.module
         NgbModule,
         FormationInfoModule,
         OrientationModule,
-        LandingPageModule
+        LandingPageModule,
+        HttpClientModule
     ]
 })
 export class AppModule { }

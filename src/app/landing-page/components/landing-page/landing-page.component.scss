@@ -45,11 +45,36 @@
         position: inherit;
         margin-bottom: 0;
     }
+    h4 {
+        font-family: PlusJakartaSans-Medium,Plus Jakarta Sans Medium,Plus Jakarta Sans,sans-serif;;
+        text-align: center;
+        color: hwb(0deg 38% 62%);
+        font-weight: bold;
+        background: #ffffffc7;
+        margin-left: auto;
+        margin-right: auto;
+        //width: 60px;
+        height: 60px;
+        font-size: 1.6em;
+        border-top-left-radius: 38px;
+        border-top-right-radius: 38px;
+        padding-top: 13px;
+        position: inherit;
+        margin-bottom: 0;
+        
+    }
     .til {
         font-family: PlusJakartaSans-Bold,Plus Jakarta Sans Bold,Plus Jakarta Sans,sans-serif;
         font-size: 1.7rem;
         margin-bottom: 8px;
         margin-top: 12px;
+    }
+    .dolle {
+        font-family: PlusJakartaSans-Bold,Plus Jakarta Sans Bold,Plus Jakarta Sans,sans-serif;
+        color: #ff5e00; 
+        font-size: 1.3rem; 
+        margin-top: 16px;
+        margin-bottom: 16px;
     }
 }
 

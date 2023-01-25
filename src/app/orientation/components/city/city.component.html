@@ -1,1 +1,5 @@
-<p>city works!</p>
+<h2>Où souhaitez vous suivre votre formation</h2>
+<div  *ngFor="let cyti of cyties$ |async ">
+    <button pButton pRipple type="button" [label]="cyti.ville_cam"></button>
+</div>
+

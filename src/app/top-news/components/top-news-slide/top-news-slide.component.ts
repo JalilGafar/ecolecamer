@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TopNews } from 'src/app/core/model/top-news-model';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { TopNewsService } from 'src/app/services/top-news.service';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-top-news-slide',
@@ -9,10 +12,12 @@ import { SharedModule } from 'src/app/shared/shared.module';
 })
 export class TopNewsSlideComponent {
 
-  myTopNews!: TopNews[];
+  myTopNews$!: Observable<TopNews[]>;
+
+  
   responsiveOptions;
 
-  constructor(){
+  constructor( private TopNewsService : TopNewsService ){
     this.responsiveOptions = [
       {
           breakpoint: '1024px',
@@ -33,36 +38,6 @@ export class TopNewsSlideComponent {
   }
 
   ngOnInit() {
-    this.myTopNews = [
-      {
-        id: 1,
-        title:'Archibald',
-        description:'Mon meilleur ami depuis tout petit !',
-        imageUrl:'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-        createdDate: new Date()
-      },
-      {
-        id: 2,
-        title:'Dexter',
-        description:'Mon meilleur ami depuis tout petit !',
-        imageUrl:'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-        createdDate: new Date()
-      },
-      {
-        id: 3,
-        title:'Phuitone',
-        description:'Mon meilleur ami depuis tout petit !',
-        imageUrl:'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-        createdDate: new Date()
-      },
-      {
-        id: 4,
-        title:'Nagato',
-        description:'Mon meilleur ami depuis tout petit !',
-        imageUrl:'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-        createdDate: new Date()
-      },
-      
-    ]
+    this.myTopNews$ = this.TopNewsService.getAllTopNews();
   }
 }
