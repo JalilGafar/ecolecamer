@@ -7,12 +7,8 @@ import { DegreeComponent } from './orientation/components/degree/degree.componen
 import { FieldComponent } from './orientation/components/field/field.component';
 
 const routes: Routes = [
-//  { path: '', loadChildren: () => import('./formation-info/formation-info.module').then(m => m.FormationInfoModule) },
   { path: '', component: LandingPageComponent},
-  { path: 'orientation/start/field', component: FieldComponent},
-  { path: 'orientation/start/degree', component: DegreeComponent},
-  { path: 'orientation/start/city', component: CityComponent},
- // { path: 'orientation/start', loadChildren: () => import('./orientation/orientation.module').then(m => m.OrientationModule) },
+  { path: 'orientation', loadChildren: () => import('./orientation/orientation.module').then(m => m.OrientationModule) },
   { path:'**', redirectTo:''}
 ];
 

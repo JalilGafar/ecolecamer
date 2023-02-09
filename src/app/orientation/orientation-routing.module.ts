@@ -5,9 +5,10 @@ import { FieldComponent } from "../orientation/components/field/field.component"
 import { CityComponent } from "./components/city/city.component";
 
 const routes: Routes = [
-    { path: 'degree', component: DegreeComponent},
-    { path: 'field', component: FieldComponent},
-    { path: 'city', component: CityComponent}
+    { path: 'start/degree', component: DegreeComponent},
+    { path: 'degree/:degree', component: DegreeComponent},
+    { path: 'start/field', component: FieldComponent},
+    { path: 'start/city', component: CityComponent}
 ];
 
 @NgModule({

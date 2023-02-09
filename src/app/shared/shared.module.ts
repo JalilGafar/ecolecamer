@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {CarouselModule} from 'primeng/carousel';
-import { DataViewModule } from 'primeng/dataview';
-import {ButtonModule} from 'primeng/button';
+import { PrimengModule } from './primeng.modules';
+
 
 
 
@@ -13,17 +12,13 @@ import {ButtonModule} from 'primeng/button';
   imports: [
     CommonModule,
     MaterialModule,
-    FlexLayoutModule,
-    CarouselModule,
-    DataViewModule,
-    ButtonModule
+    PrimengModule,
+    FlexLayoutModule
   ],
   exports: [
     MaterialModule,
     FlexLayoutModule,
-    CarouselModule,
-    DataViewModule,
-    ButtonModule
+    PrimengModule
   ],
 })
 export class SharedModule { }

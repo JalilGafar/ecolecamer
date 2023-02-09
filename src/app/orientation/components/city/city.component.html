@@ -1,5 +1,12 @@
-<h2>Où souhaitez vous suivre votre formation</h2>
-<div  *ngFor="let cyti of cyties$ |async ">
-    <button pButton pRipple type="button" [label]="cyti.ville_cam"></button>
+<div fxFlex fxLayout="column">
+    <h2>Où souhaitez vous suivre votre formation</h2>
+    <div fxLayoutGap="16px" fxLayout="row wrap">
+        <button class="but" pButton pRipple  
+                            *ngFor="let cyti of cyties$ |async " 
+                            type="button" 
+                            [label]="cyti.ville_cam"
+                            (click)="setCyti(cyti.ville_cam)"></button>
+    </div>
 </div>
+
 

@@ -6,6 +6,7 @@ import { FieldComponent } from './components/field/field.component';
 import { CityComponent } from './components/city/city.component';
 import { OrientationRoutingModule } from './orientation-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { OrientationService } from './services/orientation.service';
 
 
 
@@ -23,6 +24,9 @@ import { SharedModule } from '../shared/shared.module';
   ],
   exports :[
     StartComponent
+  ],
+  providers:[
+    OrientationService
   ]
 })
 export class OrientationModule { }
