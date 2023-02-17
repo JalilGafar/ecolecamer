@@ -1,8 +1,10 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { degree } from "src/app/core/model/degree-model";
 import { UserProfil } from "src/app/core/model/user-profil-model";
 import { ville } from "src/app/core/model/ville-model";
+import { environment } from "src/environments/environment";
 
 @Injectable ()
 export class OrientationService {
@@ -25,13 +27,20 @@ export class OrientationService {
         sercheDate: new Date("2023-01-01"),
     };
 
-
     initUser (): UserProfil {
     return this.initialUser;    
     }
 
     getAllCyties(): Observable<ville[]> {
-    return this.http.get<ville[]>('http://localhost:3000/cyties')
+    return this.http.get<ville[]>(`${environment.apiUrl}/cyties`)
+    };
+
+    geAllDegree(): Observable<degree[]> {
+        return this.http.get<degree[]>(`${environment.apiUrl}/degree`)
+    };
+
+    getDegreeByCyti(degreeCyti:string){
+
     };
       
     saveCytiIn (cyti : string) {
