@@ -14,19 +14,24 @@ export class DegreeComponent {
   degree$!: Observable<degree[]>;
   degreeView!: degree [];
   cap = {groupe: 'CAP ou équivalent'};
-  bts = {groupe: 'Bac+1 à Bac+2'}
+  bts = {groupe: 'Bac+1 à Bac+2'};
+  licence = {groupe: 'Bac+3'};
+  master = {groupe: 'Bac+4 à Bac+5'};
+  doctor = {groupe: 'Bac+6 et plus'};
+  autre = {groupe: 'Autre'};
 
   constructor (private orientationService :OrientationService,
               private appRout : Router,
               private route: ActivatedRoute) {}
 
   ngOnInit(){
-    const userDegreeCyti = this.route.snapshot.params['degreeCyti'];
+    const userDegreeCyti = this.route.snapshot.queryParams['degreeCyti'];
     /*si une ville a deja été selectionné, on n'affiche que les diplomes de cette ville*/
     if (userDegreeCyti) {
-      this.getDegreeByCyti(userDegreeCyti);
-    } else {
-      this.getAllDegree();
+      this.getDegreeCyti(userDegreeCyti);
+
+    } else if (userDegreeCyti === undefined ) {
+      this.getDegreeCyti('tous');
     }
     console.log(userDegreeCyti);
   }
@@ -35,18 +40,12 @@ export class DegreeComponent {
     this.orientationService.saveDegree(degree)
   }
     
-  getDegreeByCyti (degreeCyti: string) {
-    this.orientationService.getDegreeByCyti(degreeCyti)
-  }
-
-  getAllDegree () {
-    this.degree$ = this.orientationService.geAllDegree();
-    this.orientationService.geAllDegree().subscribe(data => {
+  getDegreeCyti (degreeCyti: string) {
+    this.degree$ = this.orientationService.getDegreeCyti(degreeCyti);
+    this.orientationService.getDegreeCyti(degreeCyti).subscribe(data => {
       this.degreeView = data;
       console.log (this.degreeView)
     })
-    
-   // console.log(this.degree$)
   }
 
 }

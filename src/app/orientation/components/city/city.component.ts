@@ -23,7 +23,11 @@ export class CityComponent {
 
   setCyti (val : string) {
     this.orientationService.saveCytiIn(val);
-    this.appRout.navigateByUrl('orientation/degree/'+val);
+   // this.appRout.navigateByUrl('orientation/degree/'+val);
+    this.appRout.navigate(
+       ['orientation/degree/'],
+       {queryParams: {degreeCyti:val} }
+     );
   }
 
 

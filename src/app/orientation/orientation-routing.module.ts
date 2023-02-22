@@ -6,7 +6,8 @@ import { CityComponent } from "./components/city/city.component";
 
 const routes: Routes = [
     { path: 'start/degree', component: DegreeComponent},
-    { path: 'degree/:degreeCyti', component: DegreeComponent},
+    //{ path: 'degree/:degreeCyti', component: DegreeComponent},
+    { path: 'degree', component: DegreeComponent},
     { path: 'start/field', component: FieldComponent},
     { path: 'start/city', component: CityComponent}
 ];

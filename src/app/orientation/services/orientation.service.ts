@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { degree } from "src/app/core/model/degree-model";
@@ -35,12 +35,12 @@ export class OrientationService {
     return this.http.get<ville[]>(`${environment.apiUrl}/cyties`)
     };
 
-    geAllDegree(): Observable<degree[]> {
-        return this.http.get<degree[]>(`${environment.apiUrl}/degree`)
-    };
-
-    getDegreeByCyti(degreeCyti:string){
-
+    getDegreeCyti(degreeCyti:string): Observable<degree[]>{
+        const url = `${environment.apiUrl}/degree`;
+        let queryParams = new HttpParams();
+        queryParams = queryParams.append('DegreeCyti', degreeCyti);
+        console.log(queryParams);
+        return this.http.get<degree[]>(url, {params: queryParams})
     };
       
     saveCytiIn (cyti : string) {
