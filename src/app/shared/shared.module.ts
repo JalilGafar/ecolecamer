@@ -4,13 +4,15 @@ import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PrimengModule } from './primeng.modules';
 import { MyFilterPipe } from './pipes/myfilter.pipe';
+import { DomFilterPipe } from './pipes/domFilter.pipe';
 
 
 
 
 @NgModule({
   declarations: [
-    MyFilterPipe
+    MyFilterPipe,
+    DomFilterPipe
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { MyFilterPipe } from './pipes/myfilter.pipe';
     MaterialModule,
     FlexLayoutModule,
     PrimengModule,
-    MyFilterPipe
+    MyFilterPipe,
+    DomFilterPipe
   ],
 })
 export class SharedModule { }

@@ -8,6 +8,7 @@ const routes: Routes = [
     { path: 'start/degree', component: DegreeComponent},
     //{ path: 'degree/:degreeCyti', component: DegreeComponent},
     { path: 'degree', component: DegreeComponent},
+    { path: 'domaines', component: FieldComponent},
     { path: 'start/field', component: FieldComponent},
     { path: 'start/city', component: CityComponent}
 ];

@@ -1,1 +1,120 @@
-<p>field works!</p>
+<p-accordion >
+    <p-accordionTab header="Agricultue, Environnement" [selected]="false" >
+        <ng-container *ngFor="let field of domaine$ | async | domfilter:agri">
+            <button pButton pRipple type="button"
+                    label={{field.nom_dom}} >
+            </button>
+        </ng-container>
+    </p-accordionTab> 
+    
+    <p-accordionTab header="Art, Culture, Design, Mode" [selected]="false" >
+        <ng-container *ngFor="let field of domaine$ | async | domfilter:art">
+            <button pButton pRipple type="button"
+                    label={{field.nom_dom}} >
+            </button>
+        </ng-container>
+    </p-accordionTab> 
+    
+    <p-accordionTab header="Bien-être, Beauté" [selected]="false" >
+        <ng-container *ngFor="let field of domaine$ | async | domfilter:beaute">
+            <button pButton pRipple type="button"
+                    label={{field.nom_dom}} >
+            </button>
+        </ng-container>
+    </p-accordionTab>
+    
+    <p-accordionTab header="Commerce, management" [selected]="false" >
+        <ng-container *ngFor="let field of domaine$ | async | domfilter:commerce">
+            <button pButton pRipple type="button"
+                    label={{field.nom_dom}} >
+            </button>
+        </ng-container>
+    </p-accordionTab>
+    
+    <p-accordionTab header="Droit, Sc. Politiques" [selected]="false" >
+        <ng-container *ngFor="let field of domaine$ | async | domfilter:droit">
+            <button pButton pRipple type="button"
+                    label={{field.nom_dom}} >
+            </button>
+        </ng-container>
+    </p-accordionTab>
+    
+    <p-accordionTab header="Finance, comptabilité" [selected]="false" >
+        <ng-container *ngFor="let field of domaine$ | async | domfilter:finance">
+            <button pButton pRipple type="button"
+                    label={{field.nom_dom}} >
+            </button>
+        </ng-container>
+    </p-accordionTab>
+    
+    <p-accordionTab header="Fonction publique" [selected]="false" >
+        <ng-container *ngFor="let field of domaine$ | async | domfilter:public">
+            <button pButton pRipple type="button"
+                    label={{field.nom_dom}} >
+            </button>
+        </ng-container>
+    </p-accordionTab>
+    
+    <p-accordionTab header="Hôtellerie, tourisme" [selected]="false" >
+        <ng-container *ngFor="let field of domaine$ | async | domfilter:tourisme">
+            <button pButton pRipple type="button"
+                    label={{field.nom_dom}} >
+            </button>
+        </ng-container>
+    </p-accordionTab>
+    
+    <p-accordionTab header="Image, son, animation 2D/3D" [selected]="false" >
+        <ng-container *ngFor="let field of domaine$ | async | domfilter:animation">
+            <button pButton pRipple type="button"
+                    label={{field.nom_dom}} >
+            </button>
+        </ng-container>
+    </p-accordionTab>
+    
+    <p-accordionTab header="Informatique" [selected]="false" >
+        <ng-container *ngFor="let field of domaine$ | async | domfilter:informatique">
+            <button pButton pRipple type="button"
+                    label={{field.nom_dom}} >
+            </button>
+        </ng-container>
+    </p-accordionTab>
+    
+    <p-accordionTab header="Ingénierie, Science" [selected]="false" >
+        <ng-container *ngFor="let field of domaine$ | async | domfilter:ingenierie">
+            <button pButton pRipple type="button"
+                    label={{field.nom_dom}} >
+            </button>
+        </ng-container>
+    </p-accordionTab>
+    
+    <p-accordionTab header="Langues et Sc. humaines" [selected]="false" >
+        <ng-container *ngFor="let field of domaine$ | async | domfilter:langue">
+            <button pButton pRipple type="button"
+                    label={{field.nom_dom}} >
+            </button>
+        </ng-container>
+    </p-accordionTab>
+    
+    <p-accordionTab header="Marketing, communication" [selected]="false" >
+        <ng-container *ngFor="let field of domaine$ | async | domfilter:marketing">
+            <button pButton pRipple type="button"
+                    label={{field.nom_dom}} >
+            </button>
+        </ng-container>
+    </p-accordionTab>
+    <p-accordionTab header="Santé" [selected]="false" >
+        <ng-container *ngFor="let field of domaine$ | async | domfilter:sante">
+            <button pButton pRipple type="button"
+                    label={{field.nom_dom}} >
+            </button>
+        </ng-container>
+    </p-accordionTab> 
+    
+    <p-accordionTab header="Sport, social, animation" [selected]="false" >
+        <ng-container *ngFor="let field of domaine$ | async | domfilter:sport">
+            <button pButton pRipple type="button"
+                    label={{field.nom_dom}} >
+            </button>
+        </ng-container>
+    </p-accordionTab>
+</p-accordion >

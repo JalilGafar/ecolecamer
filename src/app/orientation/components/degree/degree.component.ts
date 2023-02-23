@@ -37,7 +37,11 @@ export class DegreeComponent {
   }
 
   setDegree(degree : string){
-    this.orientationService.saveDegree(degree)
+    this.orientationService.saveDegree(degree);
+    this.appRout.navigate(
+      ['orientation/domaines/'],
+      {queryParams: {degree:degree} }
+    );
   }
     
   getDegreeCyti (degreeCyti: string) {

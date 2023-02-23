@@ -1,43 +1,44 @@
-<div fxFlex fxLayout="column">
+<div >
     <h2>Quel diplôme souhaitez-vous préparer ?</h2>
     <p-accordion >
         <p-accordionTab header="CAP ou équivalent" [selected]="true" >
-            <div *ngFor="let degree of degree$ | async | myfilter:cap" fxFlex fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutGap.xs="20px">       
+            <div *ngFor="let degree of degree$ | async | myfilter:cap" >       
                 <button pButton pRipple type="button"
-                        label={{degree.nom_cat}} >
+                        label={{degree.nom_cat}} 
+                        (click)="setDegree(degree.nom_cat)">
                 </button>
             </div>
         </p-accordionTab>  
         <p-accordionTab header="Bac+1 à Bac+2" [selected]="true"  >
-            <div *ngFor="let degree of degree$ | async | myfilter:bts" fxFlex fxLayout="raw">       
+            <div *ngFor="let degree of degree$ | async | myfilter:bts" >       
                 <button pButton pRipple type="button"
                         label={{degree.nom_cat}}>
                 </button>
             </div>
         </p-accordionTab> 
         <p-accordionTab header="Bac+3" [selected]="true"  >
-            <div *ngFor="let degree of degree$ | async | myfilter:licence" fxFlex fxLayoutGap="313px">       
+            <div *ngFor="let degree of degree$ | async | myfilter:licence" >       
                 <button pButton pRipple type="button"
                         label={{degree.nom_cat}}>
                 </button>
             </div>
         </p-accordionTab> 
         <p-accordionTab header="Bac+4 à Bac+5" [selected]="true"  >
-            <div *ngFor="let degree of degree$ | async | myfilter:master" fxFlex fxLayout="raw">       
+            <div *ngFor="let degree of degree$ | async | myfilter:master" >       
                 <button pButton pRipple type="button"
                         label={{degree.nom_cat}}>
                 </button>
             </div>
         </p-accordionTab>
         <p-accordionTab header="Bac+6 et plus" [selected]="true"  >
-            <div *ngFor="let degree of degree$ | async | myfilter:doctor" fxFlex fxLayout="raw">       
+            <div *ngFor="let degree of degree$ | async | myfilter:doctor" >       
                 <button pButton pRipple type="button"
                         label={{degree.nom_cat}}>
                 </button>
             </div>
         </p-accordionTab>
         <p-accordionTab header="autre" [selected]="true"  >
-            <div *ngFor="let degree of degree$ | async | myfilter:autre" fxLayout="row wrap" fxLayoutGap="33px">       
+            <div *ngFor="let degree of degree$ | async | myfilter:autre" >       
                 <button pButton pRipple type="button"
                         label={{degree.nom_cat}}>
                 </button>
