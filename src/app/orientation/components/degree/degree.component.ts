@@ -46,10 +46,10 @@ export class DegreeComponent {
     
   getDegreeCyti (degreeCyti: string) {
     this.degree$ = this.orientationService.getDegreeCyti(degreeCyti);
-    this.orientationService.getDegreeCyti(degreeCyti).subscribe(data => {
-      this.degreeView = data;
-      console.log (this.degreeView)
-    })
+   // this.orientationService.getDegreeCyti(degreeCyti).subscribe(data => {
+   //   this.degreeView = data;
+   //   console.log (this.degreeView)
+   // })
   }
 
 }

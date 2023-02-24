@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { BehaviorSubject, Observable, tap } from "rxjs";
 import { degree } from "src/app/core/model/degree-model";
 import { field } from "src/app/core/model/field-model";
 import { UserProfil } from "src/app/core/model/user-profil-model";
@@ -36,8 +36,29 @@ export class OrientationService {
     return this.http.get<ville[]>(`${environment.apiUrl}/cyties`)
     };
 
-    getAllDomaine(): Observable<field[]> {
-        return this.http.get<field[]>(`${environment.apiUrl}/field`)
+    private _domaine$ = new BehaviorSubject<field[]>([]);
+    get domaine$(): Observable<field[]> {
+        return this._domaine$.asObservable();
+    }
+    /*
+    getDomaineFromServer(domaineDegree:string): Observable<field[]> {
+        const url = `${environment.apiUrl}/field`;
+        let queryParams = new HttpParams();
+        queryParams = queryParams.append('DomaineDegree', domaineDegree);
+        return this.http.get<field[]>(url, {params: queryParams})
+        //return this.http.get<field[]>(`${environment.apiUrl}/field`)
+    }
+    */
+    getDomaineFromServer(domaineDegree:string){
+        const url = `${environment.apiUrl}/field`;
+        let queryParams = new HttpParams();
+        queryParams = queryParams.append('DomaineDegree', domaineDegree);
+        this.http.get<field[]>(url, {params: queryParams}).pipe(
+            tap(fields =>{
+                this._domaine$.next(fields)
+            })
+        ).subscribe();
+        //return this.http.get<field[]>(`${environment.apiUrl}/field`)
     }
 
     getDegreeCyti(degreeCyti:string): Observable<degree[]>{

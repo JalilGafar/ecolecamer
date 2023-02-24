@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { field } from 'src/app/core/model/field-model';
 import { OrientationService } from '../../services/orientation.service';
@@ -7,7 +7,8 @@ import { OrientationService } from '../../services/orientation.service';
 @Component({
   selector: 'app-field',
   templateUrl: './field.component.html',
-  styleUrls: ['./field.component.scss']
+  styleUrls: ['./field.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FieldComponent {
 
@@ -26,16 +27,25 @@ export class FieldComponent {
   ingenierie = {branche: 'Ingénierie, Science'};
   langue = {branche: 'Langues et Sc. humaines'};
   marketing = {branche: 'Marketing, communication'};
-  sante = {branche: 'Santé'};
+  sante = {branche: 'santé'};
   sport = {branche: 'Sport, social, animation'};
   
 
   constructor (private orientationService :OrientationService,
-                private appRout : Router) {}
+                private appRout : Router,
+                private route: ActivatedRoute) {}
 
   ngOnInit():void {
-    this.domaine$ = this.orientationService.getAllDomaine();
-    
+    const userDomaineDegree = this.route.snapshot.queryParams['degree'];
+    this.domaine$ = this.orientationService.domaine$;
+
+    if (userDomaineDegree) {
+      this.orientationService.getDomaineFromServer(userDomaineDegree);
+      //this.domaine$ = this.orientationService.getDomaine(userDomaineDegree);
+    } else {
+      this.orientationService.getDomaineFromServer('tous');
+      //this.domaine$ = this.orientationService.getDomaine('tous');
+    }
   }
 
 }
