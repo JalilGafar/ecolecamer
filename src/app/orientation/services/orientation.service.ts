@@ -36,6 +36,14 @@ export class OrientationService {
     return this.http.get<ville[]>(`${environment.apiUrl}/cyties`)
     };
 
+    getPartCyties(userDegree: string, userDomaine: string ): Observable<ville[]> {
+        const url = `${environment.apiUrl}/partCyties`;
+        let queryParams = new HttpParams();
+        queryParams = queryParams.append('Degree', userDegree);
+        queryParams = queryParams.append('Domaine', userDomaine);
+        return this.http.get<ville[]>(url, {params: queryParams})
+    }
+
     private _domaine$ = new BehaviorSubject<field[]>([]);
     get domaine$(): Observable<field[]> {
         return this._domaine$.asObservable();
@@ -58,17 +66,23 @@ export class OrientationService {
                 this._domaine$.next(fields)
             })
         ).subscribe();
-        //return this.http.get<field[]>(`${environment.apiUrl}/field`)
     }
 
+    /**Fonction qui demande au serveur de retourner les diplomes pour une ville en particulier */
     getDegreeCyti(degreeCyti:string): Observable<degree[]>{
         const url = `${environment.apiUrl}/degree`;
         let queryParams = new HttpParams();
         queryParams = queryParams.append('DegreeCyti', degreeCyti);
-
-       // console.log(queryParams);
         return this.http.get<degree[]>(url, {params: queryParams})
     };
+
+    /** Fonction qui envoie demande au serveur de retourner les diplomes pour un domaine en particulier */
+    getDegreeField(degreeField: string): Observable<degree[]>{
+        const url = `${environment.apiUrl}/degree`;
+        let queryParams = new HttpParams();
+        queryParams = queryParams.append('DegreeField', degreeField);
+        return this.http.get<degree[]>(url, {params: queryParams})
+    }
       
     saveCytiIn (cyti : string) {
         this.initialUser.city = cyti;
@@ -77,6 +91,11 @@ export class OrientationService {
 
     saveDegree (degree : string) {
         this.initialUser.degree = degree;
+        console.log(this.initialUser);
+    }
+
+    saveField(domaine: string) {
+        this.initialUser.field = domaine;
         console.log(this.initialUser);
     }
 }

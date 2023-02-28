@@ -48,4 +48,23 @@ export class FieldComponent {
     }
   }
 
+  setfiled(field : string) {
+    this.orientationService.saveField(field);
+    if (this.orientationService.initialUser.degree !=='' && this.orientationService.initialUser.city ==='') {
+      this.appRout.navigate(
+        ['orientation/city/'],
+        {queryParams: {domaine:field} }
+      );
+    } else if(this.orientationService.initialUser.degree !=='' && this.orientationService.initialUser.city !=='' ) {
+      this.appRout.navigate(
+        ['orientation/statuts/'],
+        //{queryParams: {degreeCyti:val} }
+      );
+    } else {
+      this.appRout.navigate(
+        ['orientation/degree/'],
+        {queryParams: {domaine:field} }
+      );
+    }
+  }
 }

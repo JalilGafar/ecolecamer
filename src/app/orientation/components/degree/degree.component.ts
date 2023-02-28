@@ -25,12 +25,14 @@ export class DegreeComponent {
               private route: ActivatedRoute) {}
 
   ngOnInit(){
-    const userDegreeCyti = this.route.snapshot.queryParams['degreeCyti'];
+    const userDegreeCyti = this.route.snapshot.queryParams['cyti'];
+    const userDomaine = this.route.snapshot.queryParams['domaine'];
     /*si une ville a deja été selectionné, on n'affiche que les diplomes de cette ville*/
     if (userDegreeCyti) {
       this.getDegreeCyti(userDegreeCyti);
-
-    } else if (userDegreeCyti === undefined ) {
+    } else if (userDomaine) {
+      this.degree$ = this.orientationService.getDegreeField(userDomaine);
+    } else if (userDegreeCyti === undefined && userDomaine === undefined) {
       this.getDegreeCyti('tous');
     }
     console.log(userDegreeCyti);
@@ -38,14 +40,22 @@ export class DegreeComponent {
 
   setDegree(degree : string){
     this.orientationService.saveDegree(degree);
-    this.appRout.navigate(
-      ['orientation/domaines/'],
-      {queryParams: {degree:degree} }
-    );
+    if (this.orientationService.initialUser.field === '') {
+      this.appRout.navigate(
+        ['orientation/domaines/'],
+        {queryParams: {degree:degree} }
+      );
+    } else {
+      this.appRout.navigate(
+        ['orientation/city/'],
+        {queryParams: {degree:degree} }
+      );
+    }
   }
     
   getDegreeCyti (degreeCyti: string) {
     this.degree$ = this.orientationService.getDegreeCyti(degreeCyti);
+    // *** degreeView c'est juste pour voir la reponse dans la console
    // this.orientationService.getDegreeCyti(degreeCyti).subscribe(data => {
    //   this.degreeView = data;
    //   console.log (this.degreeView)

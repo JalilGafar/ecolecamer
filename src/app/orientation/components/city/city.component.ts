@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { OrientationService } from 'src/app/orientation/services/orientation.service';
 import { ville } from 'src/app/core/model/ville-model';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-city',
@@ -14,20 +14,33 @@ export class CityComponent {
   @Input() cyties$!: Observable<ville[]>;
 
   constructor (private orientationService :OrientationService,
-                private appRout : Router) {}
+                private appRout : Router,
+                private route: ActivatedRoute) {}
 
   ngOnInit():void {
-    /*Envoyer une requete de toutes les villes ayant un campus*/
-    this.cyties$ = this.orientationService.getAllCyties();
+    const userDegree = this.orientationService.initialUser.degree ;
+    const userDomaine = this.orientationService.initialUser.field ;
+    if (userDomaine !== '' && userDegree !== '' ) {
+      this.cyties$ = this.orientationService.getPartCyties( userDegree, userDomaine);
+    } else {
+      /*Envoyer une requete de toutes les villes ayant un campus*/
+      this.cyties$ = this.orientationService.getAllCyties();
+    }
   }
 
   setCyti (val : string) {
     this.orientationService.saveCytiIn(val);
-   // this.appRout.navigateByUrl('orientation/degree/'+val);
-    this.appRout.navigate(
-       ['orientation/degree/'],
-       {queryParams: {degreeCyti:val} }
-     );
+    if (this.orientationService.initialUser.degree !== '') {
+      this.appRout.navigate(
+        ['orientation/statuts/'],
+        //{queryParams: {degreeCyti:val} }
+      );
+    } else {
+      this.appRout.navigate(
+        ['orientation/degree/'],
+        {queryParams: {cyti:val} }
+      );
+    }
   }
 
 

@@ -1,6 +1,6 @@
 
 <h2>Quel diplôme souhaitez-vous préparer ?</h2>
-<p-accordion >
+<p-accordion [multiple]="true">
     <p-accordionTab header="CAP ou équivalent" [selected]="true" class="wrapper">
         <ng-container *ngFor="let degree of degree$ | async | myfilter:cap" >       
             <button pButton pRipple type="button"
@@ -12,35 +12,40 @@
     <p-accordionTab header="Bac+1 à Bac+2" [selected]="true"  >
         <ng-container *ngFor="let degree of degree$ | async | myfilter:bts" >       
             <button pButton pRipple type="button"
-                    label={{degree.nom_cat}}>
+                    label={{degree.nom_cat}}
+                    (click)="setDegree(degree.nom_cat)">
             </button>
         </ng-container>
     </p-accordionTab> 
     <p-accordionTab header="Bac+3" [selected]="true"  >
         <ng-container *ngFor="let degree of degree$ | async | myfilter:licence" >       
             <button pButton pRipple type="button"
-                    label={{degree.nom_cat}}>
+                    label={{degree.nom_cat}}
+                    (click)="setDegree(degree.nom_cat)">
             </button>
         </ng-container>
     </p-accordionTab> 
     <p-accordionTab header="Bac+4 à Bac+5" [selected]="true"  >
         <ng-container *ngFor="let degree of degree$ | async | myfilter:master" >       
             <button pButton pRipple type="button"
-                    label={{degree.nom_cat}}>
+                    label={{degree.nom_cat}}
+                    (click)="setDegree(degree.nom_cat)">
             </button>
         </ng-container>
     </p-accordionTab>
     <p-accordionTab header="Bac+6 et plus" [selected]="true"  >
         <ng-container *ngFor="let degree of degree$ | async | myfilter:doctor" >       
             <button pButton pRipple type="button"
-                    label={{degree.nom_cat}}>
+                    label={{degree.nom_cat}}
+                    (click)="setDegree(degree.nom_cat)">
             </button>
         </ng-container>
     </p-accordionTab>
     <p-accordionTab header="autre" [selected]="true"  >
         <ng-container *ngFor="let degree of degree$ | async | myfilter:autre" >       
             <button pButton pRipple type="button"
-                    label={{degree.nom_cat}}>
+                    label={{degree.nom_cat}}
+                    (click)="setDegree(degree.nom_cat)">
             </button>
         </ng-container>
     </p-accordionTab>
