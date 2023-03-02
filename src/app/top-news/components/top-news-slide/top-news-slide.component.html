@@ -1,7 +1,7 @@
 <div *ngIf="myTopNews$ | async as data">
     <p-carousel [value]="data" [numVisible]="3" [numScroll]="3" [circular]="true" [autoplayInterval]="5000" [responsiveOptions]="responsiveOptions">
         <ng-template pTemplate="header" >
-            <h2 class="actualite"   >Actualités de l'enseignement supérieur</h2>
+            <h2 class="actualite">Actualités de l'enseignement supérieur</h2>
         </ng-template>
         <ng-template let-topNews pTemplate="item">
             <div class="product-item">

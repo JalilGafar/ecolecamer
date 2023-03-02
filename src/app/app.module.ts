@@ -13,6 +13,7 @@ import { OrientationModule } from './orientation/orientation.module';
 import { LandingPageModule } from './landing-page/landing-page.module';
 import { TopVideoSchoolModule } from './top-video-school/top-video-school.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminModule } from './admin/admin.module';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
         NgbModule,
         FormationInfoModule,
         OrientationModule,
+        AdminModule,
         LandingPageModule,
         HttpClientModule
     ]
