@@ -16,7 +16,7 @@ export class LoginComponent {
 
   onLogin() {
   this.auth.login();
-  this.router.navigateByUrl('admin/formations');
+  this.router.navigateByUrl('admin/adminStart');
   }
 
 }

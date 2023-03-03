@@ -1,0 +1,29 @@
+<div class="card">
+    <h2>Liste des Université</h2>
+    <ng-container *ngIf="universites$ | async as data">
+        <mat-spinner *ngIf="loading$ | async"></mat-spinner>
+        <p-table [value]="data" [tableStyle]="{'min-width': '30rem'}" 
+                selectionMode="single" dataKey="code" (onRowSelect)="onRowSelect($event)">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="id_univ" style="width:5%">Code <p-sortIcon field="id_univ"></p-sortIcon></th>
+                    <th pSortableColumn="sigle_univ" style="width:10%">Sigle <p-sortIcon field="sigle_univ"></p-sortIcon></th>
+                    <th pSortableColumn="nom_univ" style="width:20%">Name <p-sortIcon field="nom_univ"></p-sortIcon></th>
+                    <th pSortableColumn="type_univ" style="width:20%">Type <p-sortIcon field="type_univ"></p-sortIcon></th>
+                    <th pSortableColumn="ville_univ" style="width:20%">Ville <p-sortIcon field="ville_univ"></p-sortIcon></th>
+                </tr>
+            </ng-template>
+            
+            <ng-template pTemplate="body" let-universite>
+                
+                <tr [pSelectableRow]="universite">
+                    <td>{{universite.id_univ}}</td>
+                    <td>{{universite.sigle_univ}}</td>
+                    <td>{{universite.nom_univ}}</td>
+                    <td>{{universite.type_univ}}</td>
+                    <td>{{universite.ville_univ}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </ng-container>
+</div>

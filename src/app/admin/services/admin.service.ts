@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject, delay, Observable, tap } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Formation } from "../models/formation.model";
+import { Universite } from "../models/univ.model";
 
 @Injectable ()
 export class AdminService {
@@ -17,6 +18,11 @@ export class AdminService {
     private _formation$ = new BehaviorSubject<Formation[]>([]);
     get formation$(): Observable<Formation[]> {
       return this._formation$.asObservable();
+    }
+
+    private _universite$ = new BehaviorSubject<Universite[]>([]);
+    get universite$(): Observable<Universite[]> {
+      return this._universite$.asObservable();
     }
 
     private lastCandidatesLoad = 0;
@@ -38,5 +44,15 @@ export class AdminService {
                 this.setLoadingStatus(false);
             })
         ).subscribe();
-      }
+    }
+
+    getUniversiteFromServer(){
+      this.setLoadingStatus(true);
+      this.http.get<Universite[]>(`${environment.apiUrl}/universites`).pipe(
+        tap(universites =>{
+          this._universite$.next(universites);
+          this.setLoadingStatus(false);
+        })
+      ).subscribe();
+    }
 }

@@ -10,6 +10,11 @@ import { NewFormationComponent } from './components/new-formation/new-formation.
 import { AuthService } from './services/auth.service';
 import { SharedModule } from '../shared/shared.module';
 import { AdminService } from './services/admin.service';
+import { AdminStartComponent } from './components/admin-start/admin-start.component';
+import { UnivListComponent } from './components/univ-list/univ-list.component';
+import { CampusListComponent } from './components/campus-list/campus-list.component';
+import { EcoleListComponent } from './components/ecole-list/ecole-list.component';
+import { SingleUnivComponent } from './components/single-univ/single-univ.component';
 
 
 @NgModule({
@@ -18,7 +23,12 @@ import { AdminService } from './services/admin.service';
     FormationListComponent,
     SingleFormationComponent,
     ModifFormationComponent,
-    NewFormationComponent
+    NewFormationComponent,
+    AdminStartComponent,
+    UnivListComponent,
+    CampusListComponent,
+    EcoleListComponent,
+    SingleUnivComponent
   ],
   imports: [
     CommonModule,

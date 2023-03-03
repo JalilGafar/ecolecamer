@@ -1,0 +1,10 @@
+<div>
+    <button pButton type="button" label="Université" (click)="univClick()"></button>
+    <button pButton type="button" label="Ecole" (click)="ecoleClick()"></button>
+    <button pButton type="button" label="Campus" (click)="campusClick()"></button>
+    <button pButton type="button" label="Formations" (click)="formationClick()"></button>
+</div>
+<app-univ-list *ngIf="univView" ></app-univ-list>
+<app-ecole-list *ngIf="ecoleView" ></app-ecole-list>
+<app-formation-list *ngIf="formationView" ></app-formation-list>
+<app-campus-list *ngIf="campusView" ></app-campus-list>

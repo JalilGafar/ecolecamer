@@ -20,7 +20,6 @@ export class FormationListComponent implements OnInit{
   ngOnInit(): void {
     this.InitObservable();
     this.adminService.getFormationsFromServer();
-    throw new Error('Method not implemented.');
   }
 
   private InitObservable(){
