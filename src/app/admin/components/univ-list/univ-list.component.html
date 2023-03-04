@@ -1,5 +1,6 @@
 <div class="card">
-    <h2>Liste des Université</h2>
+    <h2>Liste des Université     <button pButton type="button" label="Ajouter une Université" class="p-button-success" (click)="onAddUniv()"></button>
+    </h2> 
     <ng-container *ngIf="universites$ | async as data">
         <mat-spinner *ngIf="loading$ | async"></mat-spinner>
         <p-table [value]="data" [tableStyle]="{'min-width': '30rem'}" 

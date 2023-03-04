@@ -32,4 +32,6 @@ export class UnivListComponent implements OnInit {
     this.appRout.navigateByUrl('admin/universite/'+ event.data.id_univ.toString());
   }
 
+  onAddUniv(){}
+
 }

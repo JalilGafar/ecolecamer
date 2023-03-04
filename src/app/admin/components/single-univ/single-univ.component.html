@@ -1,1 +1,26 @@
-<p>single-univ works!</p>
+<mat-card>
+    <ng-container *ngIf="universite$ | async as universite">
+      <div class="employee-info">
+        <h1>{{ universite.id_univ }} //  {{ universite.sigle_univ }}</h1>
+        <h2 [innerHTML]="universite.nom_univ"></h2>
+        <h3><strong>Type :</strong>  {{ universite.type_univ }}</h3>
+        <h3> <strong>Ville :</strong>  {{ universite.ville_univ }}</h3>
+        <h3><strong>Tel : </strong>{{ universite.tel_univ }}</h3>
+        <h3><strong>Email :</strong> {{ universite.email_univ }}</h3>
+        <h3><strong>Site Web :</strong> {{ universite.siteweb_univ }}</h3>
+        <h3><strong>Recteur :</strong> {{ universite.recteur_univ }}</h3>
+        <h3><strong>Mot du Recteur :</strong> </h3> <span [innerHTML]="universite.mot_du_recteur"></span> <br>
+        <h3><strong>Descriptif :</strong> </h3> <span [innerHTML]="universite.descriptif_univ"></span>
+      </div>
+    </ng-container>
+    <mat-card-actions>
+      <mat-spinner *ngIf="loading$ | async; else buttons"></mat-spinner>
+      <ng-template #buttons>
+        <div class="action-buttons">
+          <button mat-flat-button color="accent" (click)="onModif()">MODIFIER</button>
+          <button mat-flat-button color="warn" (click)="onDelet()">SUPRIMER</button>
+          <button mat-flat-button color="primary" (click)="onGoBack()">RETOUR</button>
+        </div>
+      </ng-template>
+    </mat-card-actions>
+  </mat-card>

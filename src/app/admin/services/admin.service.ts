@@ -1,7 +1,9 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, delay, Observable, tap } from "rxjs";
+import { BehaviorSubject, delay, map, Observable, tap } from "rxjs";
 import { environment } from "src/environments/environment";
+import { Campus } from "../models/campus.mode";
+import { Ecole } from "../models/ecole.model";
 import { Formation } from "../models/formation.model";
 import { Universite } from "../models/univ.model";
 
@@ -23,6 +25,16 @@ export class AdminService {
     private _universite$ = new BehaviorSubject<Universite[]>([]);
     get universite$(): Observable<Universite[]> {
       return this._universite$.asObservable();
+    }
+
+    private _ecole$ = new BehaviorSubject<Ecole[]>([]);
+    get ecoles$(): Observable<Ecole[]> {
+      return this._ecole$.asObservable();
+    }
+
+    private _campus$ = new BehaviorSubject<Campus[]>([]);
+    get campus$(): Observable<Campus[]> {
+      return this._campus$.asObservable()
     }
 
     private lastCandidatesLoad = 0;
@@ -55,4 +67,34 @@ export class AdminService {
         })
       ).subscribe();
     }
+
+    getUniversiteById(id: number): Observable<Universite>{
+      if (!this.lastCandidatesLoad) {
+          this.getUniversiteFromServer()
+      }
+      return this.universite$.pipe(
+          map(universite => universite.filter(universite => universite.id_univ === id)[0])
+      );
+    }
+
+    getEcoleFromServer(){
+      this.setLoadingStatus(true);
+      this.http.get<Ecole[]>(`${environment.apiUrl}/ecoles`).pipe(
+        tap(ecoles =>{
+          this._ecole$.next(ecoles);
+          this.setLoadingStatus(false);
+        })
+      ).subscribe();
+    }
+
+    getCampusFromServer(){
+      this.setLoadingStatus(true);
+      this.http.get<Campus[]>(`${environment.apiUrl}/campus`).pipe(
+        tap(campus =>{
+          this._campus$.next(campus);
+          this.setLoadingStatus(false);
+        })
+      ).subscribe();
+    }
 }
+

@@ -1,1 +1,25 @@
-<p>campus-list works!</p>
+<div class="card">
+    <h2>Liste des Université</h2>
+    <ng-container *ngIf="campus$ | async as data">
+        <mat-spinner *ngIf="loading$ | async"></mat-spinner>
+        <p-table [value]="data" [tableStyle]="{'min-width': '30rem'}" 
+                selectionMode="single" dataKey="code" (onRowSelect)="onRowSelect($event)">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="id_camp" style="width:5%">Code <p-sortIcon field="id_camp"></p-sortIcon></th>
+                    <th pSortableColumn="nom_camp" style="width:10%">Nom <p-sortIcon field="nom_camp"></p-sortIcon></th>
+                    <th pSortableColumn="ville_cam" style="width:20%">Ville <p-sortIcon field="ville_cam"></p-sortIcon></th>
+                </tr>
+            </ng-template>
+            
+            <ng-template pTemplate="body" let-campus>
+                
+                <tr [pSelectableRow]="campus">
+                    <td>{{campus.id_camp}}</td>
+                    <td>{{campus.nom_camp}}</td>
+                    <td>{{campus.ville_cam}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </ng-container>
+</div>

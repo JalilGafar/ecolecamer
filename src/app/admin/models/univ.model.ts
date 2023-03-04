@@ -6,7 +6,7 @@ export class Universite {
     ville_univ!: string;
     tel_univ!: string;
     email_univ!: string;
-    sitexeb_univ!: string;
+    siteweb_univ!: string;
     recteur_univ!: string;
     mot_du_recteur!: string;
     descriptif_univ!: string;
