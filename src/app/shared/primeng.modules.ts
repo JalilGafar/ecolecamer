@@ -4,6 +4,7 @@ import { DataViewModule } from 'primeng/dataview';
 import {ButtonModule} from 'primeng/button';
 import {AccordionModule} from 'primeng/accordion';
 import {TableModule} from 'primeng/table';
+import {EditorModule} from 'primeng/editor';
 
 @NgModule({
     exports: [
@@ -11,7 +12,8 @@ import {TableModule} from 'primeng/table';
       DataViewModule,
       ButtonModule,
       AccordionModule,
-      TableModule
+      TableModule,
+      EditorModule
     ]
   })
 

@@ -4,6 +4,7 @@ import { AdminStartComponent } from './components/admin-start/admin-start.compon
 import { FormationListComponent } from './components/formation-list/formation-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { ModifUnivComponent } from './components/modif-univ/modif-univ.component';
+import { NewUnivComponent } from './components/new-univ/new-univ.component';
 import { SingleCampusComponent } from './components/single-campus/single-campus.component';
 import { SingleEcoleComponent } from './components/single-ecole/single-ecole.component';
 import { SingleFormationComponent } from './components/single-formation/single-formation.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent},
  // { path: 'formations', component: FormationListComponent},
   { path: 'adminStart', component: AdminStartComponent},
+  { path: 'new-universite', component: NewUnivComponent},
   { path: 'campus/:id', component: SingleCampusComponent },
   { path: 'ecole/:id', component: SingleEcoleComponent },
   { path: 'universite/:id', component: SingleUnivComponent },

@@ -1,0 +1,47 @@
+<div class="form-card">
+    <form [formGroup]="newUniv">   
+        <div class="form-group">
+            <label for="nom_univ">Nom</label>
+            <input id="nom_univ" type="text"  formControlName="nom_univ">
+        </div>
+        <div class="form-group">
+            <label for="sigle_univ">Sigle</label>
+            <input id="sigle_univ" type="text" formControlName="sigle_univ" rows="4">
+        </div>
+        <div class="form-group">
+            <label for="type_univ">Type</label>
+            <input id="type_univ" type="text" formControlName="type_univ">
+        </div>
+        <div class="form-group">
+            <label for="ville_univ">Ville</label>
+            <input id="ville_univ" type="text" formControlName="ville_univ">
+        </div>
+        <div class="form-group">
+            <label for="tel_univ">Tel</label>
+            <input id="tel_univ" type="text" formControlName="tel_univ">
+        </div>
+        <div class="form-group">
+            <label for="email_univ">Email</label>
+            <input id="email_univ" type="text" formControlName="email_univ">
+        </div>
+        <div class="form-group">
+            <label for="siteweb_univ">Site Web</label>
+            <input id="siteweb_univ" type="text" formControlName="siteweb_univ">
+        </div>
+        <div class="form-group">
+            <label for="recteur_univ">Recteur</label>
+            <input id="recteur_univ" type="text" formControlName="recteur_univ">
+        </div>
+        <div class="form-group">
+            <label for="mot_du_recteur">Mot du Recteur</label>
+            <textarea id="mot_du_recteur" type="text" formControlName="mot_du_recteur"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="descriptif_univ">Descriptif</label>
+            <textarea id="descriptif_univ" type="text" formControlName="descriptif_univ"></textarea>
+        </div>
+        <div class="action-buttons">
+            <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+        </div>
+    </form>
+</div>

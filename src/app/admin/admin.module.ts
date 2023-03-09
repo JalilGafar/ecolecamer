@@ -18,6 +18,7 @@ import { SingleUnivComponent } from './components/single-univ/single-univ.compon
 import { SingleEcoleComponent } from './components/single-ecole/single-ecole.component';
 import { SingleCampusComponent } from './components/single-campus/single-campus.component';
 import { ModifUnivComponent } from './components/modif-univ/modif-univ.component';
+import { NewUnivComponent } from './components/new-univ/new-univ.component';
 
 
 @NgModule({
@@ -34,12 +35,13 @@ import { ModifUnivComponent } from './components/modif-univ/modif-univ.component
     SingleUnivComponent,
     SingleEcoleComponent,
     SingleCampusComponent,
-    ModifUnivComponent
+    ModifUnivComponent,
+    NewUnivComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   providers:[
     AuthService,

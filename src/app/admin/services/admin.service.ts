@@ -1,6 +1,6 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, delay, map, Observable, tap } from "rxjs";
+import { BehaviorSubject, catchError, delay, map, Observable, switchMap, tap, throwError } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Campus } from "../models/campus.mode";
 import { Ecole } from "../models/ecole.model";
@@ -43,6 +43,20 @@ export class AdminService {
       this._loading$.next(loading)
     }
 
+    private handleError(error: HttpErrorResponse) {
+      if (error.status === 0) {
+        // A client-side or network error occurred. Handle it accordingly.
+        console.error('An error occurred:', error.error);
+      } else {
+        // The backend returned an unsuccessful response code.
+        // The response body may contain clues as to what went wrong.
+        console.error(
+          `Backend returned code ${error.status}, body was: `, error.error);
+      }
+      // Return an observable with a user-facing error message.
+      return throwError(() => new Error('Something bad happened; please try again later.'));
+    }
+
     getFormationsFromServer () {
         if (Date.now() - this.lastCandidatesLoad <= 10000) {
             return;
@@ -75,6 +89,14 @@ export class AdminService {
       return this.universite$.pipe(
           map(universite => universite.filter(universite => universite.id_univ === id)[0])
       );
+    }
+
+    addNewUniv(univForm :{  nom_univ: string, sigle_univ: string, type_univ: string,
+                            ville_univ: string, tel_univ: string, email_univ: string,
+                            siteweb_univ: string, recteur_univ: string, mot_du_recteur: string, descriptif_univ: string
+                          }): Observable<Universite>{
+      console.log(univForm);
+      return this.http.post<Universite>(`${environment.apiUrl}/newUniversites`, univForm);
     }
 
     getEcoleFromServer(){
