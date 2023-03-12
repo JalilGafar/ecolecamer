@@ -99,6 +99,14 @@ export class AdminService {
       return this.http.post<Universite>(`${environment.apiUrl}/newUniversites`, univForm);
     }
 
+    editUniv(univForm :{  id_univ: number, nom_univ: string, sigle_univ: string, type_univ: string,
+                          ville_univ: string, tel_univ: string, email_univ: string,
+                          siteweb_univ: string, recteur_univ: string, mot_du_recteur: string, descriptif_univ: string
+                        }):Observable<Universite>{
+      
+      return this.http.put<Universite>(`${environment.apiUrl}/editUniversite`, univForm);
+    }
+
     getEcoleFromServer(){
       this.setLoadingStatus(true);
       this.http.get<Ecole[]>(`${environment.apiUrl}/ecoles`).pipe(

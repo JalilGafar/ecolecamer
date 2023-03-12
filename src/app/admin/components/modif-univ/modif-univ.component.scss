@@ -15,8 +15,12 @@
     justify-content: space-between;
   }
   
-  input, textarea {
+  input, textarea, p-editor {
     width: 80%;
+  }
+
+  label {
+    font-weight: bold;
   }
   
   .action-buttons {

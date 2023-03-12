@@ -3,43 +3,44 @@
         <ng-container *ngIf="universite$ | async as universite">   
             <div class="form-group">
                 <label for="nom_univ">Nom</label>
-                <input id="nom_univ" type="text" [placeholder]="universite.nom_univ" formControlName="nom_univ">
+                <input id="nom_univ" type="text" formControlName="nom_univ">
             </div>
             <div class="form-group">
                 <label for="sigle_univ">Sigle</label>
-                <input id="sigle_univ" type="text" [placeholder]="universite.sigle_univ" formControlName="sigle_univ" rows="4">
+                <input id="sigle_univ" type="text" formControlName="sigle_univ" rows="4">
             </div>
             <div class="form-group">
                 <label for="type_univ">Type</label>
-                <input id="type_univ" type="text" [placeholder]="universite.type_univ" formControlName="type_univ">
+                <input id="type_univ" type="text" formControlName="type_univ">
             </div>
             <div class="form-group">
                 <label for="ville_univ">Ville</label>
-                <input id="ville_univ" type="text" [placeholder]="universite.ville_univ" formControlName="ville_univ">
+                <input id="ville_univ" type="text" formControlName="ville_univ">
             </div>
             <div class="form-group">
                 <label for="tel_univ">Tel</label>
-                <input id="tel_univ" type="text" [placeholder]="universite.tel_univ" formControlName="tel_univ">
+                <input id="tel_univ" type="text" formControlName="tel_univ">
             </div>
             <div class="form-group">
                 <label for="email_univ">Email</label>
-                <input id="email_univ" type="text" [placeholder]="universite.email_univ" formControlName="email_univ">
+                <input id="email_univ" type="text" formControlName="email_univ">
             </div>
             <div class="form-group">
                 <label for="siteweb_univ">Site Web</label>
-                <input id="siteweb_univ" type="text" [placeholder]="universite.siteweb_univ" formControlName="siteweb_univ">
+                <input id="siteweb_univ" type="text" formControlName="siteweb_univ">
             </div>
             <div class="form-group">
                 <label for="recteur_univ">Recteur</label>
-                <input id="recteur_univ" type="text" [placeholder]="universite.recteur_univ" formControlName="recteur_univ">
+                <input id="recteur_univ" type="text" formControlName="recteur_univ">
             </div>
             <div class="form-group">
                 <label for="mot_du_recteur">Mot du Recteur</label>
-                <textarea id="mot_du_recteur" type="text" [placeholder]="universite.mot_du_recteur" formControlName="mot_du_recteur"></textarea>
+                <p-editor formControlName="mot_du_recteur" [style]="{'height':'320px'}"></p-editor>
+                
             </div>
             <div class="form-group">
                 <label for="descriptif_univ">Descriptif</label>
-                <p-editor [(ngModel)]="text1" [style]="{'height':'320px'}"></p-editor>
+                <p-editor formControlName="descriptif_univ" [style]="{'height':'320px'}"></p-editor>
                 <!-- <p>Value: {{universite.descriptif_univ||'empty'}}</p> -->
                 <!-- <textarea id="descriptif_univ" type="text" [placeholder]="universite.descriptif_univ" formControlName="descriptif_univ"></textarea> -->
             </div>
