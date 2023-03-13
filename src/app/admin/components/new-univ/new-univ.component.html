@@ -34,11 +34,11 @@
         </div>
         <div class="form-group">
             <label for="mot_du_recteur">Mot du Recteur</label>
-            <textarea id="mot_du_recteur" type="text" formControlName="mot_du_recteur"></textarea>
+            <p-editor formControlName="mot_du_recteur" [style]="{'height':'320px'}"></p-editor>
         </div>
         <div class="form-group">
             <label for="descriptif_univ">Descriptif</label>
-            <textarea id="descriptif_univ" type="text" formControlName="descriptif_univ"></textarea>
+            <p-editor formControlName="descriptif_univ" [style]="{'height':'320px'}"></p-editor>
         </div>
         <div class="action-buttons">
             <button type="submit" (click)="onSubmitForm()">Enregistrer</button>

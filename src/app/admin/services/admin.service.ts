@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, catchError, delay, map, Observable, switchMap, tap, throwError } from "rxjs";
 import { environment } from "src/environments/environment";
@@ -105,6 +105,14 @@ export class AdminService {
                         }):Observable<Universite>{
       
       return this.http.put<Universite>(`${environment.apiUrl}/editUniversite`, univForm);
+    }
+
+    deletUnivById(univId: number): Observable<unknown>{
+      let url = `${environment.apiUrl}/deletUniversite`;
+      let idParams = new HttpParams();
+      idParams = idParams.append('idUniv', univId);
+      console.log ('DELET ' + univId)
+      return this.http.delete(url, {params: idParams})
     }
 
     getEcoleFromServer(){

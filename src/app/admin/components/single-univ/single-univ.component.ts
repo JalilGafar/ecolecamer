@@ -35,7 +35,10 @@ export class SingleUnivComponent implements OnInit {
     this.router.navigateByUrl('admin/modif-univ/'+ this.universite.id_univ.toString())    
   }
 
-  onDelet(){}
+  onDelet(){
+    this.adminService.deletUnivById(this.universite.id_univ).subscribe();
+    this.router.navigateByUrl('/admin/adminStart')
+  }
 
   onGoBack(){
     this.router.navigateByUrl('/admin/adminStart')
