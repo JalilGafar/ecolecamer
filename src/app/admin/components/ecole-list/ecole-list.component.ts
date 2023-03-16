@@ -31,4 +31,8 @@ export class EcoleListComponent implements OnInit{
     this.appRout.navigateByUrl('admin/ecole/'+ event.data.id_ecol.toString());
   }
 
+  onAddEcol(){
+    this.appRout.navigateByUrl('admin/new-ecole');
+  }
+
 }

@@ -31,4 +31,8 @@ export class CampusListComponent implements OnInit{
   this.appRout.navigateByUrl('admin/campus/'+ event.data.id_camp.toString());
   }
 
+  onAddCampus(){
+    this.appRout.navigateByUrl('admin/new-campus');
+  }
+
 }

@@ -19,6 +19,9 @@ import { SingleEcoleComponent } from './components/single-ecole/single-ecole.com
 import { SingleCampusComponent } from './components/single-campus/single-campus.component';
 import { ModifUnivComponent } from './components/modif-univ/modif-univ.component';
 import { NewUnivComponent } from './components/new-univ/new-univ.component';
+import { NewEcoleComponent } from './components/new-ecole/new-ecole.component';
+import { NewCampusComponent } from './components/new-campus/new-campus.component';
+import { ModifCampusComponent } from './components/modif-campus/modif-campus.component';
 
 
 @NgModule({
@@ -36,7 +39,10 @@ import { NewUnivComponent } from './components/new-univ/new-univ.component';
     SingleEcoleComponent,
     SingleCampusComponent,
     ModifUnivComponent,
-    NewUnivComponent
+    NewUnivComponent,
+    NewEcoleComponent,
+    NewCampusComponent,
+    ModifCampusComponent
   ],
   imports: [
     CommonModule,

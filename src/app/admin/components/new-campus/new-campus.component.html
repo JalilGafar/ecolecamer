@@ -1,0 +1,31 @@
+<div class="form-card">
+    <form [formGroup]="newCampus">   
+        <div class="form-group">
+            <label for="nom_camp">Nom du Campus</label>
+            <input id="nom_camp" type="text"  formControlName="nom_camp">
+        </div>
+        <div class="form-group">
+            <label for="ville_cam">ville</label>
+            <input id="ville_cam" type="text" formControlName="ville_cam">
+        </div>
+        <div class="form-group">
+            <label for="principal_camp">Type</label>
+            <input id="principal_camp" type="text" formControlName="principal_camp">
+        </div>
+        <div class="form-group">
+            <label for="descriptif_camp">Descriptif</label>
+            <p-editor formControlName="descriptif_camp" [style]="{'height':'320px'}"></p-editor>
+        </div>
+        <div class="form-group">
+            <label for="lon_camp">Longitude</label>
+            <input id="lon_camp" type="text" formControlName="lon_camp">
+        </div>
+        <div class="form-group">
+            <label for="lat_camp">Latitude</label>
+            <input id="lat_camp" type="text" formControlName="lat_camp">
+        </div>
+        <div class="action-buttons">
+            <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+        </div>
+    </form>
+</div>

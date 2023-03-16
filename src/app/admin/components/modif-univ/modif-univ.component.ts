@@ -43,14 +43,6 @@ export class ModifUnivComponent implements OnInit{
       })
     );
 
-    // this.universite$.subscribe(
-    //   val => {
-    //       this.modifUniv.patchValue({
-    //         nom_univ: val.nom_univ
-    //       });
-    //       console.log(val.nom_univ);
-    //   } 
-    // )
     this.modifUniv = this.formBuilder.group({
       id_univ: [null],
       nom_univ: [null],

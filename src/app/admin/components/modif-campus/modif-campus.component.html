@@ -1,0 +1,35 @@
+<div class="form-card">
+    <form [formGroup]="modifCamp">   
+        <ng-container *ngIf="campus$ | async as campus">   
+            <div class="form-group">
+                <label for="nom_camp">Nom</label>
+                <input id="nom_camp" type="text" formControlName="nom_camp">
+            </div>
+            <div class="form-group">
+                <label for="ville_cam">Ville</label>
+                <input id="ville_cam" type="text" formControlName="ville_cam">
+            </div>
+            <div class="form-group">
+                <label for="principal_camp">Principal</label>
+                <input id="principal_camp" type="text" formControlName="principal_camp">
+            </div>
+            <div class="form-group">
+                <label for="lon_camp">Longitude</label>
+                <input id="lon_camp" type="text" formControlName="lon_camp">
+            </div>
+            <div class="form-group">
+                <label for="lat_camp">Latitude</label>
+                <input id="lat_camp" type="text" formControlName="lat_camp">
+            </div>
+            <div class="form-group">
+                <label for="descriptif_camp">Descriptif</label>
+                <p-editor formControlName="descriptif_camp" [style]="{'height':'320px'}"></p-editor>
+                <!-- <p>Value: {{campersite.descriptif_camp||'empty'}}</p> -->
+                <!-- <textarea id="descriptif_camp" type="text" [placeholder]="campersite.descriptif_camp" formControlName="descriptif_camp"></textarea> -->
+            </div>
+            <div class="action-buttons">
+                <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+            </div>
+        </ng-container>
+    </form>
+</div>

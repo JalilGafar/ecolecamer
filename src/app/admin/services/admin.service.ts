@@ -72,6 +72,8 @@ export class AdminService {
         ).subscribe();
     }
 
+    //*************** UNIVERSITY FUNCTIONS **************/
+
     getUniversiteFromServer(){
       this.setLoadingStatus(true);
       this.http.get<Universite[]>(`${environment.apiUrl}/universites`).pipe(
@@ -115,6 +117,8 @@ export class AdminService {
       return this.http.delete(url, {params: idParams})
     }
 
+    //************* ECOLE FUNCTIONS ***************/
+
     getEcoleFromServer(){
       this.setLoadingStatus(true);
       this.http.get<Ecole[]>(`${environment.apiUrl}/ecoles`).pipe(
@@ -125,6 +129,8 @@ export class AdminService {
       ).subscribe();
     }
 
+    //*********** CAMPUS FUNCTIONS *******************/
+
     getCampusFromServer(){
       this.setLoadingStatus(true);
       this.http.get<Campus[]>(`${environment.apiUrl}/campus`).pipe(
@@ -133,6 +139,29 @@ export class AdminService {
           this.setLoadingStatus(false);
         })
       ).subscribe();
+    }
+
+    getCampusById(id: number): Observable<Campus>{
+      if (!this.lastCandidatesLoad) {
+          this.getCampusFromServer()
+      }
+      return this.campus$.pipe(
+          map(campus => campus.filter(campus => campus.id_camp === id)[0])
+      );
+    };
+
+    deletCampusById(campId: number): Observable<unknown>{
+      let url = `${environment.apiUrl}/deletCampus`;
+      let idParams = new HttpParams();
+      idParams = idParams.append('idCamp', campId);
+      console.log ('DELET ' + campId)
+      return this.http.delete(url, {params: idParams})
+    }
+
+    addNewCampus(newCamp : {nom_camp: string, ville_cam: string, principal_camp: boolean,
+                            descriptif_camp: string, lon_camp: number, 
+                            lat_camp: number}): Observable<Campus>{
+      return this.http.post<Campus>(`${environment.apiUrl}/newCampus`, newCamp);
     }
 }
 

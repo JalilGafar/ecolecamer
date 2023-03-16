@@ -5,6 +5,7 @@ import {ButtonModule} from 'primeng/button';
 import {AccordionModule} from 'primeng/accordion';
 import {TableModule} from 'primeng/table';
 import {EditorModule} from 'primeng/editor';
+import {DropdownModule} from 'primeng/dropdown';
 
 @NgModule({
     exports: [
@@ -13,7 +14,8 @@ import {EditorModule} from 'primeng/editor';
       ButtonModule,
       AccordionModule,
       TableModule,
-      EditorModule
+      EditorModule,
+      DropdownModule
     ]
   })
 
