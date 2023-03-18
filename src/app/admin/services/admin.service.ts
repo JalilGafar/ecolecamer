@@ -127,6 +127,28 @@ export class AdminService {
           this.setLoadingStatus(false);
         })
       ).subscribe();
+    };
+
+    getecoleById(id: number):Observable<Ecole>{
+      return this.ecoles$.pipe(
+        map(ecoles => ecoles.filter(ecole => ecole.id_ecol === id)[0])
+    );
+    };
+
+    addNewEcole(  ecoleForm: {nom_e: string, sigle_e: string,
+                logo_e: string, niveau_e: string, langue_e: string, date_creation: string,
+                tel_1_e: string, email_e: string, bp_e: string, directeur_e: string,
+                photo_directeur: string, mot_directeur: string, stat_e: string, descriptif_e: string,
+                image_e: string, universites_id: number, campus_id: number}):Observable<Ecole>{
+      
+       return this.http.post<Ecole>(`${environment.apiUrl}/newEcole`, ecoleForm);
+    };
+
+    deletEcoleById(ecoleId:number): Observable<unknown>{
+      let url = `${environment.apiUrl}/deletEcole`;
+      let idParams = new HttpParams();
+      idParams = idParams.append('idEcole', ecoleId);
+      return this.http.delete(url, {params: idParams})
     }
 
     //*********** CAMPUS FUNCTIONS *******************/
@@ -149,6 +171,13 @@ export class AdminService {
           map(campus => campus.filter(campus => campus.id_camp === id)[0])
       );
     };
+
+    editCamp(campusForm : {id_camp: number, nom_camp: string, ville_cam: string, principal_camp: boolean,
+            descriptif_camp: string, lon_camp: number, 
+            lat_camp: number}): Observable<Campus>{
+      
+      return this.http.put<Campus>(`${environment.apiUrl}/editCampus`, campusForm);
+    }
 
     deletCampusById(campId: number): Observable<unknown>{
       let url = `${environment.apiUrl}/deletCampus`;

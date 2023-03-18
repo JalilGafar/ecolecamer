@@ -1,1 +1,33 @@
-<p>single-ecole works!</p>
+<mat-card>
+    <ng-container *ngIf="ecole$ | async as ecole">
+      <div class="employee-info">
+        <h1>{{ ecole.id_ecol }} //  {{ ecole.sigle_e }}</h1>
+        <h2 [innerHTML]="ecole.nom_e"></h2>
+        <h3><strong>Sigle :</strong>  {{ ecole.sigle_e }}</h3>
+        <h3> <strong>Logo :</strong>  {{ ecole.logo_e }}</h3>
+        <h3><strong>Niveau : </strong>{{ ecole.niveau_e }}</h3>
+        <h3><strong>Langue :</strong> {{ ecole.langue_e }}</h3>
+        <h3><strong>Date de création :</strong> {{ ecole.date_creation }}</h3>
+        <h3><strong>Téléphone :</strong> {{ ecole.tel_1_e }}</h3>
+        <h3><strong>Email :</strong> {{ ecole.email_e }}</h3>
+        <h3><strong>BP :</strong> {{ ecole.bp_e }}</h3>
+        <h3><strong>Directeur :</strong> {{ ecole.directeur_e }}</h3>
+        <h3><strong>Photo Directeur :</strong> {{ ecole.photo_directeur }}</h3>
+        <h3><strong>Mot du Directeur :</strong></h3> <span [innerHTML]="ecole.mot_directeur"></span>
+        <h3><strong>Statistiques :</strong> {{ ecole.stat_e }}</h3>
+        <h3><strong>Présentation de {{ecole.sigle_e}} :</strong></h3><span [innerHTML]="ecole.descriptif_e"></span> <br>
+        <h3><strong>{{ecole.sigle_e}} en Image :</strong> {{ ecole.image_e }}</h3>
+        <h3><strong>Université :</strong> {{ universite }}</h3> 
+      </div>
+    </ng-container>
+    <mat-card-actions>
+      <mat-spinner *ngIf="loading$ | async; else buttons"></mat-spinner>
+      <ng-template #buttons>
+        <div class="action-buttons">
+          <button mat-flat-button color="accent" (click)="onModif()">MODIFIER</button>
+          <button mat-flat-button color="warn" (click)="onDelet()">SUPRIMER</button>
+          <button mat-flat-button color="primary" (click)="onGoBack()">RETOUR</button>
+        </div>
+      </ng-template>
+    </mat-card-actions>
+  </mat-card>

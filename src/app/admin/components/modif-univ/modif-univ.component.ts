@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { concatMap, map, Observable, switchMap, take, tap } from 'rxjs';
 import { Universite } from '../../models/univ.model';
 import { AdminService } from '../../services/admin.service';
@@ -19,7 +19,8 @@ export class ModifUnivComponent implements OnInit{
 
   constructor ( private adminService : AdminService,
                 private route: ActivatedRoute,
-                private formBuilder: FormBuilder) {}
+                private formBuilder: FormBuilder,
+                private appRout : Router) {}
   
   ngOnInit(): void {
     this.universite$ = this.route.params.pipe(
@@ -56,13 +57,12 @@ export class ModifUnivComponent implements OnInit{
       mot_du_recteur: [null],
       descriptif_univ: [null],
     });
-
-    
   }
 
   onSubmitForm(){
     this.adminService.editUniv(this.modifUniv.value).subscribe();
-    console.log(this.modifUniv.value)
+    console.log(this.modifUniv.value);
+    this.appRout.navigateByUrl('admin/adminStart');
   }
 
 

@@ -22,6 +22,7 @@ import { NewUnivComponent } from './components/new-univ/new-univ.component';
 import { NewEcoleComponent } from './components/new-ecole/new-ecole.component';
 import { NewCampusComponent } from './components/new-campus/new-campus.component';
 import { ModifCampusComponent } from './components/modif-campus/modif-campus.component';
+import { ModifEcoleComponent } from './components/modif-ecole/modif-ecole.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { ModifCampusComponent } from './components/modif-campus/modif-campus.com
     NewUnivComponent,
     NewEcoleComponent,
     NewCampusComponent,
-    ModifCampusComponent
+    ModifCampusComponent,
+    ModifEcoleComponent
   ],
   imports: [
     CommonModule,

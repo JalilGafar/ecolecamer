@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, switchMap, take, tap } from 'rxjs';
 import { Campus } from '../../models/campus.mode';
 import { AdminService } from '../../services/admin.service';
@@ -18,7 +18,8 @@ export class ModifCampusComponent implements OnInit{
 
   constructor ( private adminService : AdminService,
                 private route: ActivatedRoute,
-                private formBuilder: FormBuilder) {}
+                private formBuilder: FormBuilder,
+                private appRout: Router) {}
 
   ngOnInit(): void {
     this.campus$ = this.route.params.pipe(
@@ -50,7 +51,8 @@ export class ModifCampusComponent implements OnInit{
   };
 
   onSubmitForm(){
-    this.adminService.editUniv(this.modifCamp.value).subscribe();
+    this.adminService.editCamp(this.modifCamp.value).subscribe();
     console.log(this.modifCamp.value)
+    this.appRout.navigateByUrl('admin/adminStart');
   }
 }

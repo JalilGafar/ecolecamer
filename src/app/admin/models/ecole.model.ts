@@ -15,5 +15,5 @@ export class Ecole {
     stat_e!: string;
     descriptif_e!: string;
     image_e!: string;
-    universites_id!: string;
+    universites_id!: number;
 }
