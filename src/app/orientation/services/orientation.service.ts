@@ -28,9 +28,7 @@ export class OrientationService {
         sercheDate: new Date("2023-01-01"),
     };
 
-    initUser (): UserProfil {
-    return this.initialUser;    
-    }
+  
 
     getAllCyties(): Observable<ville[]> {
     return this.http.get<ville[]>(`${environment.apiUrl}/cyties`)
@@ -97,5 +95,13 @@ export class OrientationService {
     saveField(domaine: string) {
         this.initialUser.field = domaine;
         console.log(this.initialUser);
+    }
+
+    initUser () {
+        this.saveCytiIn('');
+        this.saveDegree('');
+        this.saveField('');
+        console.log(this.initialUser)
+
     }
 }

@@ -29,6 +29,7 @@ export class SingleCampusComponent implements OnInit {
       switchMap(params => this.adminService.getCampusById(+params['id'])),
       tap(campus=>this.campus = campus)
     );
+    console.log(this.campus)
   }
 
   onModif(){

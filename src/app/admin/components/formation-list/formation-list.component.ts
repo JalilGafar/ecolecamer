@@ -28,7 +28,11 @@ export class FormationListComponent implements OnInit{
   }
 
   onRowSelect(event:any){
-    this.appRout.navigateByUrl('admin/formation/'+ event.data.id.toString());
+    this.appRout.navigateByUrl('admin/formation/'+ event.data.id_form.toString());
+  }
+
+  onAddFormation(){
+    this.appRout.navigateByUrl('admin/new-formation');
   }
 
 }

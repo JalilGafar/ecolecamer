@@ -1,1 +1,78 @@
-<p>modif-ecole works!</p>
+<div class="form-card">
+    <form [formGroup]="modifEcole">   
+        <ng-container *ngIf="ecole$ | async as ecole">   
+            <div class="form-group">
+                <label for="nom_e">Nom</label>
+                <input id="nom_e" type="text" formControlName="nom_e">
+            </div>
+            <div class="form-group">
+                <label for="sigle_e">Sigle</label>
+                <input id="sigle_e" type="text" formControlName="sigle_e">
+            </div>
+            <div class="form-group">
+                <label for="logo_e">Logo</label>
+                <input id="logo_e" type="text" formControlName="logo_e">
+            </div>
+            <div class="form-group">
+                <label for="niveau_e">Nivea</label>
+                <input id="niveau_e" type="text" formControlName="niveau_e">
+            </div>
+            <div class="form-group">
+                <label for="langue_e">Langue</label>
+                <input id="langue_e" type="text" formControlName="langue_e">
+            </div>
+            <div class="form-group">
+                <label for="date_creation">Date de création</label>
+                <input id="date_creation" type="text" formControlName="date_creation">
+            </div>
+            <div class="form-group">
+                <label for="tel_1_e">Téléphone</label>
+                <input id="tel_1_e" type="text" formControlName="tel_1_e">
+            </div>
+            <div class="form-group">
+                <label for="email_e">Email</label>
+                <input id="email_e" type="text" formControlName="email_e">
+            </div>
+            <div class="form-group">
+                <label for="bp_e">BP</label>
+                <input id="bp_e" type="text" formControlName="bp_e">
+            </div>
+            <div class="form-group">
+                <label for="directeur_e">Directeur</label>
+                <input id="directeur_e" type="text" formControlName="directeur_e">
+            </div>
+            <div class="form-group">
+                <label for="photo_directeur">Photo Directeur</label>
+                <input id="photo_directeur" type="text" formControlName="photo_directeur">
+            </div>
+            <div class="form-group">
+                <label for="mot_directeur">Mot du Directeur</label>
+                <p-editor formControlName="mot_directeur" [style]="{'height':'320px'}"></p-editor>
+            </div>
+            <div class="form-group">
+                <label for="stat_e">Statisques</label>
+                <input id="stat_e" type="text" formControlName="stat_e">
+            </div>
+            <div class="form-group">
+                <label for="descriptif_e">Descriptif de l'école</label>
+                <p-editor formControlName="descriptif_e" [style]="{'height':'320px'}"></p-editor>
+            </div>
+            <div class="form-group">
+                <label for="image_e">Image Ecole</label>
+                <input id="image_e" type="text" formControlName="image_e">
+            </div>
+            <div class="form-group">
+                <label for="">Université</label>
+            <p-dropdown id="universites_id" *ngIf="universites$ | async as universitess" [options]="universitess" optionLabel="nom_univ" optionValue="id_univ" formControlName="universites_id"></p-dropdown>
+            </div>
+            <div class="form-group">
+                <label for="">Campus</label>
+                <p-dropdown id="campus_id" *ngIf="campus$ | async as campuss" [options]="campuss" optionLabel="nom_camp" optionValue="id_camp" formControlName="campus_id"></p-dropdown>
+            </div>
+
+            <div class="action-buttons">
+                <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+            </div>
+        </ng-container>
+    </form>
+</div>

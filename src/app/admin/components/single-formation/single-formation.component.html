@@ -1,1 +1,27 @@
-<p>single-formation works!</p>
+<mat-card>
+    <ng-container *ngIf="formation$ | async as data">
+      <div class="employee-info">
+        <h1>{{ formation.id_form }} </h1>
+        <h2 [innerHTML]="formation.nom_f"></h2>
+        <h3><strong>Catégorie :</strong>  {{ data.nom_cat }}</h3>
+        <h3> <strong>Ville :</strong>  {{ formation.ville_cam }}</h3>
+        <h3> <strong>Cout :</strong>  {{ formation.cout_f }} FCFA</h3>
+        <h3> <strong>Début de Formation :</strong>  {{ formation.date_debut_f }}</h3>
+        <h3> <strong>Durée :</strong>  {{ formation.duree_f }} Mois</h3>
+        <h3><strong>Programme :</strong> {{ formation.programme_f }}</h3> 
+        <h3><strong>Descriptif :</strong> {{ formation.descriptif_f }}</h3> 
+        <h3><strong>Université :</strong> {{ formation.nom_univ }}</h3> 
+        <h3><strong>Campus : </strong>{{ formation.nom_camp }}</h3>
+      </div>
+    </ng-container>
+    <mat-card-actions>
+      <mat-spinner *ngIf="loading$ | async; else buttons"></mat-spinner>
+      <ng-template #buttons>
+        <div class="action-buttons">
+          <button mat-flat-button color="accent" (click)="onModif()">MODIFIER</button>
+          <button mat-flat-button color="warn" (click)="onDelet()">SUPRIMER</button>
+          <button mat-flat-button color="primary" (click)="onGoBack()">RETOUR</button>
+        </div>
+      </ng-template>
+    </mat-card-actions>
+  </mat-card>

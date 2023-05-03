@@ -57,6 +57,10 @@ export class AdminService {
       return throwError(() => new Error('Something bad happened; please try again later.'));
     }
 
+
+    //********************* FORMATION FUNCTIONS ************************/
+
+    //**Get all formations with campu and unic connection */
     getFormationsFromServer () {
         if (Date.now() - this.lastCandidatesLoad <= 10000) {
             return;
@@ -71,6 +75,16 @@ export class AdminService {
             })
         ).subscribe();
     }
+
+    getFormationById(id: number): Observable<Formation>{
+      if (!this.lastCandidatesLoad) {
+          this.getFormationsFromServer()
+      }
+      return this.formation$.pipe(
+          map(formations => formations.filter(formation => formation.id_form === id)[0])
+      );
+    }
+
 
     //*************** UNIVERSITY FUNCTIONS **************/
 
@@ -129,7 +143,7 @@ export class AdminService {
       ).subscribe();
     };
 
-    getecoleById(id: number):Observable<Ecole>{
+    getEcoleById(id: number):Observable<Ecole>{
       return this.ecoles$.pipe(
         map(ecoles => ecoles.filter(ecole => ecole.id_ecol === id)[0])
     );
@@ -143,6 +157,16 @@ export class AdminService {
       
        return this.http.post<Ecole>(`${environment.apiUrl}/newEcole`, ecoleForm);
     };
+
+    
+    editEcole(ecoleForm :{ id_ecol: number,  nom_e: string, sigle_e: string, logo_e: string, 
+                          niveau_e: string, langue_e: string, date_creation: string, tel_1_e: string, 
+                          email_e: string, bp_e: string, directeur_e: string, photo_directeur: string, 
+                          mot_directeur: string, stat_e: string, descriptif_e: string, image_e: string, 
+                          universites_id: number,   }):Observable<Ecole>{
+
+      return this.http.put<Ecole>(`${environment.apiUrl}/editEcole`, ecoleForm);
+    }
 
     deletEcoleById(ecoleId:number): Observable<unknown>{
       let url = `${environment.apiUrl}/deletEcole`;

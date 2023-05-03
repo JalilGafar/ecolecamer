@@ -1,29 +1,31 @@
 <div class="card">
-    <h2>Liste des formations</h2>
+    <h2>Liste des formations
+        <button pButton type="button" label="Ajouter une Formation" class="p-button-success" (click)="onAddFormation()"></button>
+    </h2>
     <ng-container *ngIf="formations$ | async as data">
         <mat-spinner *ngIf="loading$ | async"></mat-spinner>
         <p-table [value]="data" [tableStyle]="{'min-width': '50rem'}" 
                 selectionMode="single" dataKey="code" (onRowSelect)="onRowSelect($event)">
             <ng-template pTemplate="header">
                 <tr>
-                    <th pSortableColumn="id" style="width:7%">Code <p-sortIcon field="id"></p-sortIcon></th>
+                    <th pSortableColumn="id_form" style="width:7%">Code <p-sortIcon field="id_form"></p-sortIcon></th>
                     <th pSortableColumn="nom_f" style="width:20%">Name <p-sortIcon field="nom_f"></p-sortIcon></th>
-                    <th pSortableColumn="categorie" style="width:20%">Category <p-sortIcon field="categorie"></p-sortIcon></th>
-                    <th pSortableColumn="universite" style="width:20%">Université <p-sortIcon field="universite"></p-sortIcon></th>
-                    <th pSortableColumn="campus" style="width:20%">Campus <p-sortIcon field="campus"></p-sortIcon></th>
-                    <th pSortableColumn="ville" style="width:20%">Ville <p-sortIcon field="ville"></p-sortIcon></th>
+                    <th pSortableColumn="nom_cat" style="width:20%">Category <p-sortIcon field="nom_cat"></p-sortIcon></th>
+                    <th pSortableColumn="nom_univ" style="width:20%">Université <p-sortIcon field="nom_univ"></p-sortIcon></th>
+                    <th pSortableColumn="nom_camp" style="width:20%">Campus <p-sortIcon field="nom_camp"></p-sortIcon></th>
+                    <th pSortableColumn="ville_cam" style="width:20%">Ville <p-sortIcon field="ville_cam"></p-sortIcon></th>
                 </tr>
             </ng-template>
             
             <ng-template pTemplate="body" let-formation>
                 
                 <tr [pSelectableRow]="formation">
-                    <td>{{formation.id}}</td>
+                    <td>{{formation.id_form}}</td>
                     <td>{{formation.nom_f}}</td>
-                    <td>{{formation.categorie}}</td>
-                    <td>{{formation.universite}}</td>
-                    <td>{{formation.campus}}</td>
-                    <td>{{formation.ville}}</td>
+                    <td>{{formation.nom_cat}}</td>
+                    <td>{{formation.nom_univ}}</td>
+                    <td>{{formation.nom_camp}}</td>
+                    <td>{{formation.ville_cam}}</td>
                 </tr>
             </ng-template>
         </p-table>

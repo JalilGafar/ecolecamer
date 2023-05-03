@@ -28,8 +28,8 @@ export class SingleEcoleComponent implements OnInit {
   initObservables(){
     this.loading$ = this.adminService.loading$;
     this.ecole$ = this.route.params.pipe(
-      switchMap(params => this.adminService.getecoleById(+params['id'])),
-      tap(ecol=>this.ecole =ecol)
+      switchMap(params => this.adminService.getEcoleById(+params['id'])),
+      tap(ecol=>this.ecole = ecol)
     );
     this.adminService.universite$.pipe(
       delay(1000),
