@@ -1,1 +1,65 @@
-<p>new-formation works!</p>
+<mat-card class="main-form">
+    <form [formGroup]="newFormation">
+        <div class="form-group">
+            <label for="">Nom de la formation</label>
+            <input id="nom_f" type="text"  formControlName="nom_f">
+        </div>
+        <div class="form-group">
+            <label for="">Domaine de formation</label>
+            <p-dropdown id="domaine_id" *ngIf="domaine$ | async as domaine" [options]="domaine" optionLabel="nom_dom" optionValue="id_dom" formControlName="domaine_id"></p-dropdown>
+        </div>
+        <div class="form-group">
+            <label for="">Début de formation</label>
+            <input id="date_debut_f" type="text" formControlName="date_debut_f">
+        </div>
+        <div class="form-group">
+            <label for="">Durée de formation </label>
+            <input id="duree_f" type="text" formControlName="duree_f">
+        </div>
+        <div class="form-group">
+            <label for="">Coût de la formation (FCFA)</label>
+            <input id="cout_f" type="text" formControlName="cout_f">
+        </div>
+        <div class="form-group">
+            <label for="">Programme de la formation</label>
+            <p-editor formControlName="programme_f" [style]="{'height':'320px'}"></p-editor>
+        </div>
+        <div class="form-group">
+            <label for="">Descriptif de la formation</label>
+            <p-editor formControlName="descriptif_f" [style]="{'height':'320px'}"></p-editor>
+        </div>
+        <div class="form-group">
+            <label for="">Nom du Diplome</label>
+            <input id="nom_diplome" type="text" formControlName="nom_diplome">
+        </div>
+        <div class="form-group">
+            <label for="">Admission</label>
+            <input id="admission_diplome" type="text" formControlName="admission_diplome">
+        </div>
+        <div class="form-group">
+            <label for="">descriptif diplome</label>
+            <input id="descriptif_diplome" type="text" formControlName="descriptif_diplome">
+        </div>
+        <div class="form-group">
+            <label for="">Conditions</label>
+            <input id="condition_diplome" type="text" formControlName="condition_diplome">
+        </div>
+        <div class="form-group">
+            <label for="">Niveau de base</label>
+            <input id="niveau_diplome" type="text" formControlName="niveau_diplome">
+        </div>
+        <div class="form-group">
+            <label for="">Catégorie de diplome</label>
+            <p-dropdown id="categ_id" *ngIf="categ$ | async as categ" [options]="categ" optionLabel="nom_cat" optionValue="id_cat" formControlName="categ_id"></p-dropdown>
+        </div>
+        <div class="form-group">
+            <label for="">Ecole</label>
+            <p-dropdown id="ecole_id" *ngIf="ecole$ | async as ecoles" [options]="ecoles" optionLabel="nom_e" optionValue="id_ecol" formControlName="ecole_id"></p-dropdown>
+        </div>
+
+        <div class="action-buttons">
+            <p-button type="submit" styleClass="p-button-success" (click)="onSubmitForm()">Enregistrer</p-button>
+            <p-button styleClass="p-button-danger" >Annuler</p-button>
+        </div>
+    </form>
+</mat-card>

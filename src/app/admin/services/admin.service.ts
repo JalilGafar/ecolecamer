@@ -6,6 +6,8 @@ import { Campus } from "../models/campus.mode";
 import { Ecole } from "../models/ecole.model";
 import { Formation } from "../models/formation.model";
 import { Universite } from "../models/univ.model";
+import { Domaine } from "../models/domaine.model";
+import { Categ } from "../models/categ.model";
 
 @Injectable ()
 export class AdminService {
@@ -37,6 +39,16 @@ export class AdminService {
       return this._campus$.asObservable()
     }
 
+    private _categ$ = new BehaviorSubject<Categ[]>([]);
+    get categ$(): Observable<Categ[]> {
+      return this._categ$.asObservable()
+    }
+
+    private _domaine$ = new BehaviorSubject<Domaine[]>([]);
+    get domaine$(): Observable<Domaine[]> {
+      return this._domaine$.asObservable()
+    }
+
     private lastCandidatesLoad = 0;
 
     private setLoadingStatus(loading: boolean) {
@@ -57,6 +69,23 @@ export class AdminService {
       return throwError(() => new Error('Something bad happened; please try again later.'));
     }
 
+     //***************  FUNCTIONS TO GET DOMAINE AND CATEGORIES **************/
+
+    getDomaineFromServer(){
+       this.http.get<Domaine[]>(`${environment.apiUrl}/domaine`).pipe(
+        tap(domaine =>{
+          this._domaine$.next(domaine);
+        })
+      ).subscribe();
+    }
+
+    getCategFromServer(){
+      this.http.get<Categ[]>(`${environment.apiUrl}/categ`).pipe(
+        tap(categ =>{
+          this._categ$.next(categ);
+        })
+      ).subscribe();
+    }
 
     //********************* FORMATION FUNCTIONS ************************/
 
@@ -83,6 +112,13 @@ export class AdminService {
       return this.formation$.pipe(
           map(formations => formations.filter(formation => formation.id_form === id)[0])
       );
+    }
+
+    addNewFormation(formationForm: {nom_f: string, nom_diplome: string, admission_diplome: string, 
+                      descriptif_diplome: string, condition_diplome: string, niveau_diplome: string, categ_id: number,      
+                      ecole_id: number, domaine_id: number, date_debut_f: string, duree_f: string,
+                      cout_f: string, programme_f: string, descriptif_f: string}): Observable<Formation>{
+      return this.http.post<Formation>(`${environment.apiUrl}/newFormation`, formationForm);
     }
 
 
