@@ -70,6 +70,7 @@ export class ModifEcoleComponent implements OnInit{
       descriptif_e: [null],
       image_e: [null],
       universites_id: [null],
+      campus_id: [null],
     });
     this.adminService.getUniversiteFromServer();
     this.universites$ = this.adminService.universite$;

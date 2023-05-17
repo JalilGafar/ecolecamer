@@ -27,12 +27,12 @@ export class NewFormationComponent implements OnInit{
   ngOnInit(): void {
     this.newFormation = this.formBuilder.group({
       nom_f: [null],
-      nom_diplome: [null],
+      nom_dip: [null],
       admission_diplome: [null],
       descriptif_diplome: [null],
       condition_diplome: [null],
       niveau_diplome: [null],
-      caterg_id: [null],
+      categ_id: [null],
       ecole_id: [null],
       domaine_id: [null],
       date_debut_f: [null],

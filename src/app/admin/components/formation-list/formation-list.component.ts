@@ -13,6 +13,7 @@ export class FormationListComponent implements OnInit{
 
   loading$!: Observable<boolean>;
   formations$!:Observable<Formation[]>;
+  formations!: Formation[];
 
   constructor(private adminService: AdminService,
               private appRout : Router) { }

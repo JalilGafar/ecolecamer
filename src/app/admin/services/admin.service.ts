@@ -11,7 +11,7 @@ import { Categ } from "../models/categ.model";
 
 @Injectable ()
 export class AdminService {
-
+  
     constructor (private http: HttpClient) {}
 
     private _loading$ = new BehaviorSubject<boolean>(false);
@@ -114,11 +114,28 @@ export class AdminService {
       );
     }
 
-    addNewFormation(formationForm: {nom_f: string, nom_diplome: string, admission_diplome: string, 
+    addNewFormation(formationForm: {nom_f: string, nom_dip: string, admission_diplome: string, 
                       descriptif_diplome: string, condition_diplome: string, niveau_diplome: string, categ_id: number,      
                       ecole_id: number, domaine_id: number, date_debut_f: string, duree_f: string,
                       cout_f: string, programme_f: string, descriptif_f: string}): Observable<Formation>{
       return this.http.post<Formation>(`${environment.apiUrl}/newFormation`, formationForm);
+    };
+
+    editFormation(formationForm: {id_form: number, nom_f: string, nom_dip: string, diplome_id: number, 
+                                  admission_diplome: string, descriptif_diplome: string, condition_diplome: string, 
+                                  niveau_diplome: string, categ_id: number, ecole_id: number, 
+                                  domaine_id: number, date_debut_f: string, duree_f: string,
+                                  cout_f: string, programme_f: string, descriptif_f: string}): Observable<Formation>{
+                                  
+        return this.http.put<Formation>(`${environment.apiUrl}/editformation`, formationForm);
+
+    }
+
+    deletFormationById(formationId: number): Observable<unknown>{
+      let url = `${environment.apiUrl}/deletFormation`;
+      let idParams = new HttpParams();
+      idParams = idParams.append('idForm', formationId);
+      return this.http.delete(url, {params: idParams}) 
     }
 
 
@@ -199,7 +216,7 @@ export class AdminService {
                           niveau_e: string, langue_e: string, date_creation: string, tel_1_e: string, 
                           email_e: string, bp_e: string, directeur_e: string, photo_directeur: string, 
                           mot_directeur: string, stat_e: string, descriptif_e: string, image_e: string, 
-                          universites_id: number,   }):Observable<Ecole>{
+                          universites_id: number, campus_id:number   }):Observable<Ecole>{
 
       return this.http.put<Ecole>(`${environment.apiUrl}/editEcole`, ecoleForm);
     }

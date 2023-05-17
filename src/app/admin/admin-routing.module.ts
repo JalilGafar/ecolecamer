@@ -5,6 +5,7 @@ import { FormationListComponent } from './components/formation-list/formation-li
 import { LoginComponent } from './components/login/login.component';
 import { ModifCampusComponent } from './components/modif-campus/modif-campus.component';
 import { ModifEcoleComponent } from './components/modif-ecole/modif-ecole.component';
+import { ModifFormationComponent } from './components/modif-formation/modif-formation.component';
 import { ModifUnivComponent } from './components/modif-univ/modif-univ.component';
 import { NewCampusComponent } from './components/new-campus/new-campus.component';
 import { NewEcoleComponent } from './components/new-ecole/new-ecole.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'modif-univ/:id', component: ModifUnivComponent },
   { path: 'modif-ecole/:id', component: ModifEcoleComponent },
   { path: 'modif-campus/:id', component: ModifCampusComponent },
+  { path: 'modif-formation/:id', component: ModifFormationComponent },
   { path: 'formation/:id', component: SingleFormationComponent },
   { path:'**', redirectTo:''}
 ];

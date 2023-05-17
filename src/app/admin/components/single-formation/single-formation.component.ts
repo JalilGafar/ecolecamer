@@ -35,10 +35,11 @@ export class SingleFormationComponent implements OnInit{
   }
 
   onModif(){
-    this.router.navigateByUrl('admin/modif-ecole/')    
+    this.router.navigateByUrl('admin/modif-formation/'+ this.formation.id_form.toString())    
   }
 
   onDelet(){
+    this.adminService.deletFormationById(this.formation.id_form).subscribe();
     this.router.navigateByUrl('/admin/adminStart')
   }
 
