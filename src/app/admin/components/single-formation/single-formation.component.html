@@ -9,8 +9,8 @@
         <h3> <strong>Cout :</strong>  {{ formation.cout_f }} FCFA</h3>
         <h3> <strong>Début de Formation :</strong>  {{ formation.date_debut_f }}</h3>
         <h3> <strong>Durée :</strong>  {{ formation.duree_f }} Mois</h3>
-        <h3><strong>Programme :</strong> {{ formation.programme_f }}</h3> 
-        <h3><strong>Descriptif :</strong> {{ formation.descriptif_f }}</h3> 
+        <h3><strong>Programme :</strong></h3> <span [innerHTML]="formation.programme_f"></span>
+        <h3><strong>Descriptif :</strong> </h3> <span [innerHTML]="formation.descriptif_f"></span>
         <h3><strong>Université :</strong> {{ formation.nom_univ }}</h3> 
         <h3><strong>Campus : </strong>{{ formation.nom_camp }}</h3>
       </div>

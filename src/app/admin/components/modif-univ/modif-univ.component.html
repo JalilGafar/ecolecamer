@@ -45,7 +45,8 @@
                 <!-- <textarea id="descriptif_univ" type="text" [placeholder]="universite.descriptif_univ" formControlName="descriptif_univ"></textarea> -->
             </div>
             <div class="action-buttons">
-                <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+                <p-button  type="submit" styleClass="p-button-success" (click)="onSubmitForm()">Enregistrer</p-button>
+                <p-button  styleClass="p-button-danger" (click)="onReturn()">Annuler</p-button>
             </div>
         </ng-container>
     </form>

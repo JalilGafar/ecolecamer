@@ -7,7 +7,7 @@ import { AdminService } from '../../services/admin.service';
 @Component({
   selector: 'app-ecole-list',
   templateUrl: './ecole-list.component.html',
-  styleUrls: ['./ecole-list.component.scss']
+  styleUrls: ['./ecole-list.component.scss', '../../admin-style.module.scss']
 })
 export class EcoleListComponent implements OnInit{
 

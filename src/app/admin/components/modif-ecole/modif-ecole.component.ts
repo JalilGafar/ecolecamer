@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, switchMap, take, tap } from 'rxjs';
 import { Campus } from '../../models/campus.mode';
@@ -10,7 +10,7 @@ import { AdminService } from '../../services/admin.service';
 @Component({
   selector: 'app-modif-ecole',
   templateUrl: './modif-ecole.component.html',
-  styleUrls: ['./modif-ecole.component.scss']
+  styleUrls: ['./modif-ecole.component.scss', '../../admin-style.module.scss']
 })
 export class ModifEcoleComponent implements OnInit{
 
@@ -69,8 +69,8 @@ export class ModifEcoleComponent implements OnInit{
       stat_e: [null],
       descriptif_e: [null],
       image_e: [null],
-      universites_id: [null],
-      campus_id: [null],
+      universites_id: [null, [Validators.required]],
+      campus_id: [null, [Validators.required]],
     });
     this.adminService.getUniversiteFromServer();
     this.universites$ = this.adminService.universite$;
@@ -79,8 +79,15 @@ export class ModifEcoleComponent implements OnInit{
   };
 
   onSubmitForm(){
+    if (this.modifEcole.invalid) {
+      return;
+    }
     this.adminService.editEcole(this.modifEcole.value).subscribe();
     console.log(this.modifEcole.value);
+    this.appRout.navigateByUrl('admin/adminStart');
+  }
+
+  onReturn(){
     this.appRout.navigateByUrl('admin/adminStart');
   }
 

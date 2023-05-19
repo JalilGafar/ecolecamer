@@ -28,7 +28,8 @@
                 <!-- <textarea id="descriptif_camp" type="text" [placeholder]="campersite.descriptif_camp" formControlName="descriptif_camp"></textarea> -->
             </div>
             <div class="action-buttons">
-                <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+                <p-button type="submit" styleClass="p-button-success" (click)="onSubmitForm()">Enregistrer</p-button>
+                <p-button styleClass="p-button-danger" (click)="onReturn()">Annuler</p-button>
             </div>
         </ng-container>
     </form>

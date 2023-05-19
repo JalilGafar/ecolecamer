@@ -11,7 +11,7 @@ import { AdminService } from '../../services/admin.service';
 @Component({
   selector: 'app-modif-formation',
   templateUrl: './modif-formation.component.html',
-  styleUrls: ['./modif-formation.component.scss']
+  styleUrls: ['./modif-formation.component.scss', '../../admin-style.module.scss']
 })
 export class ModifFormationComponent implements OnInit{
 
@@ -84,13 +84,16 @@ export class ModifFormationComponent implements OnInit{
 
   onSubmitForm(){
     if (this.modifFormation.invalid) {
-      // here potentially add some visual feedback for a user
        return;
      }
     this.adminService.editFormation(this.modifFormation.value).subscribe();
     console.log(this.modifFormation.value);
     this.appRout.navigateByUrl('admin/adminStart');
 
+  }
+
+  onReturn(){
+    this.appRout.navigateByUrl('admin/adminStart');
   }
 
 }

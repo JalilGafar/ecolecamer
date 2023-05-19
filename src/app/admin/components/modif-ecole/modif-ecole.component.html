@@ -63,15 +63,16 @@
             </div>
             <div class="form-group">
                 <label for="">Université</label>
-            <p-dropdown id="universites_id" *ngIf="universites$ | async as universitess" [options]="universitess" optionLabel="nom_univ" optionValue="id_univ" formControlName="universites_id"></p-dropdown>
+                <p-dropdown id="universites_id" *ngIf="universites$ | async as universitess" [options]="universitess" placeholder="select Université" optionLabel="nom_univ" optionValue="id_univ" formControlName="universites_id"></p-dropdown>
             </div>
             <div class="form-group">
                 <label for="">Campus</label>
-                <p-dropdown id="campus_id" *ngIf="campus$ | async as campuss" [options]="campuss" optionLabel="nom_camp" optionValue="id_camp" formControlName="campus_id"></p-dropdown>
+                <p-dropdown id="campus_id" *ngIf="campus$ | async as campuss" [options]="campuss" placeholder="select Campus" optionLabel="nom_camp" optionValue="id_camp" formControlName="campus_id"></p-dropdown>
             </div>
 
             <div class="action-buttons">
-                <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+                <p-button type="submit" styleClass="p-button-success" (click)="onSubmitForm()" [disabled]="modifEcole.invalid">Enregistrer</p-button>
+                <p-button  styleClass="p-button-danger" (click)="onReturn()">Enregistrer</p-button>
             </div>
         </ng-container>
     </form>

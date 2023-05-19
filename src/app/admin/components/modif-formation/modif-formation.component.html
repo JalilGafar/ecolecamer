@@ -1,4 +1,4 @@
-<mat-card class="main-form">
+<mat-card class="form-card">
     <form [formGroup]="modifFormation">
         <ng-container *ngIf="formation$ | async as ecole">   
             <div class="form-group">
@@ -61,7 +61,7 @@
 
         <div class="action-buttons">
             <p-button type="submit" styleClass="p-button-success" (click)="onSubmitForm()" [disabled]="modifFormation.invalid">Enregistrer</p-button>
-            <p-button styleClass="p-button-danger" >Annuler</p-button>
+            <p-button styleClass="p-button-danger" (click)="onReturn()" >Annuler</p-button>
         </div>
     </form>
 </mat-card>

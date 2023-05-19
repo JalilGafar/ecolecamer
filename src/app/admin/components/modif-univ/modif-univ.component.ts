@@ -8,7 +8,7 @@ import { AdminService } from '../../services/admin.service';
 @Component({
   selector: 'app-modif-univ',
   templateUrl: './modif-univ.component.html',
-  styleUrls: ['./modif-univ.component.scss']
+  styleUrls: ['./modif-univ.component.scss', '../../admin-style.module.scss']
 })
 export class ModifUnivComponent implements OnInit{
   
@@ -62,6 +62,10 @@ export class ModifUnivComponent implements OnInit{
   onSubmitForm(){
     this.adminService.editUniv(this.modifUniv.value).subscribe();
     console.log(this.modifUniv.value);
+    this.appRout.navigateByUrl('admin/adminStart');
+  }
+
+  onReturn(){
     this.appRout.navigateByUrl('admin/adminStart');
   }
 

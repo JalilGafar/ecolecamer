@@ -8,7 +8,7 @@ import { AdminService } from '../../services/admin.service';
 @Component({
   selector: 'app-modif-campus',
   templateUrl: './modif-campus.component.html',
-  styleUrls: ['./modif-campus.component.scss']
+  styleUrls: ['./modif-campus.component.scss', '../../admin-style.module.scss']
 })
 export class ModifCampusComponent implements OnInit{
 
@@ -53,6 +53,10 @@ export class ModifCampusComponent implements OnInit{
   onSubmitForm(){
     this.adminService.editCamp(this.modifCamp.value).subscribe();
     console.log(this.modifCamp.value)
+    this.appRout.navigateByUrl('admin/adminStart');
+  }
+
+  onReturn(){
     this.appRout.navigateByUrl('admin/adminStart');
   }
 }

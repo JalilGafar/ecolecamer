@@ -1,0 +1,44 @@
+.p-button-success{
+    float: right;
+    width: fit-content;
+}
+
+p-button {
+    margin: 5px;
+}
+
+.card > h2 {
+    margin: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-card {
+    box-sizing: border-box;
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px 30px;
+    box-shadow: lightgray 4px 4px 20px;
+    background-color: rgb(250, 239, 177);
+  }
+  
+.form-group {
+    margin: 10px auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input, textarea, p-editor {
+    width: 80%;
+}
+
+label {
+    font-weight: bold;
+}
+  
