@@ -4,8 +4,16 @@
     </h2> 
     <ng-container *ngIf="universites$ | async as data">
         <mat-spinner *ngIf="loading$ | async"></mat-spinner>
-        <p-table [value]="data" [tableStyle]="{'min-width': '30rem'}" 
-                selectionMode="single" dataKey="code" (onRowSelect)="onRowSelect($event)">
+        <p-table [value]="data" 
+                [tableStyle]="{'min-width': '30rem'}" 
+                selectionMode="single" 
+                dataKey="code" 
+                [paginator]="true"
+                [rows]="10"
+                [showCurrentPageReport]="true"
+                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                [rowsPerPageOptions]="[10, 25, 50]"
+                (onRowSelect)="onRowSelect($event)">
             <ng-template pTemplate="header">
                 <tr>
                     <th pSortableColumn="id_univ" style="width:5%">Code <p-sortIcon field="id_univ"></p-sortIcon></th>
@@ -25,6 +33,12 @@
                     <td>{{universite.type_univ}}</td>
                     <td>{{universite.ville_univ}}</td>
                 </tr>
+            </ng-template>
+            <ng-template pTemplate="paginatorleft">
+                <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+            </ng-template>
+            <ng-template pTemplate="paginatorright">
+                <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
             </ng-template>
         </p-table>
     </ng-container>
