@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,13 +14,29 @@ import { LandingPageModule } from './landing-page/landing-page.module';
 import { TopVideoSchoolModule } from './top-video-school/top-video-school.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
+import { httpInterceptorProviders } from './interceptors';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BoardUserComponent } from './board-user/board-user.component';
+import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
 
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        HomeComponent,
+        RegisterComponent,
+        ProfileComponent,
+        BoardUserComponent,
+        BoardModeratorComponent,
+        BoardAdminComponent
     ],
-    providers: [],
+    providers: [
+        { provide: LOCALE_ID, useValue: 'fr-FR' },
+        httpInterceptorProviders
+    ],
     bootstrap: [
       AppComponent,
       CoreModule,

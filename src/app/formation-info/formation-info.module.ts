@@ -9,7 +9,7 @@ import { HeaderHeroComponent } from './components/header-hero/header-hero.compon
 
 @NgModule({
   declarations: [
-    HomeComponent,
+   // HomeComponent,
     HeaderHeroComponent
   ],
   imports: [
@@ -18,7 +18,7 @@ import { HeaderHeroComponent } from './components/header-hero/header-hero.compon
     SharedModule
   ],
   exports: [
-    HomeComponent,
+   // HomeComponent,
     HeaderHeroComponent
   ]
 })

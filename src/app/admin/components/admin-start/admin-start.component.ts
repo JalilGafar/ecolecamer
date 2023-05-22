@@ -6,15 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-start.component.scss']
 })
 export class AdminStartComponent implements OnInit {
+  
+  ngOnInit(): void {
+    
+  }
+
+
 
   univView: boolean = true ;
   campusView!: boolean;
   formationView!: boolean;
   ecoleView!: boolean;
   
-  ngOnInit(): void {
 
-  }
+ 
 
   univClick(){
     this.univView = true;

@@ -7,7 +7,7 @@ import { FormationListComponent } from './components/formation-list/formation-li
 import { SingleFormationComponent } from './components/single-formation/single-formation.component';
 import { ModifFormationComponent } from './components/modif-formation/modif-formation.component';
 import { NewFormationComponent } from './components/new-formation/new-formation.component';
-import { AuthService } from './services/auth.service';
+import { AuthenService } from './services/auth.service';
 import { SharedModule } from '../shared/shared.module';
 import { AdminService } from './services/admin.service';
 import { AdminStartComponent } from './components/admin-start/admin-start.component';
@@ -52,7 +52,7 @@ import { ModifEcoleComponent } from './components/modif-ecole/modif-ecole.compon
     SharedModule,
   ],
   providers:[
-    AuthService,
+    AuthenService,
     AdminService
   ]
 })
