@@ -30,9 +30,9 @@ export class AuthService {
     }
 
 
-    private token ='MyFakeToken';
+ //  private token ='MyFakeToken';
 
-    getToken(): string{
-        return this.token;
-    }
+ //  getToken(): string{
+ //      return this.token;
+ //  }
 }

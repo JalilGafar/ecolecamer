@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminStartComponent } from './components/admin-start/admin-start.component';
 import { FormationListComponent } from './components/formation-list/formation-list.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from '../login/login.component';
 import { ModifCampusComponent } from './components/modif-campus/modif-campus.component';
 import { ModifEcoleComponent } from './components/modif-ecole/modif-ecole.component';
 import { ModifFormationComponent } from './components/modif-formation/modif-formation.component';
@@ -17,7 +17,8 @@ import { SingleFormationComponent } from './components/single-formation/single-f
 import { SingleUnivComponent } from './components/single-univ/single-univ.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent},
+ // { path: '', component: LoginComponent},
+  { path: '', component: AdminStartComponent},
  // { path: 'formations', component: FormationListComponent},
   { path: 'adminStart', component: AdminStartComponent},
   { path: 'new-campus', component: NewCampusComponent},
@@ -32,7 +33,7 @@ const routes: Routes = [
   { path: 'modif-campus/:id', component: ModifCampusComponent },
   { path: 'modif-formation/:id', component: ModifFormationComponent },
   { path: 'formation/:id', component: SingleFormationComponent },
-  { path:'**', redirectTo:''}
+  { path:'**', redirectTo:'adminStart'}
 ];
 
 @NgModule({

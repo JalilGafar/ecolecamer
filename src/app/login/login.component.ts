@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { tokenStorageService } from 'src/app/services/token-storage.service';
-import { AuthenService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -32,7 +31,9 @@ export class LoginComponent implements OnInit{
   onSubmit(): void{
     this.auth.login(this.form).subscribe(
       data => {
-        this.tokenStorage.saveToken(data.accesToken);
+        console.log('le token est '+ data.accessToken);
+        this.tokenStorage.saveToken(data.accessToken);
+        //this.tokenStorage.blade('JALIL_TOKEN');
         this.tokenStorage.saveUser(data);
 
         this.isLoginFailed = false;
@@ -51,9 +52,9 @@ export class LoginComponent implements OnInit{
     window.location.reload();
   }
 
-  onLogin() {
-  //this.authen.login();
-  //this.router.navigateByUrl('admin/adminStart');
-  }
+ // onLogin() {
+ // //this.authen.login();
+ // //this.router.navigateByUrl('admin/adminStart');
+ // }
 
 }

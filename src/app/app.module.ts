@@ -14,7 +14,7 @@ import { LandingPageModule } from './landing-page/landing-page.module';
 import { TopVideoSchoolModule } from './top-video-school/top-video-school.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
-import { httpInterceptorProviders } from './interceptors';
+import { httpInterceptorProviders } from './interceptors/auth.interceptor';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
