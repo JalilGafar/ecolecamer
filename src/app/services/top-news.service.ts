@@ -12,6 +12,6 @@ export class TopNewsService {
 
   getAllTopNews(): Observable<TopNews[]> {
     //return this.topnewss;
-    return this.http.get<TopNews[]>('http://localhost:3000/topNewsSlide');
+    return this.http.get<TopNews[]>('http://localhost:3000/api/topNewsSlide');
   }
 }

@@ -15,7 +15,7 @@ import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: 'orientation', loadChildren: () => import('./orientation/orientation.module').then(m => m.OrientationModule) },
- // { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: '', component: LandingPageComponent},
   { path: 'home', component:HomeComponent},
   { path: 'login', component:LoginComponent},
@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'profil', component:ProfileComponent},
   { path: 'user', component:BoardUserComponent},
   { path: 'mod', component:BoardModeratorComponent},
-  { path: 'admin', component:BoardAdminComponent},
+ // { path: 'admin', component:BoardAdminComponent},
   { path:'**', redirectTo:''}
 ];
 

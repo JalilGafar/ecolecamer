@@ -7,9 +7,9 @@
     <nav class="navbar">
       <a href="#">Bezcoder</a>
       <ul routerLinkActive="active">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a href="/home" class="nav-link" routerLink="home">Home</a>
-        </li>
+        </li> -->
         <li class="nav-item" *ngIf="showAdminBoard">
           <a href="/adminn" class="nav-link" routerLink="admin">Admin Board</a>
         </li>
@@ -17,8 +17,11 @@
           <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
         </li>
         <li class="nav-item" >
-          <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
-        </li>
+          <a href="/admin" class="nav-link" *ngIf="isLoggedIn" routerLink="admin">Admin Board</a>
+        </li> 
+        <!-- <li class="nav-item" >
+          <a href="/user" class="nav-link"  routerLink="user">User</a>
+        </li> -->
       </ul>
 
       <ul class="" *ngIf="!isLoggedIn">

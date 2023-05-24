@@ -72,7 +72,7 @@ export class AdminService {
      //***************  FUNCTIONS TO GET DOMAINE AND CATEGORIES **************/
 
     getDomaineFromServer(){
-       this.http.get<Domaine[]>(`${environment.apiUrl}/domaine`).pipe(
+       this.http.get<Domaine[]>(`${environment.apiUrl}/api/domaine`).pipe(
         tap(domaine =>{
           this._domaine$.next(domaine);
         })
@@ -80,7 +80,7 @@ export class AdminService {
     }
 
     getCategFromServer(){
-      this.http.get<Categ[]>(`${environment.apiUrl}/categ`).pipe(
+      this.http.get<Categ[]>(`${environment.apiUrl}/api/categ`).pipe(
         tap(categ =>{
           this._categ$.next(categ);
         })
@@ -91,11 +91,11 @@ export class AdminService {
 
     //**Get all formations with campu and unic connection */
     getFormationsFromServer () {
-        if (Date.now() - this.lastCandidatesLoad <= 10000) {
+        if (Date.now() - this.lastCandidatesLoad <= 3000) {
             return;
         }
         this.setLoadingStatus(true);
-        this.http.get<Formation[]>(`${environment.apiUrl}/formations`).pipe(
+        this.http.get<Formation[]>(`${environment.apiUrl}/api/formations`).pipe(
             delay(2000),
             tap(formations => {
                 this.lastCandidatesLoad = Date.now();
@@ -118,7 +118,7 @@ export class AdminService {
                       descriptif_diplome: string, condition_diplome: string, niveau_diplome: string, categ_id: number,      
                       ecole_id: number, domaine_id: number, date_debut_f: string, duree_f: string,
                       cout_f: string, programme_f: string, descriptif_f: string}): Observable<Formation>{
-      return this.http.post<Formation>(`${environment.apiUrl}/newFormation`, formationForm);
+      return this.http.post<Formation>(`${environment.apiUrl}/api/formations`, formationForm);
     };
 
     editFormation(formationForm: {id_form: number, nom_f: string, nom_dip: string, diplome_id: number, 
@@ -127,12 +127,12 @@ export class AdminService {
                                   domaine_id: number, date_debut_f: string, duree_f: string,
                                   cout_f: string, programme_f: string, descriptif_f: string}): Observable<Formation>{
                                   
-        return this.http.put<Formation>(`${environment.apiUrl}/editformation`, formationForm);
+        return this.http.put<Formation>(`${environment.apiUrl}/api/formations`, formationForm);
 
     }
 
     deletFormationById(formationId: number): Observable<unknown>{
-      let url = `${environment.apiUrl}/deletFormation`;
+      let url = `${environment.apiUrl}/api/formations`;
       let idParams = new HttpParams();
       idParams = idParams.append('idForm', formationId);
       return this.http.delete(url, {params: idParams}) 
@@ -143,7 +143,7 @@ export class AdminService {
 
     getUniversiteFromServer(){
       this.setLoadingStatus(true);
-      this.http.get<Universite[]>(`${environment.apiUrl}/universites`).pipe(
+      this.http.get<Universite[]>(`${environment.apiUrl}/api/universites`).pipe(
         tap(universites =>{
           this._universite$.next(universites);
           this.setLoadingStatus(false);
@@ -155,6 +155,7 @@ export class AdminService {
       if (!this.lastCandidatesLoad) {
           this.getUniversiteFromServer()
       }
+      this.setLoadingStatus(false);
       return this.universite$.pipe(
           map(universite => universite.filter(universite => universite.id_univ === id)[0])
       );
@@ -165,7 +166,7 @@ export class AdminService {
                             siteweb_univ: string, recteur_univ: string, mot_du_recteur: string, descriptif_univ: string
                           }): Observable<Universite>{
       console.log(univForm);
-      return this.http.post<Universite>(`${environment.apiUrl}/newUniversites`, univForm);
+      return this.http.post<Universite>(`${environment.apiUrl}/api/universites`, univForm);
     }
 
     editUniv(univForm :{  id_univ: number, nom_univ: string, sigle_univ: string, type_univ: string,
@@ -173,11 +174,11 @@ export class AdminService {
                           siteweb_univ: string, recteur_univ: string, mot_du_recteur: string, descriptif_univ: string
                         }):Observable<Universite>{
       
-      return this.http.put<Universite>(`${environment.apiUrl}/editUniversite`, univForm);
+      return this.http.put<Universite>(`${environment.apiUrl}/api/universites`, univForm);
     }
 
     deletUnivById(univId: number): Observable<unknown>{
-      let url = `${environment.apiUrl}/deletUniversite`;
+      let url = `${environment.apiUrl}/api/universites`;
       let idParams = new HttpParams();
       idParams = idParams.append('idUniv', univId);
       console.log ('DELET ' + univId)
@@ -188,7 +189,7 @@ export class AdminService {
 
     getEcoleFromServer(){
       this.setLoadingStatus(true);
-      this.http.get<Ecole[]>(`${environment.apiUrl}/ecoles`).pipe(
+      this.http.get<Ecole[]>(`${environment.apiUrl}/api/ecoles`).pipe(
         tap(ecoles =>{
           this._ecole$.next(ecoles);
           this.setLoadingStatus(false);
@@ -208,7 +209,7 @@ export class AdminService {
                 photo_directeur: string, mot_directeur: string, stat_e: string, descriptif_e: string,
                 image_e: string, universites_id: number, campus_id: number}):Observable<Ecole>{
       
-       return this.http.post<Ecole>(`${environment.apiUrl}/newEcole`, ecoleForm);
+       return this.http.post<Ecole>(`${environment.apiUrl}/api/ecoles`, ecoleForm);
     };
 
     
@@ -218,11 +219,11 @@ export class AdminService {
                           mot_directeur: string, stat_e: string, descriptif_e: string, image_e: string, 
                           universites_id: number, campus_id:number   }):Observable<Ecole>{
 
-      return this.http.put<Ecole>(`${environment.apiUrl}/editEcole`, ecoleForm);
+      return this.http.put<Ecole>(`${environment.apiUrl}/api/ecoles`, ecoleForm);
     }
 
     deletEcoleById(ecoleId:number): Observable<unknown>{
-      let url = `${environment.apiUrl}/deletEcole`;
+      let url = `${environment.apiUrl}/api/ecoles`;
       let idParams = new HttpParams();
       idParams = idParams.append('idEcole', ecoleId);
       return this.http.delete(url, {params: idParams})
@@ -232,7 +233,7 @@ export class AdminService {
 
     getCampusFromServer(){
       this.setLoadingStatus(true);
-      this.http.get<Campus[]>(`${environment.apiUrl}/campus`).pipe(
+      this.http.get<Campus[]>(`${environment.apiUrl}/api/campus`).pipe(
         tap(campus =>{
           this._campus$.next(campus);
           this.setLoadingStatus(false);
@@ -253,11 +254,11 @@ export class AdminService {
             descriptif_camp: string, lon_camp: number, 
             lat_camp: number}): Observable<Campus>{
       
-      return this.http.put<Campus>(`${environment.apiUrl}/editCampus`, campusForm);
+      return this.http.put<Campus>(`${environment.apiUrl}/api/campus`, campusForm);
     }
 
     deletCampusById(campId: number): Observable<unknown>{
-      let url = `${environment.apiUrl}/deletCampus`;
+      let url = `${environment.apiUrl}/api/campus`;
       let idParams = new HttpParams();
       idParams = idParams.append('idCamp', campId);
       console.log ('DELET ' + campId)
@@ -267,7 +268,7 @@ export class AdminService {
     addNewCampus(newCamp : {nom_camp: string, ville_cam: string, principal_camp: boolean,
                             descriptif_camp: string, lon_camp: number, 
                             lat_camp: number}): Observable<Campus>{
-      return this.http.post<Campus>(`${environment.apiUrl}/newCampus`, newCamp);
+      return this.http.post<Campus>(`${environment.apiUrl}/api/campus`, newCamp);
     }
 }
 
