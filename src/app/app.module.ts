@@ -21,6 +21,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { InfoDiplomeComponent } from './informations/components/info-diplome/info-diplome.component';
+import { InfoBacProComponent } from './informations/components/info-bac-pro/info-bac-pro.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
         ProfileComponent,
         BoardUserComponent,
         BoardModeratorComponent,
-        BoardAdminComponent
+        BoardAdminComponent,
+        InfoDiplomeComponent,
+        InfoBacProComponent
     ],
     providers: [
         { provide: LOCALE_ID, useValue: 'fr-FR' },
