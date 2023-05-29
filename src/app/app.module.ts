@@ -21,8 +21,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { InfoDiplomeComponent } from './informations/components/info-diplome/info-diplome.component';
-import { InfoBacProComponent } from './informations/components/info-bac-pro/info-bac-pro.component';
+import { InformationsModule } from './informations/informations.module';
 
 
 @NgModule({
@@ -33,9 +32,7 @@ import { InfoBacProComponent } from './informations/components/info-bac-pro/info
         ProfileComponent,
         BoardUserComponent,
         BoardModeratorComponent,
-        BoardAdminComponent,
-        InfoDiplomeComponent,
-        InfoBacProComponent
+        BoardAdminComponent
     ],
     providers: [
         { provide: LOCALE_ID, useValue: 'fr-FR' },
@@ -57,6 +54,7 @@ import { InfoBacProComponent } from './informations/components/info-bac-pro/info
         FormationInfoModule,
         OrientationModule,
         AdminModule,
+        InformationsModule,
         LandingPageModule,
         HttpClientModule
     ]

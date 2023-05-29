@@ -21,7 +21,7 @@ export class AuthInterceptor implements HttpInterceptor {
                 // withCredentials: true,
             });
         } else {
-            console.log('le Barbar  '+token);
+            // console.log('le Barbar  '+token);
         }
         return next.handle(authReq)
         

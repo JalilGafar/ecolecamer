@@ -84,17 +84,17 @@ export class OrientationService {
       
     saveCytiIn (cyti : string) {
         this.initialUser.city = cyti;
-        console.log(this.initialUser);
+        // console.log(this.initialUser);
     }
 
     saveDegree (degree : string) {
         this.initialUser.degree = degree;
-        console.log(this.initialUser);
+        // console.log(this.initialUser);
     }
 
     saveField(domaine: string) {
         this.initialUser.field = domaine;
-        console.log(this.initialUser);
+        // console.log(this.initialUser);
     }
 
     initUser () {

@@ -7,6 +7,14 @@ import { MyFilterPipe } from './pipes/myfilter.pipe';
 import { DomFilterPipe } from './pipes/domFilter.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { HeadmsgComponent } from './components/headmsg/headmsg.component';
+import { PubFirstComponent } from './components/pub-first/pub-first.component';
+import { PubInterestComponent } from './components/pub-interest/pub-interest.component';
+import { InfoRedactionComponent } from './components/info-redaction/info-redaction.component';
+import { InterestListComponent } from './components/interest-list/interest-list.component';
+import { InterestActualiteComponent } from './components/interest-actualite/interest-actualite.component';
+import { InterestAvisComponent } from './components/interest-avis/interest-avis.component';
+import { InterestClassificationComponent } from './components/interest-classification/interest-classification.component';
 
 
 
@@ -14,7 +22,15 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     MyFilterPipe,
-    DomFilterPipe
+    DomFilterPipe,
+    HeadmsgComponent,
+    PubFirstComponent,
+    PubInterestComponent,
+    InfoRedactionComponent,
+    InterestListComponent,
+    InterestActualiteComponent,
+    InterestAvisComponent,
+    InterestClassificationComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +47,15 @@ import { FormsModule } from '@angular/forms';
     MyFilterPipe,
     DomFilterPipe,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HeadmsgComponent,
+    PubFirstComponent,
+    PubInterestComponent,
+    InfoRedactionComponent,
+    InterestListComponent,
+    InterestActualiteComponent,
+    InterestAvisComponent,
+    InterestClassificationComponent
   ],
 })
 export class SharedModule { }

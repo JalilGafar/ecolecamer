@@ -5,6 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidenavListComponent } from './components/sidenav-list/sidenav-list.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,7 +18,8 @@ import { SidenavListComponent } from './components/sidenav-list/sidenav-list.com
   imports: [
     CommonModule,
     SharedModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    RouterModule
   ], 
   exports: [
     HeaderComponent,

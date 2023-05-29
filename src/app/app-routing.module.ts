@@ -16,13 +16,14 @@ import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   { path: 'orientation', loadChildren: () => import('./orientation/orientation.module').then(m => m.OrientationModule) },
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'info', loadChildren: () => import('./informations/informations.module').then(m => m.InformationsModule) },
   { path: '', component: LandingPageComponent},
-  { path: 'home', component:HomeComponent},
+  // { path: 'home', component:HomeComponent},
   { path: 'login', component:LoginComponent},
-  { path: 'register', component:RegisterComponent},
-  { path: 'profil', component:ProfileComponent},
-  { path: 'user', component:BoardUserComponent},
-  { path: 'mod', component:BoardModeratorComponent},
+  // { path: 'register', component:RegisterComponent},
+  // { path: 'profil', component:ProfileComponent},
+  // { path: 'user', component:BoardUserComponent},
+  // { path: 'mod', component:BoardModeratorComponent},
  // { path: 'admin', component:BoardAdminComponent},
   { path:'**', redirectTo:''}
 ];
