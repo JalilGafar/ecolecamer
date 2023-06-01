@@ -1,0 +1,21 @@
+p-tag {
+    margin: 7px;
+    text-align: center;
+}
+.card {
+    width: 400px;
+    margin-top: 40px;
+}
+
+img {
+    width: 100px; 
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.grid-content {
+    text-align: center;
+}

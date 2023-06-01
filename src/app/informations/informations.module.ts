@@ -18,6 +18,7 @@ import { InfoFormationComponent } from './components/info-formation/info-formati
 import { InfoMetierComponent } from './components/info-metier/info-metier.component';
 import { FormationInfoModule } from "../formation-info/formation-info.module";
 import { OrientationModule } from "../orientation/orientation.module";
+import { InfoServices } from './information.services';
 
 
 
@@ -44,6 +45,9 @@ import { OrientationModule } from "../orientation/orientation.module";
         InfoRoutingModule,
         FormationInfoModule,
         OrientationModule
+    ],
+    providers: [
+        InfoServices
     ]
 })
 export class InformationsModule { }

@@ -15,6 +15,7 @@ import { InterestListComponent } from './components/interest-list/interest-list.
 import { InterestActualiteComponent } from './components/interest-actualite/interest-actualite.component';
 import { InterestAvisComponent } from './components/interest-avis/interest-avis.component';
 import { InterestClassificationComponent } from './components/interest-classification/interest-classification.component';
+import { PubInterestItemComponent } from './components/pub-interest-item/pub-interest-item.component';
 
 
 
@@ -30,7 +31,8 @@ import { InterestClassificationComponent } from './components/interest-classific
     InterestListComponent,
     InterestActualiteComponent,
     InterestAvisComponent,
-    InterestClassificationComponent
+    InterestClassificationComponent,
+    PubInterestItemComponent
   ],
   imports: [
     CommonModule,
@@ -51,6 +53,7 @@ import { InterestClassificationComponent } from './components/interest-classific
     HeadmsgComponent,
     PubFirstComponent,
     PubInterestComponent,
+    PubInterestItemComponent,
     InfoRedactionComponent,
     InterestListComponent,
     InterestActualiteComponent,

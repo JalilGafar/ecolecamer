@@ -1,0 +1,19 @@
+<div class="card ">
+    <p-card [header]="school.nom_dip" [subheader]="school.nom_e" >
+        <div class="grid-container">
+            <div class="grid-content">
+                <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+            </div>
+            <div class="grid-content">
+                <p-tag class="fas" [style]="{'background':'#f4f6fc', 'color':'#344cbe'}" [value]="school.groupe" icon="pi pi-user"></p-tag>
+                <p-tag [style]="{'background':'#f4f6fc', 'color':'#344cbe'}" *ngIf="school.ville_cam"  [value]="school.ville_cam" icon="pi-map-marker"></p-tag>
+                <p-tag [style]="{'margin-top': '7px','background':'#f4f6fc', 'color':'#344cbe'}" *ngIf="school.date_debut_f"  [value]="school.date_debut_f" icon="pi-dollar"></p-tag>
+                <p-tag [style]="{'margin-top': '7px','background':'#f4f6fc', 'color':'#344cbe'}" *ngIf="school.cout_f"  [value]="school.cout_f" icon="pi-dollar"></p-tag>
+            </div>
+        </div>
+
+        <ng-template pTemplate="footer">
+            <p-button label="Demander des informations"></p-button>
+        </ng-template>
+    </p-card>
+</div>

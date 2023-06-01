@@ -4,9 +4,8 @@
     >
 </app-headmsg>
 <app-start ></app-start>
-<app-start ></app-start>
 <app-pub-first></app-pub-first>
-<app-pub-interest></app-pub-interest>
+<app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
 <app-info-redaction></app-info-redaction>
 <app-interest-list></app-interest-list>
 <app-interest-actualite></app-interest-actualite>
