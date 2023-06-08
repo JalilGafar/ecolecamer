@@ -4,9 +4,497 @@
     >
 </app-headmsg>
 <app-start ></app-start>
-<app-pub-first></app-pub-first>
-<app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
-<app-info-redaction></app-info-redaction>
+<div class="container">
+    <div class="first-pub">
+        <app-pub-first></app-pub-first>
+    </div>
+    <div class="main-container">
+        <app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
+        <div class="redaction-info">
+            <h2>L'enseignement secondaire au Cameroun</h2>
+            <p>
+                Au Cameroun, le système éducatif est régi par la loi d'orientation de l'éducation 
+                numéro 98/004 du 14 Avril 1998 article 17. Il y figure différents niveaux 
+                d'enseignement à savoir : :
+            </p>
+            <ul>
+                <li> <b>L'Enseignement Maternel :</b>  </li>
+                <li> <b>L'Enseignement Primaire :</b>  </li>
+                <li> <b>l'Enseignement Post-primaire :</b> </li>
+                <li> <b>l'Enseignement Normal :</b> </li>
+                <li> <b>L'Enseignement Secondaire :</b> </li>
+                <li> <b>L'Enseignement Supérieur :</b> </li>
+            </ul>
+            <p>
+                La même loi réaffirme l'option nationale du biculturalisme 
+                du Cameroun à travers deux sous-systèmes :
+            </p>
+            <ul>
+                <li>le sous-système francophone et</li>
+                <li>le sous-système anglophone</li>
+            </ul>
+            <br>
+            <p>
+                L'enseignement primaire est fondamental et obligatoire dans la mesure où, 
+                pour l'épanouissement de l'individu, il doit « savoir lire, écrire, faire 
+                de simples calculs et explorer son environnement… ». Au bout de six années 
+                d'études l'obtention du <b>Certificat d'Etude Primaire(CEP)</b>  ou du 
+                <b>First  School Leaving Certificat (FSLC) </b>  prépare l'élève 
+                soit à une formation professionnelle soit à l'entrée dans l'Enseignement secondaire.
+            </p>
+    
+            <p-accordion [activeIndex]="0">
+                <p-accordionTab header="L'enseignement secondaire Général">                    
+                    <p-tabView>
+                        <p-tabPanel header="Sous système francophone">
+                            <p>
+                                Au Cameroun, la durée des études dans l'Enseignement secondaire Général  est de 07 ans, soit 04 ans pour le premier cycle et 03 ans pour 
+                                le second cycle du sous système francophone. La fin des quatre premières années est sanctionnée par le Brevet d'Etudes du Premier 
+                                Cycle (BEPC). La deuxième année du second cycle est sanctionnée par le Probatoire d'Enseignement 
+                                Général correspondant à la filière choisie en classe de 2nde (cinquième année). La dernière année 
+                                d'études est sanctionnée par l'obtention du Baccalauréat de la filière choisie.
+                            </p>
+                            <p>
+                                La formation se fait dans les Collèges d'Enseignement Secondaire (CES) et les Lycées d'Enseignement Général, des secteurs public et privé.
+                            </p>
+                            
+                            <div class="card">
+                                <p-table [value]="products" [tableStyle]="{  }"  >
+                                    <ng-template pTemplate="header">
+                                        <tr>
+                                            <th>Niveau</th>
+                                            <th>Durée</th>
+                                            <th>Diplome</th>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template pTemplate="body" let-product>
+                                        <tr>
+                                            <td>{{ product.niveau }}</td>
+                                            <td>{{ product.duree }}</td>
+                                            <td>{{ product.diplome }}</td>
+                                        </tr>
+                                    </ng-template>
+                                </p-table>
+                            </div>
+                            <br>
+                            <p>
+                                Les filières de l'Enseignement Général sont distinguées en deux principaux groupes : littéraires et scientifiques.
+                            </p>
+                            <div class="card">
+                                <p-table    [value]="filiere" 
+                                            [tableStyle]="{  }"  
+                                            rowGroupMode="rowspan" 
+                                            groupRowsBy="serie" 
+                                            sortField="serie" 
+                                            sortMode="single">
+                                    <ng-template pTemplate="header">
+                                        <tr>
+                                            <th>Série / Spécialité</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template pTemplate="body" 
+                                                let-filiere
+                                                let-rowgroup="rowgroup" 
+                                                let-rowspan="rowspan">
+                                        <tr>
+                                            <td *ngIf="rowgroup" [attr.rowspan]="rowspan">
+                                                <span>
+                                                    {{ filiere.serie }}
+                                                </span>
+                                            </td>
+                                            <td>{{ filiere.description }}</td>
+                                        </tr>
+                                    </ng-template>
+                                </p-table>
+                            </div>
+
+                        </p-tabPanel>
+
+                        <p-tabPanel header="Sous système anglophone">
+                            <p>
+                                Au Cameroun, la durée des études dans l'Enseignement secondaire Général anglophone La durée des études 
+                                est de cinq (05) ans pour le premier cycle et deux (02) ans pour le second cycle. La fin du premier cycle 
+                                est sanctionnée par l'examen du General Certificate of Education Ordinary Level (GCE OL). La septième année, 
+                                les candidats présentent l'examen du General Certificate of Education Advanced Level (GCE AL) dans une série au choix.
+                            </p>
+                            <p>
+                                La formation se fait dans les Collèges d'Enseignement Secondaire (CES) et les Lycées d'Enseignement Général, des secteurs public et privé.
+                            </p>
+
+                            <div class="card">
+                                <p-table [value]="productsEn" [tableStyle]="{  }"  >
+                                    <ng-template pTemplate="header">
+                                        <tr>
+                                            <th>Niveau</th>
+                                            <th>Durée</th>
+                                            <th>Diplome</th>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template pTemplate="body" let-product>
+                                        <tr>
+                                            <td>{{ product.niveau }}</td>
+                                            <td>{{ product.duree }}</td>
+                                            <td>{{ product.diplome }}</td>
+                                        </tr>
+                                    </ng-template>
+                                </p-table>
+                            </div>    
+                            <br>
+                            <p>
+                                Les filières de l'Enseignement Général Qnglophone sont  : 
+                            </p>
+                            <div class="card">
+                                <p-table    [value]="filiereEn" 
+                                            [tableStyle]="{  }"  
+                                            rowGroupMode="rowspan" 
+                                            groupRowsBy="serie" 
+                                            sortField="serie" 
+                                            sortMode="single">
+                                    <ng-template pTemplate="header">
+                                        <tr>
+                                            <th>Série / Spécialité</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template pTemplate="body" 
+                                                let-filiereEn
+                                                let-rowgroup="rowgroup" 
+                                                let-rowspan="rowspan">
+                                        <tr>
+                                            <td *ngIf="rowgroup" [attr.rowspan]="rowspan">
+                                                <span>
+                                                    {{ filiereEn.serie }}
+                                                </span>
+                                            </td>
+                                            <td>{{ filiereEn.description }}</td>
+                                        </tr>
+                                    </ng-template>
+                                </p-table>
+                            </div>            
+                        </p-tabPanel>
+                        
+                    </p-tabView>
+                </p-accordionTab>
+
+                <p-accordionTab header="L'Enseigenment Secondaire Technique et Professionnel">
+                    <p-tabView>
+                        <p-tabPanel header="Sous système francophone">
+                            <p>
+                                La durée des études est de 04 ans pour le premier cycle et 03 ans pour le 
+                                second cycle. La fin du premier cycle est sanctionnée par le Certificat 
+                                d'Aptitude Professionnel (CAP). La deuxième année du 2nd cycle est sanctionnée 
+                                par l'obtention du Probatoire Technique correspondant à la filière choisie 
+                                en classe de 2nde. La dernière année d'étude est sanctionnée par l'obtention 
+                                du Baccalauréat ou du Brevet de Technicien selon le cas.
+                            </p>
+                            <br>
+                            <div class="card">
+                                <p-table [value]="productTec" [tableStyle]="{  }"  >
+                                    <ng-template pTemplate="header">
+                                        <tr>
+                                            <th>Niveau</th>
+                                            <th>Durée</th>
+                                            <th>Diplome</th>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template pTemplate="body" let-product>
+                                        <tr>
+                                            <td>{{ product.niveau }}</td>
+                                            <td>{{ product.duree }}</td>
+                                            <td>{{ product.diplome }}</td>
+                                        </tr>
+                                    </ng-template>
+                                </p-table>
+                            </div> 
+                            <br>
+                            <p>
+                                Les établissements d'enseignement secondaire technique sont constitué des Lycées 
+                                Techniques et Collèges. On distingue les Collèges d'Enseignement Technique 
+                                Industriel et Commercial (CETIC) et les Collèges d'Enseignement Technique 
+                                Industriel pour Fille (CETIF).
+                            </p>
+                            <p>
+                                Il existe deux types de filières : les filières des Sciences et Technologie 
+                                du Tertiaire (STT) et celles des Sciences et Techniques Industrielles (IND).
+                            </p>
+                            <p>
+                                Parmi les <strong>21</strong> filières des Sciences et Technologie du Tertiaire (STT), on peux citer :
+                            </p>
+                            <ul>
+                                <li>EMPLOYE DES SERVICES COMPTABLES (ESCOM)  </li>
+                                <li>RESTAURATION (RE) </li>
+                                <li>SCIENCES ECONOMIQUES ET SOCIALES (SES) </li>
+                                <li>COMPTABILITE DE GESTION (CG) </li>
+                                <li>etc.</li>
+                            </ul>
+
+                            <p>
+                                parmis les <strong>93</strong> spécialités des Sciences et Techniques Industrielles (IND) reconnues 
+                                par le Ministère de l'éducation secondaire, on peux citer :
+                            </p>
+                            <ul>
+                                <li>INDUSTRIE D'HABILLEMENT (IH) </li>
+                                <li>BP COUTURE FLOU (BP CF) </li>
+                                <li>TECHNIQUES  ET GESTION FORESTIERES (TGF) </li>
+                                <li>PRODUCTION ANIMALE (PA) </li>
+                                <li>GEOMETRE TOPOGRAPHE (GTTO) </li>
+                                <li>etc.</li>
+                            </ul>
+
+                            <p>
+                                Le Brévet de Technicien est obtenu 03ans après le BEPC ou le CAP, mais n'est
+                                pas cosigné par le Ministre de l'Enseignement Supérieur. Cependant, il
+                                est l'équivalent du Baccalauréat Technique en ce qui concerne les programmes et la durée de
+                                formation 
+                            </p>
+
+
+                            <div>
+                                <span> <p-button routerLink="/info/cap"  label="Le CAP et ses spécialités "></p-button> </span>
+                                <span> <p-button routerLink="/info/bacPro" label="les Bac Pro et Brevets "></p-button> </span>
+                            </div>
+
+                            <hr>
+
+                            <h3>Le Brevet d'Etude Professionnel</h3>
+                            <p>
+                                Diplôme professionnel obtenu 02 ans après le CAP et donnant lieu à
+                                un emploi direct ou à une promotion sociale
+                            </p>
+
+                            <h3>Le Brevet Professionnel</h3>
+                            <p>
+                                Diplôme professionnel couronnant le perfectionnement dans un
+                                domaine précis et reservé exclusivement aux travailleurs dans
+                                le cadre de formation continue donnant lieu à une promotion
+                                sociale. 
+                            </p>
+
+
+                            
+
+                        </p-tabPanel>
+                            
+                        <p-tabPanel header="Sous système anglophone">
+                            <p>
+                                La formation de sept (7) ans se fait dans les établissements de 
+                                l'Enseignement secondaire Technique et Professionnel notamment les 
+                                Collèges de l'enseigenement technique (Government Technical College : GTC) 
+                                et Lycées de l'Enseignement Technique (Government Technical High School : 
+                                GTHS). On distingue les Collèges d'Enseignement Technique Industriel et 
+                                Commercial (GTC) et les Collèges d'Enseignement Technique Industriel pour 
+                                Fille (Girls Technical Colleges : GGTC).
+                            </p>
+                            <p>
+                                La durée des études est de 04 ans pour le premier cycle et 03 ans pour le second 
+                                cycle. La fin du premier cycle est sanctionnée par le <strong>Technical and Vocational 
+                                Education Examination Intermediate Level</strong> . La dernière année d'étude, les 
+                                élèves obtiennent le <strong>Technical and Vocational Education Examination Advanced 
+                                Level</strong>  correspondant à leur spécialités.
+                            </p>
+                            <div class="card">
+                                <p-table [value]="productTecEn" [tableStyle]="{  }"  >
+                                    <ng-template pTemplate="header">
+                                        <tr>
+                                            <th>Niveau</th>
+                                            <th>Durée</th>
+                                            <th>Diplome</th>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template pTemplate="body" let-product>
+                                        <tr>
+                                            <td>{{ product.niveau }}</td>
+                                            <td>{{ product.duree }}</td>
+                                            <td>{{ product.diplome }}</td>
+                                        </tr>
+                                    </ng-template>
+                                </p-table>
+                            </div> 
+                            <p>
+                                Les deux filières majeures sont : Sciences et Technologie du Tertiaire (STT) 
+                                et Sciences et Techniques Industrielles (IND).
+                            </p>
+                            <p>
+                                Parmi les filières des Sciences et Technologie du Tertiaire (STT), on peux citer :
+                            </p>
+                            <ul>
+                                <li>SECRETARIAT ADMINISTRATION AND COMMUNICATION (ACA) </li>
+                                <li>MARKETING (ACC) </li>
+                                <li>HOME ECONOMICS (ESF) </li>
+                                <li>etc.</li>
+                            </ul>
+                            <p>
+                                parmis les spécialités des Sciences et Techniques Industrielles (IND) reconnues 
+                                par le Ministère de l'éducation secondaire, on peux citer :
+                            </p>
+                            <ul>
+                                <li>AUTOMOBILE BODY WORK AND SPRAYING (CAPA) </li>
+                                <li>AUTOMOBILE ELECTRICAL WORKS (MAEL) </li>
+                                <li>SHEET METAL WORK AND METALLIC CONSTRUCTION (MF / CM) </li>
+                                <li>INDUSTRIAL CHEMISTRY (CI) </li>
+                                <li>WOOD WORK (MENU) </li>
+                                <li>etc.</li>
+                            </ul>
+                        </p-tabPanel>
+                    </p-tabView>
+                </p-accordionTab>
+                <p-accordionTab header="L'Enseignement Normal">
+                    <p>
+                        Les Ecoles Normales d'Instituteurs sont des établissements de formation 
+                        professionnelle chargés de la formation initiale, du perfectionnement ou 
+                        recyclage et de la spécialisation des Instituteurs de l'Enseignement Général 
+                        ou de l'Enseignement Technique.
+                    </p>
+                    <p>
+                        On distingue les Ecoles Normales d'Instituteurs de l'Enseignement Général 
+                        (ENIEG) et les Ecoles Normales d'Instituteurs de l'Enseignement Technique (ENIET).
+                    </p>
+                    <p>
+                        La durée de la formation varie d'un à trois ans. Les titulaires du Baccalauréat 
+                        font un an, les nantis du Probatoire ont deux ans et les titulaires du Brevet 
+                        d'Etudes du Premier Cycle (BEPC) ou du Certificat d'Aptitude Professionnelle 
+                        (CAP) en ont pour trois ans.
+                    </p>
+                    <p>
+                        A l'issue de cette formation les élèves-maîtres présentent un examen certificatif 
+                        dénommé, selon le cas, Certificat d'Aptitude Pédagogique d'Instituteurs de 
+                        l'Enseignement Maternel et Primaire (CAPIEMP) ou Certificat d'Aptitude Pédagogique 
+                        d'Instituteurs de l'Enseignement Technique (CAPIET). Les Titulaires du CAPIEMP sont 
+                        ces cadres dotés des compétences professionnelles pour enseigner les élèves des écoles 
+                        maternelles ou primaires. Les Instituteurs de l'Enseignement Technique quant à eux sont 
+                        formés pour enseigner dans les Collèges d'Enseignement Technique, les SAR/SM et les 
+                        Centres de formation Professionnelle Rapides.
+                    </p>
+
+                </p-accordionTab >
+
+                <p-accordionTab header="Les formations professionnelles">
+                    <p>
+                        La formation professionnelle est réservée aux salariés ou aux demandeurs d'emplois 
+                        . Son but est de leur donner la possibilité d'obtenir d'autre compétences
+                        tout au long de leur carrière. Il existe des formations pro dans de très 
+                        nombreux domaines au Cameroun. Ces formations peuvent aboutir à un diplôme d'équivalence
+                        Bac +2 ou Bac  +3 sans pour autent être sous la tutelle du Ministère de l'enseignement supérieur. C'est le cas par exemple :
+                    </p>
+                    <ul>
+                        <li>Diplôme d'Ingénieur Statisticien Economiste (ISE) </li>
+                    </ul>
+                </p-accordionTab>
+                    
+                <p-accordionTab header="Les formations niveau bac+2">
+                    <p>
+                        Au Cameroun, il existe de nombreux diplomes qui sanctionnent d'un niveau bac+2.
+                        On peux citer entre autre :
+                    </p>
+                    <ul>
+                        <li>Le Brevet de Technitien Supérieur (BTS) </li>
+                        <li>The Higher National Diploma (HND) </li>
+                        <li>Le Diplôme Supérieur d'Etudes Professionnelles (DSEP) </li>
+                        <li>Le Diplôme Universitaire de Technologie (DUT) </li>
+                    </ul>
+                    <br>
+                    <p>
+                        En règle générale, ces formations sont sipensées dans des Instituts 
+                        Privés d'Enseignement Supérieur (IPES). 
+                    </p>
+                    <p-button  label="Les BTS disponibles au Cameroun"></p-button>
+
+                </p-accordionTab>
+
+                <p-accordionTab header="Les formations niveau bac+3">
+                    
+                    <p>La licence est une formation en trois ans qui peut être intégrée après le bac, 
+                        après un bac+1 ou après un bac+2. La licence peut être Académique ou Professionnelle selon
+                        l'établissement et les programmes proposés. 
+                    </p>
+                    <br>
+                    <h3>La Licence Pro</h3>
+                    <p>
+                        La licence professionnelle ou Bachelors of Engineering est un diplôme de niveau bac+3 qui se prépare à
+                        l'université, au sein des IUT, mais aussi de plus en plus dans des Instituts 
+                        Privés d'Enseignement Supérieur, à condition qu'elles aient établi un partenariat avec une
+                        université d'état. D'une durée d'un an (deux semestres), la licence professionnelle est accessible
+                        après un diplôme de bac+2 (BTS (Brevet de technicien supérieur), DUT (Diplôme
+                        universitaire de technologie) ). Par définition, la licence professionnelle
+                        mène à l'emploi. Cette formation offre en effet aux étudiants une expertise,
+                        une spécialisation et une pratique très apprécié des employeurs. En effet, il
+                        a été prouvé que des personnes ayant reçues une licence de type Pro, sont
+                        capable de s'insérer facilement dans le monde de l'emploi.
+                    </p>
+                    <p-button label="Les Licences Pro disponibles au Cameroun"></p-button>
+                    <br>
+                    <h3>La Licence Académique</h3>
+                    <p>
+                        Contrairemet à la Licence Pro qui se veut trés pratique, la Licence Académique met 
+                        plus d'accent sur les théories fondamentales afin de préparer l'étudiant à la recherche.
+                        Ces Licences sont pour la plupart disponible dans les Universités d'Etat. On peux citer en 
+                        exemple : 
+                    </p>
+                    <ul>
+                        <li>Licence en Mathématique</li>
+                        <li>Licence en Lettre Moderne Française</li>
+                        <li>Licence en Histoire</li>
+                        <li>etc.</li>
+                    </ul>
+                    <br>
+                    <p>
+                        D' autres diplomes sont de Niveau Bac+ 3 au Cameroun. On peux par exemple citer :
+                    </p>
+                    <ul>
+                        <li>Le diplôme de technicien de laboratoire d'analyse médicale</li>
+                        <li>Infirmier Diplomé d'Etat (IDE) </li>
+                        <li>Techniciens médico-sanitaire</li>
+                        <li>Diplome d'Ingénieur de Travaux </li>
+                        <li> Diplôme de Professeur de l'Enseignement secondaire (DIPES 1) </li>
+                        <li>etc.</li>
+                    </ul>
+
+                </p-accordionTab>
+
+               
+
+                <p-accordionTab header="Les formations niveau bac+5">
+                   
+                    <p><STRong> Le Master</STRong></p>
+                    <p>
+                        Le master est un cursus en deux ans. 
+                        Vous pouvez l'intégrer si vous êtes titulaire d'un bac+3
+                    </p>
+                    <p><strong>Le diplôme d'Inénieur </strong></p>
+                    <p>Encore appelé diplôme d'Ingénieur de conception, il est obtenu après un Bac +5 dans une 
+                        ecole de formation professionnelle publique ou privée. 
+                    </p>
+                    <p><strong>Le Master of Science (MS) </strong></p>
+                    <p>
+                        Le Master of Science, quant à lui est master international qui dure entre un an et un an et demi.
+                        Il peut être effecuté en école de management et en école d'ingénieurs.
+                    </p>
+                    <p><strong>Les formations au dessus de bac+5</strong></p>
+                    <p>
+                        Mastère spécialisé ou doctorat : il existe plusieurs alternatives pour continuer ses études 
+                        après un bac+5 
+                    </p>
+                    <p><strong>Le mastère spécialisé</strong></p>
+                    <p>
+                        Le mastère spécialisé est un cursus réservé à des étudiants qui possèdent
+                         déjà un bac+4 ou un bac+5.
+                    </p>
+                    <p><strong>Le Doctorat</strong></p>
+                    <p>
+                        Le doctorat est une formation est réservé aux étudiants qui souhaitent faire de la recherche. 
+                        Il dure trois années et peut être effectué après avoir obtenu un bac+5.
+                    </p>
+                </p-accordionTab>
+                
+            </p-accordion>
+            
+        </div>
+    </div>
+    <aside class="side-container">
+        <app-side-info></app-side-info>
+    </aside>
+</div>
 <app-interest-list></app-interest-list>
 <app-interest-actualite></app-interest-actualite>
 <app-interest-avis></app-interest-avis>

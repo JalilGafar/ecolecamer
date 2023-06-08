@@ -8,6 +8,7 @@ import { OrientationRoutingModule } from './orientation-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { OrientationService } from './services/orientation.service';
 import { StatutsComponent } from './components/statuts/statuts.component';
+import { ClasseComponent } from './components/classe/classe.component';
 
 
 
@@ -17,7 +18,8 @@ import { StatutsComponent } from './components/statuts/statuts.component';
     DegreeComponent,
     FieldComponent,
     CityComponent,
-    StatutsComponent
+    StatutsComponent,
+    ClasseComponent
   ],
   imports: [
     CommonModule,

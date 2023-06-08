@@ -4,9 +4,246 @@
     >
 </app-headmsg>
 <app-start ></app-start>
-<app-pub-first></app-pub-first>
-<app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
-<app-info-redaction></app-info-redaction>
+<div class="container">
+    <div class="first-pub">
+        <app-pub-first></app-pub-first>
+    </div>
+    <div class="main-container">
+        <app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
+        <div class="redaction-info">
+            <h2>Le Bac Proffessionnel et Technique</h2>
+            <p>
+                Au Cameroun, les diplomes de l'enseignement Profesionnel et ceux de l'enseignement 
+                secondaire Technique sont soit équivalent au Bac général, soit au probatoir général.
+                Ces formations mêlent cours théoriques et enseignements professionnels avec à la clé 
+                des diplomes donnant directement accès au marché du travail. Avec près de 50 séries/spécialités, 
+                les dipomes professionnels et techniques sont obtenus par un examen final organisé par 
+                l'Office du Baccalauréat du Cameroun.
+            </p>
+            <p>
+                Contrairement au bac général, les voies professionnelles et techniques vous prépareront à travailler dans un 
+                secteur particulier. Vous suivrez tout de même un enseignement général avec, par exemple, 
+                des cours de :
+            </p>
+            <ul>
+                <li>Français</li>
+                <li>Mathématique</li>
+                <li>Education civique</li>
+                <li>Education physique et sportive</li>
+                <li>etc.</li>
+            </ul>
+            <p-accordion [activeIndex]="0">
+                <p-accordionTab header="Quelle est l'offre de formation ?">
+                    <p-accordion [activeIndex]="0">
+                        <p-accordionTab header="Enseignement Secondaire Technique Commerciale">
+                            <h3>le Probatoire de l'Enseignement Secondaire Technique Commercial (Sciences et Technologie du Tertiaire () STT)</h3>
+                            <p>
+                                Le Probatoire est un diplôme intermédiaire obtenu 02 ans après le 
+                                BEPC ou le CAP. Les différentes séries sont :
+                            </p>
+                            <ul>
+                                <li>ACA: Action et Communication Administratives </li>
+                                <li>CG: Comptabilité et Gestion </li>
+                                <li>ACC: Action et Communication Commerciales</li>
+                                <li>FIG: Fiscalité et Informatique de Gestion </li>
+                            </ul> 
+
+                            <h3>le Baccalauréat de l'Enseignement Secondaire Technique Commercial </h3>
+                            <p>
+                                C'est un diplôme reconnu par le Ministre de l'Enseignement
+                                Supérieur du Cameroun et obtenu 03 ans après le BEPC ou le CAP. L'examen 
+                                est organisé par l'Office du Baccalauréat du Cameroun. Les spécialités / séries 
+                                sont les même que pour le Probatoire de l'Enseignement Secondaire Technique Commercial
+                            </p>
+                            
+                        </p-accordionTab>
+                        <p-accordionTab header="Enseignement Secondaire Technique Industriel">
+                            <h3>le Probatoire de l'Enseignement Secondaire Technique Industriel </h3>
+                            <p>
+                                Le Probatoire est un diplôme intermédiaire obtenu 02 ans après le 
+                                BEPC ou le CAP. La filière industrielle compte de nombreuses filièresdont :
+                            </p>
+                            <ul>
+                                <li>CI : Chimie Industrielle</li>
+                                <li>F3 : Electrotechnique</li>
+                                <li>F4/TP: Génie civil, Option Travaux Publics </li>
+                                <li>F4/TP: Génie civil, Option Bâtiment</li>
+                                <li>F5: Froid et Climatisation</li>
+                                <li>F7 Bioch: Sciences Biologiques, Option Biochimie </li>
+                                <li>F8: Sciences Médico Sociales</li>
+                                <li>etc</li>
+                            </ul>
+
+                            <h3>le Probatoire de Brevet de Technicien de l'Enseignement Secondaire Technique Industriel (Probatoir BT) </h3>
+                            <p>
+                                Le Probatoire de Brévet de Technicien est un diplôme intermédiaire obtenu 02 ans
+                                après le BEPC ou le CAP. Il conditionne l'obtention du Brevet de Technicien. 
+                                La formation propose de nombreuses spécialités dont :
+                            </p>
+                            <ul>
+                                <li>AG/PA: Agricole, Option Production Animale</li>
+                                <li>EF: Exploitation Forestière</li>
+                                <li>GT: Géomètre Topographe </li>
+                                <li>IB: Industrie du Bois</li>
+                                <li>IH: Industrie de l'Habillement </li>
+                                <li>MA: Mécanique Automobile</li>
+                                <li>MF/CM: Métaux en feuille et Construction Métallique </li>
+                                <li>TGT: Tourisme, Option Guide Touristique</li>
+                                <li>etc</li>
+                            </ul>
+
+                            <h3>le Baccalauréat de l'Enseignement Secondaire Technique Industriel </h3>
+                            <p>
+                                Ce Baccalauréat est un diplôme reconnu par le Ministre de l'Enseignement
+                                Supérieur obtenu 03 ans après le BEPC ou le CAP. L'obtention du Probatoire 
+                                conditione la participation à l'examen du Baccalauréat. Les spécialités sont 
+                                les mêmes que pour le Probatoire de l'Enseignement Secondaire Technique Industriel
+                            </p>
+
+                            <h3>le Brevet de Technicien de l'Enseignement Secondaire Technique Industriel (BT) </h3>
+                            <p>
+                                Le Brévet de Technicien est obtenu 03 ans après le BEPC ou le CAP, mais n'est 
+                                pas cosigné par le Ministre de l'Enseignement Supérieur. Cependant, il 
+                                est l'équivalent du Baccalauréat en ce qui concerne les programmes et la durée de
+                                formation. Les spécialités sont les mêmes que pour le Probatoire de Brevet de Technicien 
+                                de l'Enseignement Secondaire Technique Industriel
+                            </p>
+                        
+                        </p-accordionTab>
+                        <p-accordionTab header="Enseignement Professionnel Commercial">
+                            <h3>Le Brevet d'Etudes Professionnelles Commerciales (BEP Com) </h3>
+                            <p>
+                                Diplôme professionnel obtenu 02 ans après le CAP et donnant lieu à 
+                                un emploi direct ou à une promotion sociale. Il conserne les séries de Sécrétariat 
+                                et comptabilité
+                            </p>
+                            <h3>Le Brevet Professionnel Commerciale (PB com) </h3>
+                            <p>
+                                Diplôme professionnel couronnant le perfectionnement dans un
+                                domaine précis et reservé exclusivement aux travailleurs dans
+                                le cadre de formation continue donnant lieu à une promotion
+                                sociale. Les spécialités disponibles sont :
+                            </p>
+                            <ul>
+                                <li>Comptable</li>
+                                <li>Employé de Banque</li>
+                                <li>Secrétariat</li>
+                            </ul>
+                        </p-accordionTab>
+                        <p-accordionTab header="Enseignement Professionnel Industriel">
+                            <h3>Le Brevet d'Etudes Professionnelles Industriel (BEP Ind) </h3>
+                            <p>
+                                Diplôme obtenu en 02 ans après le BEPC ou le CAP donnant lieu à un
+                                emploi direct ou à une promotion sociale. Les spécialités concernées sont :
+                            </p>
+                            <ul>
+                                <li>ELAD: Electricien Automobile Diesel</li>
+                                <li>ELNI: Electricien </li>
+                                <li>INSA: Installateur Sanitaire</li>
+                                <li>MACO: Maçon</li>
+                                <li>MENU: Menuisier </li>
+                            </ul>
+
+                            <h3>Le Brevet Professionnel Industriel (PB Ind) </h3>
+                            <p>
+                                Diplôme professionnel réservé exclusivement aux professionnels
+                                justifiant d'un exercice de métier dans le cadre d'une formation
+                                continue donnant lieu à une promotion sociale. Les spécialités concernées sont :
+                            </p>
+                            <ul>
+                                <li>CHSE: Chaudronnerie - Serrurier</li>
+                                <li>ELAU: Electricien Automobile </li>
+                                <li>ELTD: Electrotechnicien, option Distribution </li>
+                                <li>ELTE: Electrotechnicien, option Equipement </li>
+                                <li>ELTP: Electrotechnicien, option Production</li>
+                                <li>MACO: Maçon</li>
+                                <li>MEAU: Mécanicien Automobile</li>
+                                <li>MEUS: Mécanicien d'Usinage </li>
+                                <li>MENU: Menuisier</li>
+                                <li>MOFR: Monteur - Frigoriste</li>
+                            </ul>
+                        </p-accordionTab>
+                    </p-accordion>
+                </p-accordionTab >
+                <p-accordionTab header="Comment préparer son Bac Pro / Technique ? ">
+                    <p>
+                        Les examens Pro / Techniques peuvent se préparer de différente manière :
+                    </p>     
+                    <ul>
+                        <li> <strong>par la voie scolaire :</strong>  dans un lycée professionnel ou un établissement privé
+                             d'enseignement supérieur pendant trois ans. Au cours du cursus, les élèves 
+                             passeront des diplômes intermédiaires de niveau CAP ou BEP et de niveau Probatoire.
+                             Il est possible, après la seconde, d'intégrer une classe de première d'une autre 
+                             spécialité si celle-ci appartient au même champ professionnel. 
+                        </li>
+                        <li>
+                            <strong>par la voie de la formation en apprentissage :</strong>  dans des centres de formation d'apprentis, 
+                            l'élève alternera entre théorie et pratique, en formation en alternance chez un patron. 
+                            À l'issue de la formation, il n'est pas rare que le diplômé soit engagé dans son entreprise 
+                            d'accueil.
+                        </li>
+                        <li>
+                            <strong>par la voie de la formation professionnelle :</strong>  les salariés peuvent choisir d'obtenir un Bac Pro 
+                            grâce à la formation professionnelle continue réservée aux adultes. Les heures de cours sont parfois
+                            décalées en cours du soir pour plus de flexibilité.
+                        </li>
+                    </ul>
+                    <p>
+                        Il est nécessaire de bien se renseigner sur toutes les spécialités pour choisir celle 
+                        qui correspondra le plus à votre projet professionnel. 
+                    </p>
+                </p-accordionTab>
+
+                <p-accordionTab header="Que faire après un Bac Pro / Technique ?">
+                    <p>
+                        Si l'insertion professionnelle et l'entrée dans la vie active sont facilitées après l'obtention du diplôme, 
+                        il est également possible de poursuivre ses études après le bac.
+                    </p>
+                    <br>
+                    
+                    <h3>Les poursuites d'études possibles</h3>
+                    <p>
+                        Vous pouvez continuer :
+                    </p>
+                    <ul>
+                        <li>
+                            en Brevet de Technicien Supérieur (BTS) 
+                            avec un BTS MCO, un BTS GPME, un BTS tourisme, etc.
+                        </li>
+                        <li>
+                            en Bachelor Universitaire de Technologie (BUT), 
+                            ex-DUT (Diplôme Universitaire de Technologie)
+                        </li>
+                        <li>
+                            en Bachelor dans une école spécialisée comme une école de comptabilité par exemple
+                        </li>
+                    </ul>
+
+                    <h3>L'insertion professionnelle</h3>
+                    <p>
+                        Il est aussi possible de passer un concours pour accéder à des métiers de la fonction publique 
+                        (via les concours de la fonction publique) ou devenir aide-soignant par exemple.
+                    </p>
+                    <p>
+                        Voici quelques métiers accessibles après une formation bac pro :
+                    </p>
+                    <ul>
+                        <li> Employé de commerce  </li>
+                        <li> Technicien de maintenance </li>
+                        <li> Ouvrier du BTP </li>
+                        <li> Électromécanicien </li>
+                        <li> Mecanicien auto</li>
+                        <li> etc.</li>
+                    </ul>
+                </p-accordionTab>
+            </p-accordion>
+            
+        </div>
+    </div>
+    <aside class="side-container">
+        <app-side-info></app-side-info>
+    </aside>
+</div>
 <app-interest-list></app-interest-list>
 <app-interest-actualite></app-interest-actualite>
 <app-interest-avis></app-interest-avis>

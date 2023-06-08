@@ -4,9 +4,99 @@
     >
 </app-headmsg>
 <app-start ></app-start>
-<app-pub-first></app-pub-first>
-<app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
-<app-info-redaction></app-info-redaction>
+<div class="container">
+    <div class="first-pub">
+        <app-pub-first></app-pub-first>
+    </div>
+    <div class="main-container">
+        <app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
+        <div class="redaction-info">           
+            <p-accordion [activeIndex]="0">
+                <p-accordionTab header="Le Certificat d'Aptitude Professionnelle (CAP)">
+                    <p> 
+                        Liée au Ministère des Enseignements Secondaires, cette formation sanctionne la fin 
+                        de formation du premier cycle de l'enseignement secondaire technique et professionnel.
+                        Parcours professionnalisant d'une durée de 4 ans à partir de la sixième, le CAP offre un premier 
+                        niveau de qualification à ceux qui souhaitent intégrer rapidement 
+                        le monde du travail. Les élèves se professionnalisent ce qui leur permet d'entrer dans 
+                        le monde du travail dès la fin de leur formation. En clair, ce diplôme ouvre la voie professionnelle.
+                    </p>
+                    <p>
+                        Le CAP est un examen à fort enjeu et obligatoire qui atteste de la réussite 
+                        des programmes de l'enseignement secondaire professionnel inférieur (4 ans). Il s'agit 
+                        d'une exigence pour les étudiants souhaitant poursuivre un enseignement secondaire 
+                        supérieur (3 ans) dans des établissements d'enseignement professionnel ou technique.
+                    </p>
+        
+                    <p>
+                        Le CAP est administré en deux phases : Tout d'abord, tous les candidats sont soumis 
+                        aux mêmes tests qui sont passés par écrit et couvrent le programme national. Deuxièmement, 
+                        tous les candidats sont évalués sur des applications pratiques. Cette modalité d'examen 
+                        est opérationnelle depuis 2013. Avant 2013, seuls les candidats ayant réussi l'examen 
+                        écrit étaient invités à passer la partie pratique de l'épreuve.
+                    </p>
+                    <p>
+                        Une fois diplômés, les élèves ont une qualification d'ouvrier ou d'employé qualifié dans 
+                        un métier précis. Il existe des CAP dans les secteurs industriels, commerciaux, le 
+                        sanitaire et social, mais aussi dans les services.
+                    </p>
+                    <p>
+                        Deux examens du CAP, le CAP Technique Industrielle (CAP TI) et le CAP Science et Technique 
+                        du Tertiaire (CAP STT) sanctionnent la réussite de différentes filières de spécialisation.
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="le CAP Technique Industrielle (CAP TI)">
+                    <p>
+                        Les spécialités sont :
+                    </p>
+                    <ul>
+                        <li>AFFUTEUR SCIEUR</li>
+                        <li>AJUSTAGE</li>
+                        <li>CARROSSERIE PEINTURE AUTOMOBILE</li>
+                        <li>CONSTRUCTION ET OUVRAGE METALLIQUE</li>
+                        <li>MECANIQUE AUTOMOBILE ELECTRICITE</li>
+                        <li>MECANIQUE AUTOMOBILE INJECTION</li>
+                        <li>MECANIQUE AUTOMOBILE DE REPARATION</li>
+                        <li>MECANIQUE DE FABRICATION</li>
+                        <li>METAUX EN FEUILLES</li>
+                        <li>REPARATION CARROSSERIE AUTOMOBILE</li>
+                        <li>etc.</li>
+                    </ul>
+                </p-accordionTab>
+                <p-accordionTab header="le CAP Science et Technique du Tertiaire (CAP STT)">
+                    <p>
+                        Les spécialités sont :
+                    </p>
+                    <ul>
+                        <li>EMPLOYE DES SERVICES COMPTABLES</li>
+                        <li>ECONOMIE SOCIALE ET FAMILIALE</li>
+                        <li>EMLOYE DES SERVICES FINANCIERS</li>
+                        <li>RESTAURATION</li>
+                        <li>SECRETARIAT ET BUREAUTIQUE</li>
+                        <li>SECRETARIAT MEDICAL</li>
+                        <li>SERVICE HOTELIER</li>
+                        <li>VENDEUR</li>
+                        <li>etc.</li>
+                    </ul>
+                </p-accordionTab>
+                <p-accordionTab header="Dans quelle école suivre un CAP ?">
+                    <p>
+                        Le CAP est accessible dans plusieurs établissements, notamment :
+                    </p>
+                    <ul>
+                        <li>Les Colleges d'Enseignement Technique Industiel et Commercial (CETIC) </li>
+                        <li>Section artisanale rurale et section ménagère (SAR-SM) </li>
+                        <li>Collèges d'Enseignement Technique Industriel pour Fille (CETIF)</li>
+                    </ul>
+                </p-accordionTab>
+            </p-accordion>
+            
+        </div>
+    </div>
+    <aside class="side-container">
+        <app-side-info></app-side-info>
+    </aside>
+</div>
 <app-interest-list></app-interest-list>
 <app-interest-actualite></app-interest-actualite>
 <app-interest-avis></app-interest-avis>

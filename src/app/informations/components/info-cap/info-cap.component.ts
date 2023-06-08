@@ -10,7 +10,7 @@ import { InfoServices } from '../../information.services';
 })
 export class InfoCapComponent implements OnInit{
   
-  titre = "Trouvez votre formation";
+  titre = "Lancez vous avec un CAP";
   soustitre = "Comme Jules, 40% des bacheliers utilisent Diplomeo pour trouver leur école"
   
   school$!: Observable<interestelt[]>

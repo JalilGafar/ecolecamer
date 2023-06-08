@@ -16,6 +16,7 @@ import { InterestActualiteComponent } from './components/interest-actualite/inte
 import { InterestAvisComponent } from './components/interest-avis/interest-avis.component';
 import { InterestClassificationComponent } from './components/interest-classification/interest-classification.component';
 import { PubInterestItemComponent } from './components/pub-interest-item/pub-interest-item.component';
+import { SideInfoComponent } from './components/side-info/side-info.component';
 
 
 
@@ -32,7 +33,8 @@ import { PubInterestItemComponent } from './components/pub-interest-item/pub-int
     InterestActualiteComponent,
     InterestAvisComponent,
     InterestClassificationComponent,
-    PubInterestItemComponent
+    PubInterestItemComponent,
+    SideInfoComponent
   ],
   imports: [
     CommonModule,
@@ -58,7 +60,8 @@ import { PubInterestItemComponent } from './components/pub-interest-item/pub-int
     InterestListComponent,
     InterestActualiteComponent,
     InterestAvisComponent,
-    InterestClassificationComponent
+    InterestClassificationComponent,
+    SideInfoComponent
   ],
 })
 export class SharedModule { }

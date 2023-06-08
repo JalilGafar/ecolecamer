@@ -1,9 +1,10 @@
 <mat-nav-list fxLayout="column">
     <button mat-button [matMenuTriggerFor]="diplomes" >Diplômes</button>
     <mat-menu #diplomes="matMenu">
-        <button mat-menu-item routerLink="info/diplomes" (click)="onSidenavClose() " >Diplomes</button>
-        <button mat-menu-item routerLink="info/bacPro" (click)="onSidenavClose() ">Bac Pro</button>
+        <button mat-menu-item routerLink="info/diplomes" (click)="onSidenavClose() " >Diplômes</button>
         <button mat-menu-item routerLink="info/cap" (click)="onSidenavClose() ">CAP</button>
+        <button mat-menu-item routerLink="info/bacPro" (click)="onSidenavClose() ">Bac Technique</button>
+        <button mat-menu-item routerLink="info/bacPro" (click)="onSidenavClose() ">Brevet Pro</button>
         <button mat-menu-item routerLink="info/bts" (click)="onSidenavClose() ">BTS</button>
         <button mat-menu-item routerLink="info/prepa" (click)="onSidenavClose() ">Prépa</button>
         <button mat-menu-item routerLink="info/dut" (click)="onSidenavClose() ">DUT</button>

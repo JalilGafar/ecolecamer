@@ -9,9 +9,10 @@
         <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs >
             <button mat-button [matMenuTriggerFor]="diplomes" >Diplômes</button>
             <mat-menu #diplomes="matMenu" >         
-                <a routerLink="info/diplomes" ><button mat-menu-item >Diplomes</button></a>
-                <button routerLink="info/bacPro" mat-menu-item>Bac Pro</button>
+                <a routerLink="info/diplomes" ><button mat-menu-item >Diplômes</button></a>
                 <button routerLink="info/cap" mat-menu-item>CAP</button>
+                <button routerLink="info/bacPro" mat-menu-item>Bac Technique</button>
+                <button routerLink="info/bacPro" mat-menu-item>Brevet Pro</button>
                 <button routerLink="info/bts" mat-menu-item>BTS</button>
                 <button routerLink="info/prepa" mat-menu-item>Prépa</button>
                 <button routerLink="info/dut" mat-menu-item>DUT</button>

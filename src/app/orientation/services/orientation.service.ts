@@ -97,6 +97,10 @@ export class OrientationService {
         // console.log(this.initialUser);
     }
 
+    saveStatut(statut: string) {
+        this.initialUser.statuts = statut
+    }
+
     initUser () {
         this.saveCytiIn('');
         this.saveDegree('');

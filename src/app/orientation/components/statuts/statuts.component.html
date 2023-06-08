@@ -1,1 +1,9 @@
-<p>statuts works!</p>
+<div fxFlex fxLayout="column"  class="statuts">
+    <h2>Je suis :</h2>
+    <div fxLayoutGap="16px" fxLayout="row wrap">
+        <button class="but" pButton pRipple (click)="SelectStatuts('lycée')"  type="button" label="Lycéen / Collégien" ></button>
+        <button class="but" pButton pRipple (click)="SelectStatuts('étudiant')" type="button" label="Etudiant" ></button>
+        <button class="but" pButton pRipple (click)="SelectStatuts('activité')" type="button" label="En activité" ></button>
+        <button class="but" pButton pRipple (click)="SelectStatuts('sansemploi')" type="button" label="Sans emploi" ></button>
+    </div>
+</div>

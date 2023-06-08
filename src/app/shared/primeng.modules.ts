@@ -9,6 +9,8 @@ import {DropdownModule} from 'primeng/dropdown';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import { CardModule } from 'primeng/card';
 import { TagModule } from 'primeng/tag';
+import { TabViewModule } from 'primeng/tabview';
+
 
 @NgModule({
     exports: [
@@ -21,7 +23,8 @@ import { TagModule } from 'primeng/tag';
       DropdownModule,
       RadioButtonModule,
       CardModule,
-      TagModule
+      TagModule,
+      TabViewModule
     ]
   })
 
