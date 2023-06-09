@@ -4,6 +4,10 @@ import { DegreeComponent } from "../orientation/components/degree/degree.compone
 import { FieldComponent } from "../orientation/components/field/field.component";
 import { CityComponent } from "./components/city/city.component";
 import { StatutsComponent } from "./components/statuts/statuts.component";
+import { ClasseComponent } from "./components/classe/classe.component";
+import { EtudiantComponent } from "./components/etudiant/etudiant.component";
+import { DernierDiplomeComponent } from "./components/dernier-diplome/dernier-diplome.component";
+import { ContactComponent } from "./components/contact/contact.component";
 
 const routes: Routes = [
     { path: 'start/degree', component: DegreeComponent},
@@ -11,6 +15,10 @@ const routes: Routes = [
     { path: 'degree', component: DegreeComponent},
     { path: 'domaines', component: FieldComponent},
     { path: 'city', component: CityComponent},
+    { path: 'classe', component: ClasseComponent },
+    {path: 'etudiant', component: EtudiantComponent},
+    {path: 'contact', component: ContactComponent},
+    {path: 'dernierDiplome', component: DernierDiplomeComponent},
     //{ path: 'field', component: FieldComponent},
     { path: 'start/field', component: FieldComponent},
     { path: 'start/city', component: CityComponent},

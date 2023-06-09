@@ -9,6 +9,10 @@ import { SharedModule } from '../shared/shared.module';
 import { OrientationService } from './services/orientation.service';
 import { StatutsComponent } from './components/statuts/statuts.component';
 import { ClasseComponent } from './components/classe/classe.component';
+import { EtudiantComponent } from './components/etudiant/etudiant.component';
+import { DernierDiplomeComponent } from './components/dernier-diplome/dernier-diplome.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { NgxMatIntlTelInputComponent } from 'ngx-mat-intl-tel-input';
 
 
 
@@ -19,12 +23,16 @@ import { ClasseComponent } from './components/classe/classe.component';
     FieldComponent,
     CityComponent,
     StatutsComponent,
-    ClasseComponent
+    ClasseComponent,
+    EtudiantComponent,
+    DernierDiplomeComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,
     OrientationRoutingModule,
-    SharedModule
+    SharedModule,
+    NgxMatIntlTelInputComponent
   ],
   exports :[
     StartComponent

@@ -22,6 +22,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { InformationsModule } from './informations/informations.module';
+import { NgxMatIntlTelInputComponent } from 'ngx-mat-intl-tel-input';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { InformationsModule } from './informations/informations.module';
         AdminModule,
         InformationsModule,
         LandingPageModule,
-        HttpClientModule
+        HttpClientModule,
+        NgxMatIntlTelInputComponent
     ]
 })
 export class AppModule { }

@@ -98,7 +98,13 @@ export class OrientationService {
     }
 
     saveStatut(statut: string) {
-        this.initialUser.statuts = statut
+        this.initialUser.statuts = statut;
+         
+    }
+
+    saveClasse(classe: string) {
+        this.initialUser.level = classe;
+        console.log(this.initialUser);
     }
 
     initUser () {

@@ -1,0 +1,50 @@
+<div header="" class="main">
+    
+    
+    <form [formGroup]="newContact">
+        <div class="title">Dernière étape avant de voir les resultats</div>
+        <div class="input-container ic1">
+            <input id="nom" class="input" type="text" placeholder=" "  formControlName="nom">
+            <div class="cut"></div>
+            <label for="nom" class="placeholder">Nom *</label>
+        </div>
+        <div class="input-container ic1">
+            <input id="prenom" class="input" type="text" placeholder=" "  formControlName="prenom">
+            <div class="cut"></div>
+            <label for="prenom" class="placeholder">Prénom *</label>
+        </div>
+        <div class="input-container ic1">
+            <input id="born" class="input" type="text" placeholder=" "  formControlName="born">
+            <div class="cut cut-long"></div>
+            <label for="born" class="placeholder">Année de naissance *</label>
+        </div> 
+        <div class="input-container ic1">
+            <input id="pays" class="input" type="text" placeholder=" "  formControlName="pays">
+            <div class="cut cut-long"></div>
+            <label for="pays" class="placeholder">Pays de nationnalité *</label>
+        </div>
+        <div class="input-container ic1">
+            <input id="email" class="input" type="text" placeholder=" "  formControlName="email">
+            <div class="cut"></div>
+            <label for="email" class="placeholder">Email*</label>
+        </div>
+        <mat-form-field appearance="outline">
+            <ngx-mat-intl-tel-input
+                id="phone"
+                [preferredCountries]="['cm', 'td']"
+                formControlName="phone"
+                placeholder="Téléphone"
+            ></ngx-mat-intl-tel-input>
+            <mat-label>Téléphone</mat-label>
+            <!--
+            <input id="phone" class="input" type="text" placeholder=" "  formControlName="phone">
+            <div class="cut"></div>
+            <label for="phone" class="placeholderc">Téléphone*</label>
+            -->
+        </mat-form-field>
+
+        <div class="action-buttons">
+            <button type="submit" class="submit" (click)="onSubmitForm()" [disabled]="newContact.invalid" >Valider et voir mes résultats</button>
+        </div>
+    </form>
+</div>

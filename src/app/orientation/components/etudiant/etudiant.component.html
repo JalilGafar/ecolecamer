@@ -1,0 +1,10 @@
+<div fxFlex fxLayout="column">
+    <h2>En quelle Bac+ êtes-vous aujourd'hui ?</h2>
+    <div fxLayoutGap="16px" fxLayout="row wrap">
+        <button class="but" pButton pRipple  
+                            *ngFor="let niveau of niveau " 
+                            type="button" 
+                            [label]="niveau"
+                            (click)="setNiveau(niveau)"></button>
+    </div>
+</div>

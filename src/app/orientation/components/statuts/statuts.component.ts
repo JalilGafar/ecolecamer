@@ -19,6 +19,18 @@ export class StatutsComponent implements OnInit {
 
   SelectStatuts(statut : string) {
     this.orientationService.saveStatut(statut)
+    switch (statut) {
+      case 'lycéen':
+        this.appRout.navigate( ['orientation/classe/'] );        
+        break;
+      case 'étudiant':
+        this.appRout.navigate( ['orientation/etudiant/'] );        
+        break;    
+      default:
+        this.appRout.navigate( ['orientation/dernierDiplome/'] ); 
+        break;
+    }
+    
   }
 
 }
