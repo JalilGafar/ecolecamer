@@ -8,6 +8,7 @@ import { ClasseComponent } from "./components/classe/classe.component";
 import { EtudiantComponent } from "./components/etudiant/etudiant.component";
 import { DernierDiplomeComponent } from "./components/dernier-diplome/dernier-diplome.component";
 import { ContactComponent } from "./components/contact/contact.component";
+import { ResultatsComponent } from "./components/resultats/resultats.component";
 
 const routes: Routes = [
     { path: 'start/degree', component: DegreeComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
     { path: 'classe', component: ClasseComponent },
     {path: 'etudiant', component: EtudiantComponent},
     {path: 'contact', component: ContactComponent},
+    {path: 'resultats', component: ResultatsComponent},
     {path: 'dernierDiplome', component: DernierDiplomeComponent},
     //{ path: 'field', component: FieldComponent},
     { path: 'start/field', component: FieldComponent},

@@ -6,6 +6,9 @@ import { field } from "src/app/core/model/field-model";
 import { UserProfil } from "src/app/core/model/user-profil-model";
 import { ville } from "src/app/core/model/ville-model";
 import { environment } from "src/environments/environment";
+import { Contact } from "src/app/core/model/contact-model";
+import { interestelt } from "src/app/core/model/interest-item-model";
+
 
 @Injectable ()
 export class OrientationService {
@@ -20,12 +23,12 @@ export class OrientationService {
         field: '',
         name: '',
         surname: '',
-        statuts:'',
         level: '',
-        bornDate: '',
+        statuts:'',
+        bornDate: 0,
+        country: '',
         email:'',
-        tel: '',
-        sercheDate: new Date("2023-01-01"),
+        tel: ''
     };
 
   
@@ -104,7 +107,33 @@ export class OrientationService {
 
     saveClasse(classe: string) {
         this.initialUser.level = classe;
-        console.log(this.initialUser);
+    }
+
+    saveContact(contact: Contact) {
+        this.initialUser.name = contact.nom;
+        this.initialUser.surname = contact.prenom;
+        this.initialUser.bornDate = contact.born;
+        this.initialUser.email = contact.email;
+        this.initialUser.tel = contact.phone;
+        this.initialUser.country = contact.pays;
+        
+        this.saveClient(this.initialUser).subscribe();
+        //this.getSerchResult(this.initialUser);
+    }
+
+    saveClient (UserInfo : {city: string, degree: string, field: string,
+                            name: string, surname: string, statuts: string, level: string,
+                            bornDate: number, email: string, tel: string, country: string
+                        }): Observable<UserProfil> {
+        console.log(UserInfo)
+       return this.http.post<UserProfil>(`${environment.apiUrl}/api/result`, UserInfo)
+       // return this.http.get<Resultats[]>(`${environment.apiUrl}/api/result`, {params:UserInfo} )
+    };
+
+    getSerchResult(): Observable<interestelt[]> {
+        const url = `${environment.apiUrl}/api/result`;
+        let queryParams = {"city":this.initialUser.city,"diplome":this.initialUser.degree, "domaine":this.initialUser.field};
+        return this.http.get<interestelt[]>(url, {params: queryParams})
     }
 
     initUser () {

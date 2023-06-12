@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { OrientationService } from '../../services/orientation.service';
+import { Contact } from 'src/app/core/model/contact-model';
+import { SelectItem } from 'primeng/api';
 //import { preferredCountries } from 'ngx-mat-intl-tel-input'
 
 @Component({
@@ -10,7 +13,9 @@ import { Router } from '@angular/router';
 })
 export class ContactComponent implements OnInit {
 
-  newContact!: FormGroup;
+  newContact!: FormGroup  ;
+  items!: SelectItem[];
+  selectedItem!: string;
   // separateDialCode = true;
   // SearchCountryField = SearchCountryField;
   // CountryISO = CountryISO;
@@ -20,7 +25,13 @@ export class ContactComponent implements OnInit {
   //  CountryISO.UnitedKingdom];
 
   constructor(private formBuilder: FormBuilder,
-              private appRout : Router) {}
+              private orientationService: OrientationService,
+              private appRout : Router) {
+                this.items = [];
+                for (let i = 1970; i < 2010; i++) {
+                    this.items.push({ label:''+ i, value:  i });
+                }
+              }
 
   ngOnInit(): void {
     this.newContact  = this.formBuilder.group({
@@ -35,7 +46,9 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmitForm(){
-    console.log(this.newContact.value)
+    this.orientationService.saveContact(this.newContact.value);
+    this.appRout.navigate( ['orientation/resultats/'] );
+    // console.log(this.newContact.value)
   }
 
 }

@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { interestelt } from "src/app/core/model/interest-item-model"
+import { interestelt } from "src/app/core/model/interest-item-model";
 import { environment } from "src/environments/environment";
 
 @Injectable()

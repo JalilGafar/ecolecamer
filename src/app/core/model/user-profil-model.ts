@@ -6,9 +6,9 @@ export class UserProfil {
     name!: string;
     surname!: string;
     statuts!: string;
+    country!: string;
     level!: string;
-    bornDate!: string;
+    bornDate!: number;
     email!: string;
-    tel!: string;
-    sercheDate!: Date;
+    tel!: string
 }

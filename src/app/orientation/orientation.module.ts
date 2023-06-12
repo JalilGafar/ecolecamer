@@ -13,6 +13,7 @@ import { EtudiantComponent } from './components/etudiant/etudiant.component';
 import { DernierDiplomeComponent } from './components/dernier-diplome/dernier-diplome.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NgxMatIntlTelInputComponent } from 'ngx-mat-intl-tel-input';
+import { ResultatsComponent } from './components/resultats/resultats.component';
 
 
 
@@ -26,7 +27,8 @@ import { NgxMatIntlTelInputComponent } from 'ngx-mat-intl-tel-input';
     ClasseComponent,
     EtudiantComponent,
     DernierDiplomeComponent,
-    ContactComponent
+    ContactComponent,
+    ResultatsComponent
   ],
   imports: [
     CommonModule,

@@ -14,9 +14,20 @@
             <label for="prenom" class="placeholder">Prénom *</label>
         </div>
         <div class="input-container ic1">
-            <input id="born" class="input" type="text" placeholder=" "  formControlName="born">
-            <div class="cut cut-long"></div>
-            <label for="born" class="placeholder">Année de naissance *</label>
+            <!-- 
+                <input id="born" class="input" type="number" placeholder=" "  formControlName="born"> 
+                <div class="cut cut-long"></div>
+                <label for="born" class="placeholder">Année de naissance *</label>
+            -->
+            <p-dropdown id="born" 
+                        formControlName="born"
+                        type="number" 
+                        [options]="items" 
+                        [(ngModel)]="selectedItem" 
+                        placeholder="Année de naissance" 
+                        [virtualScroll]="true" 
+                        [virtualScrollItemSize]="38">
+            </p-dropdown>   
         </div> 
         <div class="input-container ic1">
             <input id="pays" class="input" type="text" placeholder=" "  formControlName="pays">
