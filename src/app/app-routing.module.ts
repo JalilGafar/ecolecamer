@@ -11,12 +11,14 @@ import { DegreeComponent } from './orientation/components/degree/degree.componen
 import { FieldComponent } from './orientation/components/field/field.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
+import { OnepageComponent } from './etablissement/components/onepage/onepage.component';
 
 
 const routes: Routes = [
   { path: 'orientation', loadChildren: () => import('./orientation/orientation.module').then(m => m.OrientationModule) },
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: 'info', loadChildren: () => import('./informations/informations.module').then(m => m.InformationsModule) },
+  { path: 'etablissement', component: OnepageComponent},
   { path: '', component: LandingPageComponent},
   // { path: 'home', component:HomeComponent},
   { path: 'login', component:LoginComponent},

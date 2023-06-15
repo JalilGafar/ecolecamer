@@ -1,6 +1,10 @@
 <div class="card ">
-    <p-card [header]="school.nom_dip" [subheader]="school.nom_e" >
-        <div class="grid-container">
+    <p-card [header]="school.nom_dip" 
+            [subheader]="school.nom_e" 
+            class="training-card"  
+            (click)="showDialog()" 
+            [style]="{'cursor':'pointer'}">
+        <div class="grid-container" >
             <div class="grid-content">
                 <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
             </div>
@@ -16,4 +20,47 @@
             <p-button label="Demander des informations"></p-button>
         </ng-template>
     </p-card>
+    <p-dialog   header="Header" 
+                [(visible)]="visible" 
+                [style]="{width: '50vw'}" 
+                [modal]="true"  
+                [draggable]="false" 
+                [resizable]="false">
+                <p-card [header]="school.nom_dip" [subheader]="school.nom_e" class="training-card medium" >
+                    <div class="grid-container" >
+                        <div class="grid-content">
+                            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+                        </div>
+                        <div class="grid-content">
+                            <p-tag class="fas" [style]="{'background':'#f4f6fc', 'color':'#344cbe'}" [value]="school.groupe" icon="pi pi-user"></p-tag>
+                            <p-tag [style]="{'background':'#f4f6fc', 'color':'#344cbe'}" *ngIf="school.ville_cam"  [value]="school.ville_cam" icon="pi-map-marker"></p-tag>
+                            <p-tag [style]="{'margin-top': '7px','background':'#f4f6fc', 'color':'#344cbe'}" *ngIf="school.date_debut_f"  [value]="school.date_debut_f" icon="pi-dollar"></p-tag>
+                            <p-tag [style]="{'margin-top': '7px','background':'#f4f6fc', 'color':'#344cbe'}" *ngIf="school.cout_f"  [value]="school.cout_f" icon="pi-dollar"></p-tag>
+                            <p-tag [style]="{'margin-top': '7px','background':'#f4f6fc', 'color':'#344cbe'}"  value="Reconnue par l'Etat" icon="pi-dollar"></p-tag>
+                        </div>
+                    </div>
+                </p-card>
+                <div class="training-card-show">
+                    <div class="more-info">
+                        <div class="accreditation">
+                            <h5>Accréditation</h5>
+                            <ul>
+                                <li> <img src="" alt=""> </li>
+                            </ul>
+                        </div>
+                        <ng-container *ngIf="school.descriptif_e">
+                            <h5>Description</h5>
+                            <br>
+                            <span [innerHTML]="school.descriptif_e"></span>
+                            <hr>
+                            <span [innerHTML]="school.descriptif_f"></span>
+                        </ng-container>
+                    </div>
+                    <div class="footer">
+                        <p-button label="Voir l'établissement" (click)="showOnePage(school.nom_e)"  styleClass="p-button-help"></p-button>
+                        <p-button label="Demander des informaions" (click)="sendNumber()"  styleClass="p-button-warning" ></p-button>
+                    </div>
+                </div>
+    </p-dialog>
+
 </div>
