@@ -1,8 +1,36 @@
 .player {
     position:relative;
     text-align : center;
+    padding-bottom: 32px;
     
     .title {
-        margin-bottom: 16px
+        font-size: 1.8rem;
+        line-height: 1.1;
+        margin-bottom: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .player-forms {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 16px;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+
+        a {
+            padding-top: 16px;
+
+            button{
+                width: 80%;
+                background-color: #FB806F;
+                color: #fff;
+                border-radius: 19px;
+                font-size: 20px;
+                line-height: 1.3333333;
+                padding: 10px 16px;
+            }
+        }
     }
 }

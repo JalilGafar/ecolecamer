@@ -1,11 +1,12 @@
 
-<mat-toolbar color="primary">
+<mat-toolbar color="">
     
-        <button mat-icon-button (click)="onToggleSidenav()" fxHide.gt-xs>
-            <mat-icon>menu</mat-icon>
-        </button>
-        <span><a href="" routerLink="['/']"  >EcoleCamer</a></span>
-        <span class="menu-spacer"></span>
+    <span><a href="" routerLink="['/']"  > <img src="../../../../assets/images/logo-no-background-right.svg" class="logo" alt="Camerdiplom"> </a></span>
+    <span class="menu-spacer"></span>
+    <button class="mat-icon-bt" mat-icon-button (click)="onToggleSidenav()" fxHide.gt-xs>
+        <mat-icon>menu</mat-icon>
+    </button>
+        
         <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs >
             <button mat-button [matMenuTriggerFor]="diplomes" >Diplômes</button>
             <mat-menu #diplomes="matMenu" >         

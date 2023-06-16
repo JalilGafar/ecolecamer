@@ -20,7 +20,7 @@
             <p-button label="Demander des informations"></p-button>
         </ng-template>
     </p-card>
-    <p-dialog   header="Header" 
+    <p-dialog   header="Détail de la formation" 
                 [(visible)]="visible" 
                 [style]="{width: '50vw'}" 
                 [modal]="true"  
@@ -61,6 +61,40 @@
                         <p-button label="Demander des informaions" (click)="sendNumber()"  styleClass="p-button-warning" ></p-button>
                     </div>
                 </div>
+    </p-dialog>
+    <p-dialog   header="Vous souhaitez vous informer sans engagement sur la formation :" 
+                [(visible)]="visibleCall" 
+                [style]="{width: '50vw'}" 
+                [modal]="true"  
+                [draggable]="false" 
+                [resizable]="false">
+                <p-card [header]="school.nom_dip" [subheader]="school.nom_e" class="training-card medium" >
+                    <div class="grid-container" >
+                        <div class="grid-content">
+                            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+                        </div>
+                    </div>
+                </p-card>
+                <form #telForm="ngForm" (ngSubmit)="onSubmitPhone(telForm)">
+                    <!-- <label for="telInput">Faites-vous rappeler par l'école !*</label>
+                    <input type="tel" id="telInput" name="userPhone" [(ngModel)]="userPhone"> -->
+                    <h2>Faites-vous rappeler par l'école !*</h2>
+                    <mat-form-field appearance="outline">
+                        <ngx-mat-intl-tel-input
+                            id="telInput" name="userPhone" [(ngModel)]="userPhone"
+                            [preferredCountries]="['cm', 'td']"
+                            placeholder="Téléphone"
+                        ></ngx-mat-intl-tel-input>
+                        <mat-label>Numéro Whatsapp si possible</mat-label>
+                        <!--
+                        <input id="phone" class="input" type="text" placeholder=" "  formControlName="phone">
+                        <div class="cut"></div>
+                        <label for="phone" class="placeholderc">Téléphone*</label>
+                        -->
+                    </mat-form-field>
+                    <button type="submit">OK!</button>
+                </form>
+
     </p-dialog>
 
 </div>

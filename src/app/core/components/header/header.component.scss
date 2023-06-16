@@ -13,8 +13,13 @@ a:hover, a:active{
     margin: 0;
 }
 
+.logo {
+    width: 150px;
+}
+
 mat-toolbar{
     border-radius: 3px;
+    justify-content: space-between;
 }
 
 @media(max-width: 959px){
@@ -22,3 +27,8 @@ mat-toolbar{
         border-radius: 0px;
     }
 }
+
+.mat-icon-bt {
+    float: right;
+}
+

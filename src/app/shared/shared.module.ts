@@ -17,6 +17,7 @@ import { InterestAvisComponent } from './components/interest-avis/interest-avis.
 import { InterestClassificationComponent } from './components/interest-classification/interest-classification.component';
 import { PubInterestItemComponent } from './components/pub-interest-item/pub-interest-item.component';
 import { SideInfoComponent } from './components/side-info/side-info.component';
+import { NgxMatIntlTelInputComponent } from 'ngx-mat-intl-tel-input';
 
 
 
@@ -42,7 +43,8 @@ import { SideInfoComponent } from './components/side-info/side-info.component';
     PrimengModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxMatIntlTelInputComponent
   ],
   exports: [
     MaterialModule,
