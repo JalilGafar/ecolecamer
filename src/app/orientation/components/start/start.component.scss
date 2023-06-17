@@ -6,7 +6,7 @@
     .title {
         font-size: 1.8rem;
         line-height: 1.1;
-        margin-bottom: 16px;
+        margin-top: 16px;
         padding-left: 16px;
         padding-right: 16px;
     }
@@ -30,6 +30,29 @@
                 font-size: 20px;
                 line-height: 1.3333333;
                 padding: 10px 16px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .player {
+        .player-forms {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding-left: 16px;
+            padding-right: 16px;
+    
+            a {
+                width: 100%;
+                padding-left: 16px;
+                padding-right: 16px;
+
+                button {
+                    width: 100%;
+                    padding: 18px 16px;
+                }
             }
         }
     }
