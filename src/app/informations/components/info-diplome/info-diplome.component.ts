@@ -12,7 +12,8 @@ import { Observable } from 'rxjs';
 export class InfoDiplomeComponent implements OnInit{
   
   titre = "Trouvez votre formation";
-  soustitre = "Comme Jules, 40% des bacheliers utilisent Diplomeo pour trouver leur école"
+  soustitre = "Comme Jules, 40% des bacheliers utilisent Camerdiplome pour trouver leur école";
+  photo = "./../../../../assets/images/pexels-kampus-productiont.jpg";
   school$!: Observable <interestelt[]>;
 
   constructor( private infoservice : InfoServices){}

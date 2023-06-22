@@ -12,12 +12,13 @@
         <button mat-menu-item routerLink="info/bachelor" (click)="onSidenavClose() ">Bachelor</button>
         <button mat-menu-item routerLink="info/licence" (click)="onSidenavClose() ">Licence</button>
         <button mat-menu-item routerLink="info/licencePro" (click)="onSidenavClose() ">Licence Pro</button>
-        <button mat-menu-item routerLink="info/master" (click)="onSidenavClose() ">Master</button>
+        <button mat-menu-item routerLink="info/master" (click)="onSidenavClose() ">Master / Ingénieur</button>
     </mat-menu>
-    <button mat-button routerLink="info/ecole">Ècoles</button>
+    <button mat-button routerLink="info/ecole" (click)="onSidenavClose() ">Ècoles</button>
     <button mat-button [matMenuTriggerFor]="formation" >Formation</button>
     <mat-menu #formation="matMenu">
         <button mat-menu-item routerLink="info/filiere" (click)="onSidenavClose() ">Filière</button>
         <button mat-menu-item routerLink="info/metier" (click)="onSidenavClose() ">Métier</button>
     </mat-menu>
+    <button mat-button routerLink="referencer" (click)="onSidenavClose() ">Référencer son établissement</button>
 </mat-nav-list>

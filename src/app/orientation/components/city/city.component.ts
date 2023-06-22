@@ -20,6 +20,7 @@ export class CityComponent {
   ngOnInit():void {
     const userDegree = this.orientationService.initialUser.degree ;
     const userDomaine = this.orientationService.initialUser.field ;
+    console.log(this.orientationService.initialUser)
     if (userDomaine !== '' && userDegree !== '' ) {
       this.cyties$ = this.orientationService.getPartCyties( userDegree, userDomaine);
     } else {

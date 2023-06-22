@@ -9,6 +9,7 @@ export class HeadmsgComponent implements OnInit{
   
   @Input() titre!: string;
   @Input() soustitre!: string;
+  @Input() photo!: string;
 
   ngOnInit(): void {
   }

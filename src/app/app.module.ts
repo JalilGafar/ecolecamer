@@ -23,6 +23,8 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { InformationsModule } from './informations/informations.module';
 import { NgxMatIntlTelInputComponent } from 'ngx-mat-intl-tel-input';
+import { AboutComponent } from './about/about.component';
+import { ReferencerComponent } from './referencer/referencer.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { NgxMatIntlTelInputComponent } from 'ngx-mat-intl-tel-input';
         ProfileComponent,
         BoardUserComponent,
         BoardModeratorComponent,
-        BoardAdminComponent
+        BoardAdminComponent,
+        AboutComponent,
+        ReferencerComponent
     ],
     providers: [
         { provide: LOCALE_ID, useValue: 'fr-FR' },

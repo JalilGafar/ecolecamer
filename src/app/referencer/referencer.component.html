@@ -1,0 +1,89 @@
+<div class="container">
+    <div header="" class="main" >
+        <p-card header="Commençons" *ngIf="stape1" >
+            <form (ngSubmit)="onSubmitCateg()" class="beSure">
+                <label for="categ">Vous êtes ?</label>
+                <p-dropdown id="categ" [options]="categ" optionLabel="name" placeholder="Votre statut" optionValue="code" [(ngModel)]="categorie" name="categ"></p-dropdown>
+                <small>Formulaire dédié aux écoles. Si vous cherchez des informations sur une école et son enseignement c'est par <a routerLink=" "><strong>ICI</strong></a> </small>
+                <p-button type="submit" styleClass="p-button-warning">Suivant</p-button>
+            </form>
+        </p-card>
+        <p-card header="Vos coordonnées" *ngIf="stape2" >
+            <form (ngSubmit)="onSubmitForm()" class="beSure" [formGroup]="newEts">
+                <mat-form-field appearance="fill">
+                    <mat-label>Votre Nom</mat-label>
+                    <input id="nom" type="text" matInput  formControlName="nom" >
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Votre Prénom</mat-label>
+                    <input id="prenom" type="text" matInput  formControlName="prenom"> 
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Votre etablissement</mat-label>
+                    <textarea id="etablissement" type="text" matInput  formControlName="etablissement"> 
+                    </textarea> 
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Ville siège</mat-label>
+                    <input id="ville" type="text" matInput  formControlName="ville"> 
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Une brève description de votre établissement</mat-label>
+                    <textarea id="comment" type="text" matInput  formControlName="comment"> 
+                    </textarea> 
+                </mat-form-field>  
+                <mat-form-field appearance="fill">
+                    <mat-label>Votre E-mail</mat-label>
+                    <input id="email" type="email" matInput  formControlName="email"> 
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Numéro Whatsapp si possible</mat-label>
+                    <input id="phone" type="tel" matInput  formControlName="phone"> 
+                </mat-form-field>                               
+                <p-button type="submit" styleClass="p-button-warning" [disabled]="newEts.invalid">Suivant</p-button>
+            </form>
+        </p-card>
+        <p-card *ngIf="stape3"
+                header="Votre demande a bien été prise en compte"  
+                subheader="Nos équipes vont vous recontacter très rapidement 😀">
+
+        </p-card>
+        <!-- <form [formGroup]="newEts">   
+            <div class="form-group">
+                <label for="nom_camp">Nom du Campus</label>
+                <input id="nom_camp" type="text"  formControlName="nom_camp">
+            </div>
+            <div class="form-group">
+                <label for="ville_cam">ville</label>
+                <input id="ville_cam" type="text" formControlName="ville_cam">
+            </div>
+            <div class="form-group">
+                <label for="quartier_camp">quartier</label>
+                <input id="quartier_camp" type="text" formControlName="quartier_camp">
+            </div>
+            <div class="form-group">
+                <label >Principal</label>
+                <p-radioButton name="principal_camp" inputId="oui" value="1" formControlName="principal_camp"></p-radioButton><label for="oui">Oui</label>
+                <p-radioButton name="principal_camp" inputId="non" value="0" formControlName="principal_camp"></p-radioButton><label for="non">Non</label>
+            </div>
+            <div class="form-group">
+                <label for="descriptif_camp">Descriptif</label>
+                <p-editor formControlName="descriptif_camp" [style]="{'height':'320px'}"></p-editor>
+            </div>
+            <div class="form-group">
+                <label for="lon_camp">Longitude</label>
+                <input id="lon_camp" type="text" formControlName="lon_camp">
+            </div>
+            <div class="form-group">
+                <label for="lat_camp">Latitude</label>
+                <input id="lat_camp" type="text" formControlName="lat_camp">
+            </div>
+            <div class="action-buttons">
+                <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+            </div>
+        </form> -->
+    </div>
+    <div class="info">
+    </div>
+
+</div>

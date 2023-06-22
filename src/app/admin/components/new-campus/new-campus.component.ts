@@ -22,6 +22,7 @@ export class NewCampusComponent implements OnInit {
     this.newCampus = this.formBuilder.group({
       nom_camp : [null],
       ville_cam : [null],
+      quartier_camp : [null],
       principal_camp : [null],
       descriptif_camp : [null],
       lon_camp : [null],

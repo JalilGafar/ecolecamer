@@ -1,0 +1,83 @@
+.container {
+    display: grid;
+
+    .main{
+        .beSure{
+           // background-color: bisque;
+            display: grid;
+            flex-direction: row;
+
+            small{
+                font-weight: 100;
+                font-size: small;
+                line-height: normal;
+                padding-bottom: 10px;
+            }
+
+            p-dropdown{
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            
+        }
+
+    }
+    .info{
+        padding: 100px;
+        background-color: blueviolet;
+    }
+    .form-card {
+        box-sizing: border-box;
+        width: 80%;
+        margin: 20px auto;
+        padding: 10px 30px;
+        box-shadow: lightgray 4px 4px 20px;
+      }
+      
+      .form-group {
+        margin: 10px auto;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      input, textarea, p-editor {
+        width: 80%;
+        
+      }
+    
+      p-dropdownx {
+        width: inherit;
+        margin-bottom: 20px;
+      }
+    
+      label {
+        font-weight: bold;
+      }
+      .action-buttons {
+        margin-left: 33%;
+        width: 100%;
+      }
+      
+      p-button {
+        margin-right: 20px;
+      }
+}
+
+
+@media  (min-width: 600px)  {
+    .container { 
+        display: flex;   
+        .main{
+            .beSure{
+
+            }
+    
+        }
+        .info{
+
+        }
+    }
+}
+

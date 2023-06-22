@@ -1,7 +1,7 @@
 
 <mat-toolbar color="">
     
-    <span><a href="" routerLink="['/']"  > <img src="../../../../assets/images/logo-no-background-right.svg" class="logo" alt="Camerdiplom"> </a></span>
+    <span><a href="" routerLink="['']"  > <img src="../../../../assets/images/logo-no-background-right.svg" class="logo" alt="Camerdiplom"> </a></span>
     <span class="menu-spacer"></span>
     <button class="mat-icon-bt" mat-icon-button (click)="onToggleSidenav()" fxHide.gt-xs>
         <mat-icon>menu</mat-icon>
@@ -21,7 +21,7 @@
                 <button routerLink="info/bachelor" mat-menu-item>Bachelor</button>
                 <button routerLink="info/licence" mat-menu-item>Licence</button>
                 <button routerLink="info/licencePro" mat-menu-item>Licence Pro</button>
-                <button routerLink="info/master" mat-menu-item>Master</button>
+                <button routerLink="info/master" mat-menu-item>Master / Ingénieur</button>
             </mat-menu>
             <button routerLink="info/ecole" mat-button >Ècoles</button>
             <button mat-button [matMenuTriggerFor]="formation" >Formation</button>
@@ -29,6 +29,7 @@
                 <button mat-menu-item routerLink="info/filiere">Filière</button>
                 <button mat-menu-item routerLink="info/metier">Métier</button>
             </mat-menu>
+            <p-button routerLink="referencer" label="Référencer son établissement" styleClass="p-button-outlined p-button-secondary"></p-button>
         </div>
     
 </mat-toolbar>

@@ -12,6 +12,8 @@ import { FieldComponent } from './orientation/components/field/field.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { OnepageComponent } from './etablissement/components/onepage/onepage.component';
+import { AboutComponent } from './about/about.component';
+import { ReferencerComponent } from './referencer/referencer.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: '', component: LandingPageComponent},
   // { path: 'home', component:HomeComponent},
   { path: 'login', component:LoginComponent},
+  { path: 'about', component:AboutComponent},
+  { path: 'referencer', component:ReferencerComponent},
   // { path: 'register', component:RegisterComponent},
   // { path: 'profil', component:ProfileComponent},
   // { path: 'user', component:BoardUserComponent},

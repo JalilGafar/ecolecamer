@@ -265,7 +265,7 @@ export class AdminService {
       return this.http.delete(url, {params: idParams})
     }
 
-    addNewCampus(newCamp : {nom_camp: string, ville_cam: string, principal_camp: boolean,
+    addNewCampus(newCamp : {nom_camp: string, ville_cam: string, quatier_camp: string, principal_camp: boolean,
                             descriptif_camp: string, lon_camp: number, 
                             lat_camp: number}): Observable<Campus>{
       return this.http.post<Campus>(`${environment.apiUrl}/api/campus`, newCamp);

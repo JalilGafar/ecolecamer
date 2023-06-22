@@ -1,9 +1,18 @@
+:host ::ng-deep {
+
+    .p-card-title {
+        font-weight: 500;
+        line-height: 1.0;
+    }
+
+}
+
 p-tag {
     margin: 7px;
     text-align: center;
 }
 .card {
-    width: 400px;
+   // width: 400px;
     margin-top: 40px;
 }
 
@@ -19,3 +28,4 @@ img {
 .grid-content {
     text-align: center;
 }
+
