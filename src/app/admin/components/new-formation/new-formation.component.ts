@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Categ } from '../../models/categ.model';
 import { Domaine } from '../../models/domaine.model';
 import { Ecole } from '../../models/ecole.model';
 import { AdminService } from '../../services/admin.service';
+import { Diplome } from '../../models/diplome.model';
+import { Formation } from '../../models/formation.model';
 
 @Component({
   selector: 'app-new-formation',
@@ -16,7 +17,7 @@ export class NewFormationComponent implements OnInit{
 
   newFormation!:FormGroup;
   ecole$!: Observable<Ecole[]>;
-  categ$!: Observable<Categ[]>;
+  diplomes$!: Observable<Diplome[]>;
   domaine$!: Observable<Domaine[]>;
 
   constructor(private formBuilder: FormBuilder,
@@ -26,13 +27,11 @@ export class NewFormationComponent implements OnInit{
 
   ngOnInit(): void {
     this.newFormation = this.formBuilder.group({
+      id_form: [null],
       nom_f: [null],
-      nom_dip: [null],
       admission_diplome: [null],
-      descriptif_diplome: [null],
       condition_diplome: [null],
-      niveau_diplome: [null],
-      categ_id: [null],
+      diplom_id: [null],
       ecole_id: [null],
       domaine_id: [null],
       date_debut_f: [null],
@@ -43,10 +42,10 @@ export class NewFormationComponent implements OnInit{
     })
 
     this.adminService.getDomaineFromServer();
-    this.adminService.getCategFromServer();
+    this.adminService.getDiplomeFromServer();
     this.adminService.getEcoleFromServer();
     this.domaine$ = this.adminService.domaine$;
-    this.categ$ = this.adminService.categ$;
+    this.diplomes$ = this.adminService.diplomes$;
     this.ecole$ = this.adminService.ecoles$;
   }
 

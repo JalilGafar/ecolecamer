@@ -1,0 +1,22 @@
+<mat-card>
+    <ng-container *ngIf="diplome$ | async as diplome">
+      <div class="employee-info">
+        <h1>{{ diplome.id_dip }} </h1>
+        <h2 [innerHTML]="diplome.nom_dip"></h2>
+        <h3><strong>Categorie :</strong>  {{ diplome.nom_cat }}</h3>
+        <h3> <strong>Groupe :</strong>  {{ diplome.groupe }}</h3>
+        <h3><strong>Descriptif : </strong></h3><span [innerHTML]="diplome.descriptif_dip"></span>
+        <h3><strong>Niveau :</strong> {{ diplome.niveau }}</h3>
+      </div>
+    </ng-container>
+    <mat-card-actions>
+      <!-- <mat-spinner *ngIf="loading$ | async; else buttons"></mat-spinner> -->
+      <div class="action-buttons">
+        <button mat-flat-button color="accent" (click)="onModif()">MODIFIER</button>
+        <button mat-flat-button color="warn" (click)="onDelet()">SUPRIMER</button>
+        <button mat-flat-button color="primary" (click)="onGoBack()">RETOUR</button>
+      </div>
+      <ng-template #buttons>
+      </ng-template>
+    </mat-card-actions>
+  </mat-card>

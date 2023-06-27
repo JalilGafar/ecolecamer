@@ -6,6 +6,7 @@ export class Formation {
     ville_cam!: string;
     nom_univ!: string;
     nom_camp!: string;
+    nom_e!: string;
     date_debut_f!: string;
     duree_f!: string;
     cout_f!: number;

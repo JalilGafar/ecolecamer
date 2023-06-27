@@ -1,8 +1,8 @@
 <div class="card">
-    <h2>Liste des Ecoles  
-        <button pButton type="button" label="Ajouter une Ecole" class="p-button-success" (click)="onAddEcol()"></button>
+    <h2>Liste des Diplomes  
+        <button pButton type="button" label="Ajouter un Diplôme" class="p-button-success" (click)="onAdddiplome()"></button>
     </h2>
-    <ng-container *ngIf="ecoles$ | async as data">
+    <ng-container *ngIf="diplomes$ | async as data">
         <mat-spinner *ngIf="loading$ | async"></mat-spinner>
         <p-table [value]="data" 
                 [tableStyle]="{'min-width': '30rem'}" 
@@ -16,20 +16,20 @@
                 (onRowSelect)="onRowSelect($event)">
             <ng-template pTemplate="header">
                 <tr>
-                    <th pSortableColumn="id_ecol" style="width:5%">Code <p-sortIcon field="id_ecol"></p-sortIcon></th>
-                    <th pSortableColumn="sigle_e" style="width:10%">Sigle <p-sortIcon field="sigle_e"></p-sortIcon></th>
-                    <th pSortableColumn="nom_e" style="width:20%">Name <p-sortIcon field="nom_e"></p-sortIcon></th>
-                    <th pSortableColumn="date_creation" style="width:20%">Creation <p-sortIcon field="date_creation"></p-sortIcon></th>
+                    <th pSortableColumn="id_dip" style="width:5%">Code <p-sortIcon field="id_dip"></p-sortIcon></th>
+                    <th pSortableColumn="nom_dip" style="width:20%">Diplome <p-sortIcon field="nom_dip"></p-sortIcon></th>
+                    <th pSortableColumn="nom_cat" style="width:10%">Catégorie <p-sortIcon field="nom_cat"></p-sortIcon></th>
+                    <th pSortableColumn="groupe" style="width:20%">Groupe <p-sortIcon field="groupe"></p-sortIcon></th>
                 </tr>
             </ng-template>
             
-            <ng-template pTemplate="body" let-ecole>
+            <ng-template pTemplate="body" let-diplome>
                 
-                <tr [pSelectableRow]="ecole">
-                    <td>{{ecole.id_ecol}}</td>
-                    <td>{{ecole.sigle_e}}</td>
-                    <td>{{ecole.nom_e}}</td>
-                    <td>{{ecole.date_creation}}</td>
+                <tr [pSelectableRow]="diplome">
+                    <td>{{diplome.id_dip}}</td>
+                    <td>{{diplome.nom_dip}}</td>
+                    <td>{{diplome.nom_cat}}</td>
+                    <td>{{diplome.groupe}}</td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="paginatorleft">

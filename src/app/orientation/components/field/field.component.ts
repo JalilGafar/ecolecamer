@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { field } from 'src/app/core/model/field-model';
 import { OrientationService } from '../../services/orientation.service';
 
@@ -37,33 +37,36 @@ export class FieldComponent {
 
   ngOnInit():void {
     const userDomaineDegree = this.route.snapshot.queryParams['degree'];
+    const userDomainecyti = this.route.snapshot.queryParams['cyti'];
+    console.log(userDomaineDegree)
     this.domaine$ = this.orientationService.domaine$;
 
-    if (userDomaineDegree) {
+    if (userDomaineDegree && userDomainecyti === undefined) {
       this.orientationService.getDomaineFromServer(userDomaineDegree);
-      //this.domaine$ = this.orientationService.getDomaine(userDomaineDegree);
+    } else if (userDomainecyti) {
+      this.domaine$ = this.orientationService.getPartDomaine(userDomaineDegree, userDomainecyti);
     } else {
       this.orientationService.getDomaineFromServer('tous');
-      //this.domaine$ = this.orientationService.getDomaine('tous');
     }
   }
 
   setfiled(field : string) {
-    this.orientationService.saveField(field);
-    if (this.orientationService.initialUser.degree !=='' && this.orientationService.initialUser.city ==='') {
+   const degree = this.route.snapshot.queryParams['degree'];
+   const cyti = this.route.snapshot.queryParams['cyti'];
+   if (degree  && cyti == undefined) {
       this.appRout.navigate(
         ['orientation/city/'],
-        {queryParams: {domaine:field} }
+        {queryParams: {field:field, degree:degree} }
       );
-    } else if(this.orientationService.initialUser.degree !=='' && this.orientationService.initialUser.city !=='' ) {
+    } else if(degree  && cyti  ) {
       this.appRout.navigate(
         ['orientation/statuts/'],
-        //{queryParams: {degreeCyti:val} }
+        {queryParams: {degree:degree, field:field, cyti:cyti} }
       );
     } else {
       this.appRout.navigate(
         ['orientation/degree/'],
-        {queryParams: {domaine:field} }
+        {queryParams: {field:field} }
       );
     }
   }

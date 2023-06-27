@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { degree } from 'src/app/core/model/degree-model';
 import { OrientationService } from '../../services/orientation.service';
 
@@ -25,41 +25,46 @@ export class DegreeComponent {
               private route: ActivatedRoute) {}
 
   ngOnInit(){
-    const userDegreeCyti = this.route.snapshot.queryParams['cyti'];
-    const userDomaine = this.route.snapshot.queryParams['domaine'];
+    const cyti = this.route.snapshot.queryParams['cyti'];
+    const field = this.route.snapshot.queryParams['field'];
     /*si une ville a deja été selectionné, on n'affiche que les diplomes de cette ville*/
-    if (userDegreeCyti) {
-      this.getDegreeCyti(userDegreeCyti);
-    } else if (userDomaine) {
-      this.degree$ = this.orientationService.getDegreeField(userDomaine);
-    } else if (userDegreeCyti === undefined && userDomaine === undefined) {
-      this.getDegreeCyti('tous');
+    if (cyti) {
+      this.getDegreeCyti(cyti);
+    } else if (field) {
+      this.degree$ = this.orientationService.getDegreeField(field);
+    } else if (cyti === undefined && field === undefined) {
+      //this.getDegreeCyti('tous');
+      this.degree$ = this.orientationService.getDegreeCyti('tous');
     }
-    console.log(userDegreeCyti);
   }
 
   setDegree(degree : string){
-    this.orientationService.saveDegree(degree);
-    if (this.orientationService.initialUser.field === '') {
+    let cyti = this.route.snapshot.queryParams['cyti'];
+    let field = this.route.snapshot.queryParams['field'];
+    //***Si field et cyti ne sont pas défini, on passe a la page "domaine" */
+    if ( field === undefined && cyti === undefined) {
       this.appRout.navigate(
         ['orientation/domaines/'],
-        {queryParams: {degree:degree} }
+        {queryParams:  {degree:degree} }
       );
-    } else {
+    } else if (cyti !== undefined) {
+      //**Si cyti seulement est défini, on le met en queryParams et on passe a la page "domaine" */
+      this.appRout.navigate(
+        ['orientation/domaines/'],
+        {queryParams:  {degree:degree, cyti:cyti} }
+      );
+    } else if (field !== undefined) {
+      //** Si field est défini, on le met en queryParams et on passe à la page "city" */
       this.appRout.navigate(
         ['orientation/city/'],
-        {queryParams: {degree:degree} }
+        {queryParams: {degree:degree, field:field} }
       );
     }
   }
     
   getDegreeCyti (degreeCyti: string) {
     this.degree$ = this.orientationService.getDegreeCyti(degreeCyti);
-    // *** degreeView c'est juste pour voir la reponse dans la console
-   // this.orientationService.getDegreeCyti(degreeCyti).subscribe(data => {
-   //   this.degreeView = data;
-   //   console.log (this.degreeView)
-   // })
+
   }
 
 }

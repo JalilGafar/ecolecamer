@@ -37,6 +37,7 @@ export class AdminStartComponent implements OnInit {
   campusView!: boolean;
   formationView!: boolean;
   ecoleView!: boolean;
+  diplomeView!: boolean;
   
 
  
@@ -46,6 +47,7 @@ export class AdminStartComponent implements OnInit {
     this.campusView = false;
     this.formationView = false;
     this.ecoleView = false;
+    this.diplomeView = false;
   };
 
   ecoleClick(){
@@ -53,13 +55,23 @@ export class AdminStartComponent implements OnInit {
     this.ecoleView = true;
     this.campusView = false;
     this.formationView = false;
-  }
+    this.diplomeView = false;
+  };
+
+  diplomeClick(){
+    this.diplomeView = true;
+    this.univView = false;
+    this.ecoleView = false;
+    this.campusView = false;
+    this.formationView = false;
+  };
 
   campusClick(){
     this.univView = false;
     this.campusView = true;
     this.formationView = false;
     this.ecoleView = false;
+    this.diplomeView = false;
   };
 
   formationClick(){
@@ -67,5 +79,6 @@ export class AdminStartComponent implements OnInit {
     this.campusView = false;
     this.formationView = true;
     this.ecoleView = false;
+    this.diplomeView = false;
   }
 }

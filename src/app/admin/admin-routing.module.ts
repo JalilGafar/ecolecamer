@@ -15,6 +15,9 @@ import { SingleCampusComponent } from './components/single-campus/single-campus.
 import { SingleEcoleComponent } from './components/single-ecole/single-ecole.component';
 import { SingleFormationComponent } from './components/single-formation/single-formation.component';
 import { SingleUnivComponent } from './components/single-univ/single-univ.component';
+import { SingleDiplomeComponent } from './components/single-diplome/single-diplome.component';
+import { ModifDiplomeComponent } from './components/modif-diplome/modif-diplome.component';
+import { NewDiplomeComponent } from './components/new-diplome/new-diplome.component';
 
 const routes: Routes = [
  // { path: '', component: LoginComponent},
@@ -23,12 +26,15 @@ const routes: Routes = [
   { path: 'adminStart', component: AdminStartComponent},
   { path: 'new-campus', component: NewCampusComponent},
   { path: 'new-ecole', component: NewEcoleComponent},
+  { path: 'new-diplome', component: NewDiplomeComponent},
   { path: 'new-formation', component: NewFormationComponent},
   { path: 'new-universite', component: NewUnivComponent},
   { path: 'campus/:id', component: SingleCampusComponent },
+  { path: 'diplome/:id', component: SingleDiplomeComponent },
   { path: 'ecole/:id', component: SingleEcoleComponent },
   { path: 'universite/:id', component: SingleUnivComponent },
   { path: 'modif-univ/:id', component: ModifUnivComponent },
+  { path: 'modif-diplome/:id', component: ModifDiplomeComponent },
   { path: 'modif-ecole/:id', component: ModifEcoleComponent },
   { path: 'modif-campus/:id', component: ModifCampusComponent },
   { path: 'modif-formation/:id', component: ModifFormationComponent },

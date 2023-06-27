@@ -31,6 +31,8 @@ export class NewEcoleComponent implements OnInit {
       niveau_e : [null],
       langue_e : [null],
       date_creation : [null],
+      arrete_creation: [null],
+      arrete_ouverture: [null],
       tel_1_e : [null],
       email_e : [null],
       bp_e : [null],

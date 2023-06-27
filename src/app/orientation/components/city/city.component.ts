@@ -1,8 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { OrientationService } from 'src/app/orientation/services/orientation.service';
 import { ville } from 'src/app/core/model/ville-model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { field } from 'src/app/core/model/field-model';
+import { degree } from 'src/app/core/model/degree-model';
 
 @Component({
   selector: 'app-city',
@@ -18,28 +20,29 @@ export class CityComponent {
                 private route: ActivatedRoute) {}
 
   ngOnInit():void {
-    const userDegree = this.orientationService.initialUser.degree ;
-    const userDomaine = this.orientationService.initialUser.field ;
-    console.log(this.orientationService.initialUser)
-    if (userDomaine !== '' && userDegree !== '' ) {
-      this.cyties$ = this.orientationService.getPartCyties( userDegree, userDomaine);
+    let degree = this.route.snapshot.queryParams['degree'];
+    let field = this.route.snapshot.queryParams['field'];
+    if (field  && degree) {
+      console.log('normalement')
+      this.cyties$ = this.orientationService.getPartCyties( degree, field);
     } else {
       /*Envoyer une requete de toutes les villes ayant un campus*/
       this.cyties$ = this.orientationService.getAllCyties();
     }
   }
 
-  setCyti (val : string) {
-    this.orientationService.saveCytiIn(val);
-    if (this.orientationService.initialUser.degree !== '') {
+  setCyti (cyti : string) {
+    let degree = this.route.snapshot.queryParams['degree'];
+    let field = this.route.snapshot.queryParams['field'];
+    if (degree && field ) {
       this.appRout.navigate(
         ['orientation/statuts/'],
-        //{queryParams: {degreeCyti:val} }
+        {queryParams: {degree:degree, field:field, cyti:cyti} }
       );
     } else {
       this.appRout.navigate(
         ['orientation/degree/'],
-        {queryParams: {cyti:val} }
+        {queryParams: {cyti:cyti} }
       );
     }
   }

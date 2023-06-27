@@ -23,6 +23,10 @@ import { NewEcoleComponent } from './components/new-ecole/new-ecole.component';
 import { NewCampusComponent } from './components/new-campus/new-campus.component';
 import { ModifCampusComponent } from './components/modif-campus/modif-campus.component';
 import { ModifEcoleComponent } from './components/modif-ecole/modif-ecole.component';
+import { DiplomeListComponent } from './components/diplome-list/diplome-list.component';
+import { SingleDiplomeComponent } from './components/single-diplome/single-diplome.component';
+import { ModifDiplomeComponent } from './components/modif-diplome/modif-diplome.component';
+import { NewDiplomeComponent } from './components/new-diplome/new-diplome.component';
 
 
 @NgModule({
@@ -44,7 +48,11 @@ import { ModifEcoleComponent } from './components/modif-ecole/modif-ecole.compon
     NewEcoleComponent,
     NewCampusComponent,
     ModifCampusComponent,
-    ModifEcoleComponent
+    ModifEcoleComponent,
+    DiplomeListComponent,
+    SingleDiplomeComponent,
+    ModifDiplomeComponent,
+    NewDiplomeComponent
   ],
   imports: [
     CommonModule,

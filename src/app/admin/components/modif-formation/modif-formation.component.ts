@@ -7,6 +7,7 @@ import { Domaine } from '../../models/domaine.model';
 import { Ecole } from '../../models/ecole.model';
 import { Formation } from '../../models/formation.model';
 import { AdminService } from '../../services/admin.service';
+import { Diplome } from '../../models/diplome.model';
 
 @Component({
   selector: 'app-modif-formation',
@@ -18,7 +19,7 @@ export class ModifFormationComponent implements OnInit{
   modifFormation!: FormGroup;
   formation$!: Observable<Formation>;
   ecole$!: Observable<Ecole[]>;
-  categ$!: Observable<Categ[]>;
+  diplomes$!: Observable<Diplome[]>;
   domaine$!: Observable<Domaine[]>;
 
   constructor ( private adminService : AdminService,
@@ -31,13 +32,9 @@ export class ModifFormationComponent implements OnInit{
     this.modifFormation = this.formBuilder.group({
       id_form: [null],
       nom_f: [null],
-      nom_dip: [null],
       diplome_id: [null, [Validators.required]],
       admission_diplome: [null],
-      descriptif_dip: [null],
       condition_diplome: [null],
-      niveau_diplome: [null],
-      categ_id: [null, [Validators.required]],
       ecole_id: [null, [Validators.required]],
       domaine_id: [null, [Validators.required]],
       date_debut_f: [null],
@@ -54,7 +51,6 @@ export class ModifFormationComponent implements OnInit{
         this.modifFormation.patchValue({
           id_form : val.id_form,
           nom_f : val.nom_f,
-          nom_dip: val.nom_dip,
           date_debut_f: val.date_debut_f,
           duree_f: val.duree_f,
           cout_f: val.cout_f,
@@ -62,10 +58,7 @@ export class ModifFormationComponent implements OnInit{
           descriptif_f: val.descriptif_f,
           admission_diplome: val.admission_diplome,
           condition_diplome: val.condition_diplome,
-          niveau_diplome : val.niveau_diplome,
-          descriptif_dip: val.descriptif_dip,
           diplome_id: val.diplome_id,
-          categorie_id: val.categorie_id,
           ecole_id : val.ecole_id,
         })
       })
@@ -73,10 +66,10 @@ export class ModifFormationComponent implements OnInit{
 
 
     this.adminService.getDomaineFromServer();
-    this.adminService.getCategFromServer();
+    this.adminService.getDiplomeFromServer();
     this.adminService.getEcoleFromServer();
+    this.diplomes$ = this.adminService.diplomes$
     this.domaine$ = this.adminService.domaine$;
-    this.categ$ = this.adminService.categ$;
     this.ecole$ = this.adminService.ecoles$;
     
 

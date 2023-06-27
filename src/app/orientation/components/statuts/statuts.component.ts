@@ -18,7 +18,10 @@ export class StatutsComponent implements OnInit {
   }
 
   SelectStatuts(statut : string) {
-    this.orientationService.saveStatut(statut)
+    let degree = this.route.snapshot.queryParams['degree'];
+    let field = this.route.snapshot.queryParams['field'];
+    let cyti = this.route.snapshot.queryParams['cyti'];
+    this.orientationService.saveStatut(degree, field, cyti, statut)
     switch (statut) {
       case 'lycéen':
         this.appRout.navigate( ['orientation/classe/'] );        

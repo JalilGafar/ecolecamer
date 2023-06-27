@@ -8,6 +8,7 @@ import { Formation } from "../models/formation.model";
 import { Universite } from "../models/univ.model";
 import { Domaine } from "../models/domaine.model";
 import { Categ } from "../models/categ.model";
+import { Diplome } from "../models/diplome.model";
 
 @Injectable ()
 export class AdminService {
@@ -32,6 +33,11 @@ export class AdminService {
     private _ecole$ = new BehaviorSubject<Ecole[]>([]);
     get ecoles$(): Observable<Ecole[]> {
       return this._ecole$.asObservable();
+    }
+    
+    private _diplome$ = new BehaviorSubject<Diplome[]>([]);
+    get diplomes$(): Observable<Diplome[]> {
+      return this._diplome$.asObservable();
     }
 
     private _campus$ = new BehaviorSubject<Campus[]>([]);
@@ -91,12 +97,12 @@ export class AdminService {
 
     //**Get all formations with campu and unic connection */
     getFormationsFromServer () {
-        if (Date.now() - this.lastCandidatesLoad <= 3000) {
-            return;
-        }
-        this.setLoadingStatus(true);
+       // if (Date.now() - this.lastCandidatesLoad <= 3000) {
+       //     return;
+       // }
+       // this.setLoadingStatus(true);
         this.http.get<Formation[]>(`${environment.apiUrl}/api/formations`).pipe(
-            delay(2000),
+            //delay(2000),
             tap(formations => {
                 this.lastCandidatesLoad = Date.now();
                 this._formation$.next(formations);
@@ -114,16 +120,15 @@ export class AdminService {
       );
     }
 
-    addNewFormation(formationForm: {nom_f: string, nom_dip: string, admission_diplome: string, 
-                      descriptif_diplome: string, condition_diplome: string, niveau_diplome: string, categ_id: number,      
-                      ecole_id: number, domaine_id: number, date_debut_f: string, duree_f: string,
+    addNewFormation(formationForm: {nom_f: string, admission_diplome: string, condition_diplome: string, 
+                    diplom_id: number, ecole_id: number, domaine_id: number, date_debut_f: string, duree_f: string,
                       cout_f: string, programme_f: string, descriptif_f: string}): Observable<Formation>{
       return this.http.post<Formation>(`${environment.apiUrl}/api/formations`, formationForm);
     };
 
-    editFormation(formationForm: {id_form: number, nom_f: string, nom_dip: string, diplome_id: number, 
-                                  admission_diplome: string, descriptif_diplome: string, condition_diplome: string, 
-                                  niveau_diplome: string, categ_id: number, ecole_id: number, 
+    editFormation(formationForm: {id_form: number, nom_f: string, diplome_id: number, 
+                                  admission_diplome: string,  condition_diplome: string, 
+                                  niveau_diplome: string, ecole_id: number, 
                                   domaine_id: number, date_debut_f: string, duree_f: string,
                                   cout_f: string, programme_f: string, descriptif_f: string}): Observable<Formation>{
                                   
@@ -142,11 +147,11 @@ export class AdminService {
     //*************** UNIVERSITY FUNCTIONS **************/
 
     getUniversiteFromServer(){
-      this.setLoadingStatus(true);
+      //this.setLoadingStatus(true);
       this.http.get<Universite[]>(`${environment.apiUrl}/api/universites`).pipe(
         tap(universites =>{
           this._universite$.next(universites);
-          this.setLoadingStatus(false);
+      //    this.setLoadingStatus(false);
         })
       ).subscribe();
     }
@@ -188,11 +193,11 @@ export class AdminService {
     //************* ECOLE FUNCTIONS ***************/
 
     getEcoleFromServer(){
-      this.setLoadingStatus(true);
+     // this.setLoadingStatus(true);
       this.http.get<Ecole[]>(`${environment.apiUrl}/api/ecoles`).pipe(
         tap(ecoles =>{
           this._ecole$.next(ecoles);
-          this.setLoadingStatus(false);
+      //    this.setLoadingStatus(false);
         })
       ).subscribe();
     };
@@ -204,7 +209,7 @@ export class AdminService {
     };
 
     addNewEcole(  ecoleForm: {nom_e: string, sigle_e: string,
-                logo_e: string, niveau_e: string, langue_e: string, date_creation: string,
+                logo_e: string, niveau_e: string, langue_e: string, date_creation: string, arrete_creation: string, arrete_ouverture: string,
                 tel_1_e: string, email_e: string, bp_e: string, directeur_e: string,
                 photo_directeur: string, mot_directeur: string, stat_e: string, descriptif_e: string,
                 image_e: string, universites_id: number, campus_id: number}):Observable<Ecole>{
@@ -229,14 +234,49 @@ export class AdminService {
       return this.http.delete(url, {params: idParams})
     }
 
+    //*********** DIPLOMES FUNCTIONS *********************/
+
+    getDiplomeFromServer(){
+      // this.setLoadingStatus(true);
+       this.http.get<Diplome[]>(`${environment.apiUrl}/api/diplomes`).pipe(
+         tap(diplomes =>{
+           this._diplome$.next(diplomes);
+       //    this.setLoadingStatus(false);
+         })
+       ).subscribe();
+    };
+
+    getDiplomeById(id: number):Observable<Diplome>{
+      return this.diplomes$.pipe(
+        map(diplomes => diplomes.filter(diplome => diplome.id_dip === id)[0])
+      )
+    };
+
+    addNewDiplome(diplomeForm:{id_dip:number, nom_dip:string, descriptif_dip: string,
+      niveau:string, categorie_id: number }): Observable<Diplome> {
+        return this.http.post<Diplome>(`${environment.apiUrl}/api/diplomes`, diplomeForm);
+      }
+
+    deletDiplomeById(diplomeId:number): Observable<unknown>{
+      let url = `${environment.apiUrl}/api/diplomes`;
+      let idParams = new HttpParams();
+      idParams = idParams.append('idDiplome', diplomeId);
+      return this.http.delete(url, {params: idParams})
+    }
+
+    editDiplome(diplomeForm:{id_dip:number, nom_dip:string, descriptif_dip: string,
+                            niveau:string, categorie_id: number }): Observable<Diplome> {
+      return this.http.put<Diplome>(`${environment.apiUrl}/api/diplomes`, diplomeForm);
+    }
+
     //*********** CAMPUS FUNCTIONS *******************/
 
     getCampusFromServer(){
-      this.setLoadingStatus(true);
+     // this.setLoadingStatus(true);
       this.http.get<Campus[]>(`${environment.apiUrl}/api/campus`).pipe(
         tap(campus =>{
           this._campus$.next(campus);
-          this.setLoadingStatus(false);
+      //    this.setLoadingStatus(false);
         })
       ).subscribe();
     }

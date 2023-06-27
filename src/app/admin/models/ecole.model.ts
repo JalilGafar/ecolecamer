@@ -6,6 +6,8 @@ export class Ecole {
     niveau_e!: string;
     langue_e!: string;
     date_creation!: string;
+    arrete_creation!: string;
+    arrete_ouverture!: string;
     tel_1_e!: string;
     email_e!: string;
     bp_e!: string;
