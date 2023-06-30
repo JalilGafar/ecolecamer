@@ -18,6 +18,7 @@ import { InterestClassificationComponent } from './components/interest-classific
 import { PubInterestItemComponent } from './components/pub-interest-item/pub-interest-item.component';
 import { SideInfoComponent } from './components/side-info/side-info.component';
 import { NgxMatIntlTelInputComponent } from 'ngx-mat-intl-tel-input';
+import { UnderBuildingComponent } from './components/under-building/under-building.component';
 
 
 
@@ -35,7 +36,8 @@ import { NgxMatIntlTelInputComponent } from 'ngx-mat-intl-tel-input';
     InterestAvisComponent,
     InterestClassificationComponent,
     PubInterestItemComponent,
-    SideInfoComponent
+    SideInfoComponent,
+    UnderBuildingComponent
   ],
   imports: [
     CommonModule,
@@ -63,7 +65,8 @@ import { NgxMatIntlTelInputComponent } from 'ngx-mat-intl-tel-input';
     InterestActualiteComponent,
     InterestAvisComponent,
     InterestClassificationComponent,
-    SideInfoComponent
+    SideInfoComponent,
+    UnderBuildingComponent
   ],
 })
 export class SharedModule { }

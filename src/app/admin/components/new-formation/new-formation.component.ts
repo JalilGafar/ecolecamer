@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Domaine } from '../../models/domaine.model';
@@ -31,9 +31,9 @@ export class NewFormationComponent implements OnInit{
       nom_f: [null],
       admission_diplome: [null],
       condition_diplome: [null],
-      diplom_id: [null],
-      ecole_id: [null],
-      domaine_id: [null],
+      diplom_id: [null, [Validators.required]],
+      ecole_id: [null, [Validators.required]],
+      domaine_id: [null, [Validators.required]],
       date_debut_f: [null],
       duree_f: [null],
       cout_f: [null],
@@ -53,6 +53,9 @@ export class NewFormationComponent implements OnInit{
   
 
   onSubmitForm(){
+    if (this.newFormation.invalid) {
+      return;
+    }
     this.adminService.addNewFormation(this.newFormation.value).subscribe();
     this.appRout.navigateByUrl('admin/adminStart');
   }

@@ -2,38 +2,37 @@
     <h2>
         Les Formations les plus recherchées
     </h2>
-    <div class="bts">
-        <h3>Quel BTS</h3>
-        <p-dataView [value]="myBts" layout="grid" 
-        [paginator]="true"
-        [rows]="9"
-        filterBy="name"
-        >          
-            <ng-template let-bts pTemplate="gridItem" fxLayout.xs="column">
-                <div class="product-grid-item card">
-                    {{bts.title}}
-                </div>
-            </ng-template>
-        </p-dataView>      
-    </div>
-    <div class="licence">
-        <h3>Quel Licence</h3>
-        
-    </div>
-    <div class="master">
-        <h3>Quel Master</h3>
-        
-    </div>
-    <div class="domaine">
-        <h3>Tous les domainnes de formations</h3>
-        
-    </div>
-    <div class="etablissement">
-        <h3>Tous les types d'établissement d'enseignement supérieur</h3>
-        
-    </div>
-    <div class="metier">
-        <h3>Toutes nos fiches métiers</h3>
-        
-    </div>
+    <p-accordion [activeIndex]="0">
+        <p-accordionTab  header="Quel BTS">
+            <div class="bts">
+                <p-dataView [value]="myBts" layout="grid" 
+                [paginator]="true"
+                [rows]="9"
+                filterBy="name"
+                >          
+                    <ng-template let-bts pTemplate="gridItem" fxLayout.xs="column">
+                        <div class="product-grid-item card">
+                            {{bts.title}}
+                        </div>
+                    </ng-template>
+                </p-dataView>      
+            </div>
+        </p-accordionTab>
+        <p-accordionTab  header="Quel Licence">
+
+        </p-accordionTab>
+        <p-accordionTab  header="Quel Master">
+
+        </p-accordionTab>
+        <p-accordionTab  header="Les domainnes de formations">
+
+        </p-accordionTab>
+        <p-accordionTab  header="Les types d'établissement d'enseignement supérieur">
+
+        </p-accordionTab>
+        <p-accordionTab  header="Nos fiches métiers">
+
+        </p-accordionTab>
+
+    </p-accordion>
 </div>

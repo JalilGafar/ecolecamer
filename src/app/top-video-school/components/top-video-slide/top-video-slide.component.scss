@@ -37,6 +37,7 @@ ul {
                 justify-content: flex-end;
                 overflow: hidden;
                 position: relative;
+                cursor: pointer;
         
                 .logo{
                     top: 37px;
@@ -46,6 +47,8 @@ ul {
                     img {
                         width: 150px;
                         border-radius: 0px;
+                        max-height: 80px;
+                        object-fit: contain;
                         padding: 5px;
                         background-color: #fff;
                         border-top-right-radius: 10px;

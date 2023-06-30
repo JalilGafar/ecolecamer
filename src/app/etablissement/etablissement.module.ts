@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OnepageComponent } from './components/onepage/onepage.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -9,7 +10,8 @@ import { OnepageComponent } from './components/onepage/onepage.component';
     OnepageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ]
 })
 export class EtablissementModule { }

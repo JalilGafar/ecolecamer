@@ -1,0 +1,27 @@
+header {
+    color: #fff;
+    font-size: larger;
+    padding: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+    .blaki {
+        background-color: black;
+        margin-right: 2px;
+        padding: 5px;
+    }
+    .rougi {
+        background-color: red;
+        padding: 5px;
+    }
+}
+p {
+    text-align: center;
+    font-size: medium;
+}
+.p-element {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+}

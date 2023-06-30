@@ -123,6 +123,7 @@ export class AdminService {
     addNewFormation(formationForm: {nom_f: string, admission_diplome: string, condition_diplome: string, 
                     diplom_id: number, ecole_id: number, domaine_id: number, date_debut_f: string, duree_f: string,
                       cout_f: string, programme_f: string, descriptif_f: string}): Observable<Formation>{
+      console.log(formationForm.nom_f + ' Send to BackEnd')
       return this.http.post<Formation>(`${environment.apiUrl}/api/formations`, formationForm);
     };
 

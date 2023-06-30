@@ -1,0 +1,32 @@
+:host ::ng-deep {
+    .p-card {
+        margin-bottom: 7px;
+    }
+    .p-card-body {
+        padding: 10px;
+    }
+
+    .p-card-content{
+        display: grid;
+        grid-template-columns: auto auto ;
+        gap: 10px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+
+        .image_c > img {
+            width: 100%;
+        }
+    }
+}
+
+.m-0{
+   font-size: large; 
+}
+.m-1 {
+    margin: 0 !important;
+    font: -webkit-control;
+}
+.m-2 {
+    margin: 0 !important;
+    color: rgb(157, 157, 157);
+}

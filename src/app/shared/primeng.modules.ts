@@ -11,6 +11,7 @@ import { CardModule } from 'primeng/card';
 import { TagModule } from 'primeng/tag';
 import { TabViewModule } from 'primeng/tabview';
 import { DialogModule } from 'primeng/dialog';
+import { ImageModule } from 'primeng/image';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { DialogModule } from 'primeng/dialog';
       CardModule,
       TagModule,
       TabViewModule,
-      DialogModule 
+      DialogModule,
+      ImageModule 
     ]
   })
 
