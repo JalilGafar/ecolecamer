@@ -14,6 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { OnepageComponent } from './etablissement/components/onepage/onepage.component';
 import { AboutComponent } from './about/about.component';
 import { ReferencerComponent } from './referencer/referencer.component';
+import { DiplomesComponent } from './diplomes/diplomes.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   // { path: 'home', component:HomeComponent},
   { path: 'login', component:LoginComponent},
   { path: 'about', component:AboutComponent},
+  { path: 'diplome', component: DiplomesComponent},
   { path: 'referencer', component:ReferencerComponent},
   // { path: 'register', component:RegisterComponent},
   // { path: 'profil', component:ProfileComponent},

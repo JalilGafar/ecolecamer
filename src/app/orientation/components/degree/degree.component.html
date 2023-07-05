@@ -1,8 +1,8 @@
 
-<h2>Quel diplôme souhaitez-vous préparer ?</h2>
+<h1>Quel diplôme souhaitez-vous préparer ?</h1>
 <p-accordion [multiple]="true">
     <p-accordionTab header="CAP ou équivalent" [selected]="true" class="wrapper">
-        <ng-container *ngFor="let degree of degree$ | async | myfilter:cap" >       
+        <ng-container *ngFor="let degree of degreeView | myfilter:cap" >       
             <button pButton pRipple type="button"
                     label={{degree.nom_cat}} 
                     (click)="setDegree(degree.nom_cat)">
@@ -10,7 +10,7 @@
         </ng-container>
     </p-accordionTab>  
     <p-accordionTab header="Bac+1 à Bac+2" [selected]="true"  >
-        <ng-container *ngFor="let degree of degree$ | async | myfilter:bts" >       
+        <ng-container *ngFor="let degree of degreeView | myfilter:bts" >       
             <button pButton pRipple type="button"
                     label={{degree.nom_cat}}
                     (click)="setDegree(degree.nom_cat)">
@@ -18,7 +18,7 @@
         </ng-container>
     </p-accordionTab> 
     <p-accordionTab header="Bac+3" [selected]="true"  >
-        <ng-container *ngFor="let degree of degree$ | async | myfilter:licence" >       
+        <ng-container *ngFor="let degree of degreeView | myfilter:licence" >       
             <button pButton pRipple type="button"
                     label={{degree.nom_cat}}
                     (click)="setDegree(degree.nom_cat)">
@@ -26,7 +26,7 @@
         </ng-container>
     </p-accordionTab> 
     <p-accordionTab header="Bac+4 à Bac+5" [selected]="true"  >
-        <ng-container *ngFor="let degree of degree$ | async | myfilter:master" >       
+        <ng-container *ngFor="let degree of degreeView | myfilter:master" >       
             <button pButton pRipple type="button"
                     label={{degree.nom_cat}}
                     (click)="setDegree(degree.nom_cat)">
@@ -34,7 +34,7 @@
         </ng-container>
     </p-accordionTab>
     <p-accordionTab header="Bac+6 et plus" [selected]="true"  >
-        <ng-container *ngFor="let degree of degree$ | async | myfilter:doctor" >       
+        <ng-container *ngFor="let degree of degreeView | myfilter:doctor" >       
             <button pButton pRipple type="button"
                     label={{degree.nom_cat}}
                     (click)="setDegree(degree.nom_cat)">
@@ -42,7 +42,7 @@
         </ng-container>
     </p-accordionTab>
     <p-accordionTab header="autre" [selected]="true"  >
-        <ng-container *ngFor="let degree of degree$ | async | myfilter:autre" >       
+        <ng-container *ngFor="let degree of degreeView | myfilter:autre" >       
             <button pButton pRipple type="button"
                     label={{degree.nom_cat}}
                     (click)="setDegree(degree.nom_cat)">

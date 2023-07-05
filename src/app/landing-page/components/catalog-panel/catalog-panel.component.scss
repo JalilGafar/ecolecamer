@@ -17,6 +17,13 @@
         margin-bottom: 0 !important;
         border: 1px solid #dee2e6;
     }
+
+    .p-button {
+        display: block;
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
     
     .grid, .p-grid, .p-nogutter, .grid-nogutter {
         display: grid;

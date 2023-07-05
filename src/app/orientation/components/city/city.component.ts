@@ -1,23 +1,25 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { OrientationService } from 'src/app/orientation/services/orientation.service';
 import { ville } from 'src/app/core/model/ville-model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { field } from 'src/app/core/model/field-model';
 import { degree } from 'src/app/core/model/degree-model';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-city',
   templateUrl: './city.component.html',
   styleUrls: ['./city.component.scss']
 })
-export class CityComponent {
+export class CityComponent implements OnInit{
 
   @Input() cyties$!: Observable<ville[]>;
 
   constructor (private orientationService :OrientationService,
                 private appRout : Router,
-                private route: ActivatedRoute) {}
+                private route: ActivatedRoute,
+                private titleService:Title) {this.titleService.setTitle("Trouver bonne une école de formation au Cameroun");}
 
   ngOnInit():void {
     let degree = this.route.snapshot.queryParams['degree'];

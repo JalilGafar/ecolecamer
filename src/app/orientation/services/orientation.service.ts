@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable, map, tap } from "rxjs";
+import { BehaviorSubject, Observable, map, take, tap } from "rxjs";
 import { degree } from "src/app/core/model/degree-model";
 import { field } from "src/app/core/model/field-model";
 import { UserProfil } from "src/app/core/model/user-profil-model";
@@ -58,6 +58,7 @@ export class OrientationService {
         let queryParams = new HttpParams();
         queryParams = queryParams.append('DomaineDegree', domaineDegree);
         this.http.get<field[]>(url, {params: queryParams}).pipe(
+            take(1),
             tap(fields =>{
                 this._domaine$.next(fields)
             })

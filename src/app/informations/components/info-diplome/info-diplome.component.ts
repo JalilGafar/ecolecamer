@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { interestelt } from 'src/app/core/model/interest-item-model';
 import { InfoServices } from '../../information.services';
 import { Observable } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -11,12 +12,14 @@ import { Observable } from 'rxjs';
 })
 export class InfoDiplomeComponent implements OnInit{
   
-  titre = "Trouvez votre formation";
-  soustitre = "Comme Jules, 40% des bacheliers utilisent Camerdiplome pour trouver leur école";
+  titre = "Trouvez votre formation au Cameroun";
+  soustitre = "Comme Jules, ils sont nombreux à utiliser Camerdiplome pour trouver leur école";
   photo = "./../../../../assets/images/pexels-kampus-productiont.jpg";
   school$!: Observable <interestelt[]>;
 
-  constructor( private infoservice : InfoServices){}
+  constructor( private infoservice : InfoServices,
+              private titleService:Title) {this.titleService.setTitle("Diplômes, certificats et brevets aux Cameroun");}
+
 
   products = [
     {

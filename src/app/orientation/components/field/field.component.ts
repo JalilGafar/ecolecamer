@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { field } from 'src/app/core/model/field-model';
 import { OrientationService } from '../../services/orientation.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-field',
@@ -29,11 +30,11 @@ export class FieldComponent {
   marketing = {branche: 'Marketing, communication'};
   sante = {branche: 'santé'};
   sport = {branche: 'Sport, social, animation'};
-  
 
   constructor (private orientationService :OrientationService,
                 private appRout : Router,
-                private route: ActivatedRoute) {}
+                private route: ActivatedRoute,
+                private titleService:Title) {this.titleService.setTitle("quel sont les domaines de formation au Cameroun");}
 
   ngOnInit():void {
     const userDomaineDegree = this.route.snapshot.queryParams['degree'];

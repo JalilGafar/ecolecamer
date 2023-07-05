@@ -25,6 +25,7 @@ import { InformationsModule } from './informations/informations.module';
 import { NgxMatIntlTelInputComponent } from 'ngx-mat-intl-tel-input';
 import { AboutComponent } from './about/about.component';
 import { ReferencerComponent } from './referencer/referencer.component';
+import { DiplomesComponent } from './diplomes/diplomes.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ReferencerComponent } from './referencer/referencer.component';
         BoardModeratorComponent,
         BoardAdminComponent,
         AboutComponent,
-        ReferencerComponent
+        ReferencerComponent,
+        DiplomesComponent
     ],
     providers: [
         { provide: LOCALE_ID, useValue: 'fr-FR' },

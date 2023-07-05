@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { interestelt } from 'src/app/core/model/interest-item-model';
 import { InfoServices } from '../../information.services';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-info-cap',
@@ -10,12 +11,15 @@ import { InfoServices } from '../../information.services';
 })
 export class InfoCapComponent implements OnInit{
   
-  titre = "Lancez vous avec un CAP";
-  soustitre = "Comme Jules, 40% des bacheliers utilisent Diplomeo pour trouver leur école"
+  titre = "Orientez vous vers un CAP";
+  soustitre = "Comme Ngono, elles sont nombreuse à utiliser Camerdiplome pour trouver une formation";
+  photo = "./../../../../assets/images/pexels-3.jpg";
   
   school$!: Observable<interestelt[]>
 
-  constructor( private infoservice :InfoServices) {}
+  constructor( private infoservice :InfoServices,
+              private titleService:Title) {this.titleService.setTitle("Liste CAP | Camerdiplome");}
+
 
   ngOnInit(): void {
 

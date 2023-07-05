@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, take } from 'rxjs';
 import { Domaine } from '../../models/domaine.model';
 import { Ecole } from '../../models/ecole.model';
 import { AdminService } from '../../services/admin.service';
@@ -13,7 +13,7 @@ import { Formation } from '../../models/formation.model';
   templateUrl: './new-formation.component.html',
   styleUrls: ['./new-formation.component.scss']
 })
-export class NewFormationComponent implements OnInit{
+export class NewFormationComponent implements OnInit, OnDestroy{
 
   newFormation!:FormGroup;
   ecole$!: Observable<Ecole[]>;
@@ -56,7 +56,11 @@ export class NewFormationComponent implements OnInit{
     if (this.newFormation.invalid) {
       return;
     }
-    this.adminService.addNewFormation(this.newFormation.value).subscribe();
+    this.adminService.addNewFormation(this.newFormation.value).pipe(take(1)).subscribe();
     this.appRout.navigateByUrl('admin/adminStart');
   }
+
+  ngOnDestroy() {
+   // this.adminService.addNewFormation(this.newFormation.value).unsubscribe(); // Unsubscribe Observable 1
+}
 }

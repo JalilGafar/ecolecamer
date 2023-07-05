@@ -3,23 +3,45 @@
         Les Formations les plus recherchées
     </h2>
     <p-accordion [activeIndex]="0">
-        <p-accordionTab  header="Quel BTS">
-            <div class="bts">
+        <p-accordionTab  header="Quelques BTS">
+            <div class="bts" *ngIf="someBts$ | async as myBts">
                 <p-dataView [value]="myBts" layout="grid" 
-                [paginator]="true"
-                [rows]="9"
+                [paginator]="false"
+                [rows]="10"
                 filterBy="name"
                 >          
-                    <ng-template let-bts pTemplate="gridItem" fxLayout.xs="column">
-                        <div class="product-grid-item card">
-                            {{bts.title}}
+                    <ng-template let-bts pTemplate="gridItem" 
+                                fxLayout.xs="column" 
+                                >
+                        <div class="product-grid-item card" 
+                            (click)="showThisDegree(bts.nom_dip)"
+                            style="cursor: pointer;">
+                            {{bts.nom_dip}}
                         </div>
                     </ng-template>
                 </p-dataView>      
+                <p-button>Voir plus de BTS</p-button>
             </div>
         </p-accordionTab>
-        <p-accordionTab  header="Quel Licence">
-
+        <p-accordionTab  header="Quelques Licences">
+            <div class="licence" *ngIf="someLicence$ | async as items">
+                <p-dataView [value]="items" layout="grid" 
+                [paginator]="false"
+                [rows]="10"
+                filterBy="name"
+                >          
+                    <ng-template let-item pTemplate="gridItem" 
+                                fxLayout.xs="column" 
+                                >
+                        <div class="product-grid-item card" 
+                            (click)="showThisDegree(item.nom_dip)"
+                            style="cursor: pointer;">
+                            {{item.nom_dip}}
+                        </div>
+                    </ng-template>
+                </p-dataView>      
+                <p-button>Voir plus de BTS</p-button>
+            </div>
         </p-accordionTab>
         <p-accordionTab  header="Quel Master">
 

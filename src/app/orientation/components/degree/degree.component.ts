@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { degree } from 'src/app/core/model/degree-model';
 import { OrientationService } from '../../services/orientation.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-degree',
@@ -22,7 +23,8 @@ export class DegreeComponent {
 
   constructor (private orientationService :OrientationService,
               private appRout : Router,
-              private route: ActivatedRoute) {}
+              private route: ActivatedRoute,
+              private titleService:Title) {this.titleService.setTitle("quel diplome pour ma formation au Cameroun");}
 
   ngOnInit(){
     const cyti = this.route.snapshot.queryParams['cyti'];
@@ -31,10 +33,18 @@ export class DegreeComponent {
     if (cyti) {
       this.getDegreeCyti(cyti);
     } else if (field) {
-      this.degree$ = this.orientationService.getDegreeField(field);
+      this.orientationService.getDegreeField(field).subscribe(
+        data => {
+          this.degreeView = data
+        }
+      );
     } else if (cyti === undefined && field === undefined) {
       //this.getDegreeCyti('tous');
-      this.degree$ = this.orientationService.getDegreeCyti('tous');
+      this.orientationService.getDegreeCyti('tous').subscribe(
+        data => {
+          this.degreeView = data
+        }
+      );
     }
   }
 
@@ -63,7 +73,11 @@ export class DegreeComponent {
   }
     
   getDegreeCyti (degreeCyti: string) {
-    this.degree$ = this.orientationService.getDegreeCyti(degreeCyti);
+    this.orientationService.getDegreeCyti(degreeCyti).subscribe(
+      data => {
+        this.degreeView = data
+      }
+    );;
 
   }
 
