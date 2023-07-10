@@ -12,7 +12,7 @@ interface EtsForm {
     email:  string;
     phone:string;
   }
-const API_URL = 'http://localhost:3000/api/test/';
+const API_URL = `${environment.apiUrl}/api/test/`;
 //const API_URL = 'http://localhost:3000/';
 
 @Injectable ({
