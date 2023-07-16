@@ -1,6 +1,7 @@
 <h1>Dans quelle ville souhaitez-vous suivre votre formation ?</h1>
+<mat-spinner *ngIf="loading$ | async"></mat-spinner>
 <div >
-    <div fxLayoutGap="16px" fxLayout="row wrap">
+    <div class="container">
         <button class="but" pButton pRipple  
                             *ngFor="let cyti of cyties$ |async " 
                             type="button" 
@@ -9,4 +10,4 @@
     </div>
 </div>
 
-
+<p-button class="buti" label="Cameroun entier" styleClass="p-button-outlined" (click)="setNiveau()"></p-button>

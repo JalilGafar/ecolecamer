@@ -57,7 +57,7 @@
 
         <div class="action-buttons">
             <p-button type="submit" styleClass="p-button-success" [disabled]="newFormation.invalid" (click)="onSubmitForm()">Enregistrer</p-button>
-            <p-button styleClass="p-button-danger" >Annuler</p-button>
+            <p-button styleClass="p-button-danger" (click)="onGoBack()" >Annuler</p-button>
         </div>
     </form>
 </mat-card>

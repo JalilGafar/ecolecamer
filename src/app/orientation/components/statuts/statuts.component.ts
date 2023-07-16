@@ -1,21 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { OrientationService } from '../../services/orientation.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TopNewsService } from 'src/app/services/top-news.service';
+import { BEHAVIOR } from 'src/app/core/model/Behavior';
 
 @Component({
   selector: 'app-statuts',
   templateUrl: './statuts.component.html',
   styleUrls: ['./statuts.component.scss']
 })
-export class StatutsComponent implements OnInit {
+export class StatutsComponent implements OnInit, AfterViewInit {
 
   constructor (private orientationService :OrientationService,
     private appRout : Router,
+    private topNewsService: TopNewsService,
     private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     
   }
+
+  ngAfterViewInit(): void {
+    this.topNewsService.scrollTo('header', BEHAVIOR.auto)
+  }
+
 
   SelectStatuts(statut : string) {
     let degree = this.route.snapshot.queryParams['degree'];

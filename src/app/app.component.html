@@ -1,3 +1,4 @@
+<app-spinner></app-spinner>
 <mat-sidenav-container>
   <mat-sidenav #sidenav role="navigation">
     <app-sidenav-list (sidenavClose)="sidenav.close()" ></app-sidenav-list>
@@ -10,13 +11,13 @@
           <a href="/home" class="nav-link" routerLink="home">Home</a>
         </li> -->
         <li class="nav-item" *ngIf="showAdminBoard">
-          <a href="/adminn" class="nav-link" routerLink="admin">Admin Board</a>
+          <a  class="nav-link" routerLink="admin">Admin Board</a>
         </li>
         <li class="nav-item" *ngIf="showModeratorBoard">
-          <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
+          <a  class="nav-link" routerLink="mod">Moderator Board</a>
         </li>
         <li class="nav-item" *ngIf="isLoggedIn">
-          <a href="/admin" class="nav-link"  routerLink="admin">Admin Board</a>
+          <a  class="nav-link"  routerLink="admin">Admin Board</a>
         </li> 
         <!-- <li class="nav-item" >
           <a href="/user" class="nav-link"  routerLink="user">User</a>

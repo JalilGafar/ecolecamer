@@ -4,14 +4,14 @@ import { interestelt } from 'src/app/core/model/interest-item-model';
 import { InfoServices } from '../../information.services';
 
 @Component({
-  selector: 'app-info-prepa',
-  templateUrl: './info-prepa.component.html',
-  styleUrls: ['./info-prepa.component.scss']
+  selector: 'app-cqp',
+  templateUrl: './cqp.component.html',
+  styleUrls: ['./cqp.component.scss']
 })
-export class InfoPrepaComponent implements OnInit{
-  
-  titre = "Prépa";
-  soustitre = "Comme Dobo, 40% des bacheliers utilisent Diplomeo pour trouver leur école";
+export class CqpComponent implements OnInit {
+
+  titre = "Certificat de Qualification Professionnelle (CQP)";
+  soustitre = "Comme Esso, 40% des bacheliers utilisent Diplomeo pour trouver leur école";
   photo = "./../../../../assets/images/pexels-cottonbro-studi.jpg";
 
   
@@ -24,6 +24,4 @@ export class InfoPrepaComponent implements OnInit{
     this.school$ = this.infoservice.getFirstInterestSchool('prepa')
 
   }
-
 }
-

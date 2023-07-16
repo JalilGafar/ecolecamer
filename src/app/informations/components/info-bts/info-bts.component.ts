@@ -11,7 +11,8 @@ import { InfoServices } from '../../information.services';
 export class InfoBtsComponent implements OnInit{
   
   titre = "Trouvez votre formation";
-  soustitre = "Comme Jules, 40% des bacheliers utilisent Diplomeo pour trouver leur école"
+  soustitre = "Comme Stefi, 40% des bacheliers utilisent Diplomeo pour trouver leur école";
+  photo = "./../../../../assets/images/pexels-godisable-jacob.jpg";
   
   school$!: Observable<interestelt[]>
 

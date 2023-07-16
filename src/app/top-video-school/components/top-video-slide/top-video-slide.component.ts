@@ -13,7 +13,8 @@ export class TopVideoSlideComponent implements OnInit{
     
   }
   showOnePage(school: string){
-    const url = this.appRout.serializeUrl(this.appRout.createUrlTree(['etablissement/'], { queryParams: {school:school} }));
-    window.open(url, '_blank');
+    //const url = this.appRout.serializeUrl(this.appRout.createUrlTree(['etablissement/'], { queryParams: {school:school} }));
+   // window.open(url, '_blank');
+   this.appRout.navigate(['etablissement/'], { queryParams: {school:school} } );
   }
 }

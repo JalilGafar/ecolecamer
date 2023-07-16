@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { tokenStorageService } from './services/token-storage.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,12 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
+    if (environment.production) {
+      if (location.protocol === 'http:') {
+        window.location.href = location.href.replace('http', 'https');
+      }
+    }
+
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
@@ -37,4 +44,5 @@ export class AppComponent implements OnInit {
     this.tokenStorageService.signOut();
     window.location.reload();
   }
+
 }

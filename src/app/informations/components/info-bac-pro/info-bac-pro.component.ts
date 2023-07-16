@@ -11,7 +11,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class InfoBacProComponent implements OnInit{
   
-  titre = "Bac Technique | Pro";
+  titre = "Bac Technique | Bac Pro";
   soustitre = "Comme Jules, 40% des bacheliers utilisent Diplomeo pour trouver leur école";
   photo = "./../../../../assets/images/pexels-kampus-productiont.jpg";
   

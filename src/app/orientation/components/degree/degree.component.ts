@@ -1,19 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { degree } from 'src/app/core/model/degree-model';
 import { OrientationService } from '../../services/orientation.service';
 import { Title } from '@angular/platform-browser';
+import { BEHAVIOR } from 'src/app/core/model/Behavior';
+import { TopNewsService } from 'src/app/services/top-news.service';
 
 @Component({
   selector: 'app-degree',
   templateUrl: './degree.component.html',
   styleUrls: ['./degree.component.scss']
 })
-export class DegreeComponent {
+export class DegreeComponent implements OnInit, AfterViewInit {
 
   degree$!: Observable<degree[]>;
   degreeView!: degree [];
+  loading$!: Observable<boolean>;
   cap = {groupe: 'CAP ou équivalent'};
   bts = {groupe: 'Bac+1 à Bac+2'};
   licence = {groupe: 'Bac+3'};
@@ -21,9 +24,17 @@ export class DegreeComponent {
   doctor = {groupe: 'Bac+6 et plus'};
   autre = {groupe: 'Autre'};
 
+  capLenght!: number
+  btsLenght!: number
+  liLenght!: number
+  masLenght!: number
+  docLenght!: number
+  autLenght!: number
+
   constructor (private orientationService :OrientationService,
               private appRout : Router,
               private route: ActivatedRoute,
+              private topNewsService: TopNewsService,
               private titleService:Title) {this.titleService.setTitle("quel diplome pour ma formation au Cameroun");}
 
   ngOnInit(){
@@ -36,6 +47,12 @@ export class DegreeComponent {
       this.orientationService.getDegreeField(field).subscribe(
         data => {
           this.degreeView = data
+          this.capLenght = this.degreeView.filter(x => x.groupe == this.cap.groupe).length
+          this.btsLenght = this.degreeView.filter(x => x.groupe == this.bts.groupe).length
+          this.liLenght = this.degreeView.filter(x => x.groupe == this.licence.groupe).length
+          this.masLenght = this.degreeView.filter(x => x.groupe == this.master.groupe).length
+          this.docLenght = this.degreeView.filter(x => x.groupe == this.doctor.groupe).length
+          this.autLenght = this.degreeView.filter(x => x.groupe == this.autre.groupe).length
         }
       );
     } else if (cyti === undefined && field === undefined) {
@@ -46,6 +63,10 @@ export class DegreeComponent {
         }
       );
     }
+  }
+
+  ngAfterViewInit(): void {
+    this.topNewsService.scrollTo('header', BEHAVIOR.auto)
   }
 
   setDegree(degree : string){
@@ -71,11 +92,22 @@ export class DegreeComponent {
       );
     }
   }
+
+  setNiveau(){
+    
+  }
     
   getDegreeCyti (degreeCyti: string) {
     this.orientationService.getDegreeCyti(degreeCyti).subscribe(
       data => {
-        this.degreeView = data
+        this.degreeView = data;
+        this.capLenght = this.degreeView.filter(x => x.groupe == this.cap.groupe).length
+        this.btsLenght = this.degreeView.filter(x => x.groupe == this.bts.groupe).length
+        this.liLenght = this.degreeView.filter(x => x.groupe == this.licence.groupe).length
+        this.masLenght = this.degreeView.filter(x => x.groupe == this.master.groupe).length
+        this.docLenght = this.degreeView.filter(x => x.groupe == this.doctor.groupe).length
+        this.autLenght = this.degreeView.filter(x => x.groupe == this.autre.groupe).length
+
       }
     );;
 

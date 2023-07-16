@@ -14,6 +14,7 @@ import { InfoMasterComponent } from "./components/info-master/info-master.compon
 import { InfoEcoleComponent } from "./components/info-ecole/info-ecole.component";
 import { InfoFormationComponent } from "./components/info-formation/info-formation.component";
 import { InfoMetierComponent } from "./components/info-metier/info-metier.component";
+import { CqpComponent } from "./components/cqp/cqp.component";
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
     { path: 'cap', component:InfoCapComponent},
     { path: 'bts', component:InfoBtsComponent},
     { path: 'prepa', component:InfoPrepaComponent},
+    { path: 'cqp', component: CqpComponent},
     { path: 'dut', component:InfoDutComponent},
     { path: 'but', component:InfoButComponent},
     { path: 'bachelor', component:InfoBachelorComponent},

@@ -12,6 +12,7 @@ import { TagModule } from 'primeng/tag';
 import { TabViewModule } from 'primeng/tabview';
 import { DialogModule } from 'primeng/dialog';
 import { ImageModule } from 'primeng/image';
+import { FieldsetModule} from 'primeng/fieldset'
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ImageModule } from 'primeng/image';
       TagModule,
       TabViewModule,
       DialogModule,
-      ImageModule 
+      ImageModule,
+      FieldsetModule
     ]
   })
 

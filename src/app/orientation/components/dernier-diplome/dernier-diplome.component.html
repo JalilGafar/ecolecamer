@@ -1,11 +1,11 @@
 <div fxFlex fxLayout="column">
     <h2>En quelle Bac+ êtes-vous aujourd'hui ?</h2>
-    <div fxLayoutGap="16px" fxLayout="row wrap">
+    <div >
         <button class="but" pButton pRipple  
                             *ngFor="let niveau of niveau " 
                             type="button" 
                             [label]="niveau"
                             (click)="setNiveau(niveau)"></button>
     </div>
-    <button class="buti" pButton pRipple type="button" (click)="setNiveau('aucun diplome')" label="Aucun diplôme" ></button>
+    <p-button class="buti" styleClass="p-button-outlined" (click)="setNiveau('aucun diplome')" label="Aucun diplôme" ></p-button>
 </div>

@@ -1,0 +1,95 @@
+.blob-9 {
+    display: block;
+    position: absolute;
+    left: 48%;
+    top: 40%;
+    margin: 0 auto;
+    width: 80px;
+    aspect-ratio: 1;
+    //border: 10px solid #c66464;
+    background: 
+      radial-gradient(farthest-side,#52cef4b7 100%,#0000) top,
+      radial-gradient(farthest-side,#52cef4b7 100%,#0000) top,
+      radial-gradient(farthest-side,#52cef4b7 100%,#0000) left,
+      radial-gradient(farthest-side,#52cef4b7 100%,#0000) right,
+      radial-gradient(farthest-side,#52cef4b7 100%,#0000) bottom,
+      #ffffff00;
+    background-size:25px 25px;
+    background-repeat: no-repeat;
+    filter: blur(2px) contrast(5); 
+    animation: b9 2s infinite;
+}
+
+@keyframes b9 {
+    0%   {background-position:top,top,left,right,bottom}
+    25%  {background-position:right,top,left,right,bottom}
+    50%  {background-position:bottom,top,left,right,bottom}
+    75%  {background-position:left,top,left,right,bottom}
+    100% {background-position:top,top,left,right,bottom}
+}
+
+.cssload-container {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #393939ea;
+    z-index: 9999;
+  }
+  
+  .cssload-speeding-wheel {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 48%;
+    top: 40%;
+    width: 63px;
+    height: 63px;
+    margin: 0 auto;
+    border: 4px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: cssload-spin 500ms infinite linear;
+    -o-animation: cssload-spin 500ms infinite linear;
+    -ms-animation: cssload-spin 500ms infinite linear;
+    -webkit-animation: cssload-spin 500ms infinite linear;
+    -moz-animation: cssload-spin 500ms infinite linear;
+  }
+  
+  @keyframes cssload-spin {
+    100% {
+      transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  @-o-keyframes cssload-spin {
+    100% {
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  @-ms-keyframes cssload-spin {
+    100% {
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  @-webkit-keyframes cssload-spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  @-moz-keyframes cssload-spin {
+    100% {
+      -moz-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }

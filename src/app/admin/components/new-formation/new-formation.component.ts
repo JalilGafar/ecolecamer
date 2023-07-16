@@ -63,4 +63,7 @@ export class NewFormationComponent implements OnInit, OnDestroy{
   ngOnDestroy() {
    // this.adminService.addNewFormation(this.newFormation.value).unsubscribe(); // Unsubscribe Observable 1
 }
+  onGoBack(){
+    this.appRout.navigateByUrl('/admin/adminStart')
+  }
 }

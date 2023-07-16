@@ -13,8 +13,8 @@ import { Title } from '@angular/platform-browser';
 export class InfoDiplomeComponent implements OnInit{
   
   titre = "Trouvez votre formation au Cameroun";
-  soustitre = "Comme Jules, ils sont nombreux à utiliser Camerdiplome pour trouver leur école";
-  photo = "./../../../../assets/images/pexels-kampus-productiont.jpg";
+  soustitre = "Comme Fadimatou, elles sont nombreuse à utiliser Camerdiplome pour trouver leur école";
+  photo = "./../../../../assets/images/fati_lon.jpg";
   school$!: Observable <interestelt[]>;
 
   constructor( private infoservice : InfoServices,

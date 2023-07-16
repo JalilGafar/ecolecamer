@@ -46,8 +46,9 @@ export class CatalogPanelComponent {
   }
 
   showThisDegree (degree : string){
-    const url = this.appRout.serializeUrl(this.appRout.createUrlTree(['diplome/'], { queryParams: {degree:degree} }));
-    window.open(url, '_blank');
+    //const url = this.appRout.serializeUrl(this.appRout.createUrlTree(['diplome/'], { queryParams: {degree:degree} }));
+    //window.open(url, '_blank');
+    this.appRout.navigate(['diplome/'], { queryParams: {degree:degree} } );
   }
 
 }
