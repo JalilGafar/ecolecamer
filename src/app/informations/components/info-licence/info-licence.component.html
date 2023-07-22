@@ -1,11 +1,58 @@
 <app-headmsg 
     [titre]="titre"
     [soustitre]="soustitre"
+    [photo] = "photo"
     >
 </app-headmsg>
 <app-start ></app-start>
-<app-pub-first></app-pub-first>
-<app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
+<div class="container">
+    <div class="first-pub">
+        <app-pub-first></app-pub-first>
+    </div>
+    <div class="main-container">
+        <app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
+        <div class="redaction-info">   
+            <h1>Licence d'Enseignement Universitaire </h1> 
+            <p>
+                La licence est une formation qui peut s'intégrer directement après l'obtention d'un 
+                baccalauréat. Vous obtenez le diplôme au bout de trois années au sein d'un établissement de 
+                l'enseignement supérieur. Elle est disponible dans de nombreux domaines et représente un 
+                premier pas dans les études supérieures. Camerdiplome vous donne tous les détails sur cette 
+                formation et vous aide à trouver celle qui vous correspond ! 
+            </p>       
+            <p-accordion [activeIndex]="0">
+                <p-accordionTab header="Qu'est ce qu'une licence ?">
+                    <p> 
+
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="Comment entrer en licence ?">
+                    <p>
+                        
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="Que faire après une licence ?">
+                    <p>
+                       
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="Comment choisir une licence qui me correspond ?">
+                    <p>
+                        
+                    </p>
+                </p-accordionTab>
+            </p-accordion>
+
+            <p-card header="Liste des licences au Cameroun" >
+                <p-card></p-card>
+            </p-card>
+            
+        </div>
+    </div>
+    <aside class="side-container">
+        <app-side-info></app-side-info>
+    </aside>
+</div>
 <!-- 
 <app-info-redaction></app-info-redaction>
 <app-interest-list></app-interest-list>

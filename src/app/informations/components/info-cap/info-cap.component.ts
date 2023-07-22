@@ -7,7 +7,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-info-cap',
   templateUrl: './info-cap.component.html',
-  styleUrls: ['./info-cap.component.scss']
+  styleUrls: ['./info-cap.component.scss', '../../informations-style.module.scss']
 })
 export class InfoCapComponent implements OnInit{
   
@@ -18,7 +18,7 @@ export class InfoCapComponent implements OnInit{
   school$!: Observable<interestelt[]>
 
   constructor( private infoservice :InfoServices,
-              private titleService:Title) {this.titleService.setTitle("Liste CAP | Camerdiplome");}
+              private titleService:Title) {this.titleService.setTitle("Obtenir un CAP au Cameroun | Camerdiplome");}
 
 
   ngOnInit(): void {

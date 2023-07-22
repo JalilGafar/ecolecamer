@@ -1,11 +1,65 @@
 <app-headmsg 
     [titre]="titre"
     [soustitre]="soustitre"
+    [photo] = "photo"
     >
 </app-headmsg>
 <app-start ></app-start>
-<app-pub-first></app-pub-first>
-<app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
+<div class="container">
+    <div class="first-pub">
+        <app-pub-first></app-pub-first>
+    </div>
+    <div class="main-container">
+        <app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
+        <div class="redaction-info">   
+            <h1>Le Diplôme Universitaire de Technologie (DUT) </h1> 
+            <p>
+                Le DUT est un diplôme préparé en 2 ans en IUT (Institut Universitaire de Technologie).
+                Le BTS, comme le DUT, est un diplôme d'État que l'on obtient à l'issue d'une formation post-bac 
+                de deux ans. Mais s'ils sont tous les deux de niveau Bac+2, les modalités d'obtention des BTS et 
+                des DUT sont différentes. En DUT, la validation se fait en contrôle continu et des examens sont 
+                organisés à la fin des premiers et seconds semestres de chaque année alors qu'en BTS, le diplôme 
+                n'est délivré qu'à l'issue d'un examen final organisé à la fin de la deuxième année. <br>
+                Déroulement des études, parcours proposés, débouchés… Retour sur l'essentiel avec 
+                Camerdiplome sur ce diplôme universitaire de technologie.
+            </p>       
+            <p-accordion [activeIndex]="0">
+                <p-accordionTab header="Qu'est ce qu'un DUT ?">
+                    <p> 
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="La liste des Diplômes Universitaires de Technologie">
+                    <p>
+                        
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="Quel est le programme en DUT ?">
+                    <p>
+                       
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="Comment se déroule l'admission en DUT ?">
+                    <p>
+                        
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="Quel sont les débouchés après une formation DUT ?">
+                    <p>
+                       
+                    </p>
+                </p-accordionTab>
+            </p-accordion>
+
+            <p-card header="Liste des DUT" >
+                <p-card></p-card>
+            </p-card>
+            
+        </div>
+    </div>
+    <aside class="side-container">
+        <app-side-info></app-side-info>
+    </aside>
+</div>
 <!-- 
 <app-info-redaction></app-info-redaction>
 <app-interest-list></app-interest-list>
@@ -13,3 +67,5 @@
 <app-interest-avis></app-interest-avis>
 <app-interest-classification></app-interest-classification>
  -->
+
+ <app-under-building></app-under-building>

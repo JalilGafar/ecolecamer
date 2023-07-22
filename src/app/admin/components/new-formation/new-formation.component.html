@@ -39,6 +39,18 @@
             </p-dropdown>
         </div>
         <div class="form-group">
+            <label for="">Autre Domaine</label>
+            <p-dropdown id="domaine_id2" *ngIf="domaine$ | async as domaine" [options]="domaine" optionLabel="nom_dom" placeholder="Quel Domaine ?" optionValue="id_dom"  formControlName="domaine_id2">
+
+            </p-dropdown>
+        </div>
+        <div class="form-group">
+            <label for="">Autre Domaine</label>
+            <p-dropdown id="domaine_id3" *ngIf="domaine$ | async as domaine" [options]="domaine" optionLabel="nom_dom" placeholder="Quel Domaine ?" optionValue="id_dom"  formControlName="domaine_id3">
+
+            </p-dropdown>
+        </div>
+        <div class="form-group">
             <label for=""> Diplome</label>
             <p-dropdown id="diplom_id" 
                         *ngIf="diplomes$ | async as diplome" 
@@ -52,7 +64,7 @@
         </div>
         <div class="form-group">
             <label for="">Ecole</label>
-            <p-dropdown id="ecole_id" *ngIf="ecole$ | async as ecoles" placeholder="Quelle Ecole ?" [options]="ecoles" optionLabel="nom_e" optionValue="id_ecol" formControlName="ecole_id"></p-dropdown>
+            <p-dropdown id="ecole_id" *ngIf="ecole$ | async as ecoles" placeholder="Quelle Ecole ?" [options]="ecoles" optionLabel="displayName" optionValue="id_ecol" formControlName="ecole_id"></p-dropdown>
         </div>
 
         <div class="action-buttons">

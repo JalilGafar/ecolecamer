@@ -2,20 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { interestelt } from 'src/app/core/model/interest-item-model';
 import { InfoServices } from '../../information.services';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-info-bachelor',
   templateUrl: './info-bachelor.component.html',
-  styleUrls: ['./info-bachelor.component.scss']
+  styleUrls: ['./info-bachelor.component.scss', '../../informations-style.module.scss']
 })
 export class InfoBachelorComponent implements OnInit{
   
-  titre = "Trouvez votre formation";
-  soustitre = "Comme Jules, 40% des bacheliers utilisent Diplomeo pour trouver leur école"
+  titre = "Find your Bachelor's degree";
+  soustitre = "Like Jules, 40% of high school graduates use Camerdiplome to find their school";
+  photo = "./../../../../assets/images/pexels-kampus-productiont.jpg";
   
   school$!: Observable<interestelt[]>
 
-  constructor( private infoservice :InfoServices) {}
+  constructor( private infoservice :InfoServices,
+              private titleService:Title) {this.titleService.setTitle("Le bac technique au Cameroun | Camerdiplome");}
 
   ngOnInit(): void {
 

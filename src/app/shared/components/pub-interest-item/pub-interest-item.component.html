@@ -6,7 +6,7 @@
             [style]="{'cursor':'pointer'}">
         <div class="grid-container" >
             <div class="grid-content">
-                <img alt="Card" src="./../../../../assets/images/logo-no-background.svg" />
+                <img alt="Card" [src]="school.logo_e" />
             </div>
             <div class="grid-content">
                 <p-tag class="fas" [style]="{'background':'#f4f6fc', 'color':'#344cbe'}" [value]="school.groupe" icon="pi pi-user"></p-tag>
@@ -29,7 +29,7 @@
                 <p-card [header]="school.nom_dip" [subheader]="school.nom_e" class="training-card medium" >
                     <div class="grid-container" >
                         <div class="grid-content">
-                            <img alt="Card" src="./../../../../assets/images/logo-no-background.svg" />
+                            <img alt="Card" [src]="school.logo_e" />
                         </div>
                         <div class="grid-content">
                             <p-tag class="fas" [style]="{'background':'#f4f6fc', 'color':'#344cbe'}" [value]="school.groupe" icon="pi pi-user"></p-tag>
@@ -71,7 +71,7 @@
                 <p-card [header]="school.nom_dip" [subheader]="school.nom_e" class="training-card medium" >
                     <div class="grid-container" >
                         <div class="grid-content">
-                            <img alt="Card" src="./../../../../assets/images/logo-no-background.svg" />
+                            <img alt="Card" [src]="school.logo_e" />
                         </div>
                     </div>
                 </p-card>

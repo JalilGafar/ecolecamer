@@ -4,13 +4,15 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { BEHAVIOR } from '../core/model/Behavior';
+import { counter } from '../core/model/counter-model';
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class TopNewsService {
 
-  
 
     constructor (private http: HttpClient){};
 
@@ -21,5 +23,9 @@ export class TopNewsService {
 
   scrollTo(element: string, behavior: BEHAVIOR): void {
     (document.getElementById(element) as HTMLElement).scrollIntoView({behavior: behavior, block:"start", inline:"nearest"})
+  }
+
+  countFormation(): Observable<counter[]> {
+    return this.http.get<counter[]>(`${environment.apiUrl}/api/countFomration`); 
   }
 }

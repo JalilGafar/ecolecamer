@@ -16,7 +16,7 @@ export class Formation {
     descriptif_dip!: string;
     condition_diplome!: string;
     niveau_diplome!: string;
-    ecole_id!: number;
+    ecole_f_id!: number;
     domaine_id!: number;
     diplome_id!: number;
     categorie_id!: number;

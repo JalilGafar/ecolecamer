@@ -24,10 +24,10 @@
 
             button{
                 width: 80%;
-                background-color: #FB806F;
+                background-color: #ff5e00;
                 color: #fff;
                 border-radius: 19px;
-                font-size: 20px;
+                font-size: x-large;
                 line-height: 1.3333333;
                 padding: 10px 16px;
             }
@@ -50,8 +50,10 @@
                 padding-right: 16px;
 
                 button {
-                    width: 100%;
-                    padding: 18px 16px;
+                    width: 50%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    //padding: 18px 16px;
                 }
             }
         }

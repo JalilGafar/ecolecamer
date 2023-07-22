@@ -41,6 +41,10 @@
             <input id="email_e" type="text" formControlName="email_e">
         </div>
         <div class="form-group">
+            <label for="">Site web</label>
+            <input id="siteweb_e" type="text" formControlName="siteweb_e">
+        </div>
+        <div class="form-group">
             <label for="">BP</label>
             <input id="bp_e" type="text" formControlName="bp_e">
         </div>
@@ -54,7 +58,7 @@
         </div>
         <div class="form-group">
             <label for="">mot du directeur</label>
-            <input id="mot_directeur" type="text" formControlName="mot_directeur">
+            <p-editor formControlName="mot_directeur" [style]="{'height':'320px'}"></p-editor>
         </div>
         <div class="form-group">
             <label for="">Statistiques</label>
@@ -62,7 +66,7 @@
         </div>
         <div class="form-group">
             <label for="">Présentation de l'Ecole</label>
-            <input id="descriptif_e" type="text" formControlName="descriptif_e">
+            <p-editor formControlName="descriptif_e" [style]="{'height':'320px'}"></p-editor>
         </div>
         <div class="form-group">
             <label for="">Images</label>

@@ -11,7 +11,16 @@
     </div>
     <div class="main-container">
         <app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
-        <div class="redaction-info">           
+        <div class="redaction-info">  
+            <h1>Le Certificat d'Aptitude Professionnel au Cameroun</h1> 
+            <p>
+                La durée des études est de 04 ans pour le premier cycle et 03 ans pour le 
+                second cycle. La fin du premier cycle est sanctionnée par le Certificat 
+                d'Aptitude Professionnel (CAP). La deuxième année du 2nd cycle est sanctionnée 
+                par l'obtention du Probatoire Technique correspondant à la filière choisie 
+                en classe de 2nde. La dernière année d'étude est sanctionnée par l'obtention 
+                du Baccalauréat ou du Brevet de Technicien selon le cas.
+            </p>    
             <p-accordion [activeIndex]="0">
                 <p-accordionTab header="Le Certificat d'Aptitude Professionnelle (CAP)">
                     <p> 

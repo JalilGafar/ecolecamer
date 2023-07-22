@@ -121,7 +121,7 @@ export class AdminService {
     }
 
     addNewFormation(formationForm: {nom_f: string, admission_diplome: string, condition_diplome: string, 
-                    diplom_id: number, ecole_id: number, domaine_id: number, date_debut_f: string, duree_f: string,
+                    diplom_id: number, ecole_id: number, domaine_id: number, domaine_id2: number, domaine_id3: number, date_debut_f: string, duree_f: string,
                       cout_f: string, programme_f: string, descriptif_f: string}): Observable<Formation>{
       console.log(formationForm.nom_f + ' Send to BackEnd')
       return this.http.post<Formation>(`${environment.apiUrl}/api/formations`, formationForm);
@@ -129,8 +129,8 @@ export class AdminService {
 
     editFormation(formationForm: {id_form: number, nom_f: string, diplome_id: number, 
                                   admission_diplome: string,  condition_diplome: string, 
-                                  niveau_diplome: string, ecole_id: number, 
-                                  domaine_id: number, date_debut_f: string, duree_f: string,
+                                  niveau_diplome: string, ecole_id: number, domaine_id: number, 
+                                  domaine2_id: number, domaine3_id: number, date_debut_f: string, duree_f: string,
                                   cout_f: string, programme_f: string, descriptif_f: string}): Observable<Formation>{
                                   
         return this.http.put<Formation>(`${environment.apiUrl}/api/formations`, formationForm);
@@ -211,7 +211,7 @@ export class AdminService {
 
     addNewEcole(  ecoleForm: {nom_e: string, sigle_e: string,
                 logo_e: string, niveau_e: string, langue_e: string, date_creation: string, arrete_creation: string, arrete_ouverture: string,
-                tel_1_e: string, email_e: string, bp_e: string, directeur_e: string,
+                tel_1_e: string, email_e: string, siteweb_e: string, bp_e: string, directeur_e: string,
                 photo_directeur: string, mot_directeur: string, stat_e: string, descriptif_e: string,
                 image_e: string, universites_id: number, campus_id: number}):Observable<Ecole>{
       

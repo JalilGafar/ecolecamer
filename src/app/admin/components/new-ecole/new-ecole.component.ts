@@ -35,6 +35,7 @@ export class NewEcoleComponent implements OnInit {
       arrete_ouverture: [null],
       tel_1_e : [null],
       email_e : [null],
+      siteweb_e : [null],
       bp_e : [null],
       directeur_e : [null],
       photo_directeur : [null],

@@ -20,6 +20,8 @@ import { FormationInfoModule } from "../formation-info/formation-info.module";
 import { OrientationModule } from "../orientation/orientation.module";
 import { InfoServices } from './information.services';
 import { CqpComponent } from './components/cqp/cqp.component';
+import { InfoHndComponent } from './components/info-hnd/info-hnd.component';
+import { InfoMasterDegreeComponent } from './components/info-master-degree/info-master-degree.component';
 
 
 
@@ -39,7 +41,9 @@ import { CqpComponent } from './components/cqp/cqp.component';
         InfoEcoleComponent,
         InfoFormationComponent,
         InfoMetierComponent,
-        CqpComponent
+        CqpComponent,
+        InfoHndComponent,
+        InfoMasterDegreeComponent
     ],
     imports: [
         CommonModule,

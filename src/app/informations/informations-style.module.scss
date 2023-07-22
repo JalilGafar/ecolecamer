@@ -1,0 +1,66 @@
+
+p {
+    text-align: justify;
+}
+
+.redaction-info {
+    padding-top: 34px;
+}
+
+:host ::ng-deep {
+    .p-tabview-panels{
+        padding: 0;
+        padding-top: 1.2rem;
+    }
+
+    .p-button {
+        margin-top: 10px;
+        width: -webkit-fill-available;
+    }
+
+    .p-fieldset-legend-text{
+        font-size: small;
+    }
+    .p-fieldset.p-fieldset-toggleable .p-fieldset-legend a {
+        padding: 4px;
+    }
+    .pi-minus:before{
+        display: none;
+    }
+
+    .p-fieldset .p-fieldset-content {
+        padding: 1px;
+    }
+    .p-fieldset-legend>a {
+        justify-content: left;
+    }
+    .p-fieldset {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (min-width: 450px) {   
+    .container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 10px;
+        background-color: #d6e5f2;
+        padding: 10px;
+    }
+    .first-pub {
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+    .main-container {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    
+    h3 {
+        font-weight: 500;
+    }
+    .side-container {
+        margin-top: 40px;
+    }
+}
+

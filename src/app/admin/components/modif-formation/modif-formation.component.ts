@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, switchMap, take, tap } from 'rxjs';
+import { Observable, map, switchMap, take, tap } from 'rxjs';
 import { Categ } from '../../models/categ.model';
 import { Domaine } from '../../models/domaine.model';
 import { Ecole } from '../../models/ecole.model';
@@ -32,11 +32,13 @@ export class ModifFormationComponent implements OnInit{
     this.modifFormation = this.formBuilder.group({
       id_form: [null],
       nom_f: [null],
-      diplome_id: [null, [Validators.required]],
+      diplome_id: [null],
       admission_diplome: [null],
       condition_diplome: [null],
-      ecole_id: [null, [Validators.required]],
+      ecole_f_id: [null, [Validators.required]],
       domaine_id: [null, [Validators.required]],
+      domaine_id2: [null],
+      domaine_id3: [null],
       date_debut_f: [null],
       duree_f: [null],
       cout_f: [null],
@@ -59,7 +61,7 @@ export class ModifFormationComponent implements OnInit{
           admission_diplome: val.admission_diplome,
           condition_diplome: val.condition_diplome,
           diplome_id: val.diplome_id,
-          ecole_id : val.ecole_id,
+          ecole_f_id : val.ecole_f_id,
         })
       })
     );
@@ -70,7 +72,12 @@ export class ModifFormationComponent implements OnInit{
     this.adminService.getEcoleFromServer();
     this.diplomes$ = this.adminService.diplomes$
     this.domaine$ = this.adminService.domaine$;
-    this.ecole$ = this.adminService.ecoles$;
+    this.ecole$ = this.adminService.ecoles$.pipe(
+      map(data => data.map(data => ({
+        ...data,
+        displayName : data.sigle_e+' || '+data.nom_e
+      })))
+    );
     
 
   }

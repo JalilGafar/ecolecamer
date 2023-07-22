@@ -1,23 +1,24 @@
 <mat-nav-list fxLayout="column">
-    <button mat-button [matMenuTriggerFor]="diplomes" >Diplômes</button>
-    <mat-menu #diplomes="matMenu">
-        <button mat-menu-item routerLink="info/diplomes" (click)="onSidenavClose() " >Diplômes</button>
+    <button mat-button routerLink="info/diplomes" (click)="onSidenavClose() " >Diplômes</button>
+    <button mat-button [matMenuTriggerFor]="postbac" >Avant Bac </button>
+    <mat-menu #postbac="matMenu">
         <button mat-menu-item routerLink="info/cap" (click)="onSidenavClose() ">CAP</button>
         <button mat-menu-item routerLink="info/bacPro" (click)="onSidenavClose() ">Bac Technique</button>
+        <button mat-menu-item routerLink="info/cqp" (click)="onSidenavClose() ">CQP / DQP</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="prebac" >Après Bac </button>
+    <mat-menu #prebac="matMenu">
         <button mat-menu-item routerLink="info/prepa" (click)="onSidenavClose() ">Prépa</button>
-        <button mat-menu-item routerLink="info/cqp" (click)="onSidenavClose() ">CQP</button>
-        <button mat-menu-item routerLink="info/bts" (click)="onSidenavClose() ">BTS / HND</button>
-        <button mat-menu-item routerLink="info/but" (click)="onSidenavClose() ">BUT</button>
-        <button mat-menu-item routerLink="info/bachelor" (click)="onSidenavClose() ">Bachelor</button>
+        <button mat-menu-item routerLink="info/bts" (click)="onSidenavClose() ">BTS</button>
+        <button mat-menu-item routerLink="info/hnd" (click)="onSidenavClose() ">HND</button>
+        <button mat-menu-item routerLink="info/dut" (click)="onSidenavClose() ">DUT</button>
         <button mat-menu-item routerLink="info/licence" (click)="onSidenavClose() ">Licence</button>
         <button mat-menu-item routerLink="info/licencePro" (click)="onSidenavClose() ">Licence Pro</button>
-        <button mat-menu-item routerLink="info/master" (click)="onSidenavClose() ">Master / Ingénieur</button>
+        <button mat-menu-item routerLink="info/bachelor" (click)="onSidenavClose() ">Bachelor's Degree</button>
+        <button mat-menu-item routerLink="info/master" (click)="onSidenavClose() ">Master</button>
     </mat-menu>
-    <button mat-button routerLink="info/ecole" (click)="onSidenavClose() ">Ècoles</button>
-    <button mat-button [matMenuTriggerFor]="formation" >Formation</button>
-    <mat-menu #formation="matMenu">
-        <button mat-menu-item routerLink="info/filiere" (click)="onSidenavClose() ">Filière</button>
-        <button mat-menu-item routerLink="info/metier" (click)="onSidenavClose() ">Métier</button>
-    </mat-menu>
+    <button mat-button routerLink="info/ecole" (click)="onSidenavClose() ">Ecoles</button>
+    <button mat-button routerLink="info/metier" (click)="onSidenavClose() ">Métier</button>
+    
     <button mat-button routerLink="referencer" (click)="onSidenavClose() ">Référencer son établissement</button>
 </mat-nav-list>

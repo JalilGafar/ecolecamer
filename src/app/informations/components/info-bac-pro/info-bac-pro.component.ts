@@ -7,18 +7,18 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-info-bac-pro',
   templateUrl: './info-bac-pro.component.html',
-  styleUrls: ['./info-bac-pro.component.scss']
+  styleUrls: ['./info-bac-pro.component.scss', '../../informations-style.module.scss']
 })
 export class InfoBacProComponent implements OnInit{
   
   titre = "Bac Technique | Bac Pro";
-  soustitre = "Comme Jules, 40% des bacheliers utilisent Diplomeo pour trouver leur école";
+  soustitre = "Comme Jules, 40% des bacheliers utilisent Camerdiplome pour trouver leur école";
   photo = "./../../../../assets/images/pexels-kampus-productiont.jpg";
   
   school$!: Observable<interestelt[]>
 
   constructor( private infoservice :InfoServices,
-              private titleService:Title) {this.titleService.setTitle("Trouver bonne une école de formation au Cameroun");}
+              private titleService:Title) {this.titleService.setTitle("Le bac technique au Cameroun | Camerdiplome");}
 
 
   ngOnInit(): void {

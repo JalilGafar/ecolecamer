@@ -8,26 +8,27 @@
     </button>
         
         <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs >
-            <button mat-button [matMenuTriggerFor]="diplomes" >Diplômes</button>
-            <mat-menu #diplomes="matMenu" >         
-                <a routerLink="info/diplomes" ><button mat-menu-item >Diplômes</button></a>
+            <button routerLink="info/diplomes" mat-button >Diplômes</button>
+            <button mat-button [matMenuTriggerFor]="prebac" class="goto" >Avant Bac</button>
+            <mat-menu #prebac="matMenu" >  
                 <button routerLink="info/cap" mat-menu-item>CAP</button>
                 <button routerLink="info/bacPro" mat-menu-item>Bac Technique</button>
+                <button routerLink="info/cqp" mat-menu-item>CQP / DQP</button>
+            </mat-menu>       
+            <button mat-button [matMenuTriggerFor]="postbac" class="goto" >Après Bac</button>
+            <mat-menu #postbac="matMenu" >         
                 <button routerLink="info/prepa" mat-menu-item>Prépa</button>
-                <button routerLink="info/cqp" mat-menu-item>CQP</button>
-                <button routerLink="info/bts" mat-menu-item>BTS / HND</button>
-                <button routerLink="info/but" mat-menu-item>BUT</button>
-                <button routerLink="info/bachelor" mat-menu-item>Bachelor</button>
+                <button routerLink="info/bts" mat-menu-item>BTS</button>
+                <button routerLink="info/hnd" mat-menu-item>HND</button>
+                <button routerLink="info/dut" mat-menu-item>DUT</button>
                 <button routerLink="info/licence" mat-menu-item>Licence</button>
                 <button routerLink="info/licencePro" mat-menu-item>Licence Pro</button>
-                <button routerLink="info/master" mat-menu-item>Master / Ingénieur</button>
+                <button routerLink="info/bachelor" mat-menu-item>Bachelor's Degree</button>
+                <button routerLink="info/master" mat-menu-item>Master</button>
             </mat-menu>
-            <button routerLink="info/ecole" mat-button >Ècoles</button>
-            <button mat-button [matMenuTriggerFor]="formation" >Formation</button>
-            <mat-menu #formation="matMenu">
-                <button mat-menu-item routerLink="info/filiere">Filière</button>
-                <button mat-menu-item routerLink="info/metier">Métier</button>
-            </mat-menu>
+            <button routerLink="info/ecole" mat-button >Ecoles</button>
+            <button routerLink="info/metier" mat-button >Métier</button>
+    
             <p-button routerLink="referencer" label="Référencer son établissement" styleClass="p-button-outlined p-button-secondary"></p-button>
         </div>
     

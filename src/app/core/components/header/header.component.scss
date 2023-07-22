@@ -1,3 +1,14 @@
+.goto::after {
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+    border-right: .3em solid transparent;
+    border-top: .3em solid;
+    content: "";
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    box-sizing: border-box;
+}
 a {
     text-decoration: none;
     color: white;

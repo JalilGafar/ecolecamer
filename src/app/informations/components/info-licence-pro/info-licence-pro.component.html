@@ -1,11 +1,68 @@
 <app-headmsg 
     [titre]="titre"
     [soustitre]="soustitre"
+    [photo] = "photo"
     >
 </app-headmsg>
 <app-start ></app-start>
-<app-pub-first></app-pub-first>
-<app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
+<div class="container">
+    <div class="first-pub">
+        <app-pub-first></app-pub-first>
+    </div>
+    <div class="main-container">
+        <app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
+        <div class="redaction-info">   
+            <h1>Licence Professionnelle </h1> 
+            <p>
+                Avec une année d'étude supplémentaire, les licences professionnelles permettent aux titulaires d'un 
+                Bac+2 d'acquérir une spécialisation supplémentaire ou d'affiner leur cursus avant d'intégrer le 
+                marché du travail. Diplôme national professionnalisant, il est très apprécié par les employeurs. 
+                Vous souhaitez poursuivre dans l'enseignement supérieur après votre bac+2 ? Voici tout ce qu'il 
+                faut savoir sur la licence professionnelle au Cameroun!
+            </p>       
+            <p-accordion [activeIndex]="0">
+                <p-accordionTab header="Qu'est ce qu'une licence pro ?">
+                    <p> 
+
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="Les spécialisations de licence pro">
+                    <p> 
+
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="Programme en licence pro ">
+                    <p>
+                        
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="Comment intégrer une licence pro ?">
+                    <p>
+                        
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="Que faire après une licence pro ?">
+                    <p>
+                       
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="Comment choisir une licence pro qui me correspond ?">
+                    <p>
+                        
+                    </p>
+                </p-accordionTab>
+            </p-accordion>
+
+            <p-card header="Liste des Licences Pro au Cameroun" >
+                <p-card></p-card>
+            </p-card>
+            
+        </div>
+    </div>
+    <aside class="side-container">
+        <app-side-info></app-side-info>
+    </aside>
+</div>
 <!-- 
 <app-info-redaction></app-info-redaction>
 <app-interest-list></app-interest-list>

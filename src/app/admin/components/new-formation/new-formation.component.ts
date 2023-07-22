@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable, take } from 'rxjs';
+import { Observable, map, take } from 'rxjs';
 import { Domaine } from '../../models/domaine.model';
 import { Ecole } from '../../models/ecole.model';
 import { AdminService } from '../../services/admin.service';
@@ -34,6 +34,8 @@ export class NewFormationComponent implements OnInit, OnDestroy{
       diplom_id: [null, [Validators.required]],
       ecole_id: [null, [Validators.required]],
       domaine_id: [null, [Validators.required]],
+      domaine_id2: [null],
+      domaine_id3: [null],
       date_debut_f: [null],
       duree_f: [null],
       cout_f: [null],
@@ -46,7 +48,12 @@ export class NewFormationComponent implements OnInit, OnDestroy{
     this.adminService.getEcoleFromServer();
     this.domaine$ = this.adminService.domaine$;
     this.diplomes$ = this.adminService.diplomes$;
-    this.ecole$ = this.adminService.ecoles$;
+    this.ecole$ = this.adminService.ecoles$.pipe(
+      map(data => data.map(data => ({
+        ...data,
+        displayName : data.sigle_e+' || '+data.nom_e
+      })))
+    ) ;
   }
 
 

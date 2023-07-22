@@ -1,12 +1,57 @@
 <app-headmsg 
     [titre]="titre"
     [soustitre]="soustitre"
+    [photo] = "photo"
     >
 </app-headmsg>
 <app-start ></app-start>
-<app-pub-first></app-pub-first>
-<app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
-<!-- 
+<div class="container">
+    <div class="first-pub">
+        <app-pub-first></app-pub-first>
+    </div>
+    <div class="main-container">
+        <app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
+        <div class="redaction-info">   
+            <h1>Les fiches métiers</h1> 
+            <p>
+                A la différence des précédentes, les générations actuelles savent qu'elles seront, 
+                majoritairement, amenées à accomplir différents métiers. Désormais, il n'est plus 
+                question de passer toute sa vie professionnelle au sein d'une même entreprise et 
+                les différentes formations proposées, les réorientations, les évolutions de postes 
+                ont pour conséquence qu'il y a de grandes chances pour que chacun vive différents 
+                emplois au cours de sa carrière.
+                <br>
+                Même s'il s'agit d'une certaine réalité, il n'en reste pas moins que les jeunes 
+                doivent choisir une orientation afin de se diriger vers le secteur qui leur plait 
+                le plus. C'est cette orientation qui permet de choisir un métier. 
+            </p>       
+            <p-accordion [activeIndex]="0">
+                <p-accordionTab header="L'orientation après le bac">
+                    <p> 
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="Comment choisir un métier ?">
+                    <p>
+                        
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab header="Et si l'on a pas d'idée ?">
+                    <p>
+                       
+                    </p>
+                </p-accordionTab>
+            </p-accordion>
+
+            <p-card header="Fiches métier" >
+                <p-card></p-card>
+            </p-card>
+            
+        </div>
+    </div>
+    <aside class="side-container">
+        <app-side-info></app-side-info>
+    </aside>
+</div><!-- 
 <app-info-redaction></app-info-redaction>
 <app-interest-list></app-interest-list>
 <app-interest-actualite></app-interest-actualite>

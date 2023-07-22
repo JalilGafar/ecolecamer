@@ -11,7 +11,7 @@ import { InfoServices } from '../../information.services';
 export class InfoButComponent implements OnInit{
   
   titre = "Trouvez votre formation";
-  soustitre = "Comme Jules, 40% des bacheliers utilisent Diplomeo pour trouver leur école"
+  soustitre = "Comme Jules, 40% des bacheliers utilisent Camerdiplome pour trouver leur école"
   
   school$!: Observable<interestelt[]>
 

@@ -8,7 +8,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-info-diplome',
   templateUrl: './info-diplome.component.html',
-  styleUrls: ['./info-diplome.component.scss']
+  styleUrls: ['./info-diplome.component.scss', '../../informations-style.module.scss']
 })
 export class InfoDiplomeComponent implements OnInit{
   
@@ -18,7 +18,7 @@ export class InfoDiplomeComponent implements OnInit{
   school$!: Observable <interestelt[]>;
 
   constructor( private infoservice : InfoServices,
-              private titleService:Title) {this.titleService.setTitle("Diplômes, certificats et brevets aux Cameroun");}
+              private titleService:Title) {this.titleService.setTitle("Diplômes, certificats et brevets au Cameroun");}
 
 
   products = [
