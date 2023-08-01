@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-etudiant',
   templateUrl: './etudiant.component.html',
-  styleUrls: ['./etudiant.component.scss']
+  styleUrls: ['./etudiant.component.scss', '../../orientation-style.module.scss']
 })
 export class EtudiantComponent {
 

@@ -1,6 +1,6 @@
  .main {
      align-items: center;
-     background-color: #cdcdcd;
+     background-color: #fff;
      display: flex;
      justify-content: center;
      padding: 10px ;
@@ -9,21 +9,20 @@
 
 form {
    
-    background-color: #a0a2b2;
+    background-color: #fefeffe1;
     border-radius: 20px;
     box-sizing: border-box;
+    border-style: solid;
    // height: 500px;
     padding: 20px;
     width: 320px;
 }
 
 .title {
-    color: #eee;
-    font-family: sans-serif;
-    font-size: 2em;
-    font-weight: 400;
-    margin-top: 20px;
-    font-family: monospace;
+    color: #000;
+    text-align: center;
+    font-size: x-large;
+    font-family: cursive;
   }
 
 .input-container {
@@ -37,16 +36,15 @@ form {
 }
 
 .input{
-    background-color: #303245;
+    background-color: #fff;
     border-radius: 12px;
-    border: 0;
-    box-sizing: border-box;
-    color: #eee;
-    font-size: 18px;
+    border-style: solid;
     height: 100%;
-    outline: 0;
-    padding: 4px 20px 0;
     width: 100%;
+    color: #282828;
+    font-size: x-large;
+    height: 100%;
+    padding: 4px 20px 0;
 }
 
 ::ng-deep .mat-form-field {
@@ -83,7 +81,7 @@ form {
 }
 
 .cut {
-    background-color: #a0a2b2;
+    background-color: #47484d;
     border-radius: 10px;
     height: 20px;
     left: 20px;
@@ -104,7 +102,7 @@ form {
 }
 
 .placeholder {
-    color: #ffffff;
+   // color: #ffffff;
     background-color: unset;
     opacity: 0.8;
     font-family: sans-serif;
@@ -123,11 +121,11 @@ form {
 }
 
 .input:not(:placeholder-shown) ~ .placeholder {
-    color: #24282b;
+    color: #fff;
 }
 
 .input:focus ~ .placeholder {
-    color: #dc2f55;
+    color: #fbc6d2;
 }
 
 .submit {

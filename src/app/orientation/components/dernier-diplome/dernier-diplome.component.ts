@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-dernier-diplome',
   templateUrl: './dernier-diplome.component.html',
-  styleUrls: ['./dernier-diplome.component.scss']
+  styleUrls: ['./dernier-diplome.component.scss', '../../orientation-style.module.scss']
 })
 export class DernierDiplomeComponent {
 

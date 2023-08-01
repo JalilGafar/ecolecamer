@@ -6,8 +6,25 @@ p {
 .redaction-info {
     padding-top: 34px;
 }
+.font-bold {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.parcour {
+    width: 50%;
+    margin-left: 25%;
+}
 
 :host ::ng-deep {
+    .p-organizationchart-table > tbody > tr {
+        opacity: 1 !important;
+    }
+    .p-organizationchart-table>tbody>tr>td {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
     .p-tabview-panels{
         padding: 0;
         padding-top: 1.2rem;
@@ -44,12 +61,15 @@ p {
         display: grid;
         grid-template-columns: auto auto auto auto;
         gap: 10px;
-        background-color: #d6e5f2;
+       // background-color: #d6e5f2;
         padding: 10px;
     }
     .first-pub {
         grid-column-start: 1;
         grid-column-end: 5;
+    }
+    .redaction-info {
+        padding-right: 20px;
     }
     .main-container {
         grid-column-start: 1;

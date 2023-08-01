@@ -10,7 +10,7 @@ import { TopNewsService } from 'src/app/services/top-news.service';
 @Component({
   selector: 'app-degree',
   templateUrl: './degree.component.html',
-  styleUrls: ['./degree.component.scss']
+  styleUrls: ['./degree.component.scss', '../../orientation-style.module.scss']
 })
 export class DegreeComponent implements OnInit, AfterViewInit {
 
@@ -18,6 +18,7 @@ export class DegreeComponent implements OnInit, AfterViewInit {
   degreeView!: degree [];
   loading$!: Observable<boolean>;
   cap = {groupe: 'CAP ou équivalent'};
+  bac = {groupe: 'Bac ou équivalent'};
   bts = {groupe: 'Bac+1 à Bac+2'};
   licence = {groupe: 'Bac+3'};
   master = {groupe: 'Bac+4 à Bac+5'};

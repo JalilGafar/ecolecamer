@@ -12,7 +12,12 @@ import { TagModule } from 'primeng/tag';
 import { TabViewModule } from 'primeng/tabview';
 import { DialogModule } from 'primeng/dialog';
 import { ImageModule } from 'primeng/image';
-import { FieldsetModule} from 'primeng/fieldset'
+import { FieldsetModule} from 'primeng/fieldset';
+import { DividerModule } from 'primeng/divider';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { OrganizationChartModule } from 'primeng/organizationchart';
+import { OverlayModule } from 'primeng/overlay';
+
 
 
 @NgModule({
@@ -30,7 +35,11 @@ import { FieldsetModule} from 'primeng/fieldset'
       TabViewModule,
       DialogModule,
       ImageModule,
-      FieldsetModule
+      FieldsetModule,
+      DividerModule,
+      ProgressBarModule,
+      OrganizationChartModule,
+      OverlayModule
     ]
   })
 

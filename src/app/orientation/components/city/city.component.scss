@@ -1,32 +1,6 @@
 
-button {
-    display: block;
-    width: 90%;
-    margin-bottom: .5rem;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.buti {
-    display: block;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 10px;
-}
-:host ::ng-deep {
-    .buti {
-        .p-button {
-            width: 100%;
-        }
-    }
-}
-
 @media screen and (min-width: 600px)  {
-    button {
-        display: initial;
-        width: auto;  
-        //float: left;   
+    button { 
         margin-left: 5px;
         margin-right: 5px;  
     }

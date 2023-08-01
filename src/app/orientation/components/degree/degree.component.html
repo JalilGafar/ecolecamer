@@ -1,9 +1,19 @@
-
+<div class="cardBar">
+    <p-progressBar [showValue]="false" [value]="20"></p-progressBar>
+</div>
 <h1>Quel diplôme souhaitez-vous préparer ?</h1>
 <mat-spinner *ngIf="loading$ | async"></mat-spinner>
 <p-accordion [activeIndex]="-1">
     <p-accordionTab header="CAP ou équivalent" [selected]="true" class="wrapper" [disabled]="capLenght === 0">
         <ng-container *ngFor="let degree of degreeView | myfilter:cap" >       
+            <button pButton pRipple type="button"
+                    label={{degree.nom_cat}} 
+                    (click)="setDegree(degree.nom_cat)">
+            </button>
+        </ng-container>
+    </p-accordionTab>  
+    <p-accordionTab header="Bac ou équivalent" [selected]="true" class="wrapper" [disabled]="capLenght === 0">
+        <ng-container *ngFor="let degree of degreeView | myfilter:bac" >       
             <button pButton pRipple type="button"
                     label={{degree.nom_cat}} 
                     (click)="setDegree(degree.nom_cat)">

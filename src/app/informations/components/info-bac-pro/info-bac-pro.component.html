@@ -14,7 +14,7 @@
         <div class="redaction-info">
             <h1>Le Bac Proffessionnel et Technique</h1>
             <p>
-                Au Cameroun, les diplomes de l'enseignement Profesionnel et ceux de l'enseignement 
+                Au Cameroun, les diplomes du second cycle de l'enseignement Professionnel et ceux de l'enseignement 
                 secondaire Technique sont soit équivalent au Bac général, soit au probatoir général.
                 Ces formations mêlent cours théoriques et enseignements professionnels avec à la clé 
                 des diplomes donnant directement accès au marché du travail. Avec près de 50 séries/spécialités, 
@@ -33,139 +33,181 @@
                 <li>Education physique et sportive</li>
                 <li>etc.</li>
             </ul>
-            <p-accordion [activeIndex]="0">
-                <p-accordionTab header="Quelle est l'offre de formation ?">
-                    
-                    <p-fieldset legend="Enseignement Secondaire Technique Commerciale" [collapsed]="true" [toggleable]="true" >
-                        <h3>le Probatoire de l'Enseignement Secondaire Technique Commercial (Sciences et Technologie du Tertiaire () STT)</h3>
-                        <p>
-                            Le Probatoire est un diplôme intermédiaire obtenu 02 ans après le 
-                            BEPC ou le CAP. Les différentes séries sont :
-                        </p>
-                        <ul>
-                            <li>ACA: Action et Communication Administratives </li>
-                            <li>CG: Comptabilité et Gestion </li>
-                            <li>ACC: Action et Communication Commerciales</li>
-                            <li>FIG: Fiscalité et Informatique de Gestion </li>
-                        </ul> 
-
-                        <h3>le Baccalauréat de l'Enseignement Secondaire Technique Commercial </h3>
-                        <p>
-                            C'est un diplôme reconnu par le Ministre de l'Enseignement
-                            Supérieur du Cameroun et obtenu 03 ans après le BEPC ou le CAP. L'examen 
-                            est organisé par l'Office du Baccalauréat du Cameroun. Les spécialités / séries 
-                            sont les même que pour le Probatoire de l'Enseignement Secondaire Technique Commercial
-                        </p>
+            
+            <div class="card ">
+                <p-button class="parcour" (click)="toggle()" label="Parcours"></p-button>
+                <p-dialog header="Header" [(visible)]="overlayVisible" [style]="{width: '95vw'}">
+                    <p-organizationChart [value]="data">
+                        <ng-template let-node pTemplate="person">
+                            <div class="p-2 text-center">
+                                <div class="font-bold">{{ node.data.label }}</div>
+                            </div>
+                        </ng-template>
+                    </p-organizationChart>
+                </p-dialog>
+            </div>                   
+            
+            
+            
+            <p-accordion [activeIndex]="" [multiple]="true">
+                <p-accordionTab header=" 2nd cycle de l'Enseignement Secondaire Technique :">
+                    <p>
+                        Les examens officiels proposés au second cycle de l'enseignement secondaire technique sont :
+                    </p>
+                    <ul>
+                        <li> 
+                            <b>Le Probatoire Technique :</b> Le Probatoire est un diplôme intermédiaire obtenu 02 ans après le 
+                            BEPC ou le CAP. Ce diplôme n'est disponible que pour les filières (F1, F2,... , F8) ;
+                        </li>
+                        <li> 
+                            <b>Le Probatoire de Brevet de Technicien :</b> il est équivalent au Probatoir Technique 
+                            mais ne concerne que les filières autre que "F" ;
+                        </li>
                         
-                    </p-fieldset>
-                    <p-fieldset legend="Enseignement Secondaire Technique Industriel" [collapsed]="true" [toggleable]="true">
-                        <h3>le Probatoire de l'Enseignement Secondaire Technique Industriel </h3>
-                        <p>
-                            Le Probatoire est un diplôme intermédiaire obtenu 02 ans après le 
-                            BEPC ou le CAP. La filière industrielle compte de nombreuses filièresdont :
-                        </p>
-                        <ul>
-                            <li>CI : Chimie Industrielle</li>
-                            <li>F3 : Electrotechnique</li>
-                            <li>F4/TP: Génie civil, Option Travaux Publics </li>
-                            <li>F4/TP: Génie civil, Option Bâtiment</li>
-                            <li>F5: Froid et Climatisation</li>
-                            <li>F7 Bioch: Sciences Biologiques, Option Biochimie </li>
-                            <li>F8: Sciences Médico Sociales</li>
-                            <li>etc</li>
-                        </ul>
-
-                        <h3>le Probatoire de Brevet de Technicien de l'Enseignement Secondaire Technique Industriel (Probatoir BT) </h3>
-                        <p>
-                            Le Probatoire de Brévet de Technicien est un diplôme intermédiaire obtenu 02 ans
-                            après le BEPC ou le CAP. Il conditionne l'obtention du Brevet de Technicien. 
-                            La formation propose de nombreuses spécialités dont :
-                        </p>
-                        <ul>
-                            <li>AG/PA: Agricole, Option Production Animale</li>
-                            <li>EF: Exploitation Forestière</li>
-                            <li>GT: Géomètre Topographe </li>
-                            <li>IB: Industrie du Bois</li>
-                            <li>IH: Industrie de l'Habillement </li>
-                            <li>MA: Mécanique Automobile</li>
-                            <li>MF/CM: Métaux en feuille et Construction Métallique </li>
-                            <li>TGT: Tourisme, Option Guide Touristique</li>
-                            <li>etc</li>
-                        </ul>
-
-                        <h3>le Baccalauréat de l'Enseignement Secondaire Technique Industriel </h3>
-                        <p>
-                            Ce Baccalauréat est un diplôme reconnu par le Ministre de l'Enseignement
-                            Supérieur obtenu 03 ans après le BEPC ou le CAP. L'obtention du Probatoire 
-                            conditione la participation à l'examen du Baccalauréat. Les spécialités sont 
-                            les mêmes que pour le Probatoire de l'Enseignement Secondaire Technique Industriel
-                        </p>
-
-                        <h3>le Brevet de Technicien de l'Enseignement Secondaire Technique Industriel (BT) </h3>
-                        <p>
-                            Le Brévet de Technicien est obtenu 03 ans après le BEPC ou le CAP, mais n'est 
-                            pas cosigné par le Ministre de l'Enseignement Supérieur. Cependant, il 
-                            est l'équivalent du Baccalauréat en ce qui concerne les programmes et la durée de
-                            formation. Les spécialités sont les mêmes que pour le Probatoire de Brevet de Technicien 
-                            de l'Enseignement Secondaire Technique Industriel
-                        </p>
-                    
-                    </p-fieldset>
-                    <p-fieldset legend="Enseignement Professionnel Commercial" [collapsed]="true" [toggleable]="true">
-                        <h3>Le Brevet d'Etudes Professionnelles Commerciales (BEP Com) </h3>
-                        <p>
-                            Diplôme professionnel obtenu 02 ans après le CAP et donnant lieu à 
-                            un emploi direct ou à une promotion sociale. Il conserne les séries de Sécrétariat 
-                            et comptabilité
-                        </p>
-                        <h3>Le Brevet Professionnel Commerciale (PB com) </h3>
-                        <p>
-                            Diplôme professionnel couronnant le perfectionnement dans un
-                            domaine précis et reservé exclusivement aux travailleurs dans
-                            le cadre de formation continue donnant lieu à une promotion
-                            sociale. Les spécialités disponibles sont :
-                        </p>
-                        <ul>
-                            <li>Comptable</li>
-                            <li>Employé de Banque</li>
-                            <li>Secrétariat</li>
-                        </ul>
-                    </p-fieldset>
-                    <p-fieldset legend="Enseignement Professionnel Industriel" [collapsed]="true" [toggleable]="true">
-                        <h3>Le Brevet d'Etudes Professionnelles Industriel (BEP Ind) </h3>
-                        <p>
-                            Diplôme obtenu en 02 ans après le BEPC ou le CAP donnant lieu à un
-                            emploi direct ou à une promotion sociale. Les spécialités concernées sont :
-                        </p>
-                        <ul>
-                            <li>ELAD: Electricien Automobile Diesel</li>
-                            <li>ELNI: Electricien </li>
-                            <li>INSA: Installateur Sanitaire</li>
-                            <li>MACO: Maçon</li>
-                            <li>MENU: Menuisier </li>
-                        </ul>
-
-                        <h3>Le Brevet Professionnel Industriel (PB Ind) </h3>
-                        <p>
-                            Diplôme professionnel réservé exclusivement aux professionnels
-                            justifiant d'un exercice de métier dans le cadre d'une formation
-                            continue donnant lieu à une promotion sociale. Les spécialités concernées sont :
-                        </p>
-                        <ul>
-                            <li>CHSE: Chaudronnerie - Serrurier</li>
-                            <li>ELAU: Electricien Automobile </li>
-                            <li>ELTD: Electrotechnicien, option Distribution </li>
-                            <li>ELTE: Electrotechnicien, option Equipement </li>
-                            <li>ELTP: Electrotechnicien, option Production</li>
-                            <li>MACO: Maçon</li>
-                            <li>MEAU: Mécanicien Automobile</li>
-                            <li>MEUS: Mécanicien d'Usinage </li>
-                            <li>MENU: Menuisier</li>
-                            <li>MOFR: Monteur - Frigoriste</li>
-                        </ul>
-                    </p-fieldset>
-                    
+                        <hr>
+                        <li>
+                            <b>Le Baccalauréat de Technicien :</b> C'est un diplôme reconnu par le Ministre de l'Enseignement
+                            Supérieur du Cameroun, pour un cursus d'une année après obtention du Probatoir. Comme le Probatoir 
+                            Technique, il ne concerne que les filière dites "F" ;
+                        </li>
+                        <li>
+                            <b>Le Brevet de Technicien :</b> il est équivalent au Baccalauréat technique et ne concerne que 
+                            les filières autre que "F".
+                        </li>
+                        
+                    </ul>
                 </p-accordionTab >
+
+                <p-accordionTab header="Les filières du second cycle de l'enseignement technique">
+                    <p-fieldset legend="Section Génie Electrique, Chimie Industrielle et Sciences Biomédicales" [collapsed]="true" [toggleable]="true" >
+                        <p-table [value]="Elec" [tableStyle]="{  }"  >
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Spécialité</th>
+                                    <th>Dénomination</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-Elec>
+                                <tr>
+                                    <td>{{ Elec.spe }}</td>
+                                    <td>{{ Elec.deno }}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </p-fieldset>
+                    <p-fieldset legend="Section Génie Mécanique" [collapsed]="true" [toggleable]="true" >
+                        <p-table [value]="GenieM" [tableStyle]="{  }"  >
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Spécialité</th>
+                                    <th>Dénomination</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-GenieM>
+                                <tr>
+                                    <td>{{ GenieM.spe }}</td>
+                                    <td>{{ GenieM.deno }}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </p-fieldset>
+                    <p-fieldset legend="Section du Génie Civil, Génie Bois et Techniques Agricoles" [collapsed]="true" [toggleable]="true" >
+                        <p-table [value]="GenieC" [tableStyle]="{  }"  >
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Spécialité</th>
+                                    <th>Dénomination</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-GenieC>
+                                <tr>
+                                    <td>{{ GenieC.spe }}</td>
+                                    <td>{{ GenieC.deno }}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </p-fieldset>
+                    <p-fieldset legend="Section Arts et Modes" [collapsed]="true" [toggleable]="true" >
+                        <p-table [value]="Mode" [tableStyle]="{  }"  >
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Spécialité</th>
+                                    <th>Dénomination</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-Mode>
+                                <tr>
+                                    <td>{{ Mode.spe }}</td>
+                                    <td>{{ Mode.deno }}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </p-fieldset>
+
+                    
+                </p-accordionTab>
+
+                <p-accordionTab header="L'Enseignement Professionnel">
+                    <p>
+                        Les diplômes professionnels couronnent le perfectionnement dans un
+                        domaine précis et reservé exclusivement aux travailleurs dans
+                        le cadre de formation continue donnant lieu à une promotion
+                        sociale. Il faut donc en plus du CAP, posseder une certaine 
+                        expérience du terrain. Ici, le volet scientifique est un peu allégé, au profit des modules 
+                        professionnelles. Les diplomes professionnels de l'enseigenement secondaire sont :
+                    </p>
+                    <ul>
+                        <li>
+                            <b>Le Brevet d'Etudes Professionnelles (BEP) :</b> Il est lui aussi équivalent au Probatoir 
+                            technique. Pour être éligible à ce diplôme, il faut en plus du CAP, posseder une certaine 
+                            expérience du terrain. Ici, le volet scientifique est un peu allégé, au profit des modules 
+                            professionnelles. 
+                        </li>
+                        <li>
+                            <b>Le Brevet Professionnel (BP) :</b> il est équivalent au baccalauréat technique et compte 
+                            trois années avec la possibilité d'obtenir un BEP en deuxième année. Contrairement au 
+                            Probatoire qui conditionne le Baccalauréat, le BEP n'est pas exigé pour obtenir un BP.
+                        </li>
+                    </ul>
+                </p-accordionTab>
+                <br>
+                <p-accordionTab header="Les filières de l'enseignement Professionnel">
+
+                    <p-fieldset legend="Brevet d'Etudes Professionnelles (BEP)" [collapsed]="true" [toggleable]="true" >
+                        <p-table [value]="Bep" [tableStyle]="{  }"  >
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Spécialité</th>
+                                    <th>Dénomination</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-Elec>
+                                <tr>
+                                    <td>{{ Elec.spe }}</td>
+                                    <td>{{ Elec.deno }}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </p-fieldset>
+                    <p-fieldset legend="Brevet d'Etudes Professionnelles (BP)" [collapsed]="true" [toggleable]="true" >
+                        <p-table [value]="Bp" [tableStyle]="{  }"  >
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>Spécialité</th>
+                                    <th>Dénomination</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-Elec>
+                                <tr>
+                                    <td>{{ Elec.spe }}</td>
+                                    <td>{{ Elec.deno }}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </p-fieldset>
+
+                </p-accordionTab>
+                
                 <p-accordionTab header="Comment préparer son Bac Pro / Technique ? " >
                     <p>
                         Les examens Pro / Techniques peuvent se préparer de différente manière :

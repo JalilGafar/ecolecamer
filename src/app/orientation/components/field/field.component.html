@@ -1,3 +1,6 @@
+<div class="cardBar">
+    <p-progressBar [showValue]="false" [value]="40"></p-progressBar>
+</div>
 <h1>Dans quelle filière souhaitez-vous effectuer votre formation ?</h1>
 <mat-spinner *ngIf="loading$ | async"></mat-spinner>
 <p-accordion [activeIndex]="-1" >
@@ -5,7 +8,7 @@
         <ng-container *ngFor="let field of domaine$ | async | domfilter:agri">
             <button pButton pRipple type="button"
                     label={{field.nom_dom}} 
-                    (click)="setfiled(field.nom_dom)">
+                    (click)="setfiled(field.nom_dom, field.branche_dom)">
             </button>
         </ng-container>
     </p-accordionTab> 
@@ -14,7 +17,7 @@
         <ng-container *ngFor="let field of domaine$ | async | domfilter:art">
             <button pButton pRipple type="button"
                     label={{field.nom_dom}} 
-                    (click)="setfiled(field.nom_dom)">
+                    (click)="setfiled(field.nom_dom, field.branche_dom)">
             </button>
         </ng-container>
     </p-accordionTab> 
@@ -23,7 +26,7 @@
         <ng-container *ngFor="let field of domaine$ | async | domfilter:beaute">
             <button pButton pRipple type="button"
                     label={{field.nom_dom}} 
-                    (click)="setfiled(field.nom_dom)">
+                    (click)="setfiled(field.nom_dom, field.branche_dom)">
             </button>
         </ng-container>
     </p-accordionTab>
@@ -32,7 +35,7 @@
         <ng-container *ngFor="let field of domaine$ | async | domfilter:commerce">
             <button pButton pRipple type="button"
                     label={{field.nom_dom}} 
-                    (click)="setfiled(field.nom_dom)">
+                    (click)="setfiled(field.nom_dom, field.branche_dom)">
             </button>
         </ng-container>
     </p-accordionTab>
@@ -41,7 +44,7 @@
         <ng-container *ngFor="let field of domaine$ | async | domfilter:droit">
             <button pButton pRipple type="button"
                     label={{field.nom_dom}} 
-                    (click)="setfiled(field.nom_dom)">
+                    (click)="setfiled(field.nom_dom, field.branche_dom)">
             </button>
         </ng-container>
     </p-accordionTab>
@@ -50,7 +53,7 @@
         <ng-container *ngFor="let field of domaine$ | async | domfilter:finance">
             <button pButton pRipple type="button"
                     label={{field.nom_dom}} 
-                    (click)="setfiled(field.nom_dom)">
+                    (click)="setfiled(field.nom_dom, field.branche_dom)">
             </button>
         </ng-container>
     </p-accordionTab>
@@ -59,7 +62,7 @@
         <ng-container *ngFor="let field of domaine$ | async | domfilter:public">
             <button pButton pRipple type="button"
                     label={{field.nom_dom}} 
-                    (click)="setfiled(field.nom_dom)">
+                    (click)="setfiled(field.nom_dom, field.branche_dom)">
             </button>
         </ng-container>
     </p-accordionTab>
@@ -68,7 +71,7 @@
         <ng-container *ngFor="let field of domaine$ | async | domfilter:tourisme">
             <button pButton pRipple type="button"
                     label={{field.nom_dom}} 
-                    (click)="setfiled(field.nom_dom)">
+                    (click)="setfiled(field.nom_dom, field.branche_dom)">
             </button>
         </ng-container>
     </p-accordionTab>
@@ -77,7 +80,7 @@
         <ng-container *ngFor="let field of domaine$ | async | domfilter:animation">
             <button pButton pRipple type="button"
                     label={{field.nom_dom}} 
-                    (click)="setfiled(field.nom_dom)">
+                    (click)="setfiled(field.nom_dom, field.branche_dom)">
             </button>
         </ng-container>
     </p-accordionTab>
@@ -86,7 +89,7 @@
         <ng-container *ngFor="let field of domaine$ | async | domfilter:informatique">
             <button pButton pRipple type="button"
                     label={{field.nom_dom}} 
-                    (click)="setfiled(field.nom_dom)">
+                    (click)="setfiled(field.nom_dom, field.branche_dom)">
             </button>
         </ng-container>
     </p-accordionTab>
@@ -95,7 +98,7 @@
         <ng-container *ngFor="let field of domaine$ | async | domfilter:ingenierie">
             <button pButton pRipple type="button"
                     label={{field.nom_dom}} 
-                    (click)="setfiled(field.nom_dom)">
+                    (click)="setfiled(field.nom_dom, field.branche_dom)">
             </button>
         </ng-container>
     </p-accordionTab>
@@ -104,7 +107,7 @@
         <ng-container *ngFor="let field of domaine$ | async | domfilter:langue">
             <button pButton pRipple type="button"
                     label={{field.nom_dom}} 
-                    (click)="setfiled(field.nom_dom)">
+                    (click)="setfiled(field.nom_dom, field.branche_dom)">
             </button>
         </ng-container>
     </p-accordionTab>
@@ -113,7 +116,7 @@
         <ng-container *ngFor="let field of domaine$ | async | domfilter:marketing">
             <button pButton pRipple type="button"
                     label={{field.nom_dom}} 
-                    (click)="setfiled(field.nom_dom)">
+                    (click)="setfiled(field.nom_dom, field.branche_dom)">
             </button>
         </ng-container>
     </p-accordionTab>
@@ -121,7 +124,7 @@
         <ng-container *ngFor="let field of domaine$ | async | domfilter:sante">
             <button pButton pRipple type="button"
                     label={{field.nom_dom}} 
-                    (click)="setfiled(field.nom_dom)">
+                    (click)="setfiled(field.nom_dom, field.branche_dom)">
             </button>
         </ng-container>
     </p-accordionTab> 
@@ -130,7 +133,7 @@
         <ng-container *ngFor="let field of domaine$ | async | domfilter:sport">
             <button pButton pRipple type="button"
                     label={{field.nom_dom}} 
-                    (click)="setfiled(field.nom_dom)">
+                    (click)="setfiled(field.nom_dom, field.branche_dom)">
             </button>
         </ng-container>
     </p-accordionTab>

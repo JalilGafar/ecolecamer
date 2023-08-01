@@ -26,6 +26,7 @@ export class OrientationService {
              city: '',
              degree: '',
              field: '',
+             branche:'',
              name: '',
              surname: '',
              level: '',
@@ -49,7 +50,7 @@ export class OrientationService {
         )
     };
 
-    getPartCyties(userDegree: string, userDomaine: string ): Observable<ville[]> {
+    getPartCyties(userDegree: string, userDomaine: string, userBranche: string ): Observable<ville[]> {
         this.setLoadingStatus(true)
         const url = `${environment.apiUrl}/api/partCyties`;
         let queryParams = new HttpParams();
@@ -117,9 +118,10 @@ export class OrientationService {
 
     //** FUNCTION USE TO SAVE degree, field, cyti and statut *****/
 
-    saveStatut(degree: string, field:string, cyti:string, statut: string) {
+    saveStatut(degree: string, field:string, branche:string, cyti:string, statut: string) {
        this.initialUser.degree = degree;
         this.initialUser.field = field;
+        this.initialUser.branche= branche;
         this.initialUser.city = cyti;
         this.initialUser.statuts = statut;
          
@@ -147,7 +149,10 @@ export class OrientationService {
 
     getSerchResult(): Observable<interestelt[]> {
         const url = `${environment.apiUrl}/api/result`;
-        let queryParams = {"city":this.initialUser.city,"diplome":this.initialUser.degree, "domaine":this.initialUser.field};
+        let queryParams = {"city":this.initialUser.city,
+                            "diplome":this.initialUser.degree, 
+                            "domaine":this.initialUser.field,
+                            "branche":this.initialUser.branche};
 
         return this.http.get<interestelt[]>(url, {params: queryParams})
     }
@@ -158,6 +163,7 @@ export class OrientationService {
             city: '',
             degree: '',
             field: '',
+            branche:'',
             name: '',
             surname: '',
             level: '',

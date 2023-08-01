@@ -22,6 +22,7 @@ import { InfoServices } from './information.services';
 import { CqpComponent } from './components/cqp/cqp.component';
 import { InfoHndComponent } from './components/info-hnd/info-hnd.component';
 import { InfoMasterDegreeComponent } from './components/info-master-degree/info-master-degree.component';
+import { InfoCapaciteComponent } from './components/info-capacite/info-capacite.component';
 
 
 
@@ -43,7 +44,8 @@ import { InfoMasterDegreeComponent } from './components/info-master-degree/info-
         InfoMetierComponent,
         CqpComponent,
         InfoHndComponent,
-        InfoMasterDegreeComponent
+        InfoMasterDegreeComponent,
+        InfoCapaciteComponent
     ],
     imports: [
         CommonModule,

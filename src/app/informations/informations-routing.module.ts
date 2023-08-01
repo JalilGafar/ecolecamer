@@ -17,6 +17,7 @@ import { InfoMetierComponent } from "./components/info-metier/info-metier.compon
 import { CqpComponent } from "./components/cqp/cqp.component";
 import { InfoHndComponent } from "./components/info-hnd/info-hnd.component";
 import { InfoMasterDegreeComponent } from "./components/info-master-degree/info-master-degree.component";
+import { InfoCapaciteComponent } from "./components/info-capacite/info-capacite.component";
 
 
 const routes: Routes = [
@@ -37,6 +38,7 @@ const routes: Routes = [
     { path: 'ecole', component:InfoEcoleComponent},
     { path: 'filiere', component:InfoFormationComponent},
     { path: 'metier', component:InfoMetierComponent},
+    { path: 'capacite', component: InfoCapaciteComponent}
 ]
 
 @NgModule({

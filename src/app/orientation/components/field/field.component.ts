@@ -10,7 +10,7 @@ import { BEHAVIOR } from 'src/app/core/model/Behavior';
 @Component({
   selector: 'app-field',
   templateUrl: './field.component.html',
-  styleUrls: ['./field.component.scss'],
+  styleUrls: ['./field.component.scss', '../../orientation-style.module.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FieldComponent implements OnInit, AfterViewInit{
@@ -120,13 +120,13 @@ export class FieldComponent implements OnInit, AfterViewInit{
 
   setNiveau(){}
 
-  setfiled(field : string) {
+  setfiled(field : string, branche : string) {
    const degree = this.route.snapshot.queryParams['degree'];
    const cyti = this.route.snapshot.queryParams['cyti'];
    if (degree  && cyti == undefined) {
       this.appRout.navigate(
         ['orientation/city/'],
-        {queryParams: {field:field, degree:degree} }
+        {queryParams: {field:field, branche:branche, degree:degree} }
       );
     } else if(degree  && cyti  ) {
       this.appRout.navigate(

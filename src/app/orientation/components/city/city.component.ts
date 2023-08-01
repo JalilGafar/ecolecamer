@@ -12,7 +12,7 @@ import { TopNewsService } from 'src/app/services/top-news.service';
 @Component({
   selector: 'app-city',
   templateUrl: './city.component.html',
-  styleUrls: ['./city.component.scss']
+  styleUrls: ['./city.component.scss', '../../orientation-style.module.scss']
 })
 export class CityComponent implements OnInit, AfterViewInit{
 
@@ -30,9 +30,10 @@ export class CityComponent implements OnInit, AfterViewInit{
     this.loading$ = this.orientationService.loading$;
     let degree = this.route.snapshot.queryParams['degree'];
     let field = this.route.snapshot.queryParams['field'];
+    let branche = this.route.snapshot.queryParams['branche'];
     if (field  && degree) {
       //console.log('normalement')
-      this.cyties$ = this.orientationService.getPartCyties( degree, field);
+      this.cyties$ = this.orientationService.getPartCyties( degree, field, branche);
     } else {
       /*Envoyer une requete de toutes les villes ayant un campus*/
       this.cyties$ = this.orientationService.getAllCyties();
@@ -48,10 +49,11 @@ export class CityComponent implements OnInit, AfterViewInit{
   setCyti (cyti : string) {
     let degree = this.route.snapshot.queryParams['degree'];
     let field = this.route.snapshot.queryParams['field'];
+    let branche = this.route.snapshot.queryParams['branche'];
     if (degree && field ) {
       this.appRout.navigate(
         ['orientation/statuts/'],
-        {queryParams: {degree:degree, field:field, cyti:cyti} }
+        {queryParams: {degree:degree, field:field, branche:branche, cyti:cyti} }
       );
     } else {
       this.appRout.navigate(

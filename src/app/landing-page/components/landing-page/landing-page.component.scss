@@ -17,6 +17,13 @@
     position: relative;
 }
 
+.bruce {
+    border-radius: 13px;
+    padding: 4px;
+    background-color: #ff5e00;
+    color: #fff;
+}
+
 .orientTitle {
     h2{
         text-align: center;
@@ -226,10 +233,6 @@
         justify-content: space-between;
 
         .inbox {
-
-            .inboxText{
-                
-            }
             .inboxImage{
                 padding-top:0px;
             }

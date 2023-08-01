@@ -1,0 +1,120 @@
+<app-headmsg 
+    [titre]="titre"
+    [soustitre]="soustitre"
+    [photo] = "photo"
+    >
+</app-headmsg>
+<app-start ></app-start>
+<div class="container">
+    <div class="first-pub">
+        <app-pub-first></app-pub-first>
+    </div>
+    <div class="main-container">
+        <app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
+        <div class="redaction-info">   
+            <h1>La Capacité en Droit et Economie </h1> 
+
+            <p-divider align="left">
+                <div class="inline-flex align-items-center">
+                    <i class="pi pi-exclamation-circle"></i>
+                    <b>  Qu'est ce que la Capacité en Droit et Economie ?</b>
+                </div>
+            </p-divider>
+            <p>
+                La capacité en droit est aujourd'hui une voie d'accès parallèle aux études supérieures juridiques 
+                et est souvent considérée comme la « vitrine sociale » des Facultés de Droit. Elle offre une formation 
+                universitaire juridique générale à tous publics avec pour condition d'être titulaire du BEPC, CAP ou tout 
+                autre diplôme équivalent, et être âgé d’au moins 21 ans révolu. Il s'agit ainsi de placer le diplôme 
+                national de la capacité en droit au cœur des dispositifs visant à lutter contre l'échec au Bac. 
+            </p>
+
+            <p-divider align="left">
+                <div class="inline-flex align-items-center">
+                    <i class="pi pi-exclamation-circle "></i>
+                    <b>  A qui s'adrèsse la Capacité en Droit ?</b>
+                </div>
+            </p-divider>
+            <p>
+                Le diplôme se prépare en 2 années soit en régime présentiel, soit en cours du soir, soit grâce à l'enseignement à 
+                distance de nombreuses facultés de droit et IPES. Ces régimes spéciaux rendent cette formation compatible avec une 
+                activité salariée ou d'autres études. 
+            </p>
+
+            <p-divider align="left">
+                <div class="inline-flex align-items-center">
+                    <i class="pi pi-exclamation-circle "></i>
+                    <b>  Quel est le programme en Capacité de Droit ?</b>
+                </div>
+            </p-divider>
+            <p>
+                Les principales unité d'enseignement sont :
+            </p>
+            <ul>
+                <li>Droit des personnes et de la famille</li>
+                <li>Droit des obligations et des sûretés</li>
+                <li>Droit des affaires</li>
+                <li>Droit des affaires</li>
+                <li>Voies d’exécutions</li>
+                <li>Droit pénal et procédure pénale</li>
+                <li>Contrats civils et commerciaux</li>
+                <li>Droit des biens et régime foncier</li>
+                <li>Anglais juridique</li>
+                <li>Droit administratif et contentieux administratif</li>
+                <li>Droit public financier</li>
+                <li>Droits de l’homme et libertés fondamentales</li>
+                <li>Droit de la décentralisation</li>
+                <li>Rédaction des actes normatifs</li>
+            </ul>
+
+            <p-divider align="left">
+                <div class="inline-flex align-items-center">
+                    <i class="pi pi-exclamation-circle "></i>
+                    <b>  Que faire après une Capacité en Droit et Economie ?</b>
+                </div>
+            </p-divider>
+            <p>
+                Les titulaire d'une capacité en droit sont capable :
+            </p>
+            <ul>
+                <li>d'assurer le suivi des procédures administratives et juridiques et de préparer les dossiers</li>
+                <li>d'assurer la veille règlementaire</li>
+                <li>d'assurer la rédaction et l’analyse de tout type de contrat</li>
+                <li>d'être rigoureux et d’avoir un esprit de synthèse</li>
+                <li>de faire preuve de discrétion et de confidentialité</li>
+                <li>d’être efficient en matière de collecte et de transmission de l’information</li>
+            </ul>
+            <p>
+                La capacité en droit ouvre les portes aux concours administratifs niveau BAC; reclassement dans la 
+                carrière professionnelle du secteur judiciaire (Clerc de Notaire, Clerc d’Huissier de Justice, 
+                Secrétaire-Greffier des tribunaux, etc.) et du secteur privé et parapublic (Secrétaire de Direction, 
+                Commercial, Agent dans les services du contentieux des sociétés commerciales, banques, assurances, etc.)
+            </p>
+            <p>
+                La capacité en droit est un équivalent du baccalauréat pour les personnes ne le possédant pas, 
+                leur permettant d'accéder à la filière droit des Instituts Privé d'Enseignement Supérieur (IPES) et à 
+                toutes les Universités du Cameroun (filière du droit)
+                avec pour condition d'avoir une  moyenne supérieure ou égale à 13/20 au terme de l’addition des 
+                résultats des niveaux I et II en capacité. Aussi, les candidats souhaitant entrer en cycle Licence à l'Université, 
+                doivent être titulaires d’un probatoire ou d’une attestation de la classe de première avec une moyenne égale ou 
+                supérieure à 10/20, et pour les candidats titulaires d’un GCE Ordinary level, l’avoir obtenu avec au moins 
+                trois matières à l’exception de la Religion. 
+            </p>
+
+            <p-card header="Liste des formations en capacité droit" >
+                <p-card></p-card>
+            </p-card>
+            
+        </div>
+    </div>
+    <aside class="side-container">
+        <app-side-info></app-side-info>
+    </aside>
+</div>
+<!-- 
+<app-info-redaction></app-info-redaction>
+<app-interest-list></app-interest-list>
+<app-interest-actualite></app-interest-actualite>
+<app-interest-avis></app-interest-avis>
+<app-interest-classification></app-interest-classification> 
+-->
+

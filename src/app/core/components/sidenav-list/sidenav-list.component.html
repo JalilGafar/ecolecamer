@@ -5,6 +5,7 @@
         <button mat-menu-item routerLink="info/cap" (click)="onSidenavClose() ">CAP</button>
         <button mat-menu-item routerLink="info/bacPro" (click)="onSidenavClose() ">Bac Technique</button>
         <button mat-menu-item routerLink="info/cqp" (click)="onSidenavClose() ">CQP / DQP</button>
+        <button mat-menu-item routerLink="info/capacite" (click)="onSidenavClose() ">Capacité en droit</button>
     </mat-menu>
     <button mat-button [matMenuTriggerFor]="prebac" >Après Bac </button>
     <mat-menu #prebac="matMenu">
@@ -19,6 +20,6 @@
     </mat-menu>
     <button mat-button routerLink="info/ecole" (click)="onSidenavClose() ">Ecoles</button>
     <button mat-button routerLink="info/metier" (click)="onSidenavClose() ">Métier</button>
-    
+
     <button mat-button routerLink="referencer" (click)="onSidenavClose() ">Référencer son établissement</button>
 </mat-nav-list>

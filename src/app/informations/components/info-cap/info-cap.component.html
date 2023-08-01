@@ -11,35 +11,99 @@
     </div>
     <div class="main-container">
         <app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
-        <div class="redaction-info">  
-            <h1>Le Certificat d'Aptitude Professionnel au Cameroun</h1> 
+        <div class="redaction-info"> 
+            <h1>le Certificat d'Aptitude Professionnel au Cameroun</h1>
             <p>
-                La durée des études est de 04 ans pour le premier cycle et 03 ans pour le 
-                second cycle. La fin du premier cycle est sanctionnée par le Certificat 
-                d'Aptitude Professionnel (CAP). La deuxième année du 2nd cycle est sanctionnée 
-                par l'obtention du Probatoire Technique correspondant à la filière choisie 
-                en classe de 2nde. La dernière année d'étude est sanctionnée par l'obtention 
-                du Baccalauréat ou du Brevet de Technicien selon le cas.
-            </p>    
-            <p-accordion [activeIndex]="0">
+                Vous souhaitez que votre enfant se professionnalise le plus rapidement possible 
+                pour faire face aux défis actuels, à l'inflation et à la crise ? Alors pourquoi 
+                attendre jusqu'au Bac ? Optez pour une formation professionnelle dans l'une des nombreuses spécialités 
+                parmi les plus recherchées du monde professionnel.
+            </p>
+            <p-accordion [activeIndex]="" [multiple]="true">
+                <p-accordionTab header="Le Premier cycle de l'enseignement technique.">
+                    <p>
+                        La durée des études secondaire au Cameroun est de 4 ans pour le premier cycle et 3 ans pour le 
+                        second cycle. En enseignement technique, le diplôme préparé sera différent selon qu'il s'agit d'une 
+                        SAR/SM ou d'un CETIC/CETIF.
+                    </p>
+                    <hr>
+                    <h3>Diplôme obtenu dans une SAR/SM.</h3>
+                    <p>
+                        Les Sections Artisanales Rurales (SAR) et les Sections Ménagères (SM) ne dépendent pas du Ministère
+                        des Enseignements Secondaires, mais plutôt de celui de l'Emploi et de la Formation Professionnelle.
+                        Elles proposent des formations opérationnelles sur une durée de deux ans seulement. Les filières et spécialités 
+                        proposées dans les SAR/SM sont pratiquement les mêmes que celles rencontrées dans les CETIC. Ici, la 
+                        formation est sanctionnée par une attestation délivrée par le Ministère de tutelle. Laquelle attestation ouvre 
+                        directement les portes de l'entreprise à son détenteur.
+                    </p>
+                    <p>
+                        Toutefois, il est toujours possible avec cette attestation de poursuivre ses études dans un CETIC, en 
+                        classe de deuxième ou troisième année, selon le niveau de l'apprenant, sur simple étude de dossier.
+                        Par ailleurs, il faut rappeler qu'aucun concours administratif n'est jusqu'ici disponible pour le titulaires de ce diplôme.
+                    </p>
+                    <hr>
+                    <h3>Diplôme obtenu dans un CETIC/CETIF.</h3>   
+                    <p> 
+                        La fin du premier cycle dans les Collèges d’Enseignement Technique Industriel et Commercial 
+                        (CETIC) ou les Collèges d'Enseignement Technique Industriel pour Fille (CETIF) est sanctionnée 
+                        par le Certificat d'Aptitude Professionnel (CAP). 
+                    </p> 
+                    <table>
+                        <tr>
+                          <th>Niveau</th>
+                          <th>Durée</th>
+                          <th>Diplôme professionnel</th>
+                        </tr>
+                        <tr>
+                          <td>1er cycle</td>
+                          <td>4 ans</td>
+                          <td>CAP</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">2nd cycle</td>
+                          <td>2 ans</td>
+                          <td>Probatoire</td>
+                        </tr>
+                        <tr>
+                          <td>1 ans</td>
+                          <td>Baccalauréat</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div class="card ">
+                        <p-button class="parcour" (click)="toggle()" label="Parcours"></p-button>
+                        <p-dialog header="Parcour" [(visible)]="overlayVisible" [style]="{width: '95vw'}">
+                                <p-organizationChart [value]="data">
+                                    <ng-template let-node pTemplate="person">
+                                        <div class="p-2 text-center">
+                                            <div class="font-bold">{{ node.data.label }}</div>
+                                        </div>
+                                    </ng-template>
+                                </p-organizationChart>
+                        </p-dialog>
+                    </div>                    
+                    
+
+                </p-accordionTab>
+
                 <p-accordionTab header="Le Certificat d'Aptitude Professionnelle (CAP)">
                     <p> 
                         Liée au Ministère des Enseignements Secondaires, cette formation sanctionne la fin 
                         de formation du premier cycle de l'enseignement secondaire technique et professionnel.
                         Parcours professionnalisant d'une durée de 4 ans à partir de la sixième, le CAP offre un premier 
                         niveau de qualification à ceux qui souhaitent intégrer rapidement 
-                        le monde du travail. Les élèves se professionnalisent ce qui leur permet d'entrer dans 
+                        le monde du travail. Les élèves se professionnalisent, ce qui leur permet d'entrer dans 
                         le monde du travail dès la fin de leur formation. En clair, ce diplôme ouvre la voie professionnelle.
                     </p>
                     <p>
                         Le CAP est un examen à fort enjeu et obligatoire qui atteste de la réussite 
                         des programmes de l'enseignement secondaire professionnel inférieur (4 ans). Il s'agit 
-                        d'une exigence pour les étudiants souhaitant poursuivre un enseignement secondaire 
+                        d'une exigence pour les élèves souhaitant poursuivre un enseignement secondaire 
                         supérieur (3 ans) dans des établissements d'enseignement professionnel ou technique.
                     </p>
         
                     <p>
-                        Le CAP est administré en deux phases : Tout d'abord, tous les candidats sont soumis 
+                        L'examen du CAP est administré en deux phases : Tout d'abord, tous les candidats sont soumis 
                         aux mêmes tests qui sont passés par écrit et couvrent le programme national. Deuxièmement, 
                         tous les candidats sont évalués sur des applications pratiques. Cette modalité d'examen 
                         est opérationnelle depuis 2013. Avant 2013, seuls les candidats ayant réussi l'examen 
@@ -55,54 +119,105 @@
                         du Tertiaire (CAP STT) sanctionnent la réussite de différentes filières de spécialisation.
                     </p>
                 </p-accordionTab>
+                <p-accordionTab header="le CAP Science et Technologies du Tertiaire (CAP STT)">
+                    <p>
+                        Les spécialités sont :
+                    </p>
+                    <ul>
+                        <li>Employé des Services Comptables (ESCOM)</li>
+                        <li>Economie Sociale et Familiale (ESF)</li>
+                        <li>Employé des Services Financiers (ESFI)</li>
+                        <li>Restauration (RT)</li>
+                        <li>Secrétariat Bureautique (SEBU)</li>
+                        <li>Secrétariat Médicale (SEME)</li>
+                        <li>Vente (VE)</li>
+                    </ul>
+                </p-accordionTab>
                 <p-accordionTab header="le CAP Technique Industrielle (CAP TI)">
                     <p>
-                        Les spécialités sont :
+                        Section du Génie Mécanique :
                     </p>
                     <ul>
-                        <li>AFFUTEUR SCIEUR</li>
-                        <li>AJUSTAGE</li>
-                        <li>CARROSSERIE PEINTURE AUTOMOBILE</li>
-                        <li>CONSTRUCTION ET OUVRAGE METALLIQUE</li>
-                        <li>MECANIQUE AUTOMOBILE ELECTRICITE</li>
-                        <li>MECANIQUE AUTOMOBILE INJECTION</li>
-                        <li>MECANIQUE AUTOMOBILE DE REPARATION</li>
-                        <li>MECANIQUE DE FABRICATION</li>
-                        <li>METAUX EN FEUILLES</li>
-                        <li>REPARATION CARROSSERIE AUTOMOBILE</li>
-                        <li>etc.</li>
+                        <li>Ajustage (AJUS) </li>
+                        <li>Carrosserie Peintur Automobile (CAPA) </li>
+                        <li>Construction d'Ouvrages Métalliques (COOM) </li>
+                        <li>MMécanique Automobile Injection (MAIN) </li>
+                        <li>Mécanique Automobile Electricité Automobile (MAEL) </li>
+                        <li>Mécanicien Réparateur d'Automobile (MARE) </li>
+                        <li>Mécanique de Fabrication (MEFA) </li>
+                        <li>Métaux en Feuille (MEFE) </li>
                     </ul>
-                </p-accordionTab>
-                <p-accordionTab header="le CAP Science et Technique du Tertiaire (CAP STT)">
-                    <p>
-                        Les spécialités sont :
-                    </p>
+
+                    <p>Section du Génie Electrique, de Chimie Industrielle et des Sciences Biomédicales</p>
                     <ul>
-                        <li>EMPLOYE DES SERVICES COMPTABLES</li>
-                        <li>ECONOMIE SOCIALE ET FAMILIALE</li>
-                        <li>EMLOYE DES SERVICES FINANCIERS</li>
-                        <li>RESTAURATION</li>
-                        <li>SECRETARIAT ET BUREAUTIQUE</li>
-                        <li>SECRETARIAT MEDICAL</li>
-                        <li>SERVICE HOTELIER</li>
-                        <li>VENDEUR</li>
-                        <li>etc.</li>
+                        <li>Aide Biochimiste (AIBC) </li>
+                        <li>Aide Chimiste (AICI) </li>
+                        <li>Electricien d'Equipement (ELEQ) </li>
+                        <li>Electromécanique (ELME) </li>
+                        <li>Electronique (ELNI) </li>
+                        <li>Froid et Climatisation (FRCL) </li>
+                    </ul>
+                    
+                    <p>Section de Génie Civil, du Génie du Bois et des Techniques Agricoles</p>
+                    <ul>        
+                        <li>Affûteur Scieur (AFSC) </li>
+                        <li>Carreleur (CARR) </li>
+                        <li>Charpentier (CHAR) </li>
+                        <li>Dessin Bâtiment (DEBA) </li>
+                        <li>Installation Sanitaire (INSA) </li>
+                        <li>Maçonnerie (MACO) </li>
+                        <li>Menuiserie (MENU) </li>
+                    </ul>
+
+                    <p>Section Arts et Modes</p>
+                    <ul>
+                        <li>Couture et Mesure (COME) </li>
+                        <li>décoration (DECOR) </li>
+                        <li>Esthétique Coiffure (ESCO) </li>
                     </ul>
                 </p-accordionTab>
-                <p-accordionTab header="Dans quelle école suivre un CAP ?">
+                <p-accordionTab header="0ù suivre un CAP ?">
                     <p>
                         Le CAP est accessible dans plusieurs établissements, notamment :
                     </p>
                     <ul>
                         <li>Les Colleges d'Enseignement Technique Industiel et Commercial (CETIC) </li>
-                        <li>Section artisanale rurale et section ménagère (SAR-SM) </li>
                         <li>Collèges d'Enseignement Technique Industriel pour Fille (CETIF)</li>
                     </ul>
                 </p-accordionTab>
-            </p-accordion>
+
+                <p-accordionTab header="Que faire après le CAP ?">
+                    <p>
+                        Le CAP reste un diplôme très recherché en matière de main d'œuvre ouvrière. 
+                        C'est un diplôme peu coûteux en terme de temps et d'argent et qui permet d'être 
+                        opérationnel très jeune (16 à 20 ans en moyenne).De nombreux ateliers de mécanique, 
+                        soudure, couture, garage et bien d'autres emploient des jeunes diplômés d'un CAP. 
+                    </p>
+                    <p>
+                        Le Certificat d'Aptitude Professionnelle offre de nombreuses ouvertures tant sur le 
+                        plan professionnel qu'académique. En effet, avec le CAP on peut se faire recruter 
+                        dans une entreprise comme ouvrier qualifié, tout comme il nous permet d'affronter 
+                        de nombreux concours d'intégration à la fonction publique, ou encore dans les forces 
+                        de défense et de sécurité, notamment <b>le Génie Militaire</b>.
+                    </p>
+                    <p>
+                        Il convient de préciser que le CAP est sur le plan accacémique l'équivalent du BEPC. Il offre
+                        donc la possibilité à son titulaires de poursuivre ses études en seconde technique, ou en 
+                        <a >capacité </a> (Sciences Juridiques et économiques), ou encore de concourir à 
+                        l'entrée en première année d'une <a >Ecole Normale d'Instituteurs d'Enseignement Technique (ENIET) </a>
+                    </p>
+                    <p>
+                        Malheureusement, de nombreux parents n'estiment pas encore l'enseignement technique 
+                        à sa juste valeur. Pourquoi donc obtenir un Bac d'enseignement général D ou C pour 
+                        au final revenir rechercher un Brevet de Technicien en mécanique automobile ? Est ce 
+                        un choix d'orientation délibéré ou juste les conséquences d'un manque d'information ?   
+                    </p>
+                </p-accordionTab>
+            </p-accordion> 
             
         </div>
     </div>
+    <app-start ></app-start>
     <aside class="side-container">
         <app-side-info></app-side-info>
     </aside>

@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-classe',
   templateUrl: './classe.component.html',
-  styleUrls: ['./classe.component.scss']
+  styleUrls: ['./classe.component.scss', '../../orientation-style.module.scss']
 })
 export class ClasseComponent implements OnInit{
 

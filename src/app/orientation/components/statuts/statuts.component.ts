@@ -7,7 +7,7 @@ import { BEHAVIOR } from 'src/app/core/model/Behavior';
 @Component({
   selector: 'app-statuts',
   templateUrl: './statuts.component.html',
-  styleUrls: ['./statuts.component.scss']
+  styleUrls: ['./statuts.component.scss', '../../orientation-style.module.scss']
 })
 export class StatutsComponent implements OnInit, AfterViewInit {
 
@@ -29,7 +29,8 @@ export class StatutsComponent implements OnInit, AfterViewInit {
     let degree = this.route.snapshot.queryParams['degree'];
     let field = this.route.snapshot.queryParams['field'];
     let cyti = this.route.snapshot.queryParams['cyti'];
-    this.orientationService.saveStatut(degree, field, cyti, statut)
+    let branche = this.route.snapshot.queryParams['branche'];
+    this.orientationService.saveStatut(degree, field, branche, cyti, statut)
     switch (statut) {
       case 'lycéen':
         this.appRout.navigate( ['orientation/classe/'] );        
