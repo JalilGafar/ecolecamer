@@ -34,18 +34,6 @@
                 <input id="condition_diplome" type="text" formControlName="condition_diplome">
             </div>
             <div class="form-group">
-                <label for="">Domaine de formation</label>
-                <p-dropdown id="domaine_id" *ngIf="domaine$ | async as domaine" [options]="domaine" optionLabel="nom_dom" optionValue="id_dom" formControlName="domaine_id" placeholder="Choisissez un domaine"></p-dropdown>
-            </div>
-            <div class="form-group">
-                <label for="">Autre Domaine</label>
-                <p-dropdown id="domaine_id" *ngIf="domaine$ | async as domaine" [options]="domaine" optionLabel="nom_dom" optionValue="id_dom" formControlName="domaine_id2" placeholder="Choisissez un domaine"></p-dropdown>
-            </div>
-            <div class="form-group">
-                <label for="">Autre Domaine</label>
-                <p-dropdown id="domaine_id" *ngIf="domaine$ | async as domaine" [options]="domaine" optionLabel="nom_dom" optionValue="id_dom" formControlName="domaine_id3" placeholder="Choisissez un domaine"></p-dropdown>
-            </div>
-            <div class="form-group">
                 <label for=""> Diplome</label>
                 <p-dropdown id="diplome_id" 
                             *ngIf="diplomes$ | async as diplome" 

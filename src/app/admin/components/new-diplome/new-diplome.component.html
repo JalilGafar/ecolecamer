@@ -13,6 +13,24 @@
             <input id="niveau" type="text" formControlName="niveau">
         </div>
         <div class="form-group">
+            <label for="">Domaine de formation</label>
+            <p-dropdown id="domaine_id" *ngIf="domaine$ | async as domaine" [options]="domaine" optionLabel="nom_dom" placeholder="Quel Domaine ?" optionValue="id_dom"  formControlName="domaine_id">
+
+            </p-dropdown>
+        </div>
+        <div class="form-group">
+            <label for="">Autre Domaine</label>
+            <p-dropdown id="domaine_id2" *ngIf="domaine$ | async as domaine" [options]="domaine" optionLabel="nom_dom" placeholder="Quel Domaine ?" optionValue="id_dom"  formControlName="domaine_id2">
+
+            </p-dropdown>
+        </div>
+        <div class="form-group">
+            <label for="">Autre Domaine</label>
+            <p-dropdown id="domaine_id3" *ngIf="domaine$ | async as domaine" [options]="domaine" optionLabel="nom_dom" placeholder="Quel Domaine ?" optionValue="id_dom"  formControlName="domaine_id3">
+
+            </p-dropdown>
+        </div>
+        <div class="form-group">
             <label for="descriptif_dip">Descriptif</label>
             <p-editor formControlName="descriptif_dip" [style]="{'height':'320px'}"></p-editor>
             <!-- <p>Value: {{campersite.descriptif_camp||'empty'}}</p> -->

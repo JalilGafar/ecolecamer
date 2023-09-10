@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { interestelt } from 'src/app/core/model/interest-item-model';
 import { InfoServices } from '../../information.services';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-info-bts',
@@ -18,7 +18,13 @@ export class InfoBtsComponent implements OnInit{
   school$!: Observable<interestelt[]>
 
   constructor( private infoservice :InfoServices,
-              private titleService:Title) {this.titleService.setTitle("Les BTS au Cameroun | Camerdiplome ");}
+              private titleService:Title,
+              private meta : Meta) {this.titleService.setTitle("Liste des BTS | Camerdiplome");
+                                    this.meta.addTags([ 
+                                      { name: 'description', content: 'BTS signification, niveau, débouchés et listes des différents de BTS' }, 
+                                      { name: 'keywords', content: 'métier, metier, BTS, Informatique, Infirmier, communication, emploie, formation, Bac, Professionnel, Professionnelle' } 
+                                    ]);   
+                                  }
 
   ngOnInit(): void {
 

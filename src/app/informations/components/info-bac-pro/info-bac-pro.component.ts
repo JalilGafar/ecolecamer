@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { interestelt } from 'src/app/core/model/interest-item-model';
 import { InfoServices } from '../../information.services';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { TreeNode } from 'primeng/api';
 
 @Component({
@@ -19,7 +19,14 @@ export class InfoBacProComponent implements OnInit{
   school$!: Observable<interestelt[]>;
   overlayVisible: boolean = false;
 
-  constructor( private infoservice :InfoServices,  private titleService:Title) {this.titleService.setTitle("Le bac technique au Cameroun | Camerdiplome");}
+  constructor( private infoservice :InfoServices,  
+              private titleService:Title,
+              private meta : Meta) {  this.titleService.setTitle("Le Bac technique et Professionnelle au Cameroun | Camerdiplome");
+                                      this.meta.addTags([ 
+                                        { name: 'description', content: 'Avec près de 50 séries/spécialités, les Bac professionnels et techniques sont des diplômes donnant directement accès au marché du travail' }, 
+                                        { name: 'keywords', content: 'métier, metier, emploie, formation, Bac, Professionnel, Professionnelle, Technique' } 
+                                      ]);
+                                    }
 
   data: TreeNode[] = [
     {

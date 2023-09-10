@@ -19,7 +19,7 @@
                     <th pSortableColumn="id_ecol" style="width:5%">Code <p-sortIcon field="id_ecol"></p-sortIcon></th>
                     <th pSortableColumn="sigle_e" style="width:10%">Sigle <p-sortIcon field="sigle_e"></p-sortIcon></th>
                     <th pSortableColumn="nom_e" style="width:20%">Name <p-sortIcon field="nom_e"></p-sortIcon></th>
-                    <th pSortableColumn="date_creation" style="width:20%">Creation <p-sortIcon field="date_creation"></p-sortIcon></th>
+                    <th pSortableColumn="logo_e" style="width:10%">Logo <p-sortIcon field="logo_e"></p-sortIcon></th>
                 </tr>
             </ng-template>
             
@@ -29,7 +29,7 @@
                     <td>{{ecole.id_ecol}}</td>
                     <td>{{ecole.sigle_e}}</td>
                     <td>{{ecole.nom_e}}</td>
-                    <td>{{ecole.date_creation}}</td>
+                    <td> <img [src]="ecole.logo_e" alt=""> </td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="paginatorleft">

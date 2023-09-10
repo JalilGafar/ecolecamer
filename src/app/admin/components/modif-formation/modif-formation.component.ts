@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, map, switchMap, take, tap } from 'rxjs';
 import { Categ } from '../../models/categ.model';
-import { Domaine } from '../../models/domaine.model';
 import { Ecole } from '../../models/ecole.model';
 import { Formation } from '../../models/formation.model';
 import { AdminService } from '../../services/admin.service';
@@ -20,7 +19,6 @@ export class ModifFormationComponent implements OnInit{
   formation$!: Observable<Formation>;
   ecole$!: Observable<Ecole[]>;
   diplomes$!: Observable<Diplome[]>;
-  domaine$!: Observable<Domaine[]>;
 
   constructor ( private adminService : AdminService,
                 private route: ActivatedRoute,
@@ -36,9 +34,6 @@ export class ModifFormationComponent implements OnInit{
       admission_diplome: [null],
       condition_diplome: [null],
       ecole_f_id: [null, [Validators.required]],
-      domaine_id: [null, [Validators.required]],
-      domaine_id2: [null],
-      domaine_id3: [null],
       date_debut_f: [null],
       duree_f: [null],
       cout_f: [null],
@@ -67,11 +62,9 @@ export class ModifFormationComponent implements OnInit{
     );
 
 
-    this.adminService.getDomaineFromServer();
     this.adminService.getDiplomeFromServer();
     this.adminService.getEcoleFromServer();
     this.diplomes$ = this.adminService.diplomes$
-    this.domaine$ = this.adminService.domaine$;
     this.ecole$ = this.adminService.ecoles$.pipe(
       map(data => data.map(data => ({
         ...data,

@@ -121,7 +121,7 @@ export class AdminService {
     }
 
     addNewFormation(formationForm: {nom_f: string, admission_diplome: string, condition_diplome: string, 
-                    diplom_id: number, ecole_id: number, domaine_id: number, domaine_id2: number, domaine_id3: number, date_debut_f: string, duree_f: string,
+                    diplom_id: number, ecole_id: number, date_debut_f: string, duree_f: string,
                       cout_f: string, programme_f: string, descriptif_f: string}): Observable<Formation>{
       console.log(formationForm.nom_f + ' Send to BackEnd')
       return this.http.post<Formation>(`${environment.apiUrl}/api/formations`, formationForm);
@@ -129,8 +129,7 @@ export class AdminService {
 
     editFormation(formationForm: {id_form: number, nom_f: string, diplome_id: number, 
                                   admission_diplome: string,  condition_diplome: string, 
-                                  niveau_diplome: string, ecole_id: number, domaine_id: number, 
-                                  domaine2_id: number, domaine3_id: number, date_debut_f: string, duree_f: string,
+                                  niveau_diplome: string, ecole_id: number, date_debut_f: string, duree_f: string,
                                   cout_f: string, programme_f: string, descriptif_f: string}): Observable<Formation>{
                                   
         return this.http.put<Formation>(`${environment.apiUrl}/api/formations`, formationForm);
@@ -254,6 +253,7 @@ export class AdminService {
     };
 
     addNewDiplome(diplomeForm:{id_dip:number, nom_dip:string, descriptif_dip: string,
+      domaine_id: number, domaine_id2: number, domaine_id3: number,
       niveau:string, categorie_id: number }): Observable<Diplome> {
         return this.http.post<Diplome>(`${environment.apiUrl}/api/diplomes`, diplomeForm);
       }
@@ -266,6 +266,7 @@ export class AdminService {
     }
 
     editDiplome(diplomeForm:{id_dip:number, nom_dip:string, descriptif_dip: string,
+                            domaine_id: number, domaine_id2: number, domaine_id3: number,
                             niveau:string, categorie_id: number }): Observable<Diplome> {
       return this.http.put<Diplome>(`${environment.apiUrl}/api/diplomes`, diplomeForm);
     }

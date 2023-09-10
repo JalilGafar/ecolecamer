@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable, switchMap, take, tap } from 'rxjs';
 import { Diplome } from '../../models/diplome.model';
 import { AdminService } from '../../services/admin.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categ } from '../../models/categ.model';
+import { Domaine } from '../../models/domaine.model';
 
 @Component({
   selector: 'app-modif-diplome',
@@ -16,7 +17,8 @@ export class ModifDiplomeComponent implements OnInit{
   modifDiplome!: FormGroup;
   diplome$!: Observable<Diplome>;
   dipPrev!: Diplome;
-  categorie$!: Observable<Categ[]>
+  categorie$!: Observable<Categ[]>;
+  domaine$!: Observable<Domaine[]>;
 
   constructor ( private adminService : AdminService,
                 private route: ActivatedRoute,
@@ -44,9 +46,14 @@ export class ModifDiplomeComponent implements OnInit{
       nom_dip: [null],
       descriptif_dip: [null],
       niveau: [null],
+      domaine_id: [null, [Validators.required]],
+      domaine_id2: [null],
+      domaine_id3: [null],
       categorie_id: [null]
     });
 
+    this.adminService.getDomaineFromServer();
+    this.domaine$ = this.adminService.domaine$;
     this.adminService.getCategFromServer();
     this.categorie$ = this.adminService.categ$;
   };

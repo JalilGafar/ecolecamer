@@ -1,21 +1,16 @@
-.large{
-    display: none;
-}
+
 .phone{
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 95%;
 }
-@media screen and (min-width: 400px ){
+@media screen and (min-width: 360px ){
     .large{
         display: block;
         margin-left: auto;
         margin-right: auto;
         width: 70%;
         
-    }
-    .phone{
-        display: none;
     }
 }

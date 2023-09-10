@@ -7,6 +7,7 @@
         <div class="grid-container" >
             <div class="grid-content">
                 <img alt="Card" [src]="school.logo_e" />
+                
             </div>
             <div class="grid-content">
                 <p-tag class="fas" [style]="{'background':'#f4f6fc', 'color':'#344cbe'}" [value]="school.groupe" icon="pi pi-user"></p-tag>
@@ -43,11 +44,15 @@
                 <div class="training-card-show">
                     <div class="more-info">
                         <div class="accreditation">
-                            <h5>Accréditation</h5>
-                            <ul>
-                                <li> <img src="" alt=""> </li>
-                            </ul>
+                            <h5>Accréditation</h5>                            
                         </div>
+                        <ng-container *ngIf="school.descriptif_dip">
+                            <h5>Description du diplôme :</h5>
+                            <br>
+                            <span [innerHTML]="school.descriptif_dip"></span>
+                            <hr>
+                            <span [innerHTML]="school.descriptif_f"></span>
+                        </ng-container>
                         <ng-container *ngIf="school.descriptif_e">
                             <h5>Description</h5>
                             <br>

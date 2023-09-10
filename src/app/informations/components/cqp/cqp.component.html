@@ -12,52 +12,103 @@
     <div class="main-container">
         <app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
         <div class="redaction-info">   
-            <h1>Le Certificat de Qualification Professionnelle (CQP)</h1> 
+            <h1>CQP/DQP au Cameroun</h1> 
             <p>
                 La formation professionnelle est l'acquisition de compétences par l'apprentissage des 
                 métiers qui sont des spécialités harmonisées et homologuées par l'Etat. Cette formation 
-                se fait dans un lieu appelé centre ou institut de formation professionnelle oû les apprenants 
+                se fait dans un lieu appelé centre ou institut de formation professionnelle où les apprenants 
                 sont regroupés suivant les cours.
             </p>
             <p>
                 Après une période d'apprentissage, en présentiel ou à distance, qui dure variablement quelques 
-                heures, des mois, des années, on en sort généralement diplômé, certifié ou nanti d'un diplôme de 
-                qualification (DQP) ou d'une certification (CQP)
+                heures, des mois ou des années, on en sort généralement diplômé, certifié ou nanti d'un diplôme de 
+                Qualification Professionnelle (DQP) ou d'un certificat de Qualification Professionnelle (CQP)
             </p>      
             <p>
-                les formation sont administrés aux apprenants soit en présentiel, soit à distance, les institutions 
-                réconnues pour former doivent se voir octroyés des licences ou agrément gouvernementales pour 
-                exercer. Ces institutions peuvent êtres des écoles, des centre de formation publics ou privés.
+                Les formations sont administrées aux apprenants, soit en présentiel, soit à distance. Les institutions 
+                reconnues pour former doivent se voir octroyées des licences ou agrément gouvernementales pour 
+                exercer. Ces institutions peuvent être des écoles ou des centre de formation publics ou privés.
             </p> 
             <p>
-                Au terme d'une formation dans un centre de Formation professionnelle, des diplômes professionnels DQP / CQP 
-                émis par l'Etat du Camerounais, sont délivrés aux apprénants.
+               
+                
             </p>
-            <p-accordion [activeIndex]="0">
-                <p-accordionTab header="Quels sont les avantage d'un CQP ?">
+            <p-accordion [activeIndex]="" [multiple]="true">
+                <p-accordionTab header="C'est quoi le CQP ?">
                     <p> 
+                        <b>Le Certificat de Qualification Professionnelle (CQP)</b> est une certification créée et 
+                        délivrée par une branche professionnelle, via la Commission Paritaire Nationale de 
+                        l’Emploi et de la Formation professionnelle (CPN EEP Formation). Il atteste de la 
+                        maîtrise de compétences liées à un métier (c’est-à-dire une qualification identifiée par la branche).
                     </p>
                 </p-accordionTab>
-                <p-accordionTab header="Qui peut viser un CQP ?">
+                <p-accordionTab header="C'est quoi le DQP" >
                     <p>
-                        
+                        <b>Le Diplôme de Qualification Professionnelle (DQP)</b> est un diplôme délivré par le Ministère 
+                        de l’Emplois et de Formation Professionnelle (MINEFOP) à l’issue d’un examen national après 
+                        apprentissage d’une profession. Le DQP est aujourd’hui l’un des Diplômes les plus sollicités 
+                        par le marché de l’emploi, car l’aspect pratique de la formation professionnelle lui donne cette 
+                        plus-value en rendant son titulaire directement opérationnel après sa formation. Et par conséquent, 
+                        immédiatement rentable à l’entreprise. De plus, le DQP est aussi bien reconnu au Cameroun qu’à l’étranger.
                     </p>
                 </p-accordionTab>
-                <p-accordionTab header="Le programme d'un CQP">
+                <p-accordionTab header="Qui peut viser un CQP/DQP ?">
                     <p>
-                       
+                        La pluspart des CQP/DQP n'exigent pas de diplôme au préalable. Ce sont des formations qui mettent 
+                        uniquement l'accent sur la pratique professionnelle. Il est toutefois judicieux d'avoir soit au moins
+                        un niveau BEPC, soit une solide expérience professionnelle, afin de facilement assimiler les cours dispensés.
                     </p>
+                    <ul>
+                        <li>Les jeunes de moins de 18 ans, dans le cadre d’un contrat de professionnalisation</li>
+                        <li>Les salariés, dans le cadre du plan de formation, de la période de professionnalisation 
+                            ou de la Validation des Acquis de l’Expérience (VAE).</li>
+                        <li>Les demandeurs d’emploi de 26 ans et plus, dans le cadre d’un contrat de professionnalisation</li>
+                    </ul>
                 </p-accordionTab>
-                <p-accordionTab header="Que faire après son CQP ?">
+                <p-accordionTab header="Le programme d'un CQP/DQP">
                     <p>
-                       
+                        Le CQP s'appuie sur un référentiel de compétences nécessaires pour exercer un métier dans un 
+                        secteur particulier. Ce référentiel est défini par les professionnels du secteur concerné.
+                        Cette certification dure généralement 2 ans en formation normale et peut être raccourcis en quelques 
+                        mois pour une formation accélérée. Une admission en deuxième année est possible aux diplômés 
+                        du domaine connexe à la spécialité choisie, notamment les titulaires du BTS, Licence, et Master.
                     </p>
-                </p-accordionTab>
-                <p-accordionTab header="Comment choisir le bon centre de formation pour un CQP ?">
                     <p>
-                        
+                        Le DQP quant à lui se prépare en 7 à 12 mois en cycle long, et en 1 à 3 mois en cycle accéléré.
                     </p>
+                    <ul>
+                        <li>
+                            Le CQP et le DQP sont construits autour des modules de formation adaptés aux 
+                            spécificités de l'entreprise (produits, organisation...) et ajusté en fonction
+                            du domaine d'activité cible.
+                        </li>
+                        <li>Une évaluation sur la pratique professionnelle et sur l'acquisition des connaissances.</li>
+                        <li>Une validation par des professionnels. Chaque module de formation est évalué par un jury.</li>
+                    </ul>
                 </p-accordionTab>
+                <p-accordionTab header="pourquoi rechercher un CQP/DQP ?">
+                    <b>Pour votre entreprise</b>
+                    <ul>
+                        <li>Faciliter la formation d’un salarié ou d’un nouvel embauché à un métier particulier de votre entreprise</li>
+                        <li>Qualifier et fidéliser un salarié en poste par la reconnaissance de son savoir-faire</li>
+                        <li>Construire des parcours de formation adaptés aux besoins de votre entreprise</li>
+                        <li>Favoriser l’intégration d’un nouveau collaborateur et reconnaître leurs compétences</li>
+                        <li>Améliorer les relations de communication, développer l’esprit d’équipe, limiter les conflits, motiver les collaborateurs.</li>
+                    </ul>
+                    <br>
+                    <b>Pour le travailleur </b>
+                    <ul>
+                        <li>Obtenir une certification reconnue par l'État Camerounais</li>
+                        <li>Être reconnu expert dans son métier.</li>
+                        <li>Monter en qualification et en compétences pour faire face aux évolutions techniques et
+                            organisationnelles de votre métier</li>
+                        <li>Mettre à jour vos connaissances, développer vos savoir-faire</li>
+                        <li>Accéder à un autre niveau de poste au sein de l’entreprise</li>
+                        <li>Vous inscrire dans une dynamique de progression</li>
+                        <li>Mieux comprendre les attentes de votre entreprise sur votre poste.</li>
+                    </ul>
+                </p-accordionTab>
+
             </p-accordion>
 
             <p-card header="Liste des CQP" >
@@ -65,6 +116,7 @@
             </p-card>
             
         </div>
+        <app-start ></app-start>
     </div>
     <aside class="side-container">
         <app-side-info></app-side-info>
@@ -77,5 +129,3 @@
 <app-interest-avis></app-interest-avis>
 <app-interest-classification></app-interest-classification> 
 -->
-
-<app-under-building></app-under-building>

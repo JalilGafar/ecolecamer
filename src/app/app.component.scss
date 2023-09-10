@@ -1,6 +1,10 @@
 mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     height: 100%;
-    color: inherit;
+    color: inherit; 
+}
+
+mat-sidenav-container {
+    background-color: #efeae275;
 }
 
 mat-sidenav {

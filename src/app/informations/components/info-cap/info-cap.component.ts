@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { interestelt } from 'src/app/core/model/interest-item-model';
 import { InfoServices } from '../../information.services';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { TreeNode } from 'primeng/api';
 
 @Component({
@@ -92,7 +92,13 @@ export class InfoCapComponent implements OnInit{
 ];
 
   constructor( private infoservice :InfoServices,
-              private titleService:Title) {this.titleService.setTitle("Obtenir un CAP au Cameroun | Camerdiplome");}
+              private meta: Meta,
+              private titleService:Title) {this.titleService.setTitle("Le Certificat d'Aptitude Professionnel (CAP) au Cameroun | Camerdiplome");
+                                            this.meta.addTags([ 
+                                              { name: 'description', content: 'Optez pour une formation professionnelle avant le Bac dans l\'une des nombreuses spécialités du CAP' }, 
+                                              { name: 'keywords', content: 'CAP, métier, metier, emploie, formation, Bac' } 
+                                            ]);
+                                          }
 
 
   ngOnInit(): void {

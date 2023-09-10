@@ -69,6 +69,7 @@ export class OrientationService {
     /*Fonction qui demande de retourner les domaines pour un diplome en particulier pour toutes les villes
      Car une foi qu'o aura le diplome et le domaine d'intérêt, on enclanche getPartCyties() pour 
      avoir les villes qui offrent ces formations */
+     // on charge tt les domaines pour lesquel il y a une categ de diplome en particulier
     getDomaineFromServer(domaineDegree:string){
         this.setLoadingStatus(true);
         const url = `${environment.apiUrl}/api/field`;

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { interestelt } from 'src/app/core/model/interest-item-model';
 import { InfoServices } from '../../information.services';
 import { Observable } from 'rxjs';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 
 @Component({
@@ -14,11 +15,18 @@ export class InfoDiplomeComponent implements OnInit{
   
   titre = "Trouvez votre formation au Cameroun";
   soustitre = "Comme Fadimatou, elles sont nombreuse à utiliser Camerdiplome pour trouver leur école";
-  photo = "./../../../../assets/images/fati_lon.jpg";
+  photo = "./../../../../assets/images/fati_lon_mini.jpg";
   school$!: Observable <interestelt[]>;
 
   constructor( private infoservice : InfoServices,
-              private titleService:Title) {this.titleService.setTitle("Diplômes, certificats et brevets au Cameroun");}
+              private responsive: BreakpointObserver,
+              private titleService:Title, 
+              private meta: Meta) {this.titleService.setTitle("Liste des Diplômes au Cameroun");
+                                    this.meta.addTags([ 
+                                      { name: 'description', content: 'CAP, Bac, DQP, CQP, Master, BTS, Licence, Bachelor, HND, Licence pro, Prepa, Capacité' }, 
+                                      { name: 'keywords', content: 'CAP, Bac, DQP, CQP, Master, BTS, Licence, Bachelor, HND, Licence pro, Prepa, Capacité' } 
+                                    ]);
+                                  }
 
 
   products = [
@@ -168,6 +176,8 @@ export class InfoDiplomeComponent implements OnInit{
 
 
     this.school$ = this.infoservice.getFirstInterestSchool('diplome')
+
+    
 
    
   }

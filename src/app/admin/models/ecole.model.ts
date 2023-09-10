@@ -8,6 +8,7 @@ export class Ecole {
     date_creation!: string;
     arrete_creation!: string;
     arrete_ouverture!: string;
+    siteweb_e!: string;
     tel_1_e!: string;
     email_e!: string;
     bp_e!: string;

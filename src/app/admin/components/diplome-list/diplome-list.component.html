@@ -11,9 +11,12 @@
                 [paginator]="true"
                 [rows]="50"
                 [showCurrentPageReport]="true"
+                paginatorPosition="top"
                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
                 [rowsPerPageOptions]="[10, 25, 50]"
-                (onRowSelect)="onRowSelect($event)">
+                (onRowSelect)="onRowSelect($event)"
+                sortField="id_dip"
+                [sortOrder]="1" >
             <ng-template pTemplate="header">
                 <tr>
                     <th pSortableColumn="id_dip" style="width:5%">Code <p-sortIcon field="id_dip"></p-sortIcon></th>

@@ -12,34 +12,110 @@
     <div class="main-container">
         <app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
         <div class="redaction-info">   
-            <h1>Les Prépa Concours</h1> 
+            <h1>Les Types de Prépa </h1> 
             <p>
-                Le Centre de prépa concours est une étape importante si vous voulez passer des concours d'entrée
-                dans les grandes écoles ou dans la fonction publique. Zoom sur les prépas.
+                Au Cameroun, on peut distinguer : <b>les Centres de prépa concours</b>  et <b>les écoles Préparatoires</b>.
+                Ces deux modèles de formation sont communément appelés "Prépa", mais ne visent pas les mêmes objectifs. 
+                Zoom sur les prépas.
             </p>       
-            <p-accordion [activeIndex]="0">
-                <p-accordionTab header="Qu'est ce qu'un centre de prépa ?">
-                    <p> 
-                    </p>
-                </p-accordionTab>
-                <p-accordionTab header="Comment intégrer un centre de prépa concours ?">
+            <p-accordion [activeIndex]="" [multiple]="true">
+                <p-accordionTab header="Qu'est ce qu'une Prépa ?">
                     <p>
-                        
+                        Les prépas ont pour but de préparer les candidats aux concours d'entrée dans les grandes
+                        écoles ou aux concours d'entrée dans la fonction publique. Depuis quelques années, les 
+                        Prépas ont évolué au point de devenir un passage quasi-obligatoire pour les candidats au 
+                        concours, compte tenu de la compétition de plus en plus élevé, dû au nombre très
+                        limité de place.
+                    </p>
+                    <p>
+                        Au Cameroun, les classes préparatoires sont réparties en plusieurs catégories :
+                    </p>
+                    <ul>
+                        <li>
+                            <b>La prépa internationale :</b> ce modèle de formation prévoit 2 ans d'étude
+                            au Cameroun et 3 ans à l'international en intégrant sans concours, des écoles 
+                            de haut niveau à l'étranger.
+                        </li>
+                        <li>
+                            <b>Le centre de prépa concours :</b> ce modèle prépare le candidat à affronter les
+                            concours nationaux via des classes intensives pouvant aller de quelques semaines 
+                            à une année complète.
+                        </li>
+                    </ul>
+                </p-accordionTab>
+                <p-accordionTab header="Comment intégrer une prépa ?">
+                    <p>
+                        L'inscription en prépa se fait généralement avec une simple demande. Le plus important étant que 
+                        le candidat qui souhaite se préparer soit titulaire des diplômes qui conditionnent le concours
+                        visé.
+                    </p>
+                    <p>
+                        Certaines prépas internationales ne sont intégrables qu par concours ou via une verification de la 
+                        bonne qualité des bulletins de première et terminale.
                     </p>
                 </p-accordionTab>
                 <p-accordionTab header="Le programme des classes préparatoires">
                     <p>
-                       
-                    </p>
+                        Le programme de cours des classes préparatoires dépend de l'école ou du cours que vous préparez.
+                        Les disciplines sont diverses :
+                     </p>
+                     <ul>
+                         <li>mathématique</li>
+                         <li>physique</li>
+                         <li>chimie</li>
+                         <li>culture générale</li>
+                         <li>anglais</li>
+                         <li>méthodologie</li>
+                         <li>etc.</li>
+                     </ul>
+                     <p>
+                         Un accent particulier est mis sur le traitement systématique des anciennes 
+                         épreuves de concours. A ce programme, s'ajoute une grande partie de travail
+                         personnel. Les formations en classes préparatoires demandent une grande 
+                         <b>motivation</b>, une bonne <b>méthodologie</b>, et une <b>assiduité</b>. 
+                         De nombreux annales et des examens blancs de préparation aux concours sont 
+                         accessibles à bon prix.
+                     </p>
+                     <p>
+                        Les concours sont de plus en plus sélectifs et les candidats de plus en plus nombreux.
+                        Durant le concours, la moindre erreur, la moindre hésitation, le plus petit retard de 
+                        calcul, sont autant de facteurs qui vous feront perdre des dizaines de places. Travailler
+                        dur, croire en vous et développer de bons réflexes, voilà l'attitude à adopter.
+                     </p>
+
                 </p-accordionTab>
                 <p-accordionTab header="Que faire après sa prépa ?">
                     <p>
-                       
+                        La première vocation des classes préparatoires est d’intégrer les grandes écoles, 
+                        qui recrutent en majorité des étudiants ayant réussi leur concours d'entrée. Sachez
+                        toutefois qu'en cas d'échec, vous pouvez vous réorienter.
+                    </p>
+                    <p>
+                        Une bonne prépa ne sera pas un temps perdu, car vous aurez <b>consolidé vos 
+                        connaissances et acquis une méthodologie de travail</b> qui vous sera très utile
+                        tout au long de vos études et de votre carrière professionnelle.
+                    </p>
+                    <p>
+                        Rappelez-vous qu'il existe des procédures d’admission parallèles et des passerelles. 
+                        Par exemple, en cas d’échec au concours des écoles d’ingénieurs, il est possible de 
+                        viser le concours niveau licence ou même le master accessible par étude de dossier.
+                        Pour cela, il faudra judicieusement choisir les formations universitaires qui offrent
+                        les unités d'enseignement que l'école visé exige pour l'intégration en licence ou master.                        
                     </p>
                 </p-accordionTab>
                 <p-accordionTab header="Comment choisir le bon centre prépa ?">
                     <p>
-                        
+                        Le choix de la classe préparatoire dépend fortement de votre projet d'étude et 
+                        du concours visé. Identifiez clairement l'école que vous visez, prenez la peine 
+                        de vous renseigner sur cette école. Certaines écoles ont des classes préparatoires 
+                        tenues par des enseignants ou d'ancien élèves de cette école. Renseignez-vous chez des candidats
+                        qui ont réussi le concours que vous visez. Ils peuvent vous aider à comprendre
+                        comment vous préparer et où vous préparer.
+                    </p>
+                    <p>
+                        Renommée de l’établissement, taux de réussite, coût de la vie et programme en adéquation 
+                        avec un projet professionnel précis, de nombreux critères sont à prendre en compte avant 
+                        de se décider.
                     </p>
                 </p-accordionTab>
             </p-accordion>
@@ -61,5 +137,3 @@
 <app-interest-avis></app-interest-avis>
 <app-interest-classification></app-interest-classification> 
 -->
-
-<app-under-building></app-under-building>

@@ -10,4 +10,5 @@ export class interestelt {
     cout_f!: string;
     descriptif_e!: string;
     descriptif_f!: string;
+    descriptif_dip!: string;
 }

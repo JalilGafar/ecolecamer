@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { interestelt } from 'src/app/core/model/interest-item-model';
 import { InfoServices } from '../../information.services';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-info-prepa',
@@ -18,8 +18,14 @@ export class InfoPrepaComponent implements OnInit{
   
   school$!: Observable<interestelt[]>
 
-  constructor( private infoservice :InfoServices,
-    private titleService:Title) {this.titleService.setTitle("Les Prépa concours au Cameroun | Camerdiplome");}
+  constructor(private infoservice :InfoServices,
+              private titleService:Title,
+              private meta: Meta) { this.titleService.setTitle("Les Meilleurs Prépa au Cameroun | Camerdiplome");
+                                    this.meta.addTags([ 
+                                      { name: 'description', content: 'Vous souhaitez facilement intégrer une grande école au Cameroun ou à l\'étranger ? Alors, le passage par une prépa est le moyen le plus sûr d\'atteindre votre objectif.' }, 
+                                      { name: 'keywords', content: 'métier, metier, école, concours, grande école, emploie, Certificat, formation, Bac, Professionnel, Professionnelle' } 
+                                    ]); 
+                                  }
 
   ngOnInit(): void {
 
