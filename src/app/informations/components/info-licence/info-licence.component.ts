@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { interestelt } from 'src/app/core/model/interest-item-model';
 import { InfoServices } from '../../information.services';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-info-licence',
@@ -17,7 +17,13 @@ export class InfoLicenceComponent implements OnInit{
   school$!: Observable<interestelt[]>
 
   constructor( private infoservice :InfoServices,
-              private titleService:Title) {this.titleService.setTitle("La Licence au Cameroun  | Camerdiplome");}
+              private titleService:Title,
+              private meta : Meta) {this.titleService.setTitle("La Licence au Cameroun  | Camerdiplome");
+                                      this.meta.addTags([ 
+                                        { name: 'description', content: 'Le Cycle licence est une formation qui peut s\'intégrer directement après l\'obtention d\'un baccalauréat. ' }, 
+                                        { name: 'keywords', content: 'DUT, BTS IUT, Licence, formation, LMD ' } 
+                                      ]);
+                                    }
 
   ngOnInit(): void {
 

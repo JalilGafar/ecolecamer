@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { interestelt } from 'src/app/core/model/interest-item-model';
 import { InfoServices } from '../../information.services';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-info-dut',
@@ -13,12 +13,18 @@ export class InfoDutComponent implements OnInit{
   
   titre = "Trouvez votre formation";
   soustitre = "Comme Fatima, 40% des bacheliers utilisent Camerdiplome pour trouver leur école";
-  photo = "./../../../../assets/images/fati_lon.jpg";
+  photo = "./../../../../assets/images/fati_lon_mini.jpg";
   
   school$!: Observable<interestelt[]>
 
   constructor( private infoservice :InfoServices,
-              private titleService:Title) {this.titleService.setTitle("Les DUT au Cameroun | Camerdiplome ");}
+              private titleService:Title,
+              private meta : Meta ) {this.titleService.setTitle("Le DUT au Cameroun | Camerdiplome ");
+                                      this.meta.addTags([ 
+                                        { name: 'description', content: 'Le Diplôme Universitaire de Technologie (DUT) se prépare dans un Institut Universitaire de Technologie (IUT)' }, 
+                                        { name: 'keywords', content: 'DUT, BTS IUT, Diplôme Universitaire de Technologie, Institut Universitaire de Technologie, formation ' } 
+                                      ]);
+            }
 
   ngOnInit(): void {
 

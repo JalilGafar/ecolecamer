@@ -14,38 +14,85 @@
         <div class="redaction-info">   
             <h1>Le Diplôme Universitaire de Technologie (DUT) </h1> 
             <p>
-                Le DUT est un diplôme préparé en 2 ans en IUT (Institut Universitaire de Technologie).
-                Le BTS, comme le DUT, est un diplôme d'État que l'on obtient à l'issue d'une formation post-bac 
-                de deux ans. Mais s'ils sont tous les deux de niveau Bac+2, les modalités d'obtention des BTS et 
-                des DUT sont différentes. En DUT, la validation se fait en contrôle continu et des examens sont 
+                Le DUT est un diplôme préparé en 2 ans en <b> IUT (Institut Universitaire de Technologie)</b>.
+                Le BTS, comme le DUT, est un diplôme d'État que l'on obtient à l'issue d'une formation post-bac.  
+                Mais s'ils sont tous les deux de niveau Bac+2, les modalités d'obtention des BTS et 
+                des DUT sont différentes. En DUT, la validation se fait en <b>contrôle continu</b> et des examens sont 
                 organisés à la fin des premiers et seconds semestres de chaque année alors qu'en BTS, le diplôme 
-                n'est délivré qu'à l'issue d'un examen final organisé à la fin de la deuxième année. <br>
+                n'est délivré qu'à l'issue d'un <b>examen final</b> organisé à la <b>fin de la deuxième année</b>. <br>
                 Déroulement des études, parcours proposés, débouchés… Retour sur l'essentiel avec 
                 Camerdiplome sur ce diplôme universitaire de technologie.
             </p>       
-            <p-accordion [activeIndex]="0">
+            <p-accordion [activeIndex]="0" [multiple]="true" >
                 <p-accordionTab header="Qu'est ce qu'un DUT ?">
                     <p> 
+                        Le cycle DUT forme des techniciens supérieurs ayant un <b>large spectre de connaissances</b> et de 
+                        compétences dans les domaines de <b>l’informatique</b>, de la <b>biologie</b> et de la <b>maintenance industrielle</b>.
+                    </p>
+                    <p>
+                        De nombreuses similitudes existent entre le BTS et le DUT, notament le nombre d'année de formations
+                        et les filières et enseignements. Sur quelle base devrait on choisire le cycle DUT plutôt qu'un autre ? 
+                    </p>
+                    
+                    <hr>
+                    <h3>IPES ou IUT : un environnement différent</h3>
+                    <p>
+                        Le DUT se prépare dans un IUT (Institut Universitaire de Technologie) tandis que le BTS peut 
+                        être dispensé par des IPES (Institut Privé d'Enseignement Supérieur).
+                    </p>
+                    <p>
+                        La première différence entre ces deux formations est donc leur environnement. Étudier en BTS signifie en 
+                        effet rester dans un cadre privé, alors que les IUT s’inscrivent dans un environnement universitaire publique.
+                        L’encadrement ne sera donc pas le même, et les IUT, même s’ils savent bien entourer leurs étudiants, 
+                        laisseront toujours plus d’autonomie à leurs élèves que les IPES, où une forte assiduité aux cours est, par exemple, de règle.
+                    </p>
+
+                    <hr>
+                    <h3>Des IUT plus généralistes que les IPES</h3>
+                    <p>
+                        Pour ce qui concerne le contenu des enseignements, de vrais points communs existent, avec à chaque fois des 
+                        cours théoriques – maths, langues vivantes, etc. – adossés à des cours plus professionnalisants, 
+                        le tout entrecoupé de stages de 10 à 15 semaines au total sur les deux années.
+                    </p>
+                    <p>
+                        Pourtant, les IUT, dont la vocation est bien souvent de mener leurs étudiants vers des études longues, 
+                        resteront plus généralistes, alors que les IPES n’hésiteront pas à multiplier des enseignements largement 
+                        spécifiques. Il faut dire qu’il existe près de 150 spécialités en BTS contre une vingtaine en DUT principalement 
+                        axées sur la production et le secteur tertiaire. Notons néanmoins que certains DUT n’ont pas d’équivalence en BTS. 
+                        Autre point important, la présence d’un examen de fin d’études en BTS, alors que les IUT font la part belle au 
+                        contrôle continu. De quoi faire réfléchir les allergiques aux épreuves couperet !
+                    </p>
+                    <p>
+                        Un autre aspect important à noter est que l'accès au IUT se fait par concours, contrairement à l'accès au IPES qui 
+                        se fait généralement par étude de dossier.
                     </p>
                 </p-accordionTab>
                 <p-accordionTab header="La liste des Diplômes Universitaires de Technologie">
                     <p>
-                        
+                        Il existe de nombreuses spécialités en DUT. On peut lister en exemple :
                     </p>
-                </p-accordionTab>
-                <p-accordionTab header="Quel est le programme en DUT ?">
-                    <p>
-                       
-                    </p>
-                </p-accordionTab>
-                <p-accordionTab header="Comment se déroule l'admission en DUT ?">
-                    <p>
-                        
-                    </p>
+                    <ul>
+                        <li>Génie Informatique (Génie Logiciel, Réseau et Télécommunication, Informatique de Gestion... ) </li>
+                        <li>Génie Electrique</li>
+                        <li>Génie Biomédicale </li>
+                        <li>Génie Biologique (Analyses Biologiques et Biochimiques, Génie de l’Environnement, Industries Alimentaires et Biotechnologiques) </li>
+                        <li>Génie Industriel et Maintenace</li>
+                        <li>Génie Civil (Métalurgie, Mine et Pétrole) </li>
+                        <li>Génie Thermique et Energétique</li>
+                        <li>Génie Logistique et Transport</li>
+
+                    </ul>
                 </p-accordionTab>
                 <p-accordionTab header="Quel sont les débouchés après une formation DUT ?">
                     <p>
-                       
+                       Tout comme Le BTS, le DUT est un diplôme qui ouvre directement au monde professionnel. Suivant sa filière d'études,
+                       sa détermination, sa maîtrise des compétences et son carnet d'adresses, le diplômé d'un DUT pourra plus ou moins facilement 
+                       se trouver un emploi. 
+                    </p>
+                    <p>
+                        Il est vrai que le concept d'entrepreneuriat est très à la mode de nos jours. Les Pouvoirs Publics invitent d'ailleurs 
+                        beaucoup de jeunes diplômer à se tourner résolument vers cette option pour résorber le taux de plus en plus croissant de 
+                        demandeur d'emploi.
                     </p>
                 </p-accordionTab>
             </p-accordion>
@@ -67,5 +114,3 @@
 <app-interest-avis></app-interest-avis>
 <app-interest-classification></app-interest-classification>
  -->
-
- <app-under-building></app-under-building>
