@@ -8,13 +8,13 @@ import { TreeNode } from 'primeng/api';
 @Component({
   selector: 'app-info-cap',
   templateUrl: './info-cap.component.html',
-  styleUrls: ['./info-cap.component.scss', '../../informations-style.module.scss']
+  styleUrls: ['./info-cap.component.scss'  ]
 })
 export class InfoCapComponent implements OnInit{
   
   titre = "Orientez vous vers un CAP";
   soustitre = "Comme Ngono, elles sont nombreuse à utiliser Camerdiplome pour trouver une formation";
-  photo = "./../../../../assets/images/pexels-3.jpg";
+  photo = "./../../../../assets/images/pexels-3.webp";
   
   school$!: Observable<interestelt[]>;
   overlayVisible: boolean = false;

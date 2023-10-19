@@ -7,13 +7,13 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-info-metier',
   templateUrl: './info-metier.component.html',
-  styleUrls: ['./info-metier.component.scss', '../../informations-style.module.scss']
+  styleUrls: ['./info-metier.component.scss'  ]
 })
 export class InfoMetierComponent implements OnInit{
   
   titre = "Un Métier qui te correspond";
   soustitre = "Comme Toumbe, 40% des bacheliers utilisent Camerdiplome pour trouver leur école";
-  photo = "./../../../../assets/images/pexels-cottonbro-studi.jpg";
+  photo = "./../../../../assets/images/pexels-cottonbro-studi.webp";
   
   school$!: Observable<interestelt[]>
 

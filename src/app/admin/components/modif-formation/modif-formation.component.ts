@@ -11,7 +11,7 @@ import { Diplome } from '../../models/diplome.model';
 @Component({
   selector: 'app-modif-formation',
   templateUrl: './modif-formation.component.html',
-  styleUrls: ['./modif-formation.component.scss', '../../admin-style.module.scss']
+  styleUrls: ['./modif-formation.component.scss' ]
 })
 export class ModifFormationComponent implements OnInit{
 

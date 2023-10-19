@@ -7,7 +7,7 @@ import { AdminService } from '../../services/admin.service';
 @Component({
   selector: 'app-univ-list',
   templateUrl: './univ-list.component.html',
-  styleUrls: ['../../admin-style.module.scss']
+  styleUrls: ['./univ-list.component.scss']
 })
 export class UnivListComponent implements OnInit {
 

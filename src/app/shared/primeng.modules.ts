@@ -17,6 +17,7 @@ import { DividerModule } from 'primeng/divider';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { OrganizationChartModule } from 'primeng/organizationchart';
 import { OverlayModule } from 'primeng/overlay';
+import { InputTextModule } from 'primeng/inputtext';
 
 
 
@@ -39,7 +40,8 @@ import { OverlayModule } from 'primeng/overlay';
       DividerModule,
       ProgressBarModule,
       OrganizationChartModule,
-      OverlayModule
+      OverlayModule,
+      InputTextModule
     ]
   })
 

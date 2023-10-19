@@ -39,20 +39,23 @@
             <div class="cut"></div>
             <label for="email" class="placeholder">Email*</label>
         </div>
-        <mat-form-field appearance="outline">
+        
+        <div style="margin-top: 12px;" >Téléphone</div>
+        
+        <div>
             <ngx-mat-intl-tel-input
                 id="phone"
                 [preferredCountries]="['cm', 'td']"
                 formControlName="phone"
                 placeholder="Téléphone"
             ></ngx-mat-intl-tel-input>
-            <mat-label>Téléphone</mat-label>
+            
             <!--
             <input id="phone" class="input" type="text" placeholder=" "  formControlName="phone">
             <div class="cut"></div>
             <label for="phone" class="placeholderc">Téléphone*</label>
             -->
-        </mat-form-field>
+        </div>
 
         <div class="action-buttons">
             <button type="submit" class="submit" (click)="onSubmitForm()" [disabled]="newContact.invalid" >Valider et voir mes résultats</button>

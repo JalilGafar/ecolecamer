@@ -47,8 +47,12 @@ form {
     padding: 4px 20px 0;
 }
 
-::ng-deep .mat-form-field {
+.ngx-floating[_nghost-xrb-c133]   .country-selector[_ngcontent-xrb-c133] {
+    opacity: 1 !important;
+   }
 
+::ng-deep .mat-form-field {
+ /*
     width: 100%;
     margin-top: 30px;
 
@@ -77,7 +81,17 @@ form {
         font-size: 18px;
         
     }
+   */
+   .mat-form-field-infix{
+    width: inherit;
+    margin-top: 10px;
+    font-size: larger;
+    top: 15px;
+   }
    
+   .mat-form-field-flex{
+    height: 50px;
+   }
 }
 
 .cut {

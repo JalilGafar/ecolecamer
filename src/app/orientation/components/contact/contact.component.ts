@@ -29,7 +29,7 @@ export class ContactComponent implements OnInit {
               private appRout : Router) {
                 this.items = [];
                 for (let i = 1970; i < 2010; i++) {
-                    this.items.push({ label:''+ i, value:  i });
+                    this.items.push({ label:''+ i, value: 'Item ' + i });
                 }
               }
 

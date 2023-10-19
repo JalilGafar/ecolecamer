@@ -7,7 +7,7 @@ import { Diplome } from '../../models/diplome.model';
 @Component({
   selector: 'app-single-diplome',
   templateUrl: './single-diplome.component.html',
-  styleUrls: ['./single-diplome.component.scss', '../../admin-style.module.scss']
+  styleUrls: ['./single-diplome.component.scss' ]
 })
 export class SingleDiplomeComponent implements OnInit {
 

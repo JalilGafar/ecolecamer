@@ -6,14 +6,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormationInfoModule } from './formation-info/formation-info.module';
-import { OrientationModule } from './orientation/orientation.module';
 import { LandingPageModule } from './landing-page/landing-page.module';
 import { TopVideoSchoolModule } from './top-video-school/top-video-school.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { AdminModule } from './admin/admin.module';
 import { httpInterceptorProviders } from './interceptors/auth.interceptor';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
@@ -21,15 +18,13 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { InformationsModule } from './informations/informations.module';
 import { NgxMatIntlTelInputComponent } from 'ngx-mat-intl-tel-input';
 import { AboutComponent } from './about/about.component';
 import { ReferencerComponent } from './referencer/referencer.component';
 import { DiplomesComponent } from './diplomes/diplomes.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { SpinnerComponent } from './spinner/spinner.component';
-import { LoadingInterceptor } from './interceptors/loading.interceptor';
-
+//import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 @NgModule({
     declarations: [
@@ -48,7 +43,7 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
     providers: [
         { provide: LOCALE_ID, useValue: 'fr-FR' },
         {provide: LocationStrategy, useClass: HashLocationStrategy},
-        {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true},
+       // {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true},
         httpInterceptorProviders
     ],
     bootstrap: [
@@ -65,9 +60,9 @@ import { LoadingInterceptor } from './interceptors/loading.interceptor';
         //FlexLayoutModule,
         NgbModule,
         FormationInfoModule,
-        OrientationModule,
-        AdminModule,
-        InformationsModule,
+       // OrientationModule,
+       // AdminModule,
+       // InformationsModule,
         LandingPageModule,
         HttpClientModule,
         NgxMatIntlTelInputComponent

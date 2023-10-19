@@ -10,7 +10,7 @@ import { TopNewsService } from 'src/app/services/top-news.service';
 @Component({
   selector: 'app-degree',
   templateUrl: './degree.component.html',
-  styleUrls: ['./degree.component.scss', '../../orientation-style.module.scss']
+  styleUrls: ['./degree.component.scss'   ]
 })
 export class DegreeComponent implements OnInit, AfterViewInit {
 

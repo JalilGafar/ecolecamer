@@ -7,13 +7,13 @@ import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-cqp',
   templateUrl: './cqp.component.html',
-  styleUrls: ['./cqp.component.scss', '../../informations-style.module.scss']
+  styleUrls: ['./cqp.component.scss'  ]
 })
 export class CqpComponent implements OnInit {
 
   titre = "Certificat de Qualification Professionnelle (CQP)";
   soustitre = "Comme Esso, 40% des bacheliers utilisent Camerdiplome pour trouver leur école";
-  photo = "./../../../../assets/images/pexels-cottonbro-studi.jpg";
+  photo = "./../../../../assets/images/pexels-cottonbro-studi.webp";
 
   
   school$!: Observable<interestelt[]>

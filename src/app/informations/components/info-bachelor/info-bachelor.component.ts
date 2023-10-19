@@ -7,13 +7,13 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-info-bachelor',
   templateUrl: './info-bachelor.component.html',
-  styleUrls: ['./info-bachelor.component.scss', '../../informations-style.module.scss']
+  styleUrls: ['./info-bachelor.component.scss'  ]
 })
 export class InfoBachelorComponent implements OnInit{
   
   titre = "Find your Bachelor's degree";
   soustitre = "Like Jules, 40% of high school graduates use Camerdiplome to find their school";
-  photo = "./../../../../assets/images/pexels-kampus-productiont.jpg";
+  photo = "./../../../../assets/images/pexels-kampus-productiont.webp";
   
   school$!: Observable<interestelt[]>
 

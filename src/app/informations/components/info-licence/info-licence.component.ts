@@ -7,13 +7,13 @@ import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-info-licence',
   templateUrl: './info-licence.component.html',
-  styleUrls: ['./info-licence.component.scss', '../../informations-style.module.scss']
+  styleUrls: ['./info-licence.component.scss'  ]
 })
 export class InfoLicenceComponent implements OnInit{
   
   titre = "Trouvez votre licence";
   soustitre = "Comme Choupo, 40% des bacheliers utilisent Camerdiplome pour trouver leur école";
-  photo = "./../../../../assets/images/pexels-rdne-stock-project.jpg";
+  photo = "./../../../../assets/images/pexels-rdne-stock-project.webp";
   school$!: Observable<interestelt[]>
 
   constructor( private infoservice :InfoServices,

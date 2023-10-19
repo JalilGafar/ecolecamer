@@ -8,7 +8,7 @@ import { AdminService } from '../../services/admin.service';
 @Component({
   selector: 'app-modif-campus',
   templateUrl: './modif-campus.component.html',
-  styleUrls: ['./modif-campus.component.scss', '../../admin-style.module.scss']
+  styleUrls: ['./modif-campus.component.scss' ]
 })
 export class ModifCampusComponent implements OnInit{
 

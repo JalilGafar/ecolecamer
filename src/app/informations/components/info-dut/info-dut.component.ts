@@ -7,13 +7,13 @@ import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-info-dut',
   templateUrl: './info-dut.component.html',
-  styleUrls: ['./info-dut.component.scss', '../../informations-style.module.scss']
+  styleUrls: ['./info-dut.component.scss'  ]
 })
 export class InfoDutComponent implements OnInit{
   
   titre = "Trouvez votre formation";
   soustitre = "Comme Fatima, 40% des bacheliers utilisent Camerdiplome pour trouver leur école";
-  photo = "./../../../../assets/images/fati_lon_mini.jpg";
+  photo = "./../../../../assets/images/fati_lon_mini.webp";
   
   school$!: Observable<interestelt[]>
 

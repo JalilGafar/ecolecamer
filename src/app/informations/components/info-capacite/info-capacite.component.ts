@@ -7,13 +7,13 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-info-capacite',
   templateUrl: './info-capacite.component.html',
-  styleUrls: ['./info-capacite.component.scss', '../../informations-style.module.scss']
+  styleUrls: ['./info-capacite.component.scss'  ]
 })
 export class InfoCapaciteComponent implements OnInit {
 
   titre = "Trouvez votre formation";
   soustitre = "Comme Stefi, 40% des bacheliers utilisent Camerdiplome pour trouver leur école";
-  photo = "./../../../../assets/images/pexels-godisable-jacob.jpg";
+  photo = "./../../../../assets/images/pexels-godisable-jacob.webp";
 
   school$!: Observable<interestelt[]>
 

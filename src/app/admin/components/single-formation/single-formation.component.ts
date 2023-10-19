@@ -7,7 +7,7 @@ import { AdminService } from '../../services/admin.service';
 @Component({
   selector: 'app-single-formation',
   templateUrl: './single-formation.component.html',
-  styleUrls: ['./single-formation.component.scss', '../../admin-style.module.scss']
+  styleUrls: ['./single-formation.component.scss' ]
 })
 export class SingleFormationComponent implements OnInit{
 

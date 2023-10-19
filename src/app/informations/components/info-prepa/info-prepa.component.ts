@@ -7,13 +7,13 @@ import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-info-prepa',
   templateUrl: './info-prepa.component.html',
-  styleUrls: ['./info-prepa.component.scss', '../../informations-style.module.scss']
+  styleUrls: ['./info-prepa.component.scss'  ]
 })
 export class InfoPrepaComponent implements OnInit{
   
   titre = "Prépa";
   soustitre = "Comme Dobo, 40% des bacheliers utilisent Camerdiplome pour trouver leur école";
-  photo = "./../../../../assets/images/pexels-cottonbro-studi.jpg";
+  photo = "./../../../../assets/images/pexels-cottonbro-studi.webp";
 
   
   school$!: Observable<interestelt[]>

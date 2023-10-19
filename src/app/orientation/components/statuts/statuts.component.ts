@@ -7,7 +7,7 @@ import { BEHAVIOR } from 'src/app/core/model/Behavior';
 @Component({
   selector: 'app-statuts',
   templateUrl: './statuts.component.html',
-  styleUrls: ['./statuts.component.scss', '../../orientation-style.module.scss']
+  styleUrls: ['./statuts.component.scss'   ]
 })
 export class StatutsComponent implements OnInit, AfterViewInit {
 

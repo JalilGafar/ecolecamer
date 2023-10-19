@@ -10,7 +10,7 @@ import { Domaine } from '../../models/domaine.model';
 @Component({
   selector: 'app-modif-diplome',
   templateUrl: './modif-diplome.component.html',
-  styleUrls: ['./modif-diplome.component.scss', '../../admin-style.module.scss']
+  styleUrls: ['./modif-diplome.component.scss' ]
 })
 export class ModifDiplomeComponent implements OnInit{
 

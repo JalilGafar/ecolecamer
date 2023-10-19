@@ -8,13 +8,13 @@ import { TreeNode } from 'primeng/api';
 @Component({
   selector: 'app-info-bac-pro',
   templateUrl: './info-bac-pro.component.html',
-  styleUrls: ['./info-bac-pro.component.scss', '../../informations-style.module.scss']
+  styleUrls: ['./info-bac-pro.component.scss'  ]
 })
 export class InfoBacProComponent implements OnInit{
   
   titre = "Bac Technique | Bac Pro";
   soustitre = "Comme Jules, 40% des bacheliers utilisent Camerdiplome pour trouver leur école";
-  photo = "./../../../../assets/images/pexels-kampus-productiont.jpg";
+  photo = "./../../../../assets/images/pexels-kampus-productiont.webp";
   
   school$!: Observable<interestelt[]>;
   overlayVisible: boolean = false;

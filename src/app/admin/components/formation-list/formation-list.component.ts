@@ -7,7 +7,7 @@ import { AdminService } from '../../services/admin.service';
 @Component({
   selector: 'app-formation-list',
   templateUrl: './formation-list.component.html',
-  styleUrls: ['./formation-list.component.scss', '../../admin-style.module.scss']
+  styleUrls: ['./formation-list.component.scss' ]
 })
 export class FormationListComponent implements OnInit{
 

@@ -10,7 +10,10 @@
         <app-pub-first></app-pub-first>
     </div>
     <div class="main-container">
+        <h3 class="suscep">Formations susceptibles de vous intéresser</h3>
         <app-pub-interest-item *ngFor="let schooli of school$ | async" [school]="schooli"></app-pub-interest-item>
+        <div>
+        </div>
         <div class="redaction-info">
             <h1>Le système éducatif au Cameroun</h1>
             <p>

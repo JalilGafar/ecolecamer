@@ -7,7 +7,7 @@ import { AdminService } from '../../services/admin.service';
 @Component({
   selector: 'app-single-campus',
   templateUrl: './single-campus.component.html',
-  styleUrls: ['./single-campus.component.scss', '../../admin-style.module.scss']
+  styleUrls: ['./single-campus.component.scss' ]
 })
 export class SingleCampusComponent implements OnInit {
 

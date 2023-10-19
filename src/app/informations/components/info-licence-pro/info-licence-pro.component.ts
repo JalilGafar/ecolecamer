@@ -7,13 +7,13 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-info-licence-pro',
   templateUrl: './info-licence-pro.component.html',
-  styleUrls: ['./info-licence-pro.component.scss', '../../informations-style.module.scss']
+  styleUrls: ['./info-licence-pro.component.scss'  ]
 })
 export class InfoLicenceProComponent implements OnInit{
   
   titre = "Trouvez votre Licence Pro";
   soustitre = "Comme Choupo, 40% des bacheliers utilisent Camerdiplome pour trouver leur école";
-  photo = "./../../../../assets/images/pexels-rdne-stock-project.jpg";
+  photo = "./../../../../assets/images/pexels-rdne-stock-project.webp";
   
   school$!: Observable<interestelt[]>
 

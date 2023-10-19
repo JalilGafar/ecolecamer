@@ -7,13 +7,13 @@ import { InfoServices } from '../../information.services';
 @Component({
   selector: 'app-info-hnd',
   templateUrl: './info-hnd.component.html',
-  styleUrls: ['./info-hnd.component.scss', '../../informations-style.module.scss']
+  styleUrls: ['./info-hnd.component.scss'  ]
 })
 export class InfoHndComponent implements OnInit {
 
   titre = "Find your training";
   soustitre = "Like Stefi, 40% of high school graduates use Camerdiplome to find their school";
-  photo = "./../../../../assets/images/pexels-godisable-jacob.jpg";
+  photo = "./../../../../assets/images/pexels-godisable-jacob.webp";
 
   school$!: Observable<interestelt[]>
 

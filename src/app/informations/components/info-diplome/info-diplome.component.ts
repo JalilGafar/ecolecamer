@@ -9,13 +9,13 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 @Component({
   selector: 'app-info-diplome',
   templateUrl: './info-diplome.component.html',
-  styleUrls: ['./info-diplome.component.scss', '../../informations-style.module.scss']
+  styleUrls: ['./info-diplome.component.scss'  ]
 })
 export class InfoDiplomeComponent implements OnInit{
   
   titre = "Trouvez votre formation au Cameroun";
   soustitre = "Comme Fadimatou, elles sont nombreuse à utiliser Camerdiplome pour trouver leur école";
-  photo = "./../../../../assets/images/fati_lon_mini.jpg";
+  photo = "./../../../../assets/images/fati_lon_mini.webp";
   school$!: Observable <interestelt[]>;
 
   constructor( private infoservice : InfoServices,

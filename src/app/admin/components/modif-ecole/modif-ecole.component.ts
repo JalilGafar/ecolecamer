@@ -10,7 +10,7 @@ import { AdminService } from '../../services/admin.service';
 @Component({
   selector: 'app-modif-ecole',
   templateUrl: './modif-ecole.component.html',
-  styleUrls: ['./modif-ecole.component.scss', '../../admin-style.module.scss']
+  styleUrls: ['./modif-ecole.component.scss' ]
 })
 export class ModifEcoleComponent implements OnInit{
 

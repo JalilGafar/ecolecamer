@@ -26,14 +26,12 @@ export class PubFirstComponent implements OnInit {
         const breakpoints = result.breakpoints;
     
         if (breakpoints[Breakpoints.XSmall]) {
-          console.log("screens matches TabletPortrait");
-          this.mobile = "./../../../../assets/images/school/visa_succes_short.png";
+          this.mobile = "./../../../../assets/images/school/visa_succes_short.webp";
           this.classer = "phone"
         }
         else {
-          console.log("screens matches HandsetLandscape");
           this.classer = "large"
-          this.mobile = "./../../../../assets/images/school/visa_succes.png";
+          this.mobile = "./../../../../assets/images/school/visa_succes.webp";
         }
     
       });

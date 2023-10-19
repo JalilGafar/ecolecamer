@@ -12,7 +12,7 @@ import { TopNewsService } from 'src/app/services/top-news.service';
 @Component({
   selector: 'app-city',
   templateUrl: './city.component.html',
-  styleUrls: ['./city.component.scss', '../../orientation-style.module.scss']
+  styleUrls: ['./city.component.scss'   ]
 })
 export class CityComponent implements OnInit, AfterViewInit{
 

@@ -9,7 +9,7 @@ import { Domaine } from '../../models/domaine.model';
 @Component({
   selector: 'app-new-diplome',
   templateUrl: './new-diplome.component.html',
-  styleUrls: ['./new-diplome.component.scss', '../../admin-style.module.scss']
+  styleUrls: ['./new-diplome.component.scss' ]
 })
 export class NewDiplomeComponent implements OnInit {
 
