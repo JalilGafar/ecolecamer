@@ -24,6 +24,7 @@ import { ReferencerComponent } from './referencer/referencer.component';
 import { DiplomesComponent } from './diplomes/diplomes.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { SpinnerComponent } from './spinner/spinner.component';
+import {provideClientHydration} from '@angular/platform-browser';
 //import { LoadingInterceptor } from './interceptors/loading.interceptor';
 
 @NgModule({
@@ -43,6 +44,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
     providers: [
         { provide: LOCALE_ID, useValue: 'fr-FR' },
         {provide: LocationStrategy, useClass: HashLocationStrategy},
+        provideClientHydration(),
        // {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true},
         httpInterceptorProviders
     ],
