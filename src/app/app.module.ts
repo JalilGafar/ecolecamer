@@ -52,7 +52,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
       TopVideoSchoolModule
     ],
     imports: [
-        BrowserModule,
+        BrowserModule.withServerTransition({ appId: 'serverApp' }),
         AppRoutingModule,
         BrowserAnimationsModule,
         CoreModule,
