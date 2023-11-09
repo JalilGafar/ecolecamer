@@ -21,6 +21,9 @@
                 "path": "src/custom-webpack.config.js",
                 "replaceDuplicatePlugins": true
             },
+            "allowedCommonJsDependencies": [
+              "lodash"
+           ],
             "outputPath": "dist/ecolecamer/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -75,7 +78,11 @@
             },
             "development": {
               "buildOptimizer": false,
-              "optimization": false,
+              "optimization": {
+                "styles": {
+                  "inlineCritical": false
+                }
+              },
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,

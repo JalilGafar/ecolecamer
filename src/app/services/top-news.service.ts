@@ -22,7 +22,12 @@ export class TopNewsService {
   }
 
   scrollTo(element: string, behavior: BEHAVIOR): void {
-    (document.getElementById(element) as HTMLElement).scrollIntoView({behavior: behavior, block:"start", inline:"nearest"})
+    if (typeof document !== 'undefined') {
+      let elementer = document.getElementById(element);
+    
+      (elementer as HTMLElement).scrollIntoView({behavior: behavior, block:"start", inline:"nearest"})
+      // Manipulating the DOM here
+   }
   }
 
   countFormation(): Observable<counter[]> {

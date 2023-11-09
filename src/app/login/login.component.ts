@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { tokenStorageService } from 'src/app/services/token-storage.service';
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit{
   constructor(private auth: AuthService,
               //private authen : AuthenService, 
              // private router: Router,
+             @Inject(PLATFORM_ID) private platformId: any,
               private tokenStorage: tokenStorageService) { }
 
   ngOnInit(): void {
@@ -49,8 +51,10 @@ export class LoginComponent implements OnInit{
   }
 
   reloadPage(): void {
-    window.location.reload();
-  }
+    if (isPlatformBrowser(this.platformId)) {
+      window.location.reload();
+    }
+    }
 
  // onLogin() {
  // //this.authen.login();

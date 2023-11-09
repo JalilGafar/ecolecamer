@@ -15,7 +15,7 @@ import { Title } from '@angular/platform-browser';
 export class LandingPageComponent implements OnInit {
 
   count!: number;
-  counter = document.querySelector('.counter');
+ // counter = document.querySelector('.counter');
   counti = 0 ;
   speed = 200; // The lower the slower
 
@@ -30,6 +30,7 @@ export class LandingPageComponent implements OnInit {
                                 }
 
   ngOnInit(): void {
+    
     this.service.countFormation().pipe(
       map(data => {
         this.count = data[0].cont;

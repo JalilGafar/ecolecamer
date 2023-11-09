@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-pub-first',
@@ -8,14 +9,17 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 })
 export class PubFirstComponent implements OnInit {
 
-  constructor(private responsive: BreakpointObserver) {}
+  constructor(private responsive: BreakpointObserver,
+    @Inject(PLATFORM_ID) private platformId: any) {}
 
   mobile !: string;
   classer !: string; 
   
   ngOnInit () {
-    if (window.screen.width <= 360) { // 768px portrait
-     // this.mobile = true;
+    if (isPlatformBrowser(this.platformId)) {
+      if (window.screen.width <= 360) { // 768px portrait
+       // this.mobile = true;
+      }
     }
 
     this.responsive.observe([
